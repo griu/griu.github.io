@@ -2,9 +2,6 @@
 .Rhistory
 .Rapp.history
 
-# Session Data files
-.RData
-
 # User-specific files
 .Ruserdata
 
@@ -19,6 +16,8 @@
 
 # RStudio files
 .Rproj.user/
+.Rproj
+*.Rproj
 
 # produced vignettes
 vignettes/*.html
@@ -34,3 +33,15 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+
+# R Environment Variables
+.Renviron
+
+# bookdown
+_book
+_bookdown_files
+
+# others
+*.md
+*.tex
+*.bak
