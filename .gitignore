@@ -41,7 +41,3 @@ vignettes/*.pdf
 _book
 _bookdown_files
 
-# others
-*.md
-*.tex
-*.bak
