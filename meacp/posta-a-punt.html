@@ -53,6 +53,13 @@
 
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script>
 % https://stackoverflow.com/a/4425214/8242291
 var links = document.links;
@@ -153,17 +160,22 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="part"><span><b>I Computació en R</b></span></li>
 <li class="chapter" data-level="1" data-path="posta-a-punt.html"><a href="posta-a-punt.html"><i class="fa fa-check"></i><b>1</b> Posta a punt</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#instalació"><i class="fa fa-check"></i><b>1.1</b> Instalació</a>
+<li class="chapter" data-level="1.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r"><i class="fa fa-check"></i><b>1.1</b> R</a></li>
+<li class="chapter" data-level="1.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a>
 <ul>
-<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r"><i class="fa fa-check"></i>R</a></li>
-<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rstudio"><i class="fa fa-check"></i>RStudio</a></li>
-<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#paquets-de-r"><i class="fa fa-check"></i>Paquets de R</a></li>
+<li class="chapter" data-level="1.2.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#gitproject"><i class="fa fa-check"></i><b>1.2.1</b> Crear un proyecto</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rmarkdown-.rmd"><i class="fa fa-check"></i><b>1.2</b> Rmarkdown (*.Rmd)</a></li>
-<li class="chapter" data-level="1.3" data-path="posta-a-punt.html"><a href="posta-a-punt.html#act11"><i class="fa fa-check"></i><b>1.3</b> Actividad guiada 1.1</a>
+<li class="chapter" data-level="1.3" data-path="posta-a-punt.html"><a href="posta-a-punt.html#paquetes"><i class="fa fa-check"></i><b>1.3</b> Paquets de R</a></li>
+<li class="chapter" data-level="1.4" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rmarkdown-.rmd"><i class="fa fa-check"></i><b>1.4</b> Rmarkdown (*.Rmd)</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r-markdown"><i class="fa fa-check"></i><b>1.3.1</b> R Markdown</a></li>
-<li class="chapter" data-level="1.3.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#including-plots"><i class="fa fa-check"></i><b>1.3.2</b> Including Plots</a></li>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#comandos-rmarkdown"><i class="fa fa-check"></i>Comandos Rmarkdown</a></li>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#recomendaciones"><i class="fa fa-check"></i>Recomendaciones</a></li>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#recomendaciones-1"><i class="fa fa-check"></i>Recomendaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="posta-a-punt.html"><a href="posta-a-punt.html#act11"><i class="fa fa-check"></i><b>1.5</b> Actividad guiada 1.1</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r-markdown"><i class="fa fa-check"></i><b>1.5.1</b> R Markdown</a></li>
+<li class="chapter" data-level="1.5.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#including-plots"><i class="fa fa-check"></i><b>1.5.2</b> Including Plots</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="elementos-básicos.html"><a href="elementos-básicos.html"><i class="fa fa-check"></i><b>2</b> Elementos básicos</a>
@@ -183,99 +195,103 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="2.3.2" data-path="elementos-básicos.html"><a href="elementos-básicos.html#tabla-descriptiva-de-países"><i class="fa fa-check"></i><b>2.3.2</b> Tabla descriptiva de países</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html"><i class="fa fa-check"></i><b>3</b> Colecciones de objetos</a>
+<li class="chapter" data-level="3" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html"><i class="fa fa-check"></i><b>3</b> Objetos de R</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#tipo-básicos"><i class="fa fa-check"></i><b>3.1</b> Tipo básicos</a>
+<li class="chapter" data-level="3.1" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#colecciones-de-objetos"><i class="fa fa-check"></i><b>3.1</b> Colecciones de objetos</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#numeric"><i class="fa fa-check"></i>Numeric</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#integer"><i class="fa fa-check"></i>Integer</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#logical"><i class="fa fa-check"></i>Logical</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#character"><i class="fa fa-check"></i>Character</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#factor"><i class="fa fa-check"></i>Factor</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#fechas-y-horarios"><i class="fa fa-check"></i>Fechas y horarios</a></li>
+<li class="chapter" data-level="3.1.1" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#tipo-básicos"><i class="fa fa-check"></i><b>3.1.1</b> Tipo básicos</a></li>
+<li class="chapter" data-level="3.1.2" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#vectores"><i class="fa fa-check"></i><b>3.1.2</b> Vectores</a></li>
+<li class="chapter" data-level="3.1.3" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#matrices"><i class="fa fa-check"></i><b>3.1.3</b> Matrices</a></li>
+<li class="chapter" data-level="3.1.4" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#listas"><i class="fa fa-check"></i><b>3.1.4</b> Listas</a></li>
+<li class="chapter" data-level="3.1.5" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#data-frames"><i class="fa fa-check"></i><b>3.1.5</b> Data frames</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#vectores"><i class="fa fa-check"></i><b>3.2</b> Vectores</a>
+<li class="chapter" data-level="3.2" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#filtrado-de-objetos"><i class="fa fa-check"></i><b>3.2</b> Filtrado de objetos</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#longitud"><i class="fa fa-check"></i>Longitud</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres"><i class="fa fa-check"></i>Nombres</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#operaciones-aritméticas"><i class="fa fa-check"></i>Operaciones aritméticas</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#operaciones-con-texto"><i class="fa fa-check"></i>Operaciones con texto</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#secuencias"><i class="fa fa-check"></i>Secuencias</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#factor-1"><i class="fa fa-check"></i>Factor</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#enteros-positivos"><i class="fa fa-check"></i>Enteros positivos</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#enteros-negativos"><i class="fa fa-check"></i>Enteros negativos</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#nombres-3"><i class="fa fa-check"></i>Nombres</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#dolares-y-dobles-corchetes"><i class="fa fa-check"></i>Dolares y dobles corchetes</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#valores-lógicos"><i class="fa fa-check"></i>Valores lógicos</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#operaciones-booleanas"><i class="fa fa-check"></i>Operaciones booleanas</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#matrices"><i class="fa fa-check"></i><b>3.3</b> Matrices</a>
+<li class="chapter" data-level="3.3" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#modificacion-objetos"><i class="fa fa-check"></i><b>3.3</b> Modificacion objetos</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#dimensión"><i class="fa fa-check"></i>Dimensión</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres-1"><i class="fa fa-check"></i>Nombres</a></li>
-<li class="chapter" data-level="3.3.1" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#arrays"><i class="fa fa-check"></i><b>3.3.1</b> Arrays</a></li>
+<li><a href="objetos-de-r-1.html#filtro-y-asignación--">Filtro y asignación “<code>]&lt;-</code>”</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#listas"><i class="fa fa-check"></i><b>3.4</b> Listas</a>
+<li class="chapter" data-level="3.4" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#información-faltante"><i class="fa fa-check"></i><b>3.4</b> Información faltante</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres-2"><i class="fa fa-check"></i>Nombres</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#data-frames"><i class="fa fa-check"></i><b>3.5</b> Data frames</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html"><i class="fa fa-check"></i><b>4</b> Filtrado de objetos</a>
-<ul>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#enteros-positivos"><i class="fa fa-check"></i>Enteros positivos</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#enteros-negativos"><i class="fa fa-check"></i>Enteros negativos</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#nombres-3"><i class="fa fa-check"></i>Nombres</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#dolares-y-dobles-corchetes"><i class="fa fa-check"></i>Dolares y dobles corchetes</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#valores-lógicos"><i class="fa fa-check"></i>Valores lógicos</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#operaciones-booleanas"><i class="fa fa-check"></i>Operaciones booleanas</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html"><i class="fa fa-check"></i><b>5</b> Modificacion objetos</a>
-<ul>
-<li><a href="modificacion-objetos.html#filtro-y-asignación--">Filtro y asignación “<code>]&lt;-</code>”</a></li>
-<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#información-faltante"><i class="fa fa-check"></i>Información faltante</a></li>
-<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#seleccion-de-filas-con-valores-faltantes"><i class="fa fa-check"></i>Seleccion de filas con valores faltantes</a></li>
-<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#filtros-en-variables-con-valores-faltantes"><i class="fa fa-check"></i>Filtros en variables con valores faltantes</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Gráficos con ggplot2</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#estructura-básica-de-ggplot2"><i class="fa fa-check"></i><b>6.1</b> Estructura básica de ggplot2</a>
-<ul>
-<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-geoms"><i class="fa fa-check"></i>Otros geoms</a></li>
-<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-elmentos-gráficos"><i class="fa fa-check"></i>Otros elmentos gráficos</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#act13"><i class="fa fa-check"></i><b>6.2</b> Actividad guiada 1.3</a>
-<ul>
-<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-1"><i class="fa fa-check"></i>Gráfico de dispersión de países</a></li>
-<li class="chapter" data-level="6.2.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#preparación-de-datos"><i class="fa fa-check"></i><b>6.2.1</b> Preparación de datos</a></li>
-<li class="chapter" data-level="6.2.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#descriptivo-boxplot"><i class="fa fa-check"></i><b>6.2.2</b> Descriptivo boxplot</a></li>
-<li class="chapter" data-level="6.2.3" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-2"><i class="fa fa-check"></i><b>6.2.3</b> Gráfico de dispersión de países</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#seleccion-filas-missings"><i class="fa fa-check"></i>Seleccion filas missings</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#filtros-missings"><i class="fa fa-check"></i>Filtros missings</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Trabajo con datos</b></span></li>
-<li class="chapter" data-level="7" data-path="lectura-escritura.html"><a href="lectura-escritura.html"><i class="fa fa-check"></i><b>7</b> Lectura escritura</a>
+<li class="chapter" data-level="4" data-path="DataIO.html"><a href="DataIO.html"><i class="fa fa-check"></i><b>4</b> Lectura escritura</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="lectura-escritura.html"><a href="lectura-escritura.html#importar-y-exportar-datos"><i class="fa fa-check"></i><b>7.0.1</b> IMPORTAR Y EXPORTAR DATOS</a></li>
+<li class="chapter" data-level="4.1" data-path="DataIO.html"><a href="DataIO.html#datos-de-texto"><i class="fa fa-check"></i><b>4.1</b> Datos de texto</a>
+<ul>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#lectura-texto-con-separador"><i class="fa fa-check"></i>Lectura texto con separador</a></li>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#escritura-texto-con-separador"><i class="fa fa-check"></i>Escritura texto con separador</a></li>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#texto-con-ancho-fijo"><i class="fa fa-check"></i>Texto con ancho fijo</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html"><i class="fa fa-check"></i><b>8</b> Fuentes de dades</a></li>
-<li class="chapter" data-level="9" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html"><i class="fa fa-check"></i><b>9</b> Operaciones entre tablas</a>
+<li class="chapter" data-level="4.2" data-path="DataIO.html"><a href="DataIO.html#otros-formatos"><i class="fa fa-check"></i><b>4.2</b> Otros formatos</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#ordenación-y-union"><i class="fa fa-check"></i><b>9.1</b> Ordenación y Union</a>
-<ul>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#ordenación"><i class="fa fa-check"></i>Ordenación</a></li>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unión-por-columnas"><i class="fa fa-check"></i>Unión por columnas</a></li>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unión-por-filas"><i class="fa fa-check"></i>Unión por filas</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#cruce-por-campos-clave"><i class="fa fa-check"></i><b>9.2</b> Cruce por campos clave</a>
-<ul>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unicidad"><i class="fa fa-check"></i>Unicidad</a></li>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#fusión-con-claves"><i class="fa fa-check"></i>Fusión con claves</a></li>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#definción-de-las-claves"><i class="fa fa-check"></i>Definción de las claves</a></li>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#leer-excel"><i class="fa fa-check"></i>Leer Excel</a></li>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#leer-spss"><i class="fa fa-check"></i>Leer SPSS</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html"><i class="fa fa-check"></i><b>10</b> Resumenes de agregados</a>
+<li class="chapter" data-level="5" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html"><i class="fa fa-check"></i><b>5</b> Fuentes de dades</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#summary"><i class="fa fa-check"></i><b>10.1</b> Summary</a>
-<ul>
-<li class="chapter" data-level="10.1.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#estadísticos-basicos"><i class="fa fa-check"></i><b>10.1.1</b> Estadísticos basicos</a></li>
+<li class="chapter" data-level="5.1" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html#algunmos-orígenes"><i class="fa fa-check"></i><b>5.1</b> Algunmos orígenes:</a></li>
+<li class="chapter" data-level="5.2" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html#más-origenes"><i class="fa fa-check"></i><b>5.2</b> Más origenes</a></li>
+<li class="chapter" data-level="5.3" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html#crear-datos"><i class="fa fa-check"></i><b>5.3</b> Crear datos</a></li>
+<li class="chapter" data-level="5.4" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html#criterios-selección"><i class="fa fa-check"></i><b>5.4</b> Criterios selección</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#tablas-de-frecuencias"><i class="fa fa-check"></i><b>10.2</b> Tablas de frecuencias</a></li>
-<li class="chapter" data-level="10.3" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#agregados-por-subgrupos"><i class="fa fa-check"></i><b>10.3</b> Agregados por subgrupos</a></li>
-<li class="chapter" data-level="10.4" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#la-familia-apply"><i class="fa fa-check"></i><b>10.4</b> La familia apply</a>
+<li class="chapter" data-level="6" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Gráficos con ggplot2</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#estructura-básica"><i class="fa fa-check"></i><b>6.1</b> Estructura básica</a></li>
+<li class="chapter" data-level="6.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-geoms"><i class="fa fa-check"></i><b>6.2</b> Otros geoms</a></li>
+<li class="chapter" data-level="6.3" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-elmentos"><i class="fa fa-check"></i><b>6.3</b> Otros elmentos</a></li>
+<li class="chapter" data-level="6.4" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#más-ejemplos"><i class="fa fa-check"></i><b>6.4</b> Más ejemplos</a>
+<ul>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#panel-de-datos"><i class="fa fa-check"></i>Panel de datos</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#etiquetas"><i class="fa fa-check"></i>Etiquetas</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#paleta-colores"><i class="fa fa-check"></i>Paleta colores</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#zoom"><i class="fa fa-check"></i>Zoom</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#temas"><i class="fa fa-check"></i>Temas</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráficos-interactivos"><i class="fa fa-check"></i>Gráficos interactivos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#act13"><i class="fa fa-check"></i><b>6.5</b> Actividad guiada 1.3</a>
+<ul>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-1"><i class="fa fa-check"></i>Gráfico de dispersión de países</a></li>
+<li class="chapter" data-level="6.5.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#preparación-de-datos"><i class="fa fa-check"></i><b>6.5.1</b> Preparación de datos</a></li>
+<li class="chapter" data-level="6.5.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#descriptivo-boxplot"><i class="fa fa-check"></i><b>6.5.2</b> Descriptivo boxplot</a></li>
+<li class="chapter" data-level="6.5.3" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-2"><i class="fa fa-check"></i><b>6.5.3</b> Gráfico de dispersión de países</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html"><i class="fa fa-check"></i><b>7</b> Cruces entre tablas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#ordenación-y-union"><i class="fa fa-check"></i><b>7.1</b> Ordenación y Union</a>
+<ul>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#ordenación"><i class="fa fa-check"></i>Ordenación</a></li>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#unión-por-columnas"><i class="fa fa-check"></i>Unión por columnas</a></li>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#unión-por-filas"><i class="fa fa-check"></i>Unión por filas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#cruce-por-campos-clave"><i class="fa fa-check"></i><b>7.2</b> Cruce por campos clave</a>
+<ul>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#unicidad"><i class="fa fa-check"></i>Unicidad</a></li>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#fusión-con-claves"><i class="fa fa-check"></i>Fusión con claves</a></li>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#definción-de-las-claves"><i class="fa fa-check"></i>Definción de las claves</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html"><i class="fa fa-check"></i><b>8</b> Resumenes de agregados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#summary"><i class="fa fa-check"></i><b>8.1</b> Summary</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#estadísticos-basicos"><i class="fa fa-check"></i><b>8.1.1</b> Estadísticos basicos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#tablas-de-frecuencias"><i class="fa fa-check"></i><b>8.2</b> Tablas de frecuencias</a></li>
+<li class="chapter" data-level="8.3" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#agregados-por-subgrupos"><i class="fa fa-check"></i><b>8.3</b> Agregados por subgrupos</a></li>
+<li class="chapter" data-level="8.4" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#la-familia-apply"><i class="fa fa-check"></i><b>8.4</b> La familia apply</a>
 <ul>
 <li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#tapply"><i class="fa fa-check"></i>tapply</a></li>
 <li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#lapply"><i class="fa fa-check"></i>lapply</a></li>
@@ -283,24 +299,24 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#apply"><i class="fa fa-check"></i>apply</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html"><i class="fa fa-check"></i><b>11</b> Las alternativas tydiverse</a>
+<li class="chapter" data-level="9" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html"><i class="fa fa-check"></i><b>9</b> Alternativas Tydiverse</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#dplyr-arrange-filter-select"><i class="fa fa-check"></i><b>11.1</b> Dplyr: arrange, filter, select</a></li>
-<li class="chapter" data-level="11.2" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#dplyr-mutate-group_by-summarise"><i class="fa fa-check"></i><b>11.2</b> Dplyr: mutate, group_by, summarise</a></li>
-<li class="chapter" data-level="11.3" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#actividad-guiada-1.4."><i class="fa fa-check"></i><b>11.3</b> Actividad guiada 1.4.</a></li>
-<li class="chapter" data-level="11.4" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#act14"><i class="fa fa-check"></i><b>11.4</b> Actividad guiada 1.4</a>
+<li class="chapter" data-level="9.1" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#dplyr-arrange-filter-select"><i class="fa fa-check"></i><b>9.1</b> Dplyr: arrange, filter, select</a></li>
+<li class="chapter" data-level="9.2" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#dplyr-mutate-group_by-summarise"><i class="fa fa-check"></i><b>9.2</b> Dplyr: mutate, group_by, summarise</a></li>
+<li class="chapter" data-level="9.3" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#actividad-guiada-1.4."><i class="fa fa-check"></i><b>9.3</b> Actividad guiada 1.4.</a></li>
+<li class="chapter" data-level="9.4" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#act14"><i class="fa fa-check"></i><b>9.4</b> Actividad guiada 1.4</a>
 <ul>
-<li class="chapter" data-level="11.4.1" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#evolución-de-los-continentes"><i class="fa fa-check"></i><b>11.4.1</b> Evolución de los continentes</a></li>
+<li class="chapter" data-level="9.4.1" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#evolución-de-los-continentes"><i class="fa fa-check"></i><b>9.4.1</b> Evolución de los continentes</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Regressió</b></span></li>
-<li class="chapter" data-level="12" data-path="regressió-lineal.html"><a href="regressió-lineal.html"><i class="fa fa-check"></i><b>12</b> Regressió lineal</a></li>
-<li class="chapter" data-level="13" data-path="regressió-logística.html"><a href="regressió-logística.html"><i class="fa fa-check"></i><b>13</b> Regressió logística</a></li>
+<li class="chapter" data-level="10" data-path="regressió-lineal.html"><a href="regressió-lineal.html"><i class="fa fa-check"></i><b>10</b> Regressió lineal</a></li>
+<li class="chapter" data-level="11" data-path="regressió-logística.html"><a href="regressió-logística.html"><i class="fa fa-check"></i><b>11</b> Regressió logística</a></li>
 <li class="part"><span><b>IV Reducció dimensió y Clustering</b></span></li>
-<li class="chapter" data-level="14" data-path="componentes-principales.html"><a href="componentes-principales.html"><i class="fa fa-check"></i><b>14</b> Componentes principales</a></li>
-<li class="chapter" data-level="15" data-path="cluster-jerarquic.html"><a href="cluster-jerarquic.html"><i class="fa fa-check"></i><b>15</b> Cluster jerarquic</a></li>
-<li class="chapter" data-level="16" data-path="cluster-no-jerarquic.html"><a href="cluster-no-jerarquic.html"><i class="fa fa-check"></i><b>16</b> Cluster no jerarquic</a></li>
-<li class="chapter" data-level="17" data-path="análisis-de-correspondencies.html"><a href="análisis-de-correspondencies.html"><i class="fa fa-check"></i><b>17</b> Análisis de correspondencies</a></li>
+<li class="chapter" data-level="12" data-path="componentes-principales.html"><a href="componentes-principales.html"><i class="fa fa-check"></i><b>12</b> Componentes principales</a></li>
+<li class="chapter" data-level="13" data-path="cluster-jerarquic.html"><a href="cluster-jerarquic.html"><i class="fa fa-check"></i><b>13</b> Cluster jerarquic</a></li>
+<li class="chapter" data-level="14" data-path="cluster-no-jerarquic.html"><a href="cluster-no-jerarquic.html"><i class="fa fa-check"></i><b>14</b> Cluster no jerarquic</a></li>
+<li class="chapter" data-level="15" data-path="análisis-de-correspondencies.html"><a href="análisis-de-correspondencies.html"><i class="fa fa-check"></i><b>15</b> Análisis de correspondencies</a></li>
 <li class="chapter" data-level="" data-path="referències.html"><a href="referències.html"><i class="fa fa-check"></i>Referències</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/griu/meacp" target="blank">Repositori GiutHub</a></li>
@@ -324,10 +340,8 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
             <section class="normal" id="section-">
 <div id="posta-a-punt" class="section level1" number="1">
 <h1><span class="header-section-number">Capítol 1</span> Posta a punt</h1>
-<div id="instalació" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Instalació</h2>
-<div id="r" class="section level3 unnumbered">
-<h3>R</h3>
+<div id="r" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> R</h2>
 <p>R és <a href="https://www.gnu.org/">GNU</a> i per tant Programari lliure). És un entorn i llenguatge per a als gràfics i la computació estadística.</p>
 <p>Si bien R funciona perfectamente des de consola de texto (R-GUI en windows o bien, ejecutando comando R desde xterm en Linux) en el curso se utilizará la interfaz gráfica de RStudio. Ejecuta la siguiente línea.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="posta-a-punt.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">/</span> (<span class="dv">4</span> <span class="sc">-</span> <span class="dv">1</span>)</span></code></pre></div>
@@ -336,9 +350,18 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <p>Puedes recuperar las líneas ejecutadas previamente apretando la tecla Arriba del cursor.</p>
 </blockquote>
 <p>Pots instalar R tant en Linux, Mac com e Windows des de: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> .</p>
+<p>Para pedir ayuda sobre una función hay 2 opciones:</p>
+<ol style="list-style-type: decimal">
+<li>Con un ?</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="posta-a-punt.html#cb3-1" aria-hidden="true" tabindex="-1"></a>?read.table</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Con dos ?</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="posta-a-punt.html#cb4-1" aria-hidden="true" tabindex="-1"></a>??excel</span></code></pre></div>
 </div>
-<div id="rstudio" class="section level3 unnumbered">
-<h3>RStudio</h3>
+<div id="rstudio" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> RStudio</h2>
 <p>El lenguaje R se puede escribir mediante editor de texto en ficheros con extensión <code>*.R</code>. El entorno RStudio (ver imagen), incorpora, además de un editor y de la consola de R, un conjunto de utilidades que facilitan las tareas de programación y análisis de datos: navegador de ficheros, ayuda, objetos en memoria, visor de gráficos…</p>
 <div class="figure" style="text-align: center"><span id="fig:bas-rstudio"></span>
 <img src="www/images/02_basics/rstudio.png" alt="Entorno RStudio (Fuente: Elaboración propia)." width="750px" />
@@ -347,9 +370,48 @@ Figura 1.1: Entorno RStudio (Fuente: Elaboración propia).
 </p>
 </div>
 <p>Per programar en R utilitzarem el IDE RStudio. Un cop hagis instal·lat R, pots instalar RStudio des de: <a href="https://rstudio.com/products/rstudio/download/#download" class="uri">https://rstudio.com/products/rstudio/download/#download</a> .</p>
+<p>Las combinaciones de teclas disponibles: <code>Alt + Shift + K</code></p>
+<ul>
+<li>Ejecutar código: <code>Ctrl + Enter</code></li>
+<li>Ir a la ventana de código: <code>Ctrl + 1</code></li>
+<li>Ir a la consola: <code>Ctrl + 2</code></li>
+</ul>
+<div id="gitproject" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Crear un proyecto</h3>
+<p>Opcionalmente, resulta útil crear un proyecto en RSTudio descargando el material y datos de este curso, des de la plataforma GitHub (compartir código y datos).</p>
+<p>Los pasos son los sigientes:</p>
+<ul>
+<li>File &gt; New Project…</li>
+<li>Versión Control &gt; Git</li>
+<li>Repository URL:
+<ul>
+<li><a href="https://github.com/griu/meacp.git" class="uri">https://github.com/griu/meacp.git</a></li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:bas-git"></span>
+<img src="www/images/02_basics/proyectogit.png" alt="Crear proyecto Git del Curso (Fuente: Elaboración propia)." width="500px" />
+<p class="caption">
+Figura 1.2: Crear proyecto Git del Curso (Fuente: Elaboración propia).
+</p>
 </div>
-<div id="paquets-de-r" class="section level3 unnumbered">
-<h3>Paquets de R</h3>
+<p>Alternativamente, puedes descargar el material des del navegador y crear un proyecto de RSTudio:</p>
+<ul>
+<li>Descargar el material des del enlace:
+<ul>
+<li><a href="https://github.com/griu/meacp" class="uri">https://github.com/griu/meacp</a></li>
+<li>“Code” -&gt; “Download Zip”</li>
+</ul></li>
+<li>Descomprimir el código</li>
+<li>Crear el proyecto des de R
+<ul>
+<li>File -&gt; New Project … -&gt; New Directory -&gt; New project</li>
+<li>Buscar la carpeta con el código descomprimido</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="paquetes" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Paquets de R</h2>
 <p>Hi ha tota una comunitat de desenvolupadors que amplien les funcionalitats de R a través de llibreries o paquets. Per utilizar auquests funcionalitats, primer es necesari instalar els paquets.</p>
 <p>Se publican en <a href="https://cran.r-project.org/">CRAN</a>, un repositorio centralizado. Actualmente contiene más de 16 mil paquetes.</p>
 <p>Los más importantes, como <code>stats</code>, <code>graphics</code>, <code>methods</code>, <code>base...</code> están ya disponibles en la consola.</p>
@@ -368,46 +430,88 @@ install.packages(&quot;car&quot;)
 install.packages(&quot;corrplot&quot;)
 install.packages(&quot;FactoMineR&quot;)
 install.packages(&quot;factoextra&quot;)
+install.packages(&quot;quantreg&quot;)
 install.packages(&quot;psych&quot;)
+install.packages(&quot;mice&quot;)
 install.packages(&quot;cluster&quot;)
+install.packages(&quot;readxl&quot;)
+install.packages(&quot;remotes&quot;)
+install.packages(&quot;WDI&quot;)
 install.packages(&quot;gapminder&quot;)
 install.packages(&quot;datos&quot;)
-install.packages(&quot;UsingR&quot;)</code></pre>
+install.packages(&quot;HistData&quot;)
+install.packages(&quot;poliscidata&quot;)</code></pre>
 </div>
-</div>
-<div id="rmarkdown-.rmd" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Rmarkdown (*.Rmd)</h2>
+<div id="rmarkdown-.rmd" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Rmarkdown (*.Rmd)</h2>
 <p>Puedes generar de forma dinámica documentos PDF, Word (como éste que estás leyendo) o HTML mediante ficheros de tipo Rmarkdown (*.Rmd). Este formato, permite combinar texto con formato, código R y resultados (tablas y gráfcos) ejecutados por R.</p>
 <blockquote>
-<p>Puedes acceder a versión Bookdown, un tipo de RMarkdown de este documento en <a href="https://github.com/griu/meacp">Github.</a></p>
+<p>Puedes acceder al materialdel curso en formato Bookdown (un tipo de RMarkdown) en <a href="https://github.com/griu/meacp">Github.</a>.</p>
 </blockquote>
+<div id="comandos-rmarkdown" class="section level3 unnumbered">
+<h3>Comandos Rmarkdown</h3>
+<ul>
+<li><strong>R chunks</strong>: ```{r, options} CODIGO R ```: echo, eval, fig.cap, warning, message. Opciones:
+<ul>
+<li><code>include = FALSE</code> : Ejecuta pero no muestra el código ni resultados.</li>
+<li><code>echo = FALSE</code> : No muestra el código, pero sí el resultado (tablas, gráficos…).</li>
+<li><code>fig.cap = "..."</code> : Añade un texto al pie de imagen.</li>
+</ul></li>
+<li><strong>R inline</strong>: ` r CODIGO R`</li>
+<li><strong>Titulo</strong>: # TITULO1, ## TITULO2</li>
+<li><strong>Emphasis</strong>: Negrita con <code>**string**</code> . Cursiva con <code>*string*</code></li>
+<li><strong>Link externo</strong>: <code>[texto enlace](http://url)</code></li>
+<li><strong>Imagen</strong>: <code>![texto alternativo](url imagen o ruta del a imagen)</code></li>
+<li><strong>Lista de puntos</strong>: Al inicio de línea, usa guion <code>-</code></li>
+<li><strong>Lista numerada</strong>: Al inicio, pon <code>1.</code></li>
+<li><strong>Código látex</strong>: <code>$x^2$</code>. Salida: <span class="math inline">\(x^2\)</span></li>
+<li><strong>Línea en blanco</strong>: Una linea nueva con <code>&lt;br&gt;</code></li>
+<li><strong>Sangrado (Indented)</strong>: Al incio de línea, usa símbolo <code>&gt;</code></li>
+<li><strong>Tablas</strong>: <code>kintr::kable(tabla)</code></li>
+</ul>
+<p>Puedes ver la <a href="https://rstudio.com/resources/cheatsheets/">hoja resumen</a> y la <a href="https://bookdown.org/yihui/rmarkdown/">Guía completa</a>.</p>
+</div>
+<div id="recomendaciones" class="section level3 unnumbered">
+<h3>Recomendaciones</h3>
+</div>
+<div id="recomendaciones-1" class="section level3 unnumbered">
+<h3>Recomendaciones</h3>
+<ul>
+<li>Enriquece los informes con elmentos RMarkdown: Listas, cursiva…</li>
+<li>Combina código y texto con: inline R.</li>
+<li>Configura las Tablas de contenidos.</li>
+<li>Utiliza caption en tablas y gráficos.</li>
+<li>Muestra sólo el código indispensable.</li>
+<li>Los Gráficos con título (global y ejes) y leyenda.</li>
+</ul>
 <div id="actividad-guiada-1.1" class="section level5 unnumbered">
 <h5>Actividad guiada 1.1</h5>
 <p>Genera tu primer documento RMarkdown. En RStudio, accede al menú <code>File &gt; New File &gt; R Markdown &gt; Documentos &gt; html</code> y edita <code>Title</code>y <code>Author</code> del formulario de la imagen y el formato de salida HTML &gt; aprieta <code>OK</code>.</p>
 <div class="figure" style="text-align: center"><span id="fig:bas-rmarkdown"></span>
 <img src="www/images/02_basics/rmarkdown1.png" alt="Menú de nuevo RMarkdown (Fuente: Elaboración propia)." width="500px" />
 <p class="caption">
-Figura 1.2: Menú de nuevo RMarkdown (Fuente: Elaboración propia).
+Figura 1.3: Menú de nuevo RMarkdown (Fuente: Elaboración propia).
 </p>
 </div>
 <p>Guarda el documento generado automáticamente con el nombre <code>11_actividad.Rmd</code>. Ahora genera el documento apretando el botón <strong>Knit</strong>.</p>
-<p>Puedes ver la solución en <a href="posta-a-punt.html#act11">1.3</a> .</p>
+<p>Puedes ver la solución en <a href="posta-a-punt.html#act11">1.5</a> .</p>
 </div>
 </div>
-<div id="act11" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Actividad guiada 1.1</h2>
+</div>
+<div id="act11" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Actividad guiada 1.1</h2>
 <pre><code>---
 title: &quot;Actividad 1.1.&quot;
 author: &quot;FC&quot;
 date: &quot;8/15/2020&quot;
 output: html_document
 ---</code></pre>
-<div id="r-markdown" class="section level3" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> R Markdown</h3>
+<div id="r-markdown" class="section level3" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> R Markdown</h3>
 <p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
 <p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="posta-a-punt.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza el comando summary para mostrar un resumen general de cars</span></span>
-<span id="cb5-2"><a href="posta-a-punt.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="posta-a-punt.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza el comando summary para mostrar un resumen general de cars</span></span>
+<span id="cb7-2"><a href="posta-a-punt.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
 <pre><code>##      speed           dist       
 ##  Min.   : 4.0   Min.   :  2.00  
 ##  1st Qu.:12.0   1st Qu.: 26.00  
@@ -416,8 +520,8 @@ output: html_document
 ##  3rd Qu.:19.0   3rd Qu.: 56.00  
 ##  Max.   :25.0   Max.   :120.00</code></pre>
 </div>
-<div id="including-plots" class="section level3" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> Including Plots</h3>
+<div id="including-plots" class="section level3" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> Including Plots</h3>
 <p>You can also embed plots, for example:</p>
 <p><img src="meacp_files/figure-html/pressure-1.png" width="672" /></p>
 <p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
@@ -472,6 +576,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

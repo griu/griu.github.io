@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítol 9 Operaciones entre tablas | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
+  <title>Capítol 7 Operaciones entre tablas | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
   <meta name="description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítol 9 Operaciones entre tablas | Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta property="og:title" content="Capítol 7 Operaciones entre tablas | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítol 9 Operaciones entre tablas | Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta name="twitter:title" content="Capítol 7 Operaciones entre tablas | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   
   <meta name="twitter:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   
@@ -53,6 +53,13 @@
 
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script>
 % https://stackoverflow.com/a/4425214/8242291
 var links = document.links;
@@ -153,17 +160,22 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="part"><span><b>I Computació en R</b></span></li>
 <li class="chapter" data-level="1" data-path="posta-a-punt.html"><a href="posta-a-punt.html"><i class="fa fa-check"></i><b>1</b> Posta a punt</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#instalació"><i class="fa fa-check"></i><b>1.1</b> Instalació</a>
+<li class="chapter" data-level="1.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r"><i class="fa fa-check"></i><b>1.1</b> R</a></li>
+<li class="chapter" data-level="1.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a>
 <ul>
-<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r"><i class="fa fa-check"></i>R</a></li>
-<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rstudio"><i class="fa fa-check"></i>RStudio</a></li>
-<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#paquets-de-r"><i class="fa fa-check"></i>Paquets de R</a></li>
+<li class="chapter" data-level="1.2.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#gitproject"><i class="fa fa-check"></i><b>1.2.1</b> Crear un proyecto</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rmarkdown-.rmd"><i class="fa fa-check"></i><b>1.2</b> Rmarkdown (*.Rmd)</a></li>
-<li class="chapter" data-level="1.3" data-path="posta-a-punt.html"><a href="posta-a-punt.html#act11"><i class="fa fa-check"></i><b>1.3</b> Actividad guiada 1.1</a>
+<li class="chapter" data-level="1.3" data-path="posta-a-punt.html"><a href="posta-a-punt.html#paquets-de-r"><i class="fa fa-check"></i><b>1.3</b> Paquets de R</a></li>
+<li class="chapter" data-level="1.4" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rmarkdown-.rmd"><i class="fa fa-check"></i><b>1.4</b> Rmarkdown (*.Rmd)</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r-markdown"><i class="fa fa-check"></i><b>1.3.1</b> R Markdown</a></li>
-<li class="chapter" data-level="1.3.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#including-plots"><i class="fa fa-check"></i><b>1.3.2</b> Including Plots</a></li>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#comandos-rmarkdown"><i class="fa fa-check"></i>Comandos Rmarkdown</a></li>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#recomendaciones"><i class="fa fa-check"></i>Recomendaciones</a></li>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#recomendaciones-1"><i class="fa fa-check"></i>Recomendaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="posta-a-punt.html"><a href="posta-a-punt.html#act11"><i class="fa fa-check"></i><b>1.5</b> Actividad guiada 1.1</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r-markdown"><i class="fa fa-check"></i><b>1.5.1</b> R Markdown</a></li>
+<li class="chapter" data-level="1.5.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#including-plots"><i class="fa fa-check"></i><b>1.5.2</b> Including Plots</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="elementos-básicos.html"><a href="elementos-básicos.html"><i class="fa fa-check"></i><b>2</b> Elementos básicos</a>
@@ -183,99 +195,97 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="2.3.2" data-path="elementos-básicos.html"><a href="elementos-básicos.html#tabla-descriptiva-de-países"><i class="fa fa-check"></i><b>2.3.2</b> Tabla descriptiva de países</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html"><i class="fa fa-check"></i><b>3</b> Colecciones de objetos</a>
+<li class="chapter" data-level="3" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html"><i class="fa fa-check"></i><b>3</b> Objetos de R</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#tipo-básicos"><i class="fa fa-check"></i><b>3.1</b> Tipo básicos</a>
+<li class="chapter" data-level="3.1" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#colecciones-de-objetos"><i class="fa fa-check"></i><b>3.1</b> Colecciones de objetos</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#numeric"><i class="fa fa-check"></i>Numeric</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#integer"><i class="fa fa-check"></i>Integer</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#logical"><i class="fa fa-check"></i>Logical</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#character"><i class="fa fa-check"></i>Character</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#factor"><i class="fa fa-check"></i>Factor</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#fechas-y-horarios"><i class="fa fa-check"></i>Fechas y horarios</a></li>
+<li class="chapter" data-level="3.1.1" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#tipo-básicos"><i class="fa fa-check"></i><b>3.1.1</b> Tipo básicos</a></li>
+<li class="chapter" data-level="3.1.2" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#vectores"><i class="fa fa-check"></i><b>3.1.2</b> Vectores</a></li>
+<li class="chapter" data-level="3.1.3" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#matrices"><i class="fa fa-check"></i><b>3.1.3</b> Matrices</a></li>
+<li class="chapter" data-level="3.1.4" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#listas"><i class="fa fa-check"></i><b>3.1.4</b> Listas</a></li>
+<li class="chapter" data-level="3.1.5" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#data-frames"><i class="fa fa-check"></i><b>3.1.5</b> Data frames</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#vectores"><i class="fa fa-check"></i><b>3.2</b> Vectores</a>
+<li class="chapter" data-level="3.2" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#filtrado-de-objetos"><i class="fa fa-check"></i><b>3.2</b> Filtrado de objetos</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#longitud"><i class="fa fa-check"></i>Longitud</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres"><i class="fa fa-check"></i>Nombres</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#operaciones-aritméticas"><i class="fa fa-check"></i>Operaciones aritméticas</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#operaciones-con-texto"><i class="fa fa-check"></i>Operaciones con texto</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#secuencias"><i class="fa fa-check"></i>Secuencias</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#factor-1"><i class="fa fa-check"></i>Factor</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#enteros-positivos"><i class="fa fa-check"></i>Enteros positivos</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#enteros-negativos"><i class="fa fa-check"></i>Enteros negativos</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#nombres-3"><i class="fa fa-check"></i>Nombres</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#dolares-y-dobles-corchetes"><i class="fa fa-check"></i>Dolares y dobles corchetes</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#valores-lógicos"><i class="fa fa-check"></i>Valores lógicos</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#operaciones-booleanas"><i class="fa fa-check"></i>Operaciones booleanas</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#matrices"><i class="fa fa-check"></i><b>3.3</b> Matrices</a>
+<li class="chapter" data-level="3.3" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#modificacion-objetos"><i class="fa fa-check"></i><b>3.3</b> Modificacion objetos</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#dimensión"><i class="fa fa-check"></i>Dimensión</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres-1"><i class="fa fa-check"></i>Nombres</a></li>
-<li class="chapter" data-level="3.3.1" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#arrays"><i class="fa fa-check"></i><b>3.3.1</b> Arrays</a></li>
+<li><a href="objetos-de-r-1.html#filtro-y-asignación--">Filtro y asignación “<code>]&lt;-</code>”</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#listas"><i class="fa fa-check"></i><b>3.4</b> Listas</a>
+<li class="chapter" data-level="3.4" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#información-faltante"><i class="fa fa-check"></i><b>3.4</b> Información faltante</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres-2"><i class="fa fa-check"></i>Nombres</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#seleccion-filas-missings"><i class="fa fa-check"></i>Seleccion filas missings</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#filtros-missings"><i class="fa fa-check"></i>Filtros missings</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#data-frames"><i class="fa fa-check"></i><b>3.5</b> Data frames</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html"><i class="fa fa-check"></i><b>4</b> Filtrado de objetos</a>
+<li class="chapter" data-level="4" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html"><i class="fa fa-check"></i><b>4</b> Gráficos con ggplot2</a>
 <ul>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#enteros-positivos"><i class="fa fa-check"></i>Enteros positivos</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#enteros-negativos"><i class="fa fa-check"></i>Enteros negativos</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#nombres-3"><i class="fa fa-check"></i>Nombres</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#dolares-y-dobles-corchetes"><i class="fa fa-check"></i>Dolares y dobles corchetes</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#valores-lógicos"><i class="fa fa-check"></i>Valores lógicos</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#operaciones-booleanas"><i class="fa fa-check"></i>Operaciones booleanas</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html"><i class="fa fa-check"></i><b>5</b> Modificacion objetos</a>
+<li class="chapter" data-level="4.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#estructura-básica"><i class="fa fa-check"></i><b>4.1</b> Estructura básica</a></li>
+<li class="chapter" data-level="4.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-geoms"><i class="fa fa-check"></i><b>4.2</b> Otros geoms</a></li>
+<li class="chapter" data-level="4.3" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-elmentos"><i class="fa fa-check"></i><b>4.3</b> Otros elmentos</a></li>
+<li class="chapter" data-level="4.4" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#más-ejemplos"><i class="fa fa-check"></i><b>4.4</b> Más ejemplos</a>
 <ul>
-<li><a href="modificacion-objetos.html#filtro-y-asignación--">Filtro y asignación “<code>]&lt;-</code>”</a></li>
-<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#información-faltante"><i class="fa fa-check"></i>Información faltante</a></li>
-<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#seleccion-de-filas-con-valores-faltantes"><i class="fa fa-check"></i>Seleccion de filas con valores faltantes</a></li>
-<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#filtros-en-variables-con-valores-faltantes"><i class="fa fa-check"></i>Filtros en variables con valores faltantes</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#panel-de-datos"><i class="fa fa-check"></i>Panel de datos</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#etiquetas"><i class="fa fa-check"></i>Etiquetas</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#paleta-colores"><i class="fa fa-check"></i>Paleta colores</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#zoom"><i class="fa fa-check"></i>Zoom</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#temas"><i class="fa fa-check"></i>Temas</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráficos-interactivos"><i class="fa fa-check"></i>Gráficos interactivos</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Gráficos con ggplot2</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#estructura-básica-de-ggplot2"><i class="fa fa-check"></i><b>6.1</b> Estructura básica de ggplot2</a>
-<ul>
-<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-geoms"><i class="fa fa-check"></i>Otros geoms</a></li>
-<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-elmentos-gráficos"><i class="fa fa-check"></i>Otros elmentos gráficos</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#act13"><i class="fa fa-check"></i><b>6.2</b> Actividad guiada 1.3</a>
+<li class="chapter" data-level="4.5" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#act13"><i class="fa fa-check"></i><b>4.5</b> Actividad guiada 1.3</a>
 <ul>
 <li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-1"><i class="fa fa-check"></i>Gráfico de dispersión de países</a></li>
-<li class="chapter" data-level="6.2.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#preparación-de-datos"><i class="fa fa-check"></i><b>6.2.1</b> Preparación de datos</a></li>
-<li class="chapter" data-level="6.2.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#descriptivo-boxplot"><i class="fa fa-check"></i><b>6.2.2</b> Descriptivo boxplot</a></li>
-<li class="chapter" data-level="6.2.3" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-2"><i class="fa fa-check"></i><b>6.2.3</b> Gráfico de dispersión de países</a></li>
+<li class="chapter" data-level="4.5.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#preparación-de-datos"><i class="fa fa-check"></i><b>4.5.1</b> Preparación de datos</a></li>
+<li class="chapter" data-level="4.5.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#descriptivo-boxplot"><i class="fa fa-check"></i><b>4.5.2</b> Descriptivo boxplot</a></li>
+<li class="chapter" data-level="4.5.3" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-2"><i class="fa fa-check"></i><b>4.5.3</b> Gráfico de dispersión de países</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Trabajo con datos</b></span></li>
-<li class="chapter" data-level="7" data-path="lectura-escritura.html"><a href="lectura-escritura.html"><i class="fa fa-check"></i><b>7</b> Lectura escritura</a>
+<li class="chapter" data-level="5" data-path="DataIO.html"><a href="DataIO.html"><i class="fa fa-check"></i><b>5</b> Lectura escritura</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="lectura-escritura.html"><a href="lectura-escritura.html#importar-y-exportar-datos"><i class="fa fa-check"></i><b>7.0.1</b> IMPORTAR Y EXPORTAR DATOS</a></li>
+<li class="chapter" data-level="5.1" data-path="DataIO.html"><a href="DataIO.html#datos-de-texto"><i class="fa fa-check"></i><b>5.1</b> Datos de texto</a>
+<ul>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#lectura-texto-con-separador"><i class="fa fa-check"></i>Lectura texto con separador</a></li>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#escritura-texto-con-separador"><i class="fa fa-check"></i>Escritura texto con separador</a></li>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#texto-con-ancho-fijo"><i class="fa fa-check"></i>Texto con ancho fijo</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html"><i class="fa fa-check"></i><b>8</b> Fuentes de dades</a></li>
-<li class="chapter" data-level="9" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html"><i class="fa fa-check"></i><b>9</b> Operaciones entre tablas</a>
+<li class="chapter" data-level="5.2" data-path="DataIO.html"><a href="DataIO.html#otros-formatos"><i class="fa fa-check"></i><b>5.2</b> Otros formatos</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#ordenación-y-union"><i class="fa fa-check"></i><b>9.1</b> Ordenación y Union</a>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#leer-excel"><i class="fa fa-check"></i>Leer Excel</a></li>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#leer-spss"><i class="fa fa-check"></i>Leer SPSS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html"><i class="fa fa-check"></i><b>6</b> Fuentes de dades</a></li>
+<li class="chapter" data-level="7" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html"><i class="fa fa-check"></i><b>7</b> Operaciones entre tablas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#ordenación-y-union"><i class="fa fa-check"></i><b>7.1</b> Ordenación y Union</a>
 <ul>
 <li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#ordenación"><i class="fa fa-check"></i>Ordenación</a></li>
 <li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unión-por-columnas"><i class="fa fa-check"></i>Unión por columnas</a></li>
 <li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unión-por-filas"><i class="fa fa-check"></i>Unión por filas</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#cruce-por-campos-clave"><i class="fa fa-check"></i><b>9.2</b> Cruce por campos clave</a>
+<li class="chapter" data-level="7.2" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#cruce-por-campos-clave"><i class="fa fa-check"></i><b>7.2</b> Cruce por campos clave</a>
 <ul>
 <li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unicidad"><i class="fa fa-check"></i>Unicidad</a></li>
 <li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#fusión-con-claves"><i class="fa fa-check"></i>Fusión con claves</a></li>
 <li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#definción-de-las-claves"><i class="fa fa-check"></i>Definción de las claves</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html"><i class="fa fa-check"></i><b>10</b> Resumenes de agregados</a>
+<li class="chapter" data-level="8" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html"><i class="fa fa-check"></i><b>8</b> Resumenes de agregados</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#summary"><i class="fa fa-check"></i><b>10.1</b> Summary</a>
+<li class="chapter" data-level="8.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#summary"><i class="fa fa-check"></i><b>8.1</b> Summary</a>
 <ul>
-<li class="chapter" data-level="10.1.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#estadísticos-basicos"><i class="fa fa-check"></i><b>10.1.1</b> Estadísticos basicos</a></li>
+<li class="chapter" data-level="8.1.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#estadísticos-basicos"><i class="fa fa-check"></i><b>8.1.1</b> Estadísticos basicos</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#tablas-de-frecuencias"><i class="fa fa-check"></i><b>10.2</b> Tablas de frecuencias</a></li>
-<li class="chapter" data-level="10.3" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#agregados-por-subgrupos"><i class="fa fa-check"></i><b>10.3</b> Agregados por subgrupos</a></li>
-<li class="chapter" data-level="10.4" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#la-familia-apply"><i class="fa fa-check"></i><b>10.4</b> La familia apply</a>
+<li class="chapter" data-level="8.2" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#tablas-de-frecuencias"><i class="fa fa-check"></i><b>8.2</b> Tablas de frecuencias</a></li>
+<li class="chapter" data-level="8.3" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#agregados-por-subgrupos"><i class="fa fa-check"></i><b>8.3</b> Agregados por subgrupos</a></li>
+<li class="chapter" data-level="8.4" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#la-familia-apply"><i class="fa fa-check"></i><b>8.4</b> La familia apply</a>
 <ul>
 <li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#tapply"><i class="fa fa-check"></i>tapply</a></li>
 <li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#lapply"><i class="fa fa-check"></i>lapply</a></li>
@@ -283,24 +293,24 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#apply"><i class="fa fa-check"></i>apply</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html"><i class="fa fa-check"></i><b>11</b> Las alternativas tydiverse</a>
+<li class="chapter" data-level="9" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html"><i class="fa fa-check"></i><b>9</b> Alternativas tydiverse</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#dplyr-arrange-filter-select"><i class="fa fa-check"></i><b>11.1</b> Dplyr: arrange, filter, select</a></li>
-<li class="chapter" data-level="11.2" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#dplyr-mutate-group_by-summarise"><i class="fa fa-check"></i><b>11.2</b> Dplyr: mutate, group_by, summarise</a></li>
-<li class="chapter" data-level="11.3" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#actividad-guiada-1.4."><i class="fa fa-check"></i><b>11.3</b> Actividad guiada 1.4.</a></li>
-<li class="chapter" data-level="11.4" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#act14"><i class="fa fa-check"></i><b>11.4</b> Actividad guiada 1.4</a>
+<li class="chapter" data-level="9.1" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#dplyr-arrange-filter-select"><i class="fa fa-check"></i><b>9.1</b> Dplyr: arrange, filter, select</a></li>
+<li class="chapter" data-level="9.2" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#dplyr-mutate-group_by-summarise"><i class="fa fa-check"></i><b>9.2</b> Dplyr: mutate, group_by, summarise</a></li>
+<li class="chapter" data-level="9.3" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#actividad-guiada-1.4."><i class="fa fa-check"></i><b>9.3</b> Actividad guiada 1.4.</a></li>
+<li class="chapter" data-level="9.4" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#act14"><i class="fa fa-check"></i><b>9.4</b> Actividad guiada 1.4</a>
 <ul>
-<li class="chapter" data-level="11.4.1" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#evolución-de-los-continentes"><i class="fa fa-check"></i><b>11.4.1</b> Evolución de los continentes</a></li>
+<li class="chapter" data-level="9.4.1" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#evolución-de-los-continentes"><i class="fa fa-check"></i><b>9.4.1</b> Evolución de los continentes</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Regressió</b></span></li>
-<li class="chapter" data-level="12" data-path="regressió-lineal.html"><a href="regressió-lineal.html"><i class="fa fa-check"></i><b>12</b> Regressió lineal</a></li>
-<li class="chapter" data-level="13" data-path="regressió-logística.html"><a href="regressió-logística.html"><i class="fa fa-check"></i><b>13</b> Regressió logística</a></li>
+<li class="chapter" data-level="10" data-path="regressió-lineal.html"><a href="regressió-lineal.html"><i class="fa fa-check"></i><b>10</b> Regressió lineal</a></li>
+<li class="chapter" data-level="11" data-path="regressió-logística.html"><a href="regressió-logística.html"><i class="fa fa-check"></i><b>11</b> Regressió logística</a></li>
 <li class="part"><span><b>IV Reducció dimensió y Clustering</b></span></li>
-<li class="chapter" data-level="14" data-path="componentes-principales.html"><a href="componentes-principales.html"><i class="fa fa-check"></i><b>14</b> Componentes principales</a></li>
-<li class="chapter" data-level="15" data-path="cluster-jerarquic.html"><a href="cluster-jerarquic.html"><i class="fa fa-check"></i><b>15</b> Cluster jerarquic</a></li>
-<li class="chapter" data-level="16" data-path="cluster-no-jerarquic.html"><a href="cluster-no-jerarquic.html"><i class="fa fa-check"></i><b>16</b> Cluster no jerarquic</a></li>
-<li class="chapter" data-level="17" data-path="análisis-de-correspondencies.html"><a href="análisis-de-correspondencies.html"><i class="fa fa-check"></i><b>17</b> Análisis de correspondencies</a></li>
+<li class="chapter" data-level="12" data-path="componentes-principales.html"><a href="componentes-principales.html"><i class="fa fa-check"></i><b>12</b> Componentes principales</a></li>
+<li class="chapter" data-level="13" data-path="cluster-jerarquic.html"><a href="cluster-jerarquic.html"><i class="fa fa-check"></i><b>13</b> Cluster jerarquic</a></li>
+<li class="chapter" data-level="14" data-path="cluster-no-jerarquic.html"><a href="cluster-no-jerarquic.html"><i class="fa fa-check"></i><b>14</b> Cluster no jerarquic</a></li>
+<li class="chapter" data-level="15" data-path="análisis-de-correspondencies.html"><a href="análisis-de-correspondencies.html"><i class="fa fa-check"></i><b>15</b> Análisis de correspondencies</a></li>
 <li class="chapter" data-level="" data-path="referències.html"><a href="referències.html"><i class="fa fa-check"></i>Referències</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/griu/meacp" target="blank">Repositori GiutHub</a></li>
@@ -322,33 +332,33 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="operaciones-entre-tablas" class="section level1" number="9">
-<h1><span class="header-section-number">Capítol 9</span> Operaciones entre tablas</h1>
-<div id="ordenación-y-union" class="section level2" number="9.1">
-<h2><span class="header-section-number">9.1</span> Ordenación y Union</h2>
+<div id="operaciones-entre-tablas" class="section level1" number="7">
+<h1><span class="header-section-number">Capítol 7</span> Operaciones entre tablas</h1>
+<div id="ordenación-y-union" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Ordenación y Union</h2>
 <div id="ordenación" class="section level3 unnumbered">
 <h3>Ordenación</h3>
 <p>Para ordenar un vector se utiliza la función <code>sort()</code>.</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="operaciones-entre-tablas.html#cb214-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">4</span>)</span>
-<span id="cb214-2"><a href="operaciones-entre-tablas.html#cb214-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(a)</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="operaciones-entre-tablas.html#cb224-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">4</span>)</span>
+<span id="cb224-2"><a href="operaciones-entre-tablas.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(a)</span></code></pre></div>
 <pre><code>## [1] 2 4 5 9</code></pre>
 <p>Lo mismo se puede hacer en dos pasos. Primero, con order() se obtienen los índices de ordenación.</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="operaciones-entre-tablas.html#cb216-1" aria-hidden="true" tabindex="-1"></a>indices_ordenacion <span class="ot">&lt;-</span> <span class="fu">order</span>(a)</span>
-<span id="cb216-2"><a href="operaciones-entre-tablas.html#cb216-2" aria-hidden="true" tabindex="-1"></a>indices_ordenacion</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="operaciones-entre-tablas.html#cb226-1" aria-hidden="true" tabindex="-1"></a>indices_ordenacion <span class="ot">&lt;-</span> <span class="fu">order</span>(a)</span>
+<span id="cb226-2"><a href="operaciones-entre-tablas.html#cb226-2" aria-hidden="true" tabindex="-1"></a>indices_ordenacion</span></code></pre></div>
 <pre><code>## [1] 2 4 1 3</code></pre>
 <p>Segundo se seleccionan los elementos del vector <code>a</code> en ese orden.</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="operaciones-entre-tablas.html#cb218-1" aria-hidden="true" tabindex="-1"></a>a[indices_ordenacion]</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="operaciones-entre-tablas.html#cb228-1" aria-hidden="true" tabindex="-1"></a>a[indices_ordenacion]</span></code></pre></div>
 <pre><code>## [1] 2 4 5 9</code></pre>
 <p>Observa que el resultado es idéntico a utilizar directamente <code>sort()</code>.</p>
 <p>Mismo principio ahora, para ordenar la tabla <code>paises07</code> por continente (decreciente) y esperanza de vida (creciente).</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="operaciones-entre-tablas.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datos)</span>
-<span id="cb220-2"><a href="operaciones-entre-tablas.html#cb220-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb220-3"><a href="operaciones-entre-tablas.html#cb220-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
-<span id="cb220-4"><a href="operaciones-entre-tablas.html#cb220-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb220-5"><a href="operaciones-entre-tablas.html#cb220-5" aria-hidden="true" tabindex="-1"></a>paises07 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(paises <span class="sc">%&gt;%</span> <span class="fu">filter</span>(anio<span class="sc">==</span><span class="dv">2007</span>))</span>
-<span id="cb220-6"><a href="operaciones-entre-tablas.html#cb220-6" aria-hidden="true" tabindex="-1"></a>paises07Ord <span class="ot">&lt;-</span> paises07[<span class="fu">order</span>(paises07<span class="sc">$</span>continente,paises07<span class="sc">$</span>esperanza_de_vida</span>
-<span id="cb220-7"><a href="operaciones-entre-tablas.html#cb220-7" aria-hidden="true" tabindex="-1"></a>                              ,<span class="at">decreasing =</span> <span class="fu">c</span>(T,F)),]</span>
-<span id="cb220-8"><a href="operaciones-entre-tablas.html#cb220-8" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07Ord))</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="operaciones-entre-tablas.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datos)</span>
+<span id="cb230-2"><a href="operaciones-entre-tablas.html#cb230-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb230-3"><a href="operaciones-entre-tablas.html#cb230-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb230-4"><a href="operaciones-entre-tablas.html#cb230-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb230-5"><a href="operaciones-entre-tablas.html#cb230-5" aria-hidden="true" tabindex="-1"></a>paises07 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(paises <span class="sc">%&gt;%</span> <span class="fu">filter</span>(anio<span class="sc">==</span><span class="dv">2007</span>))</span>
+<span id="cb230-6"><a href="operaciones-entre-tablas.html#cb230-6" aria-hidden="true" tabindex="-1"></a>paises07Ord <span class="ot">&lt;-</span> paises07[<span class="fu">order</span>(paises07<span class="sc">$</span>continente,paises07<span class="sc">$</span>esperanza_de_vida</span>
+<span id="cb230-7"><a href="operaciones-entre-tablas.html#cb230-7" aria-hidden="true" tabindex="-1"></a>                              ,<span class="at">decreasing =</span> <span class="fu">c</span>(T,F)),]</span>
+<span id="cb230-8"><a href="operaciones-entre-tablas.html#cb230-8" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07Ord))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -519,10 +529,10 @@ Europa
 <div id="unión-por-columnas" class="section level3 unnumbered">
 <h3>Unión por columnas</h3>
 <p>Para unir las columnas de 2 tablas que comparten ordenación de sus filas se utiliza <code>cbind()</code>.</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="operaciones-entre-tablas.html#cb221-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> paises07[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
-<span id="cb221-2"><a href="operaciones-entre-tablas.html#cb221-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> paises07[,<span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>]</span>
-<span id="cb221-3"><a href="operaciones-entre-tablas.html#cb221-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">cbind</span>(a1, a2)</span></code></pre></div>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="operaciones-entre-tablas.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(a))</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="operaciones-entre-tablas.html#cb231-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> paises07[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
+<span id="cb231-2"><a href="operaciones-entre-tablas.html#cb231-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> paises07[,<span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb231-3"><a href="operaciones-entre-tablas.html#cb231-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">cbind</span>(a1, a2)</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="operaciones-entre-tablas.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(a))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -631,10 +641,10 @@ Oceanía
 <div id="unión-por-filas" class="section level3 unnumbered">
 <h3>Unión por filas</h3>
 <p>Unir las filas de dos tablas con la misma ordenación de sus columnas <code>rbind()</code>.</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="operaciones-entre-tablas.html#cb223-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> paises07[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span>
-<span id="cb223-2"><a href="operaciones-entre-tablas.html#cb223-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> paises07[<span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>,]</span>
-<span id="cb223-3"><a href="operaciones-entre-tablas.html#cb223-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rbind</span>(a1, a2)</span></code></pre></div>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="operaciones-entre-tablas.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(a))</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="operaciones-entre-tablas.html#cb233-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> paises07[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span>
+<span id="cb233-2"><a href="operaciones-entre-tablas.html#cb233-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> paises07[<span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>,]</span>
+<span id="cb233-3"><a href="operaciones-entre-tablas.html#cb233-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rbind</span>(a1, a2)</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="operaciones-entre-tablas.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(a))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -757,21 +767,21 @@ Américas
 </table>
 </div>
 </div>
-<div id="cruce-por-campos-clave" class="section level2" number="9.2">
-<h2><span class="header-section-number">9.2</span> Cruce por campos clave</h2>
+<div id="cruce-por-campos-clave" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Cruce por campos clave</h2>
 <p>Un campo clave consiste en una variable que identifica cada registro de forma única.</p>
 <p>Por ejemplo, <code>pais</code> y <code>continente</code> son campos clave ya que identifican de forma única a sus respectivas entidades en la tabla de <code>paises</code>.</p>
 <p>Antes de realizar cualquier cruce por campos clave, es importante saber si éste tiene o no duplicados.</p>
 <div id="unicidad" class="section level3 unnumbered">
 <h3>Unicidad</h3>
 <p>Para obtener las claves únicas de un vector utiliza <code>unique()</code>.</p>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="operaciones-entre-tablas.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">unique</span>(<span class="fu">as.character</span>(paises07<span class="sc">$</span>continente)))</span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="operaciones-entre-tablas.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">unique</span>(<span class="fu">as.character</span>(paises07<span class="sc">$</span>continente)))</span></code></pre></div>
 <pre><code>## [1] &quot;África&quot;   &quot;Américas&quot; &quot;Asia&quot;     &quot;Europa&quot;   &quot;Oceanía&quot;</code></pre>
 <p>Para saber qué filas de un data frame están duplicadas, utiliza <code>duplicated()</code>.</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="operaciones-entre-tablas.html#cb227-1" aria-hidden="true" tabindex="-1"></a>paisesDup <span class="ot">&lt;-</span> paises07[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>),]</span>
-<span id="cb227-2"><a href="operaciones-entre-tablas.html#cb227-2" aria-hidden="true" tabindex="-1"></a><span class="fu">any</span>(<span class="fu">duplicated</span>(paisesDup))    <span class="co"># ¿Tiene duplicados?</span></span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="operaciones-entre-tablas.html#cb237-1" aria-hidden="true" tabindex="-1"></a>paisesDup <span class="ot">&lt;-</span> paises07[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>),]</span>
+<span id="cb237-2"><a href="operaciones-entre-tablas.html#cb237-2" aria-hidden="true" tabindex="-1"></a><span class="fu">any</span>(<span class="fu">duplicated</span>(paisesDup))    <span class="co"># ¿Tiene duplicados?</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="operaciones-entre-tablas.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(paisesDup<span class="sc">$</span>pais[<span class="fu">duplicated</span>(paisesDup)]) <span class="co"># que países son</span></span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="operaciones-entre-tablas.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(paisesDup<span class="sc">$</span>pais[<span class="fu">duplicated</span>(paisesDup)]) <span class="co"># que países son</span></span></code></pre></div>
 <pre><code>## [1] &quot;Afganistán&quot; &quot;Argelia&quot;    &quot;Argentina&quot;</code></pre>
 </div>
 <div id="fusión-con-claves" class="section level3 unnumbered">
@@ -780,11 +790,11 @@ Américas
 <div id="inner-join" class="section level4 unnumbered">
 <h4>Inner join</h4>
 <p>Analiza el siguiente ejemplo:</p>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="operaciones-entre-tablas.html#cb231-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">X1 =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">X2 =</span> <span class="fu">c</span>(<span class="st">&quot;b&quot;</span>,<span class="st">&quot;a&quot;</span>,<span class="st">&quot;a&quot;</span>))</span>
-<span id="cb231-2"><a href="operaciones-entre-tablas.html#cb231-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="at">X1 =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">X3 =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>))</span>
-<span id="cb231-3"><a href="operaciones-entre-tablas.html#cb231-3" aria-hidden="true" tabindex="-1"></a>a_inner <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2)</span>
-<span id="cb231-4"><a href="operaciones-entre-tablas.html#cb231-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb231-5"><a href="operaciones-entre-tablas.html#cb231-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(a_inner)</span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="operaciones-entre-tablas.html#cb241-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">X1 =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">X2 =</span> <span class="fu">c</span>(<span class="st">&quot;b&quot;</span>,<span class="st">&quot;a&quot;</span>,<span class="st">&quot;a&quot;</span>))</span>
+<span id="cb241-2"><a href="operaciones-entre-tablas.html#cb241-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="at">X1 =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">X3 =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>))</span>
+<span id="cb241-3"><a href="operaciones-entre-tablas.html#cb241-3" aria-hidden="true" tabindex="-1"></a>a_inner <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2)</span>
+<span id="cb241-4"><a href="operaciones-entre-tablas.html#cb241-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb241-5"><a href="operaciones-entre-tablas.html#cb241-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(a_inner)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -839,9 +849,9 @@ FALSE
 <div id="full-join" class="section level4 unnumbered">
 <h4>Full join</h4>
 <p>Para conservar <strong>todos los registros de las tablas originales</strong>, tanto de la tabla izquierda como derecha, coincida o no, se utiliza el parámetro <code>all=TRUE</code>.</p>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="operaciones-entre-tablas.html#cb232-1" aria-hidden="true" tabindex="-1"></a>a_full <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2, <span class="at">all =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb232-2"><a href="operaciones-entre-tablas.html#cb232-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb232-3"><a href="operaciones-entre-tablas.html#cb232-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(a_full)</span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="operaciones-entre-tablas.html#cb242-1" aria-hidden="true" tabindex="-1"></a>a_full <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2, <span class="at">all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb242-2"><a href="operaciones-entre-tablas.html#cb242-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb242-3"><a href="operaciones-entre-tablas.html#cb242-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(a_full)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -937,8 +947,8 @@ FALSE
 <div id="left-join" class="section level4 unnumbered">
 <h4>Left join</h4>
 <p>Para imponer que conserve <strong>todos los valores origen de la tabla izquierda</strong> (<code>a1</code>) y que descarte los de la taba derecha que no sean compartidos utiliza <code>all.x=TRUE</code>.</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="operaciones-entre-tablas.html#cb233-1" aria-hidden="true" tabindex="-1"></a>a_left <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2, <span class="at">all.x =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb233-2"><a href="operaciones-entre-tablas.html#cb233-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(a_left)</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="operaciones-entre-tablas.html#cb243-1" aria-hidden="true" tabindex="-1"></a>a_left <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2, <span class="at">all.x =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb243-2"><a href="operaciones-entre-tablas.html#cb243-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(a_left)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1006,8 +1016,8 @@ FALSE
 <div id="right-join" class="section level4 unnumbered">
 <h4>Right join</h4>
 <p>Para preservar <strong>todos los valores de la tabla derecha</strong> utiliza <code>all.y=TRUE</code>. Este comportamiento en SQL es el conocido como <em>RIGHT JOIN</em>.</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="operaciones-entre-tablas.html#cb234-1" aria-hidden="true" tabindex="-1"></a>a_right <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2, <span class="at">all.y =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb234-2"><a href="operaciones-entre-tablas.html#cb234-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(a_right)</span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="operaciones-entre-tablas.html#cb244-1" aria-hidden="true" tabindex="-1"></a>a_right <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2, <span class="at">all.y =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb244-2"><a href="operaciones-entre-tablas.html#cb244-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(a_right)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1095,11 +1105,11 @@ FALSE
 <li>Cuando hay cambios de nombre, utiliza <code>by.x</code> y <code>by.y</code></li>
 </ul>
 <p>El siguiente ejemplo, realiza un <em>FULL JOIN</em> definiendo como clave la variable <code>ID</code>.</p>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="operaciones-entre-tablas.html#cb235-1" aria-hidden="true" tabindex="-1"></a>a_comparte <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2, <span class="at">all.x=</span><span class="cn">TRUE</span>, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;ID&quot;</span>)) </span>
-<span id="cb235-2"><a href="operaciones-entre-tablas.html#cb235-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de forma equivalente</span></span>
-<span id="cb235-3"><a href="operaciones-entre-tablas.html#cb235-3" aria-hidden="true" tabindex="-1"></a>a_comparte <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2, <span class="at">all.x=</span><span class="cn">TRUE</span>, <span class="at">by.x =</span> <span class="fu">c</span>(<span class="st">&quot;ID&quot;</span>), <span class="at">by.y =</span> <span class="fu">c</span>(<span class="st">&quot;ID&quot;</span>))</span>
-<span id="cb235-4"><a href="operaciones-entre-tablas.html#cb235-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb235-5"><a href="operaciones-entre-tablas.html#cb235-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(a_comparte)</span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="operaciones-entre-tablas.html#cb245-1" aria-hidden="true" tabindex="-1"></a>a_comparte <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2, <span class="at">all.x=</span><span class="cn">TRUE</span>, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;ID&quot;</span>)) </span>
+<span id="cb245-2"><a href="operaciones-entre-tablas.html#cb245-2" aria-hidden="true" tabindex="-1"></a><span class="co"># de forma equivalente</span></span>
+<span id="cb245-3"><a href="operaciones-entre-tablas.html#cb245-3" aria-hidden="true" tabindex="-1"></a>a_comparte <span class="ot">&lt;-</span> <span class="fu">merge</span>(a1, a2, <span class="at">all.x=</span><span class="cn">TRUE</span>, <span class="at">by.x =</span> <span class="fu">c</span>(<span class="st">&quot;ID&quot;</span>), <span class="at">by.y =</span> <span class="fu">c</span>(<span class="st">&quot;ID&quot;</span>))</span>
+<span id="cb245-4"><a href="operaciones-entre-tablas.html#cb245-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb245-5"><a href="operaciones-entre-tablas.html#cb245-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(a_comparte)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1243,6 +1253,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

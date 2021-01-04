@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítol 8 Fuentes de dades | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
+  <title>Capítol 5 Fuentes de dades | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
   <meta name="description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítol 8 Fuentes de dades | Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta property="og:title" content="Capítol 5 Fuentes de dades | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítol 8 Fuentes de dades | Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta name="twitter:title" content="Capítol 5 Fuentes de dades | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   
   <meta name="twitter:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lectura-escritura.html"/>
-<link rel="next" href="operaciones-entre-tablas.html"/>
+<link rel="prev" href="DataIO.html"/>
+<link rel="next" href="gráficos-con-ggplot2.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -53,6 +53,13 @@
 
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <script>
 % https://stackoverflow.com/a/4425214/8242291
 var links = document.links;
@@ -153,17 +160,22 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="part"><span><b>I Computació en R</b></span></li>
 <li class="chapter" data-level="1" data-path="posta-a-punt.html"><a href="posta-a-punt.html"><i class="fa fa-check"></i><b>1</b> Posta a punt</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#instalació"><i class="fa fa-check"></i><b>1.1</b> Instalació</a>
+<li class="chapter" data-level="1.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r"><i class="fa fa-check"></i><b>1.1</b> R</a></li>
+<li class="chapter" data-level="1.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a>
 <ul>
-<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r"><i class="fa fa-check"></i>R</a></li>
-<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rstudio"><i class="fa fa-check"></i>RStudio</a></li>
-<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#paquets-de-r"><i class="fa fa-check"></i>Paquets de R</a></li>
+<li class="chapter" data-level="1.2.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#gitproject"><i class="fa fa-check"></i><b>1.2.1</b> Crear un proyecto</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rmarkdown-.rmd"><i class="fa fa-check"></i><b>1.2</b> Rmarkdown (*.Rmd)</a></li>
-<li class="chapter" data-level="1.3" data-path="posta-a-punt.html"><a href="posta-a-punt.html#act11"><i class="fa fa-check"></i><b>1.3</b> Actividad guiada 1.1</a>
+<li class="chapter" data-level="1.3" data-path="posta-a-punt.html"><a href="posta-a-punt.html#paquetes"><i class="fa fa-check"></i><b>1.3</b> Paquets de R</a></li>
+<li class="chapter" data-level="1.4" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rmarkdown-.rmd"><i class="fa fa-check"></i><b>1.4</b> Rmarkdown (*.Rmd)</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r-markdown"><i class="fa fa-check"></i><b>1.3.1</b> R Markdown</a></li>
-<li class="chapter" data-level="1.3.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#including-plots"><i class="fa fa-check"></i><b>1.3.2</b> Including Plots</a></li>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#comandos-rmarkdown"><i class="fa fa-check"></i>Comandos Rmarkdown</a></li>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#recomendaciones"><i class="fa fa-check"></i>Recomendaciones</a></li>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#recomendaciones-1"><i class="fa fa-check"></i>Recomendaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="posta-a-punt.html"><a href="posta-a-punt.html#act11"><i class="fa fa-check"></i><b>1.5</b> Actividad guiada 1.1</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r-markdown"><i class="fa fa-check"></i><b>1.5.1</b> R Markdown</a></li>
+<li class="chapter" data-level="1.5.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#including-plots"><i class="fa fa-check"></i><b>1.5.2</b> Including Plots</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="elementos-básicos.html"><a href="elementos-básicos.html"><i class="fa fa-check"></i><b>2</b> Elementos básicos</a>
@@ -183,99 +195,103 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="2.3.2" data-path="elementos-básicos.html"><a href="elementos-básicos.html#tabla-descriptiva-de-países"><i class="fa fa-check"></i><b>2.3.2</b> Tabla descriptiva de países</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html"><i class="fa fa-check"></i><b>3</b> Colecciones de objetos</a>
+<li class="chapter" data-level="3" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html"><i class="fa fa-check"></i><b>3</b> Objetos de R</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#tipo-básicos"><i class="fa fa-check"></i><b>3.1</b> Tipo básicos</a>
+<li class="chapter" data-level="3.1" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#colecciones-de-objetos"><i class="fa fa-check"></i><b>3.1</b> Colecciones de objetos</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#numeric"><i class="fa fa-check"></i>Numeric</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#integer"><i class="fa fa-check"></i>Integer</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#logical"><i class="fa fa-check"></i>Logical</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#character"><i class="fa fa-check"></i>Character</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#factor"><i class="fa fa-check"></i>Factor</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#fechas-y-horarios"><i class="fa fa-check"></i>Fechas y horarios</a></li>
+<li class="chapter" data-level="3.1.1" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#tipo-básicos"><i class="fa fa-check"></i><b>3.1.1</b> Tipo básicos</a></li>
+<li class="chapter" data-level="3.1.2" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#vectores"><i class="fa fa-check"></i><b>3.1.2</b> Vectores</a></li>
+<li class="chapter" data-level="3.1.3" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#matrices"><i class="fa fa-check"></i><b>3.1.3</b> Matrices</a></li>
+<li class="chapter" data-level="3.1.4" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#listas"><i class="fa fa-check"></i><b>3.1.4</b> Listas</a></li>
+<li class="chapter" data-level="3.1.5" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#data-frames"><i class="fa fa-check"></i><b>3.1.5</b> Data frames</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#vectores"><i class="fa fa-check"></i><b>3.2</b> Vectores</a>
+<li class="chapter" data-level="3.2" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#filtrado-de-objetos"><i class="fa fa-check"></i><b>3.2</b> Filtrado de objetos</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#longitud"><i class="fa fa-check"></i>Longitud</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres"><i class="fa fa-check"></i>Nombres</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#operaciones-aritméticas"><i class="fa fa-check"></i>Operaciones aritméticas</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#operaciones-con-texto"><i class="fa fa-check"></i>Operaciones con texto</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#secuencias"><i class="fa fa-check"></i>Secuencias</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#factor-1"><i class="fa fa-check"></i>Factor</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#enteros-positivos"><i class="fa fa-check"></i>Enteros positivos</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#enteros-negativos"><i class="fa fa-check"></i>Enteros negativos</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#nombres-3"><i class="fa fa-check"></i>Nombres</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#dolares-y-dobles-corchetes"><i class="fa fa-check"></i>Dolares y dobles corchetes</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#valores-lógicos"><i class="fa fa-check"></i>Valores lógicos</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#operaciones-booleanas"><i class="fa fa-check"></i>Operaciones booleanas</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#matrices"><i class="fa fa-check"></i><b>3.3</b> Matrices</a>
+<li class="chapter" data-level="3.3" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#modificacion-objetos"><i class="fa fa-check"></i><b>3.3</b> Modificacion objetos</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#dimensión"><i class="fa fa-check"></i>Dimensión</a></li>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres-1"><i class="fa fa-check"></i>Nombres</a></li>
-<li class="chapter" data-level="3.3.1" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#arrays"><i class="fa fa-check"></i><b>3.3.1</b> Arrays</a></li>
+<li><a href="objetos-de-r-1.html#filtro-y-asignación--">Filtro y asignación “<code>]&lt;-</code>”</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#listas"><i class="fa fa-check"></i><b>3.4</b> Listas</a>
+<li class="chapter" data-level="3.4" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#información-faltante"><i class="fa fa-check"></i><b>3.4</b> Información faltante</a>
 <ul>
-<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres-2"><i class="fa fa-check"></i>Nombres</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#data-frames"><i class="fa fa-check"></i><b>3.5</b> Data frames</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html"><i class="fa fa-check"></i><b>4</b> Filtrado de objetos</a>
-<ul>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#enteros-positivos"><i class="fa fa-check"></i>Enteros positivos</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#enteros-negativos"><i class="fa fa-check"></i>Enteros negativos</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#nombres-3"><i class="fa fa-check"></i>Nombres</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#dolares-y-dobles-corchetes"><i class="fa fa-check"></i>Dolares y dobles corchetes</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#valores-lógicos"><i class="fa fa-check"></i>Valores lógicos</a></li>
-<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#operaciones-booleanas"><i class="fa fa-check"></i>Operaciones booleanas</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html"><i class="fa fa-check"></i><b>5</b> Modificacion objetos</a>
-<ul>
-<li><a href="modificacion-objetos.html#filtro-y-asignación--">Filtro y asignación “<code>]&lt;-</code>”</a></li>
-<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#información-faltante"><i class="fa fa-check"></i>Información faltante</a></li>
-<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#seleccion-de-filas-con-valores-faltantes"><i class="fa fa-check"></i>Seleccion de filas con valores faltantes</a></li>
-<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#filtros-en-variables-con-valores-faltantes"><i class="fa fa-check"></i>Filtros en variables con valores faltantes</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Gráficos con ggplot2</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#estructura-básica-de-ggplot2"><i class="fa fa-check"></i><b>6.1</b> Estructura básica de ggplot2</a>
-<ul>
-<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-geoms"><i class="fa fa-check"></i>Otros geoms</a></li>
-<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-elmentos-gráficos"><i class="fa fa-check"></i>Otros elmentos gráficos</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#act13"><i class="fa fa-check"></i><b>6.2</b> Actividad guiada 1.3</a>
-<ul>
-<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-1"><i class="fa fa-check"></i>Gráfico de dispersión de países</a></li>
-<li class="chapter" data-level="6.2.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#preparación-de-datos"><i class="fa fa-check"></i><b>6.2.1</b> Preparación de datos</a></li>
-<li class="chapter" data-level="6.2.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#descriptivo-boxplot"><i class="fa fa-check"></i><b>6.2.2</b> Descriptivo boxplot</a></li>
-<li class="chapter" data-level="6.2.3" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-2"><i class="fa fa-check"></i><b>6.2.3</b> Gráfico de dispersión de países</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#seleccion-filas-missings"><i class="fa fa-check"></i>Seleccion filas missings</a></li>
+<li class="chapter" data-level="" data-path="objetos-de-r-1.html"><a href="objetos-de-r-1.html#filtros-missings"><i class="fa fa-check"></i>Filtros missings</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Trabajo con datos</b></span></li>
-<li class="chapter" data-level="7" data-path="lectura-escritura.html"><a href="lectura-escritura.html"><i class="fa fa-check"></i><b>7</b> Lectura escritura</a>
+<li class="chapter" data-level="4" data-path="DataIO.html"><a href="DataIO.html"><i class="fa fa-check"></i><b>4</b> Lectura escritura</a>
 <ul>
-<li class="chapter" data-level="7.0.1" data-path="lectura-escritura.html"><a href="lectura-escritura.html#importar-y-exportar-datos"><i class="fa fa-check"></i><b>7.0.1</b> IMPORTAR Y EXPORTAR DATOS</a></li>
+<li class="chapter" data-level="4.1" data-path="DataIO.html"><a href="DataIO.html#datos-de-texto"><i class="fa fa-check"></i><b>4.1</b> Datos de texto</a>
+<ul>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#lectura-texto-con-separador"><i class="fa fa-check"></i>Lectura texto con separador</a></li>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#escritura-texto-con-separador"><i class="fa fa-check"></i>Escritura texto con separador</a></li>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#texto-con-ancho-fijo"><i class="fa fa-check"></i>Texto con ancho fijo</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html"><i class="fa fa-check"></i><b>8</b> Fuentes de dades</a></li>
-<li class="chapter" data-level="9" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html"><i class="fa fa-check"></i><b>9</b> Operaciones entre tablas</a>
+<li class="chapter" data-level="4.2" data-path="DataIO.html"><a href="DataIO.html#otros-formatos"><i class="fa fa-check"></i><b>4.2</b> Otros formatos</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#ordenación-y-union"><i class="fa fa-check"></i><b>9.1</b> Ordenación y Union</a>
-<ul>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#ordenación"><i class="fa fa-check"></i>Ordenación</a></li>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unión-por-columnas"><i class="fa fa-check"></i>Unión por columnas</a></li>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unión-por-filas"><i class="fa fa-check"></i>Unión por filas</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#cruce-por-campos-clave"><i class="fa fa-check"></i><b>9.2</b> Cruce por campos clave</a>
-<ul>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unicidad"><i class="fa fa-check"></i>Unicidad</a></li>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#fusión-con-claves"><i class="fa fa-check"></i>Fusión con claves</a></li>
-<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#definción-de-las-claves"><i class="fa fa-check"></i>Definción de las claves</a></li>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#leer-excel"><i class="fa fa-check"></i>Leer Excel</a></li>
+<li class="chapter" data-level="" data-path="DataIO.html"><a href="DataIO.html#leer-spss"><i class="fa fa-check"></i>Leer SPSS</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html"><i class="fa fa-check"></i><b>10</b> Resumenes de agregados</a>
+<li class="chapter" data-level="5" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html"><i class="fa fa-check"></i><b>5</b> Fuentes de dades</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#summary"><i class="fa fa-check"></i><b>10.1</b> Summary</a>
-<ul>
-<li class="chapter" data-level="10.1.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#estadísticos-basicos"><i class="fa fa-check"></i><b>10.1.1</b> Estadísticos basicos</a></li>
+<li class="chapter" data-level="5.1" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html#algunmos-orígenes"><i class="fa fa-check"></i><b>5.1</b> Algunmos orígenes:</a></li>
+<li class="chapter" data-level="5.2" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html#más-origenes"><i class="fa fa-check"></i><b>5.2</b> Más origenes</a></li>
+<li class="chapter" data-level="5.3" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html#crear-datos"><i class="fa fa-check"></i><b>5.3</b> Crear datos</a></li>
+<li class="chapter" data-level="5.4" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html#criterios-selección"><i class="fa fa-check"></i><b>5.4</b> Criterios selección</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#tablas-de-frecuencias"><i class="fa fa-check"></i><b>10.2</b> Tablas de frecuencias</a></li>
-<li class="chapter" data-level="10.3" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#agregados-por-subgrupos"><i class="fa fa-check"></i><b>10.3</b> Agregados por subgrupos</a></li>
-<li class="chapter" data-level="10.4" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#la-familia-apply"><i class="fa fa-check"></i><b>10.4</b> La familia apply</a>
+<li class="chapter" data-level="6" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Gráficos con ggplot2</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#estructura-básica"><i class="fa fa-check"></i><b>6.1</b> Estructura básica</a></li>
+<li class="chapter" data-level="6.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-geoms"><i class="fa fa-check"></i><b>6.2</b> Otros geoms</a></li>
+<li class="chapter" data-level="6.3" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-elmentos"><i class="fa fa-check"></i><b>6.3</b> Otros elmentos</a></li>
+<li class="chapter" data-level="6.4" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#más-ejemplos"><i class="fa fa-check"></i><b>6.4</b> Más ejemplos</a>
+<ul>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#panel-de-datos"><i class="fa fa-check"></i>Panel de datos</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#etiquetas"><i class="fa fa-check"></i>Etiquetas</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#paleta-colores"><i class="fa fa-check"></i>Paleta colores</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#zoom"><i class="fa fa-check"></i>Zoom</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#temas"><i class="fa fa-check"></i>Temas</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráficos-interactivos"><i class="fa fa-check"></i>Gráficos interactivos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#act13"><i class="fa fa-check"></i><b>6.5</b> Actividad guiada 1.3</a>
+<ul>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-1"><i class="fa fa-check"></i>Gráfico de dispersión de países</a></li>
+<li class="chapter" data-level="6.5.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#preparación-de-datos"><i class="fa fa-check"></i><b>6.5.1</b> Preparación de datos</a></li>
+<li class="chapter" data-level="6.5.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#descriptivo-boxplot"><i class="fa fa-check"></i><b>6.5.2</b> Descriptivo boxplot</a></li>
+<li class="chapter" data-level="6.5.3" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-2"><i class="fa fa-check"></i><b>6.5.3</b> Gráfico de dispersión de países</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html"><i class="fa fa-check"></i><b>7</b> Cruces entre tablas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#ordenación-y-union"><i class="fa fa-check"></i><b>7.1</b> Ordenación y Union</a>
+<ul>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#ordenación"><i class="fa fa-check"></i>Ordenación</a></li>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#unión-por-columnas"><i class="fa fa-check"></i>Unión por columnas</a></li>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#unión-por-filas"><i class="fa fa-check"></i>Unión por filas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#cruce-por-campos-clave"><i class="fa fa-check"></i><b>7.2</b> Cruce por campos clave</a>
+<ul>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#unicidad"><i class="fa fa-check"></i>Unicidad</a></li>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#fusión-con-claves"><i class="fa fa-check"></i>Fusión con claves</a></li>
+<li class="chapter" data-level="" data-path="cruces-entre-tablas.html"><a href="cruces-entre-tablas.html#definción-de-las-claves"><i class="fa fa-check"></i>Definción de las claves</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html"><i class="fa fa-check"></i><b>8</b> Resumenes de agregados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#summary"><i class="fa fa-check"></i><b>8.1</b> Summary</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#estadísticos-basicos"><i class="fa fa-check"></i><b>8.1.1</b> Estadísticos basicos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#tablas-de-frecuencias"><i class="fa fa-check"></i><b>8.2</b> Tablas de frecuencias</a></li>
+<li class="chapter" data-level="8.3" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#agregados-por-subgrupos"><i class="fa fa-check"></i><b>8.3</b> Agregados por subgrupos</a></li>
+<li class="chapter" data-level="8.4" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#la-familia-apply"><i class="fa fa-check"></i><b>8.4</b> La familia apply</a>
 <ul>
 <li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#tapply"><i class="fa fa-check"></i>tapply</a></li>
 <li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#lapply"><i class="fa fa-check"></i>lapply</a></li>
@@ -283,24 +299,24 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#apply"><i class="fa fa-check"></i>apply</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html"><i class="fa fa-check"></i><b>11</b> Las alternativas tydiverse</a>
+<li class="chapter" data-level="9" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html"><i class="fa fa-check"></i><b>9</b> Alternativas Tydiverse</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#dplyr-arrange-filter-select"><i class="fa fa-check"></i><b>11.1</b> Dplyr: arrange, filter, select</a></li>
-<li class="chapter" data-level="11.2" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#dplyr-mutate-group_by-summarise"><i class="fa fa-check"></i><b>11.2</b> Dplyr: mutate, group_by, summarise</a></li>
-<li class="chapter" data-level="11.3" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#actividad-guiada-1.4."><i class="fa fa-check"></i><b>11.3</b> Actividad guiada 1.4.</a></li>
-<li class="chapter" data-level="11.4" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#act14"><i class="fa fa-check"></i><b>11.4</b> Actividad guiada 1.4</a>
+<li class="chapter" data-level="9.1" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#dplyr-arrange-filter-select"><i class="fa fa-check"></i><b>9.1</b> Dplyr: arrange, filter, select</a></li>
+<li class="chapter" data-level="9.2" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#dplyr-mutate-group_by-summarise"><i class="fa fa-check"></i><b>9.2</b> Dplyr: mutate, group_by, summarise</a></li>
+<li class="chapter" data-level="9.3" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#actividad-guiada-1.4."><i class="fa fa-check"></i><b>9.3</b> Actividad guiada 1.4.</a></li>
+<li class="chapter" data-level="9.4" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#act14"><i class="fa fa-check"></i><b>9.4</b> Actividad guiada 1.4</a>
 <ul>
-<li class="chapter" data-level="11.4.1" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#evolución-de-los-continentes"><i class="fa fa-check"></i><b>11.4.1</b> Evolución de los continentes</a></li>
+<li class="chapter" data-level="9.4.1" data-path="alternativas-tydiverse.html"><a href="alternativas-tydiverse.html#evolución-de-los-continentes"><i class="fa fa-check"></i><b>9.4.1</b> Evolución de los continentes</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Regressió</b></span></li>
-<li class="chapter" data-level="12" data-path="regressió-lineal.html"><a href="regressió-lineal.html"><i class="fa fa-check"></i><b>12</b> Regressió lineal</a></li>
-<li class="chapter" data-level="13" data-path="regressió-logística.html"><a href="regressió-logística.html"><i class="fa fa-check"></i><b>13</b> Regressió logística</a></li>
+<li class="chapter" data-level="10" data-path="regressió-lineal.html"><a href="regressió-lineal.html"><i class="fa fa-check"></i><b>10</b> Regressió lineal</a></li>
+<li class="chapter" data-level="11" data-path="regressió-logística.html"><a href="regressió-logística.html"><i class="fa fa-check"></i><b>11</b> Regressió logística</a></li>
 <li class="part"><span><b>IV Reducció dimensió y Clustering</b></span></li>
-<li class="chapter" data-level="14" data-path="componentes-principales.html"><a href="componentes-principales.html"><i class="fa fa-check"></i><b>14</b> Componentes principales</a></li>
-<li class="chapter" data-level="15" data-path="cluster-jerarquic.html"><a href="cluster-jerarquic.html"><i class="fa fa-check"></i><b>15</b> Cluster jerarquic</a></li>
-<li class="chapter" data-level="16" data-path="cluster-no-jerarquic.html"><a href="cluster-no-jerarquic.html"><i class="fa fa-check"></i><b>16</b> Cluster no jerarquic</a></li>
-<li class="chapter" data-level="17" data-path="análisis-de-correspondencies.html"><a href="análisis-de-correspondencies.html"><i class="fa fa-check"></i><b>17</b> Análisis de correspondencies</a></li>
+<li class="chapter" data-level="12" data-path="componentes-principales.html"><a href="componentes-principales.html"><i class="fa fa-check"></i><b>12</b> Componentes principales</a></li>
+<li class="chapter" data-level="13" data-path="cluster-jerarquic.html"><a href="cluster-jerarquic.html"><i class="fa fa-check"></i><b>13</b> Cluster jerarquic</a></li>
+<li class="chapter" data-level="14" data-path="cluster-no-jerarquic.html"><a href="cluster-no-jerarquic.html"><i class="fa fa-check"></i><b>14</b> Cluster no jerarquic</a></li>
+<li class="chapter" data-level="15" data-path="análisis-de-correspondencies.html"><a href="análisis-de-correspondencies.html"><i class="fa fa-check"></i><b>15</b> Análisis de correspondencies</a></li>
 <li class="chapter" data-level="" data-path="referències.html"><a href="referències.html"><i class="fa fa-check"></i>Referències</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/griu/meacp" target="blank">Repositori GiutHub</a></li>
@@ -322,17 +338,64 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="fuentes-de-dades" class="section level1" number="8">
-<h1><span class="header-section-number">Capítol 8</span> Fuentes de dades</h1>
+<div id="fuentes-de-dades" class="section level1" number="5">
+<h1><span class="header-section-number">Capítol 5</span> Fuentes de dades</h1>
+<div id="algunmos-orígenes" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Algunmos orígenes:</h2>
+<p>Algunos orígenes de datos de interés son:</p>
+<ul>
+<li><strong>Baròmetre del CEO</strong>: <a href="https://ceo.gencat.cat/ca/barometre/" class="uri">https://ceo.gencat.cat/ca/barometre/</a></li>
+<li><strong>Institut d’Estadística de Catalunya</strong>: <a href="https://www.idescat.cat/" class="uri">https://www.idescat.cat/</a></li>
+<li><strong>Resultats electorals (Catalunya)</strong>: <a href="https://eleccions.gencat.cat/ca/resultats-electorals/#/" class="uri">https://eleccions.gencat.cat/ca/resultats-electorals/#/</a></li>
+<li><strong>Resultados electorales (España)</strong>: <a href="http://www.infoelectoral.mir.es/infoelectoral/min/areaDescarga.html?method=inicio" class="uri">http://www.infoelectoral.mir.es/infoelectoral/min/areaDescarga.html?method=inicio</a></li>
+<li><strong>Microdatos de INE (Insituto Nacional Estadística)</strong>: <a href="http://www.ine.es/prodyser/microdatos.htm" class="uri">http://www.ine.es/prodyser/microdatos.htm</a></li>
+<li><strong>EU Open data portal</strong>: <a href="https://data.europa.eu/euodp/en/data" class="uri">https://data.europa.eu/euodp/en/data</a></li>
+<li><strong>PISA Data</strong>: <a href="http://www.oecd.org/pisa/data/" class="uri">http://www.oecd.org/pisa/data/</a></li>
+<li><strong>European Social Survey (2018 - SPSS)</strong>: <a href="https://www.europeansocialsurvey.org/data/round-index.html" class="uri">https://www.europeansocialsurvey.org/data/round-index.html</a></li>
+<li><strong>Open Data USA</strong>: <a href="https://www.data.gov/" class="uri">https://www.data.gov/</a></li>
+<li><strong>USA General Social Survey (2018 - SPSS)</strong>: <a href="https://gss.norc.org/get-the-data/spss" class="uri">https://gss.norc.org/get-the-data/spss</a></li>
+<li><strong>package psData</strong>: Download Regularly Maintained Political Science Data Sets
+<a href="https://cran.r-project.org/web/packages/psData/index.html" class="uri">https://cran.r-project.org/web/packages/psData/index.html</a></li>
+<li><strong>package poliscidata</strong>: Datasets and Functions Featured in Pollock and Edwards, an R Companion to Essentials of Political Analysis, Second Edition: <a href="https://cran.r-project.org/web/packages/poliscidata/index.html" class="uri">https://cran.r-project.org/web/packages/poliscidata/index.html</a></li>
+<li><strong>package WDI</strong>: World Development Indicators and Other World Bank Data: <a href="https://cran.r-project.org/web/packages/WDI/index.html" class="uri">https://cran.r-project.org/web/packages/WDI/index.html</a></li>
+<li><strong>package manifestoR</strong>: Access and Process Data and Documents of the Manifesto Project</li>
+</ul>
+</div>
+<div id="más-origenes" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Más origenes</h2>
+<p>Resulta de gran interès la lectura del <a href="http://qpolr.com/datadownload.html">Capítulo 5: Get existing</a> (Gahner y Zoltán , 2019).</p>
+<p>En concreto resulta de especial interès el enlace al siguiente <a href="https://github.com/erikgahner/PolData/raw/master/PolData.xlsx">Directorio en Excel</a> de más de 400 orígenes de datos políticos de todo el mundo. Estan categorizados por: tema, pais, fechas, disponibilidad, formato, registro, enlace al diseño…</p>
+<p>Más datos paquetes con datos des de GitHub (instalar previamente paquete remotes):</p>
+<ul>
+<li><code>remotes::install_github("arcruz0/paqueteadp")</code>: Datos de apoyo al libro <a href="https://arcruz0.github.io/libroadp/index.html">AnalizaR Datos Políticos</a></li>
+<li><code>remotes::install_github("jamesmartherus/anesr")</code>: American National Election Study</li>
+<li><code>remotes::install_github("xmarquez/vdem")</code>: Varieties of Democracy into R</li>
+</ul>
+</div>
+<div id="crear-datos" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Crear datos</h2>
+<p>Otro camino más complejo es crear tu propia base de datos. Una opción seria el desarrollo de una encuesta. En este sentido Google Forms es una excelente herramienta para realizar encuestas online.</p>
+<p>Para mas opciones se recomienda la lectura del <a href="http://qpolr.com/create.html">Capítulo 6: Create data</a> (Gahner y Zoltán , 2019), donde se explicam alguinos pasos en realizar web scraping de datos, parlamentos, Twitter, Google Trends, Wikipedia…</p>
+</div>
+<div id="criterios-selección" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Criterios selección</h2>
+<p>Algunos criterios para seleccionar un conjunto de datos son:</p>
+<ul>
+<li>Datos de tu interés</li>
+<li>Que tenga suficientes filas: Si bien no es un criterio preciso, es aconsejable que la base del proyecto tenga un mínimo entre 7 y 10 filas por cada variable del modelo. Por ejemplo, su quieres introducir un mínimo de 5 variables, como mínimo deberias tener 50 filas. Es decir, evita escojer datos de Comunidades autónomos (17) y usa como mínimo datos de provincia (52).</li>
+<li>Que haya diversidad de tipología de variables: Continuas, categóricas, ordinales…</li>
+<li>Selecciona cual va a ser tu variable dependiente y cuales las independientes.</li>
+</ul>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lectura-escritura.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="operaciones-entre-tablas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="DataIO.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gráficos-con-ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -354,7 +417,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/griu/meacp/edit/master/060-obtencion.Rmd",
+"link": "https://github.com/griu/meacp/edit/master/050-obtencion.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -373,6 +436,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
