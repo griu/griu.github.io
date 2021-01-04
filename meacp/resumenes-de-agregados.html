@@ -847,10 +847,14 @@ Oceanía
 <div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="resumenes-de-agregados.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(paises07Summ) <span class="sc">+</span></span>
 <span id="cb270-2"><a href="resumenes-de-agregados.html#cb270-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x=</span>continente, <span class="at">fill=</span>nivel_de_riqueza), <span class="at">position =</span> <span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
 <span id="cb270-3"><a href="resumenes-de-agregados.html#cb270-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&quot;%&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_files/figure-html/unnamed-chunk-154-1.png" width="672" /></p>
+<p><img src="meacp_files/figure-html/unnamed-chunk-165-1.png" width="672" /></p>
 <p>Para calcular la tabla de porcentajes que se observan en el gráfico se utiliza <code>prop.table(., margin = ?)</code>, dónde ? vale 1 para obtener el % fila y 2 para el % columna.</p>
+<p>Para incluir la suma marginal por filas se utiliza <code>addmargins(.,margin = ?)</code>, dónde ? vale 1 para incluir el total suma marginal fila y 2 para el total columna.</p>
 <div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="resumenes-de-agregados.html#cb271-1" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente, paises07Summ<span class="sc">$</span>nivel_de_riqueza, <span class="at">useNA =</span> <span class="st">&quot;ifany&quot;</span>)</span>
-<span id="cb271-2"><a href="resumenes-de-agregados.html#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="dv">100</span> <span class="sc">*</span> <span class="fu">prop.table</span>(tabla1, <span class="at">margin =</span> <span class="dv">1</span>),<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<span id="cb271-2"><a href="resumenes-de-agregados.html#cb271-2" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">addmargins</span>(tabla1, <span class="at">margin =</span> <span class="dv">1</span>) <span class="co"># total marginal columna (antes que el %)</span></span>
+<span id="cb271-3"><a href="resumenes-de-agregados.html#cb271-3" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fu">prop.table</span>(tabla1, <span class="at">margin =</span> <span class="dv">1</span>)  <span class="co"># porcentaje fila</span></span>
+<span id="cb271-4"><a href="resumenes-de-agregados.html#cb271-4" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">addmargins</span>(tabla1, <span class="at">margin =</span> <span class="dv">2</span>) <span class="co"># total marginal fila </span></span>
+<span id="cb271-5"><a href="resumenes-de-agregados.html#cb271-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(tabla1,<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -867,6 +871,9 @@ Ricos
 </th>
 <th style="text-align:right;">
 NA
+</th>
+<th style="text-align:right;">
+Sum
 </th>
 </tr>
 </thead>
@@ -887,6 +894,9 @@ NA
 <td style="text-align:right;">
 1.9
 </td>
+<td style="text-align:right;">
+100
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -903,6 +913,9 @@ Américas
 </td>
 <td style="text-align:right;">
 0.0
+</td>
+<td style="text-align:right;">
+100
 </td>
 </tr>
 <tr>
@@ -921,6 +934,9 @@ Asia
 <td style="text-align:right;">
 3.0
 </td>
+<td style="text-align:right;">
+100
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -938,6 +954,9 @@ Europa
 <td style="text-align:right;">
 3.3
 </td>
+<td style="text-align:right;">
+100
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -954,6 +973,29 @@ Oceanía
 </td>
 <td style="text-align:right;">
 0.0
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sum
+</td>
+<td style="text-align:right;">
+23.9
+</td>
+<td style="text-align:right;">
+48.6
+</td>
+<td style="text-align:right;">
+25.4
+</td>
+<td style="text-align:right;">
+2.1
+</td>
+<td style="text-align:right;">
+100
 </td>
 </tr>
 </tbody>
@@ -1237,8 +1279,8 @@ Oceanía-Ricos
 <span id="cb275-7"><a href="resumenes-de-agregados.html#cb275-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">force=</span><span class="dv">10</span>) <span class="sc">+</span></span>
 <span id="cb275-8"><a href="resumenes-de-agregados.html#cb275-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
 <span id="cb275-9"><a href="resumenes-de-agregados.html#cb275-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Continentes-riqueza en 2007 (no ponderado)&quot;</span>)</span></code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-159"></span>
-<img src="meacp_files/figure-html/unnamed-chunk-159-1.png" alt="Contienentes (Fuente: Elaboración propia, datos de Gapminder)" width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-170"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-170-1.png" alt="Contienentes (Fuente: Elaboración propia, datos de Gapminder)" width="672" />
 <p class="caption">
 Figura 8.1: Contienentes (Fuente: Elaboración propia, datos de Gapminder)
 </p>
