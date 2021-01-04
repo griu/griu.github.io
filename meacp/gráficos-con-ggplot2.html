@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítol 6 Gráficos con ggplot2 | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
+  <meta name="description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítol 6 Gráficos con ggplot2 | Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítol 6 Gráficos con ggplot2 | Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  
+  <meta name="twitter:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
+  
+
+<meta name="author" content="Ferran Carrascosa Mallafrè" />
+
+
+<meta name="date" content="2021-01-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="modificacion-objetos.html"/>
+<link rel="next" href="lectura-escritura.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script>
+% https://stackoverflow.com/a/4425214/8242291
+var links = document.links;
+
+for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+
+    if (links[i].hostname != window.location.hostname) {
+        links[i].target = '_blank';
+    }
+
+}
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #2a211c;
+    color: #bdae9d;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+div.sourceCode
+  { color: #bdae9d; background-color: #2a211c; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffff00; } /* Alert */
+code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #44aa43; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #049b0a; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.dv { color: #44aa43; } /* DecVal */
+code span.er { color: #ffff00; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #44aa43; } /* Float */
+code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+code span.op { } /* Operator */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.sc { color: #049b0a; } /* SpecialChar */
+code span.ss { color: #049b0a; } /* SpecialString */
+code span.st { color: #049b0a; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #049b0a; } /* VerbatimString */
+code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><b><a href="./index.html"><img style="float: left; margin-right: 5px;" src="www/images/01_general/logo.png" width="40" height="40"></img>Mètodes Estadístics Aplicats</a></b></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#estructura-del-llibre"><i class="fa fa-check"></i>Estructura del llibre</a></li>
+</ul></li>
+<li class="part"><span><b>I Computació en R</b></span></li>
+<li class="chapter" data-level="1" data-path="posta-a-punt.html"><a href="posta-a-punt.html"><i class="fa fa-check"></i><b>1</b> Posta a punt</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#instalació"><i class="fa fa-check"></i><b>1.1</b> Instalació</a>
+<ul>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r"><i class="fa fa-check"></i>R</a></li>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rstudio"><i class="fa fa-check"></i>RStudio</a></li>
+<li class="chapter" data-level="" data-path="posta-a-punt.html"><a href="posta-a-punt.html#paquets-de-r"><i class="fa fa-check"></i>Paquets de R</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#rmarkdown-.rmd"><i class="fa fa-check"></i><b>1.2</b> Rmarkdown (*.Rmd)</a></li>
+<li class="chapter" data-level="1.3" data-path="posta-a-punt.html"><a href="posta-a-punt.html#act11"><i class="fa fa-check"></i><b>1.3</b> Actividad guiada 1.1</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="posta-a-punt.html"><a href="posta-a-punt.html#r-markdown"><i class="fa fa-check"></i><b>1.3.1</b> R Markdown</a></li>
+<li class="chapter" data-level="1.3.2" data-path="posta-a-punt.html"><a href="posta-a-punt.html#including-plots"><i class="fa fa-check"></i><b>1.3.2</b> Including Plots</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="elementos-básicos.html"><a href="elementos-básicos.html"><i class="fa fa-check"></i><b>2</b> Elementos básicos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="elementos-básicos.html"><a href="elementos-básicos.html#objetos-de-r"><i class="fa fa-check"></i><b>2.1</b> Objetos de R</a>
+<ul>
+<li class="chapter" data-level="" data-path="elementos-básicos.html"><a href="elementos-básicos.html#asignar-objetos"><i class="fa fa-check"></i>Asignar objetos</a></li>
+<li class="chapter" data-level="" data-path="elementos-básicos.html"><a href="elementos-básicos.html#listar-objetos"><i class="fa fa-check"></i>Listar objetos</a></li>
+<li class="chapter" data-level="" data-path="elementos-básicos.html"><a href="elementos-básicos.html#guardar-objetos"><i class="fa fa-check"></i>Guardar objetos</a></li>
+<li class="chapter" data-level="" data-path="elementos-básicos.html"><a href="elementos-básicos.html#borrar-objetos"><i class="fa fa-check"></i>Borrar objetos</a></li>
+<li class="chapter" data-level="" data-path="elementos-básicos.html"><a href="elementos-básicos.html#cargar-objetos"><i class="fa fa-check"></i>Cargar objetos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="elementos-básicos.html"><a href="elementos-básicos.html#scripts"><i class="fa fa-check"></i><b>2.2</b> Scripts</a></li>
+<li class="chapter" data-level="2.3" data-path="elementos-básicos.html"><a href="elementos-básicos.html#act12"><i class="fa fa-check"></i><b>2.3</b> Actividad guiada 1.2</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="elementos-básicos.html"><a href="elementos-básicos.html#gráfico-de-dispersión-de-países"><i class="fa fa-check"></i><b>2.3.1</b> Gráfico de dispersión de países</a></li>
+<li class="chapter" data-level="2.3.2" data-path="elementos-básicos.html"><a href="elementos-básicos.html#tabla-descriptiva-de-países"><i class="fa fa-check"></i><b>2.3.2</b> Tabla descriptiva de países</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html"><i class="fa fa-check"></i><b>3</b> Colecciones de objetos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#tipo-básicos"><i class="fa fa-check"></i><b>3.1</b> Tipo básicos</a>
+<ul>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#numeric"><i class="fa fa-check"></i>Numeric</a></li>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#integer"><i class="fa fa-check"></i>Integer</a></li>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#logical"><i class="fa fa-check"></i>Logical</a></li>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#character"><i class="fa fa-check"></i>Character</a></li>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#factor"><i class="fa fa-check"></i>Factor</a></li>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#fechas-y-horarios"><i class="fa fa-check"></i>Fechas y horarios</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#vectores"><i class="fa fa-check"></i><b>3.2</b> Vectores</a>
+<ul>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#longitud"><i class="fa fa-check"></i>Longitud</a></li>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres"><i class="fa fa-check"></i>Nombres</a></li>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#operaciones-aritméticas"><i class="fa fa-check"></i>Operaciones aritméticas</a></li>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#operaciones-con-texto"><i class="fa fa-check"></i>Operaciones con texto</a></li>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#secuencias"><i class="fa fa-check"></i>Secuencias</a></li>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#factor-1"><i class="fa fa-check"></i>Factor</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#matrices"><i class="fa fa-check"></i><b>3.3</b> Matrices</a>
+<ul>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#dimensión"><i class="fa fa-check"></i>Dimensión</a></li>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres-1"><i class="fa fa-check"></i>Nombres</a></li>
+<li class="chapter" data-level="3.3.1" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#arrays"><i class="fa fa-check"></i><b>3.3.1</b> Arrays</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#listas"><i class="fa fa-check"></i><b>3.4</b> Listas</a>
+<ul>
+<li class="chapter" data-level="" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#nombres-2"><i class="fa fa-check"></i>Nombres</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="colecciones-de-objetos.html"><a href="colecciones-de-objetos.html#data-frames"><i class="fa fa-check"></i><b>3.5</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html"><i class="fa fa-check"></i><b>4</b> Filtrado de objetos</a>
+<ul>
+<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#enteros-positivos"><i class="fa fa-check"></i>Enteros positivos</a></li>
+<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#enteros-negativos"><i class="fa fa-check"></i>Enteros negativos</a></li>
+<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#nombres-3"><i class="fa fa-check"></i>Nombres</a></li>
+<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#dolares-y-dobles-corchetes"><i class="fa fa-check"></i>Dolares y dobles corchetes</a></li>
+<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#valores-lógicos"><i class="fa fa-check"></i>Valores lógicos</a></li>
+<li class="chapter" data-level="" data-path="filtrado-de-objetos.html"><a href="filtrado-de-objetos.html#operaciones-booleanas"><i class="fa fa-check"></i>Operaciones booleanas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html"><i class="fa fa-check"></i><b>5</b> Modificacion objetos</a>
+<ul>
+<li><a href="modificacion-objetos.html#filtro-y-asignación--">Filtro y asignación “<code>]&lt;-</code>”</a></li>
+<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#información-faltante"><i class="fa fa-check"></i>Información faltante</a></li>
+<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#seleccion-de-filas-con-valores-faltantes"><i class="fa fa-check"></i>Seleccion de filas con valores faltantes</a></li>
+<li class="chapter" data-level="" data-path="modificacion-objetos.html"><a href="modificacion-objetos.html#filtros-en-variables-con-valores-faltantes"><i class="fa fa-check"></i>Filtros en variables con valores faltantes</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Gráficos con ggplot2</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#estructura-básica-de-ggplot2"><i class="fa fa-check"></i><b>6.1</b> Estructura básica de ggplot2</a>
+<ul>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-geoms"><i class="fa fa-check"></i>Otros geoms</a></li>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#otros-elmentos-gráficos"><i class="fa fa-check"></i>Otros elmentos gráficos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#act13"><i class="fa fa-check"></i><b>6.2</b> Actividad guiada 1.3</a>
+<ul>
+<li class="chapter" data-level="" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-1"><i class="fa fa-check"></i>Gráfico de dispersión de países</a></li>
+<li class="chapter" data-level="6.2.1" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#preparación-de-datos"><i class="fa fa-check"></i><b>6.2.1</b> Preparación de datos</a></li>
+<li class="chapter" data-level="6.2.2" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#descriptivo-boxplot"><i class="fa fa-check"></i><b>6.2.2</b> Descriptivo boxplot</a></li>
+<li class="chapter" data-level="6.2.3" data-path="gráficos-con-ggplot2.html"><a href="gráficos-con-ggplot2.html#gráfico-de-dispersión-de-países-2"><i class="fa fa-check"></i><b>6.2.3</b> Gráfico de dispersión de países</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Trabajo con datos</b></span></li>
+<li class="chapter" data-level="7" data-path="lectura-escritura.html"><a href="lectura-escritura.html"><i class="fa fa-check"></i><b>7</b> Lectura escritura</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="lectura-escritura.html"><a href="lectura-escritura.html#importar-y-exportar-datos"><i class="fa fa-check"></i><b>7.0.1</b> IMPORTAR Y EXPORTAR DATOS</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="fuentes-de-dades.html"><a href="fuentes-de-dades.html"><i class="fa fa-check"></i><b>8</b> Fuentes de dades</a></li>
+<li class="chapter" data-level="9" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html"><i class="fa fa-check"></i><b>9</b> Operaciones entre tablas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#ordenación-y-union"><i class="fa fa-check"></i><b>9.1</b> Ordenación y Union</a>
+<ul>
+<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#ordenación"><i class="fa fa-check"></i>Ordenación</a></li>
+<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unión-por-columnas"><i class="fa fa-check"></i>Unión por columnas</a></li>
+<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unión-por-filas"><i class="fa fa-check"></i>Unión por filas</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#cruce-por-campos-clave"><i class="fa fa-check"></i><b>9.2</b> Cruce por campos clave</a>
+<ul>
+<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#unicidad"><i class="fa fa-check"></i>Unicidad</a></li>
+<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#fusión-con-claves"><i class="fa fa-check"></i>Fusión con claves</a></li>
+<li class="chapter" data-level="" data-path="operaciones-entre-tablas.html"><a href="operaciones-entre-tablas.html#definción-de-las-claves"><i class="fa fa-check"></i>Definción de las claves</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html"><i class="fa fa-check"></i><b>10</b> Resumenes de agregados</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#summary"><i class="fa fa-check"></i><b>10.1</b> Summary</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#estadísticos-basicos"><i class="fa fa-check"></i><b>10.1.1</b> Estadísticos basicos</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#tablas-de-frecuencias"><i class="fa fa-check"></i><b>10.2</b> Tablas de frecuencias</a></li>
+<li class="chapter" data-level="10.3" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#agregados-por-subgrupos"><i class="fa fa-check"></i><b>10.3</b> Agregados por subgrupos</a></li>
+<li class="chapter" data-level="10.4" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#la-familia-apply"><i class="fa fa-check"></i><b>10.4</b> La familia apply</a>
+<ul>
+<li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#tapply"><i class="fa fa-check"></i>tapply</a></li>
+<li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#lapply"><i class="fa fa-check"></i>lapply</a></li>
+<li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#sapply"><i class="fa fa-check"></i>sapply</a></li>
+<li class="chapter" data-level="" data-path="resumenes-de-agregados.html"><a href="resumenes-de-agregados.html#apply"><i class="fa fa-check"></i>apply</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html"><i class="fa fa-check"></i><b>11</b> Las alternativas tydiverse</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#dplyr-arrange-filter-select"><i class="fa fa-check"></i><b>11.1</b> Dplyr: arrange, filter, select</a></li>
+<li class="chapter" data-level="11.2" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#dplyr-mutate-group_by-summarise"><i class="fa fa-check"></i><b>11.2</b> Dplyr: mutate, group_by, summarise</a></li>
+<li class="chapter" data-level="11.3" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#actividad-guiada-1.4."><i class="fa fa-check"></i><b>11.3</b> Actividad guiada 1.4.</a></li>
+<li class="chapter" data-level="11.4" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#act14"><i class="fa fa-check"></i><b>11.4</b> Actividad guiada 1.4</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="las-alternativas-tydiverse.html"><a href="las-alternativas-tydiverse.html#evolución-de-los-continentes"><i class="fa fa-check"></i><b>11.4.1</b> Evolución de los continentes</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III Regressió</b></span></li>
+<li class="chapter" data-level="12" data-path="regressió-lineal.html"><a href="regressió-lineal.html"><i class="fa fa-check"></i><b>12</b> Regressió lineal</a></li>
+<li class="chapter" data-level="13" data-path="regressió-logística.html"><a href="regressió-logística.html"><i class="fa fa-check"></i><b>13</b> Regressió logística</a></li>
+<li class="part"><span><b>IV Reducció dimensió y Clustering</b></span></li>
+<li class="chapter" data-level="14" data-path="componentes-principales.html"><a href="componentes-principales.html"><i class="fa fa-check"></i><b>14</b> Componentes principales</a></li>
+<li class="chapter" data-level="15" data-path="cluster-jerarquic.html"><a href="cluster-jerarquic.html"><i class="fa fa-check"></i><b>15</b> Cluster jerarquic</a></li>
+<li class="chapter" data-level="16" data-path="cluster-no-jerarquic.html"><a href="cluster-no-jerarquic.html"><i class="fa fa-check"></i><b>16</b> Cluster no jerarquic</a></li>
+<li class="chapter" data-level="17" data-path="análisis-de-correspondencies.html"><a href="análisis-de-correspondencies.html"><i class="fa fa-check"></i><b>17</b> Análisis de correspondencies</a></li>
+<li class="chapter" data-level="" data-path="referències.html"><a href="referències.html"><i class="fa fa-check"></i>Referències</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/griu/meacp" target="blank">Repositori GiutHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mètodes Estadístics Aplicats a Ciències Polítiques</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="gráficos-con-ggplot2" class="section level1" number="6">
+<h1><span class="header-section-number">Capítol 6</span> Gráficos con ggplot2</h1>
+<blockquote>
+<p>Un simple gráfico ha brindado más información a la mente del analista de datos que cualquier otro dispositivo. - John Tukey</p>
+</blockquote>
+<div id="estructura-básica-de-ggplot2" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Estructura básica de ggplot2</h2>
+<p>ggplot2 es un sistema coherente para hacer gráficos.</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="gráficos-con-ggplot2.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb190-2"><a href="gráficos-con-ggplot2.html#cb190-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(galton)</span>
+<span id="cb190-3"><a href="gráficos-con-ggplot2.html#cb190-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb190-4"><a href="gráficos-con-ggplot2.html#cb190-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span> galton, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>parent, <span class="at">y=</span> child)) <span class="sc">+</span> </span>
+<span id="cb190-5"><a href="gráficos-con-ggplot2.html#cb190-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-84"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-84-1.png" alt="Altura padres e hijos (Galton, 1885)" width="672" />
+<p class="caption">
+Figura 6.1: Altura padres e hijos (Galton, 1885)
+</p>
+</div>
+<p>La altura de los padres es la media entre la altura del padre y 1.08 veces la de la madre. En los datos hay 205 padres diferentes y 928 hijos. Los datos fueron tabulados y por lo tanto discretizado.</p>
+<p>Para visualizar los datos resulta útil introducir aleatoridad con jitter.</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="gráficos-con-ggplot2.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(galton)</span>
+<span id="cb191-2"><a href="gráficos-con-ggplot2.html#cb191-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb191-3"><a href="gráficos-con-ggplot2.html#cb191-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data=</span> galton, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>parent, <span class="at">y=</span> child)) <span class="sc">+</span> </span>
+<span id="cb191-4"><a href="gráficos-con-ggplot2.html#cb191-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>()</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-85"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-85-1.png" alt="Jitter altura padres e hijos (Galton, 1885)" width="672" />
+<p class="caption">
+Figura 6.2: Jitter altura padres e hijos (Galton, 1885)
+</p>
+</div>
+<p>Los componentes mínimos son:</p>
+<ul>
+<li><code>ggplot</code> define el conjunto de datos en el parámetro <code>data</code> que debería contener todas las variables del gráfico.</li>
+<li><code>geom_&lt;función&gt;</code>: Define el tipo de gráfico. Por ejemplo, <em>geom_point</em> es un gráfico de puntos.</li>
+<li><code>mapping</code>: define mapeo de parámetros estéticos (<code>x</code>, <code>y</code>…) a través de la función <code>aes()</code>.</li>
+</ul>
+<p>A diferencia de <code>plot</code>, <code>ggplot</code> permite asignar el gráfico a un objeto R.</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="gráficos-con-ggplot2.html#cb192-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span> galton, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x=</span>parent, <span class="at">y=</span> child)) <span class="sc">+</span> </span>
+<span id="cb192-2"><a href="gráficos-con-ggplot2.html#cb192-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>()</span></code></pre></div>
+<p>Posteriormente, puedes añadirle otros elementos gráficos.</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="gráficos-con-ggplot2.html#cb193-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> p1 <span class="sc">+</span> </span>
+<span id="cb193-2"><a href="gráficos-con-ggplot2.html#cb193-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;lm&#39;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">formula =</span> y<span class="sc">~</span>x, <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;lm&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb193-3"><a href="gráficos-con-ggplot2.html#cb193-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="fu">aes</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;Diagonal y = x&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb193-4"><a href="gráficos-con-ggplot2.html#cb193-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relación altura padres e hijos (Galton, 1885)&quot;</span></span>
+<span id="cb193-5"><a href="gráficos-con-ggplot2.html#cb193-5" aria-hidden="true" tabindex="-1"></a>   ,<span class="at">x =</span> <span class="st">&quot;Media altura padres (pulgadas)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Altura hijos (pulgadas)&quot;</span>)</span>
+<span id="cb193-6"><a href="gráficos-con-ggplot2.html#cb193-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb193-7"><a href="gráficos-con-ggplot2.html#cb193-7" aria-hidden="true" tabindex="-1"></a>p1</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-87"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-87-1.png" alt="Regresion Simple y recta diagonal altura padres e hijos (Galton, 1885)" width="672" />
+<p class="caption">
+Figura 6.3: Regresion Simple y recta diagonal altura padres e hijos (Galton, 1885)
+</p>
+</div>
+<blockquote>
+<p>Si defines el mapeo de estéticos en <code>ggplot</code> ya no es necesario definirlos en los geoms.</p>
+</blockquote>
+<div id="otros-geoms" class="section level3 unnumbered">
+<h3>Otros geoms</h3>
+<p>Otros ejemplos de geoms con los datos de países en 2007.</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="gráficos-con-ggplot2.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb194-2"><a href="gráficos-con-ggplot2.html#cb194-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datos)</span>
+<span id="cb194-3"><a href="gráficos-con-ggplot2.html#cb194-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-4"><a href="gráficos-con-ggplot2.html#cb194-4" aria-hidden="true" tabindex="-1"></a>paises07 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(paises <span class="sc">%&gt;%</span> <span class="fu">filter</span>(anio<span class="sc">==</span><span class="dv">2007</span>))  <span class="co"># paises en 2007</span></span>
+<span id="cb194-5"><a href="gráficos-con-ggplot2.html#cb194-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-6"><a href="gráficos-con-ggplot2.html#cb194-6" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(paises07, <span class="fu">aes</span>(<span class="at">x=</span>esperanza_de_vida)) <span class="sc">+</span></span>
+<span id="cb194-7"><a href="gráficos-con-ggplot2.html#cb194-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span>
+<span id="cb194-8"><a href="gráficos-con-ggplot2.html#cb194-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-9"><a href="gráficos-con-ggplot2.html#cb194-9" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(paises07, <span class="fu">aes</span>(<span class="at">x=</span>continente, <span class="at">fill=</span>continente)) <span class="sc">+</span></span>
+<span id="cb194-10"><a href="gráficos-con-ggplot2.html#cb194-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb194-11"><a href="gráficos-con-ggplot2.html#cb194-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-12"><a href="gráficos-con-ggplot2.html#cb194-12" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(paises07, <span class="fu">aes</span>(<span class="at">y=</span>esperanza_de_vida, <span class="at">fill=</span>continente)) <span class="sc">+</span></span>
+<span id="cb194-13"><a href="gráficos-con-ggplot2.html#cb194-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb194-14"><a href="gráficos-con-ggplot2.html#cb194-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb194-15"><a href="gráficos-con-ggplot2.html#cb194-15" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(paises07 <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(esperanza_de_vida)) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">25</span>),</span>
+<span id="cb194-16"><a href="gráficos-con-ggplot2.html#cb194-16" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita, <span class="at">y=</span>esperanza_de_vida)) <span class="sc">+</span></span>
+<span id="cb194-17"><a href="gráficos-con-ggplot2.html#cb194-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb194-18"><a href="gráficos-con-ggplot2.html#cb194-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>pais), <span class="at">size=</span><span class="dv">3</span>)</span></code></pre></div>
+<p><img src="meacp_files/figure-html/unnamed-chunk-89-1.png" width="1056" /></p>
+</div>
+<div id="otros-elmentos-gráficos" class="section level3 unnumbered">
+<h3>Otros elmentos gráficos</h3>
+<p>Otros elementos a tener en cuenta en la presentación:</p>
+<ul>
+<li>Permite crear un panel de gráficos utilizando variables de segmentación: <code>facet_wrap()</code> y <code>facet_grid()</code></li>
+<li>Insertar etiquetas y anotaciones de texto: consulta la función <code>annotate()</code>, <code>geom_text()</code>, <code>geom_label()</code>, <code>geom_label_repel()</code>.</li>
+<li>Escalas: Permite cambiar los valores de los ejes. Por ejemplo, consulta <code>scale_x_continuous()</code> y <code>scale_x_log10()</code>.</li>
+<li>Colores: Para cambiar las paletas de colores consulta <code>scale_colour_discrete()</code>, <code>scale_colour_brewer()</code>, <code>scale_colour_manual()</code>, <code>scale_fill_viridis()</code>, <code>scale_colour_gradient()</code>…</li>
+<li>Zoom: Importante, para realizar zoom utiliza xlim e ylim en: <code>coord_cartesian()</code>.</li>
+<li>Temas: Personaliza posición de la leyenda y resto de elementos gráficos, tamaños colores, fuente… Consulta: <code>theme()</code> y <code>theme_bw()</code>.</li>
+<li>Interactivos: packages <a href="https://gganimate.com/">gganimate</a> y <a href="https://plotly.com/r/">plotly</a>.</li>
+</ul>
+<p>Para ampliar la lectura consulta:</p>
+<ul>
+<li><a href="https://r4ds.had.co.nz/">R for Data Science</a> from Garrett Grolemund and Hadley Wickham.</li>
+<li><a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics for Data Analysis</a> de Hadley Wickham.</li>
+<li><a href="https://exts.ggplot2.tidyverse.org/gallery/">ggplot2 extensions guide</a> lista los paquetes que extienden <code>ggplot2</code>.</li>
+<li>La <a href="https://www.statsandr.com/blog/files/ggplot2-cheatsheet.pdf">{ggplot2} cheat sheet</a>.</li>
+</ul>
+<div id="actividad-guiada-1.3." class="section level5 unnumbered">
+<h5>Actividad guiada 1.3.</h5>
+<p>Vamos a mejorar de nuevo el informe de los países introduciendo:</p>
+<ul>
+<li>Haz un panel de boxplot por año del PIB per cápita (escala log10) y la esperanza de vida.</li>
+<li>Mejora el gráfico de dispersión de países:
+<ul>
+<li>Recodifica Oceanía como Asia y Modifica los colores de los continentes.</li>
+<li>Utiliza los siguiente paleta de colores:
+<ul>
+<li>“blue”: “África”</li>
+<li>“green”: “Américas”</li>
+<li>“red”: “Asia”</li>
+<li>“yellow”: “Europa”</li>
+</ul></li>
+<li>Inserta Etiquetas para España, China, Etiopía y Canadá.</li>
+</ul></li>
+</ul>
+<p>Observa:</p>
+<ul>
+<li>Se han añadido parámetros estéticos: <code>color</code> y <code>size</code>.</li>
+<li>La escala del eje x (pib_per_capita) se ha transformado a escala logarítmica con <code>scale_x_log10()</code>.</li>
+<li>Se ha definido un panel temporal con <code>facet_wrap()</code></li>
+<li>Hay que imprimir el gráfico con <code>print()</code></li>
+<li>Se ha recodificado una variable factor.</li>
+<li>Se ha parametrizado los colores de los continentes y las etiquetas de los países.</li>
+<li>La función <code>describir()</code> devuelve una lista de resultados (plots y tablas).</li>
+<li>Se han introducido boxplots.</li>
+<li>Se ha construido un data frame con los países con etiqueta.</li>
+<li>Se ha seleccionado las variables a presentar en el summary.</li>
+</ul>
+<p>Puedes ver la solución en <a href="gráficos-con-ggplot2.html#act13">6.2</a> .</p>
+<blockquote>
+<p>Hans Rosling de Gapminder utilizó un gráfico muy parecido a éste, añadiendo un quinto eje (el tiempo) en una famosa conferencia <a href="https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen">TED Talk</a> (14,6M de visualizaciones). Dedícale 1 minuto a ver la simulación dándole al botón de play (abajo izquierda), en el <a href="https://www.gapminder.org/tools/#$chart-type=bubbles">siguiente enlace</a>. La herramienta utilizada Trendalyzer fue posteriormente adquirida por Google.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="act13" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Actividad guiada 1.3</h2>
+<pre><code>---
+title: &quot;Actividad 1.3&quot;
+output: html_document
+---</code></pre>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="gráficos-con-ggplot2.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb196-2"><a href="gráficos-con-ggplot2.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datos)</span>
+<span id="cb196-3"><a href="gráficos-con-ggplot2.html#cb196-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb196-4"><a href="gráficos-con-ggplot2.html#cb196-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div id="gráfico-de-dispersión-de-países-1" class="section level3 unnumbered">
+<h3>Gráfico de dispersión de países</h3>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="gráficos-con-ggplot2.html#cb197-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(paises, <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita, <span class="at">y=</span>esperanza_de_vida</span>
+<span id="cb197-2"><a href="gráficos-con-ggplot2.html#cb197-2" aria-hidden="true" tabindex="-1"></a>      , <span class="at">color=</span>continente, <span class="at">size=</span>poblacion)) <span class="sc">+</span></span>
+<span id="cb197-3"><a href="gráficos-con-ggplot2.html#cb197-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb197-4"><a href="gráficos-con-ggplot2.html#cb197-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb197-5"><a href="gráficos-con-ggplot2.html#cb197-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Panel de países del 1952 al 2007&quot;</span></span>
+<span id="cb197-6"><a href="gráficos-con-ggplot2.html#cb197-6" aria-hidden="true" tabindex="-1"></a>      , <span class="at">x =</span> <span class="st">&quot;Logaritmo base 10 del PIB per cápita ($ americanos, ajustados según inflación)&quot;</span></span>
+<span id="cb197-7"><a href="gráficos-con-ggplot2.html#cb197-7" aria-hidden="true" tabindex="-1"></a>      , <span class="at">y =</span> <span class="st">&quot;Esperanza de vida (años)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb197-8"><a href="gráficos-con-ggplot2.html#cb197-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>anio)</span>
+<span id="cb197-9"><a href="gráficos-con-ggplot2.html#cb197-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb197-10"><a href="gráficos-con-ggplot2.html#cb197-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(p1)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-91"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-91-1.png" alt="Panel países (Fuente: Elaboración propia con datos de Gapminder)" width="1056" />
+<p class="caption">
+Figura 6.4: Panel países (Fuente: Elaboración propia con datos de Gapminder)
+</p>
+</div>
+<p>Se observa una clara relación entre tener un mayor PIB per cápita (logaritmo base 10) y la esperanza de vida media de los países.</p>
+<p>Se observa como África ha tenido históricamente menor PIB y menor esperanza de vida. Se observa Asia y América en su conjunto, han aumentado en PIB y esperanza de vida.</p>
+</div>
+<div id="preparación-de-datos" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Preparación de datos</h3>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="gráficos-con-ggplot2.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb198-2"><a href="gráficos-con-ggplot2.html#cb198-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-3"><a href="gráficos-con-ggplot2.html#cb198-3" aria-hidden="true" tabindex="-1"></a>paises_informe <span class="ot">&lt;-</span> paises</span>
+<span id="cb198-4"><a href="gráficos-con-ggplot2.html#cb198-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Recodifica Oceanía por Asia</span></span>
+<span id="cb198-5"><a href="gráficos-con-ggplot2.html#cb198-5" aria-hidden="true" tabindex="-1"></a>paises_informe<span class="sc">$</span>continente[paises_informe<span class="sc">$</span>continente<span class="sc">==</span><span class="st">&quot;Oceanía&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Asia&quot;</span></span>
+<span id="cb198-6"><a href="gráficos-con-ggplot2.html#cb198-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Elimina Oceanía de los levels</span></span>
+<span id="cb198-7"><a href="gráficos-con-ggplot2.html#cb198-7" aria-hidden="true" tabindex="-1"></a>paises_informe<span class="sc">$</span>continente <span class="ot">&lt;-</span> <span class="fu">factor</span>(paises_informe<span class="sc">$</span>continente)</span>
+<span id="cb198-8"><a href="gráficos-con-ggplot2.html#cb198-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-9"><a href="gráficos-con-ggplot2.html#cb198-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Paleta de colores</span></span>
+<span id="cb198-10"><a href="gráficos-con-ggplot2.html#cb198-10" aria-hidden="true" tabindex="-1"></a>colores_continente <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;green&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>) </span>
+<span id="cb198-11"><a href="gráficos-con-ggplot2.html#cb198-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(colores_continente) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;África&quot;</span>, <span class="st">&quot;Américas&quot;</span>, <span class="st">&quot;Asia&quot;</span>, <span class="st">&quot;Europa&quot;</span>)</span>
+<span id="cb198-12"><a href="gráficos-con-ggplot2.html#cb198-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-13"><a href="gráficos-con-ggplot2.html#cb198-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Etiquetas</span></span>
+<span id="cb198-14"><a href="gráficos-con-ggplot2.html#cb198-14" aria-hidden="true" tabindex="-1"></a>etiquetas_paises <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;España&quot;</span>,<span class="st">&quot;China&quot;</span>,<span class="st">&quot;Etiopía&quot;</span>,<span class="st">&quot;Canadá&quot;</span>)</span>
+<span id="cb198-15"><a href="gráficos-con-ggplot2.html#cb198-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-16"><a href="gráficos-con-ggplot2.html#cb198-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-17"><a href="gráficos-con-ggplot2.html#cb198-17" aria-hidden="true" tabindex="-1"></a><span class="co"># funcion describir</span></span>
+<span id="cb198-18"><a href="gráficos-con-ggplot2.html#cb198-18" aria-hidden="true" tabindex="-1"></a>describir <span class="ot">&lt;-</span> <span class="cf">function</span>(data, colores, etiquetas) {</span>
+<span id="cb198-19"><a href="gráficos-con-ggplot2.html#cb198-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb198-20"><a href="gráficos-con-ggplot2.html#cb198-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filtra paises con etiqueta</span></span>
+<span id="cb198-21"><a href="gráficos-con-ggplot2.html#cb198-21" aria-hidden="true" tabindex="-1"></a>  data_etiquetas <span class="ot">&lt;-</span> data[data<span class="sc">$</span>pais <span class="sc">%in%</span> etiquetas, ]</span>
+<span id="cb198-22"><a href="gráficos-con-ggplot2.html#cb198-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb198-23"><a href="gráficos-con-ggplot2.html#cb198-23" aria-hidden="true" tabindex="-1"></a>  resultados <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb198-24"><a href="gráficos-con-ggplot2.html#cb198-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-25"><a href="gráficos-con-ggplot2.html#cb198-25" aria-hidden="true" tabindex="-1"></a>  resultados[[<span class="st">&quot;pib_per_capita&quot;</span>]] <span class="ot">&lt;-</span> </span>
+<span id="cb198-26"><a href="gráficos-con-ggplot2.html#cb198-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>anio, <span class="at">y=</span>pib_per_capita, <span class="at">group=</span>anio)) <span class="sc">+</span></span>
+<span id="cb198-27"><a href="gráficos-con-ggplot2.html#cb198-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb198-28"><a href="gráficos-con-ggplot2.html#cb198-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_log10</span>()</span>
+<span id="cb198-29"><a href="gráficos-con-ggplot2.html#cb198-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-30"><a href="gráficos-con-ggplot2.html#cb198-30" aria-hidden="true" tabindex="-1"></a>  resultados[[<span class="st">&quot;esperanza_de_vida&quot;</span>]] <span class="ot">&lt;-</span> </span>
+<span id="cb198-31"><a href="gráficos-con-ggplot2.html#cb198-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>anio, <span class="at">y=</span>esperanza_de_vida, <span class="at">group=</span>anio)) <span class="sc">+</span></span>
+<span id="cb198-32"><a href="gráficos-con-ggplot2.html#cb198-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>()</span>
+<span id="cb198-33"><a href="gráficos-con-ggplot2.html#cb198-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-34"><a href="gráficos-con-ggplot2.html#cb198-34" aria-hidden="true" tabindex="-1"></a>  resultados[[<span class="st">&quot;dispersion&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita, <span class="at">y=</span>esperanza_de_vida</span>
+<span id="cb198-35"><a href="gráficos-con-ggplot2.html#cb198-35" aria-hidden="true" tabindex="-1"></a>      , <span class="at">color=</span>continente, <span class="at">size=</span>poblacion)) <span class="sc">+</span></span>
+<span id="cb198-36"><a href="gráficos-con-ggplot2.html#cb198-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb198-37"><a href="gráficos-con-ggplot2.html#cb198-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb198-38"><a href="gráficos-con-ggplot2.html#cb198-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> colores) <span class="sc">+</span></span>
+<span id="cb198-39"><a href="gráficos-con-ggplot2.html#cb198-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_label</span>(<span class="at">data=</span>data_etiquetas</span>
+<span id="cb198-40"><a href="gráficos-con-ggplot2.html#cb198-40" aria-hidden="true" tabindex="-1"></a>      , <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita, <span class="at">y=</span>esperanza_de_vida, <span class="at">label=</span>pais)</span>
+<span id="cb198-41"><a href="gráficos-con-ggplot2.html#cb198-41" aria-hidden="true" tabindex="-1"></a>      , <span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb198-42"><a href="gráficos-con-ggplot2.html#cb198-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Panel de países del 1952 al 2007&quot;</span></span>
+<span id="cb198-43"><a href="gráficos-con-ggplot2.html#cb198-43" aria-hidden="true" tabindex="-1"></a>      , <span class="at">x =</span> <span class="st">&quot;Logaritmo base 10 del PIB per cápita ($ americanos, ajustados según inflación)&quot;</span></span>
+<span id="cb198-44"><a href="gráficos-con-ggplot2.html#cb198-44" aria-hidden="true" tabindex="-1"></a>      , <span class="at">y =</span> <span class="st">&quot;Esperanza de vida (años)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb198-45"><a href="gráficos-con-ggplot2.html#cb198-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>anio)</span>
+<span id="cb198-46"><a href="gráficos-con-ggplot2.html#cb198-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-47"><a href="gráficos-con-ggplot2.html#cb198-47" aria-hidden="true" tabindex="-1"></a>  resultados[[<span class="st">&quot;summary&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">summary</span>(data[,<span class="fu">c</span>(<span class="st">&quot;anio&quot;</span>,<span class="st">&quot;continente&quot;</span>,<span class="st">&quot;esperanza_de_vida&quot;</span>,<span class="st">&quot;pib_per_capita&quot;</span>)])</span>
+<span id="cb198-48"><a href="gráficos-con-ggplot2.html#cb198-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb198-49"><a href="gráficos-con-ggplot2.html#cb198-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(resultados)</span>
+<span id="cb198-50"><a href="gráficos-con-ggplot2.html#cb198-50" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb198-51"><a href="gráficos-con-ggplot2.html#cb198-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-52"><a href="gráficos-con-ggplot2.html#cb198-52" aria-hidden="true" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> <span class="fu">describir</span>(paises_informe, colores_continente, etiquetas_paises)</span></code></pre></div>
+</div>
+<div id="descriptivo-boxplot" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Descriptivo boxplot</h3>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-93"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-93-1.png" alt="Boxplot PIB per càpita (Continente y año) - Escala Log10" width="1056" />
+<p class="caption">
+Figura 6.5: Boxplot PIB per càpita (Continente y año) - Escala Log10
+</p>
+</div>
+<p>Se observa como los valores del boxplot aumentan, es decir, el PIB cada vez es mayor. Aunque parece que el tamaño de las cajas (difernecia entre 1r y 3r cuantil), cada vez son mas anchas.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-94"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-94-1.png" alt="Boxplot Esperanza de vida (Continente y año)" width="1056" />
+<p class="caption">
+Figura 6.6: Boxplot Esperanza de vida (Continente y año)
+</p>
+</div>
+<p>A su vez, la esperanza de vida también aumenta. El eje central de la caja (la mediana) cada vez se sitúa más en al parte superior de la caja (cerca del 3r cuantil).</p>
+</div>
+<div id="gráfico-de-dispersión-de-países-2" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Gráfico de dispersión de países</h3>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-95"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-95-1.png" alt="Panel países (Fuente: Elaboración propia con datos de Gapminder)" width="1650" />
+<p class="caption">
+Figura 6.7: Panel países (Fuente: Elaboración propia con datos de Gapminder)
+</p>
+</div>
+<p>Vemos como España y Canadá siempre han estado en la parte superior y Etiopía en la parte inferior en PIB per cápita y esperanza de vida. En cambio, China ha evolucionado positivamente en estos dos aspectos, pasando de la parte inferior a la parte superior de la nube de países.</p>
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="modificacion-objetos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lectura-escritura.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/griu/meacp/edit/master/040-graf.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["meacp.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

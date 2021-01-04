@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mètodes Estadístics Aplicats a Ciències Polítiques</title>
+  <title>Capítol 5 Modificacion objetos | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
   <meta name="description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta property="og:title" content="Capítol 5 Modificacion objetos | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta name="twitter:title" content="Capítol 5 Modificacion objetos | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   
   <meta name="twitter:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="posta-a-punt.html"/>
+<link rel="prev" href="filtrado-de-objetos.html"/>
+<link rel="next" href="gráficos-con-ggplot2.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -322,40 +322,848 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Mètodes Estadístics Aplicats a Ciències Polítiques</h1>
-<p class="author"><em>Ferran Carrascosa Mallafrè</em></p>
-<p class="date"><em>2021-01-03</em></p>
+<div id="modificacion-objetos" class="section level1" number="5">
+<h1><span class="header-section-number">Capítol 5</span> Modificacion objetos</h1>
+<p>R ofrece algunas facilidades para modificar los valores de sus objetos.</p>
+<div id="filtro-y-asignación--" class="section level2 unnumbered">
+<h2>Filtro y asignación “<code>]&lt;-</code>”</h2>
+<p>Para modificar uno elemento de un vector, R te ofrece la posibilidad de aplicar un filtro con corchetes seguido de una asignación.</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="modificacion-objetos.html#cb163-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb163-2"><a href="modificacion-objetos.html#cb163-2" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb163-3"><a href="modificacion-objetos.html#cb163-3" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<pre><code>## [1] 10  2  3  4  5  6</code></pre>
+<p>También puedes modificar varios elementos a la vez asignando un vector de la misma longitud.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="modificacion-objetos.html#cb165-1" aria-hidden="true" tabindex="-1"></a>a[<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>)] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">300</span>,<span class="dv">500</span>)</span>
+<span id="cb165-2"><a href="modificacion-objetos.html#cb165-2" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<pre><code>## [1]  10   2 300   4 500   6</code></pre>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="modificacion-objetos.html#cb167-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>] <span class="ot">&lt;-</span> a[<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>] <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb167-2"><a href="modificacion-objetos.html#cb167-2" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<pre><code>## [1]  10   2 300   5 501   7</code></pre>
+<p>Puedes añadir elementos nuevos a un vector.</p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="modificacion-objetos.html#cb169-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">7</span>] <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb169-2"><a href="modificacion-objetos.html#cb169-2" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<pre><code>## [1]  10   2 300   5 501   7   7</code></pre>
+<p>También puedes modificar varios elementos asignando un único valor.</p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="modificacion-objetos.html#cb171-1" aria-hidden="true" tabindex="-1"></a>a[<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb171-2"><a href="modificacion-objetos.html#cb171-2" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<pre><code>## [1] 10  2  0  5  0  7  0</code></pre>
+<p>En data frames (y listas) se pueden añadir columnas (resp. elementos).</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="modificacion-objetos.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb173-2"><a href="modificacion-objetos.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datos)</span>
+<span id="cb173-3"><a href="modificacion-objetos.html#cb173-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb173-4"><a href="modificacion-objetos.html#cb173-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb173-5"><a href="modificacion-objetos.html#cb173-5" aria-hidden="true" tabindex="-1"></a>paises07<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(paises07)</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="modificacion-objetos.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:right;">
+anio
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+poblacion
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+<th style="text-align:right;">
+id
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Afganistán
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+43.828
+</td>
+<td style="text-align:right;">
+31889923
+</td>
+<td style="text-align:right;">
+974.5803
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Albania
+</td>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+76.423
+</td>
+<td style="text-align:right;">
+3600523
+</td>
+<td style="text-align:right;">
+5937.0295
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Argelia
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+72.301
+</td>
+<td style="text-align:right;">
+33333216
+</td>
+<td style="text-align:right;">
+6223.3675
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Angola
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+42.731
+</td>
+<td style="text-align:right;">
+12420476
+</td>
+<td style="text-align:right;">
+4797.2313
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Argentina
+</td>
+<td style="text-align:left;">
+Américas
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+75.320
+</td>
+<td style="text-align:right;">
+40301927
+</td>
+<td style="text-align:right;">
+12779.3796
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+81.235
+</td>
+<td style="text-align:right;">
+20434176
+</td>
+<td style="text-align:right;">
+34435.3674
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+</tbody>
+</table>
+<p>Modificar el nombre de una columna.</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="modificacion-objetos.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(paises07)[<span class="fu">colnames</span>(paises07)<span class="sc">==</span><span class="st">&quot;id&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;identificador&quot;</span></span>
+<span id="cb175-2"><a href="modificacion-objetos.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(paises07)</span></code></pre></div>
+<pre><code>## [1] &quot;pais&quot;              &quot;continente&quot;        &quot;anio&quot;             
+## [4] &quot;esperanza_de_vida&quot; &quot;poblacion&quot;         &quot;pib_per_capita&quot;   
+## [7] &quot;identificador&quot;</code></pre>
+<p>Eliminar las columnas (resp. elmentos) con el objeto <code>NULL</code>.</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="modificacion-objetos.html#cb177-1" aria-hidden="true" tabindex="-1"></a>paises07<span class="sc">$</span>identificador <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb177-2"><a href="modificacion-objetos.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(paises07)</span></code></pre></div>
+<pre><code>## [1] &quot;pais&quot;              &quot;continente&quot;        &quot;anio&quot;             
+## [4] &quot;esperanza_de_vida&quot; &quot;poblacion&quot;         &quot;pib_per_capita&quot;</code></pre>
 </div>
-<div id="introducció" class="section level1 unnumbered">
-<h1>Introducció</h1>
-<p>Aquest material está enfocat a</p>
-<hr>
-<p>Aquest llibre digital es troba sota la llicencia <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ca">Reconeixement-NoComercial-SenseObraDerivada 4.0 Internacional (CC BY-NC-ND 4.0)</a>.</p>
-<hr>
-<div id="estructura-del-llibre" class="section level2 unnumbered">
-<h2>Estructura del llibre</h2>
-<ul>
-<li>Computació en R</li>
-<li>Model de regressió simple i múltiple</li>
-<li>Regressió amb variable dependent dicotòmica</li>
-<li>Reducció de la dimensión o anàlisi de components principals i factorial</li>
-<li>Classificació i anàlisi d’agrupaments</li>
-<li>L’anàlisi de correspondències i altres mètodes d’anàlisi multivariada</li>
-</ul>
+<div id="información-faltante" class="section level2 unnumbered">
+<h2>Información faltante</h2>
+<p>Para marcar los valores faltantes en R se utiliza la combinación <code>NA</code> (acrónimo de <em>Not Available</em>). Este valor especial tiene su propia aritmética.</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="modificacion-objetos.html#cb179-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">4</span>)</span>
+<span id="cb179-2"><a href="modificacion-objetos.html#cb179-2" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<pre><code>## [1] NA  7</code></pre>
+<p>Es decir, cuando un valor es desconocido, la mejor opción es no evaluar la suma con otros valores. Las expresiones lógicas se comportan de un modo similar.</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="modificacion-objetos.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">8</span>, <span class="cn">NA</span>) <span class="sc">&gt;</span> <span class="dv">0</span></span></code></pre></div>
+<pre><code>## [1] TRUE   NA</code></pre>
+</div>
+<div id="seleccion-de-filas-con-valores-faltantes" class="section level2 unnumbered">
+<h2>Seleccion de filas con valores faltantes</h2>
+<p>Para seleccionar las filas con valores faltantes, entre otros usos, puedes utilizar la función <code>is.na()</code>.</p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="modificacion-objetos.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Introducimos algunos NA para el ejemplo</span></span>
+<span id="cb183-2"><a href="modificacion-objetos.html#cb183-2" aria-hidden="true" tabindex="-1"></a>paises07NA <span class="ot">&lt;-</span> paises07</span>
+<span id="cb183-3"><a href="modificacion-objetos.html#cb183-3" aria-hidden="true" tabindex="-1"></a>paises07NA<span class="sc">$</span>pib_per_capita[<span class="fu">c</span>(<span class="dv">34</span>,<span class="dv">70</span>,<span class="dv">108</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="modificacion-objetos.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(paises07NA))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:left;">
+anio
+</th>
+<th style="text-align:left;">
+esperanza_de_vida
+</th>
+<th style="text-align:left;">
+poblacion
+</th>
+<th style="text-align:left;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Afganistán: 1
+</td>
+<td style="text-align:left;">
+África :52
+</td>
+<td style="text-align:left;">
+Min. :2007
+</td>
+<td style="text-align:left;">
+Min. :39.61
+</td>
+<td style="text-align:left;">
+Min. :1.996e+05
+</td>
+<td style="text-align:left;">
+Min. : 277.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Albania : 1
+</td>
+<td style="text-align:left;">
+Américas:25
+</td>
+<td style="text-align:left;">
+1st Qu.:2007
+</td>
+<td style="text-align:left;">
+1st Qu.:57.16
+</td>
+<td style="text-align:left;">
+1st Qu.:4.508e+06
+</td>
+<td style="text-align:left;">
+1st Qu.: 1708.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Argelia : 1
+</td>
+<td style="text-align:left;">
+Asia :33
+</td>
+<td style="text-align:left;">
+Median :2007
+</td>
+<td style="text-align:left;">
+Median :71.94
+</td>
+<td style="text-align:left;">
+Median :1.052e+07
+</td>
+<td style="text-align:left;">
+Median : 6223.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Angola : 1
+</td>
+<td style="text-align:left;">
+Europa :30
+</td>
+<td style="text-align:left;">
+Mean :2007
+</td>
+<td style="text-align:left;">
+Mean :67.01
+</td>
+<td style="text-align:left;">
+Mean :4.402e+07
+</td>
+<td style="text-align:left;">
+Mean :11750.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Argentina : 1
+</td>
+<td style="text-align:left;">
+Oceanía : 2
+</td>
+<td style="text-align:left;">
+3rd Qu.:2007
+</td>
+<td style="text-align:left;">
+3rd Qu.:76.41
+</td>
+<td style="text-align:left;">
+3rd Qu.:3.121e+07
+</td>
+<td style="text-align:left;">
+3rd Qu.:18008.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Australia : 1
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Max. :2007
+</td>
+<td style="text-align:left;">
+Max. :82.60
+</td>
+<td style="text-align:left;">
+Max. :1.319e+09
+</td>
+<td style="text-align:left;">
+Max. :49357.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+(Other) :136
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA’s :3
+</td>
+</tr>
+</tbody>
+</table>
+<p>Para seleccionar los registros con missing en una columna.</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="modificacion-objetos.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07NA[<span class="fu">is.na</span>(paises07NA<span class="sc">$</span>pib_per_capita),])</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:right;">
+anio
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+poblacion
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+34
+</td>
+<td style="text-align:left;">
+República Checa
+</td>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+76.486
+</td>
+<td style="text-align:right;">
+10228744
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+70
+</td>
+<td style="text-align:left;">
+Corea, Rep. Dem.
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+67.297
+</td>
+<td style="text-align:right;">
+23301725
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+108
+</td>
+<td style="text-align:left;">
+Ruanda
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+46.242
+</td>
+<td style="text-align:right;">
+8860588
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="filtros-en-variables-con-valores-faltantes" class="section level2 unnumbered">
+<h2>Filtros en variables con valores faltantes</h2>
+<p>La presencia de NA en una variable dificulta la definición de condiciones lógicas. Por ejemplo, si seleccionamos países con PIB per cápita inferior a 500 dólares se obtiene el siguiente resultado incorrecto:</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="modificacion-objetos.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07NA[paises07NA<span class="sc">$</span>pib_per_capita<span class="sc">&lt;</span><span class="dv">500</span>,])</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:right;">
+anio
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+poblacion
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+Burundi
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+49.580
+</td>
+<td style="text-align:right;">
+8390505
+</td>
+<td style="text-align:right;">
+430.0707
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28
+</td>
+<td style="text-align:left;">
+República Democrática del Congo
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+46.462
+</td>
+<td style="text-align:right;">
+64606759
+</td>
+<td style="text-align:right;">
+277.5519
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA.1
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+75
+</td>
+<td style="text-align:left;">
+Liberia
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+45.678
+</td>
+<td style="text-align:right;">
+3193942
+</td>
+<td style="text-align:right;">
+414.5073
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NA.2
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+142
+</td>
+<td style="text-align:left;">
+Zimbabue
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+43.487
+</td>
+<td style="text-align:right;">
+12311143
+</td>
+<td style="text-align:right;">
+469.7093
+</td>
+</tr>
+</tbody>
+</table>
+<p>Esta problemática se puede resolver mediante la función <code>which()</code>.</p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="modificacion-objetos.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07NA[<span class="fu">which</span>(paises07NA<span class="sc">$</span>pib_per_capita<span class="sc">&lt;</span><span class="dv">500</span>),])</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:right;">
+anio
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+poblacion
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+Burundi
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+49.580
+</td>
+<td style="text-align:right;">
+8390505
+</td>
+<td style="text-align:right;">
+430.0707
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28
+</td>
+<td style="text-align:left;">
+República Democrática del Congo
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+46.462
+</td>
+<td style="text-align:right;">
+64606759
+</td>
+<td style="text-align:right;">
+277.5519
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+75
+</td>
+<td style="text-align:left;">
+Liberia
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+45.678
+</td>
+<td style="text-align:right;">
+3193942
+</td>
+<td style="text-align:right;">
+414.5073
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+142
+</td>
+<td style="text-align:left;">
+Zimbabue
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+43.487
+</td>
+<td style="text-align:right;">
+12311143
+</td>
+<td style="text-align:right;">
+469.7093
+</td>
+</tr>
+</tbody>
+</table>
+<p>La función <code>which()</code> devuelve la posición de los valores TRUE dentro de un vector.</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="modificacion-objetos.html#cb188-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="cn">FALSE</span>, <span class="cn">NA</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">NA</span> )</span>
+<span id="cb188-2"><a href="modificacion-objetos.html#cb188-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span>(a)</span></code></pre></div>
+<pre><code>## [1] 4 6</code></pre>
+<blockquote>
+<p>Utiliza which para “protegerte” de la presencia de valores faltantes en la definición de filtros.</p>
+</blockquote>
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="posta-a-punt.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="filtrado-de-objetos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gráficos-con-ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -377,7 +1185,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/griu/meacp/edit/master/index.Rmd",
+"link": "https://github.com/griu/meacp/edit/master/032-modificacion.Rmd",
 "text": "Edit"
 },
 "history": {

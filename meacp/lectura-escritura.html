@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mètodes Estadístics Aplicats a Ciències Polítiques</title>
+  <title>Capítol 7 Lectura escritura | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
   <meta name="description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta property="og:title" content="Capítol 7 Lectura escritura | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta name="twitter:title" content="Capítol 7 Lectura escritura | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   
   <meta name="twitter:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="posta-a-punt.html"/>
+<link rel="prev" href="gráficos-con-ggplot2.html"/>
+<link rel="next" href="fuentes-de-dades.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -322,40 +322,653 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Mètodes Estadístics Aplicats a Ciències Polítiques</h1>
-<p class="author"><em>Ferran Carrascosa Mallafrè</em></p>
-<p class="date"><em>2021-01-03</em></p>
-</div>
-<div id="introducció" class="section level1 unnumbered">
-<h1>Introducció</h1>
-<p>Aquest material está enfocat a</p>
-<hr>
-<p>Aquest llibre digital es troba sota la llicencia <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ca">Reconeixement-NoComercial-SenseObraDerivada 4.0 Internacional (CC BY-NC-ND 4.0)</a>.</p>
-<hr>
-<div id="estructura-del-llibre" class="section level2 unnumbered">
-<h2>Estructura del llibre</h2>
+<div id="lectura-escritura" class="section level1" number="7">
+<h1><span class="header-section-number">Capítol 7</span> Lectura escritura</h1>
+<p>A continuación, se presentan las funciones para la lectura/escritura de datos, cruce y construcción de tablas resumen.</p>
+<div id="importar-y-exportar-datos" class="section level3" number="7.0.1">
+<h3><span class="header-section-number">7.0.1</span> IMPORTAR Y EXPORTAR DATOS</h3>
+<p>RStudio aporta facilidades para la importación de datos a través del menú: <code>File -&gt; Import Data set -&gt; From Text...</code></p>
+<div id="lectura-texto-con-separador" class="section level4" number="7.0.1.1">
+<h4><span class="header-section-number">7.0.1.1</span> LECTURA TEXTO CON SEPARADOR</h4>
+<p>Para leer el siguiente fichero de texto:</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="lectura-escritura.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb199-2"><a href="lectura-escritura.html#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pander)</span>
+<span id="cb199-3"><a href="lectura-escritura.html#cb199-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb199-4"><a href="lectura-escritura.html#cb199-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb199-5"><a href="lectura-escritura.html#cb199-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="fu">readLines</span>(<span class="st">&quot;www/data/mtcars.csv&quot;</span>, <span class="at">n =</span> <span class="dv">6</span>), <span class="at">collapse=</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<pre><code>## &quot;mpg&quot;,&quot;cyl&quot;,&quot;disp&quot;,&quot;hp&quot;,&quot;drat&quot;,&quot;wt&quot;,&quot;qsec&quot;,&quot;vs&quot;,&quot;am&quot;,&quot;gear&quot;,&quot;carb&quot;
+## 21,6,160,110,3.9,2.62,16.46,0,1,4,4
+## 21,6,160,110,3.9,2.875,17.02,0,1,4,4
+## 22.8,4,108,93,3.85,2.32,18.61,1,1,4,1
+## 21.4,6,258,110,3.08,3.215,19.44,1,0,3,1
+## 18.7,8,360,175,3.15,3.44,17.02,0,0,3,2</code></pre>
+<p>Dado que se trata de un fichero con un carácter separado, la función genérica para teste tipo de ficheros es <code>read.table()</code>.</p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="lectura-escritura.html#cb201-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;www/data/mtcars.csv&quot;</span>, <span class="at">dec=</span><span class="st">&quot;.&quot;</span>,<span class="at">sep=</span><span class="st">&quot;,&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Los parámetros especificados son:</p>
 <ul>
-<li>Computació en R</li>
-<li>Model de regressió simple i múltiple</li>
-<li>Regressió amb variable dependent dicotòmica</li>
-<li>Reducció de la dimensión o anàlisi de components principals i factorial</li>
-<li>Classificació i anàlisi d’agrupaments</li>
-<li>L’anàlisi de correspondències i altres mètodes d’anàlisi multivariada</li>
+<li><code>dec</code>: El separador decimal. En Europa se acostumbra a utilizar la coma “,”</li>
+<li><code>sep</code>: El separador de columnas. Es habitual usar también “;” y “\t” cuando es un tabulador.</li>
+<li><code>header</code>: Indica si la primera fila contiene el nombre de las variables o no.</li>
 </ul>
+<p>También es común el uso de <code>fileEncoding="Latin1"</code> cuando el fichero se ha creado con Windows y utiliza caracteres especiales de texto (tildes, …).</p>
+<p>Dada la estructura del fichero, con <code>read.csv()</code> la carga es más simple.</p>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="lectura-escritura.html#cb202-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;www/data/mtcars.csv&quot;</span>)</span></code></pre></div>
+<p>Cuando el csv es europeo, “,” decimal y “;” como separador, se utiliza <code>read.csv2()</code>.</p>
+<p>Es una buena práctica verificar su carga con <code>dim()</code>, <code>head()</code> y <code>summary()</code>.</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="lectura-escritura.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mtcars)</span></code></pre></div>
+<pre><code>## [1] 32 11</code></pre>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="lectura-escritura.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(mtcars))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+mpg
+</th>
+<th style="text-align:right;">
+cyl
+</th>
+<th style="text-align:right;">
+disp
+</th>
+<th style="text-align:right;">
+hp
+</th>
+<th style="text-align:right;">
+drat
+</th>
+<th style="text-align:right;">
+wt
+</th>
+<th style="text-align:right;">
+qsec
+</th>
+<th style="text-align:right;">
+vs
+</th>
+<th style="text-align:right;">
+am
+</th>
+<th style="text-align:right;">
+gear
+</th>
+<th style="text-align:right;">
+carb
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.90
+</td>
+<td style="text-align:right;">
+2.620
+</td>
+<td style="text-align:right;">
+16.46
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+21.0
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+160
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.90
+</td>
+<td style="text-align:right;">
+2.875
+</td>
+<td style="text-align:right;">
+17.02
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+22.8
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+108
+</td>
+<td style="text-align:right;">
+93
+</td>
+<td style="text-align:right;">
+3.85
+</td>
+<td style="text-align:right;">
+2.320
+</td>
+<td style="text-align:right;">
+18.61
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+21.4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+258
+</td>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+3.08
+</td>
+<td style="text-align:right;">
+3.215
+</td>
+<td style="text-align:right;">
+19.44
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+18.7
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+360
+</td>
+<td style="text-align:right;">
+175
+</td>
+<td style="text-align:right;">
+3.15
+</td>
+<td style="text-align:right;">
+3.440
+</td>
+<td style="text-align:right;">
+17.02
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+18.1
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+225
+</td>
+<td style="text-align:right;">
+105
+</td>
+<td style="text-align:right;">
+2.76
+</td>
+<td style="text-align:right;">
+3.460
+</td>
+<td style="text-align:right;">
+20.22
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="lectura-escritura.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(mtcars))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+mpg
+</th>
+<th style="text-align:left;">
+cyl
+</th>
+<th style="text-align:left;">
+disp
+</th>
+<th style="text-align:left;">
+hp
+</th>
+<th style="text-align:left;">
+drat
+</th>
+<th style="text-align:left;">
+wt
+</th>
+<th style="text-align:left;">
+qsec
+</th>
+<th style="text-align:left;">
+vs
+</th>
+<th style="text-align:left;">
+am
+</th>
+<th style="text-align:left;">
+gear
+</th>
+<th style="text-align:left;">
+carb
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Min. :10.40
+</td>
+<td style="text-align:left;">
+Min. :4.000
+</td>
+<td style="text-align:left;">
+Min. : 71.1
+</td>
+<td style="text-align:left;">
+Min. : 52.0
+</td>
+<td style="text-align:left;">
+Min. :2.760
+</td>
+<td style="text-align:left;">
+Min. :1.513
+</td>
+<td style="text-align:left;">
+Min. :14.50
+</td>
+<td style="text-align:left;">
+Min. :0.0000
+</td>
+<td style="text-align:left;">
+Min. :0.0000
+</td>
+<td style="text-align:left;">
+Min. :3.000
+</td>
+<td style="text-align:left;">
+Min. :1.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+1st Qu.:15.43
+</td>
+<td style="text-align:left;">
+1st Qu.:4.000
+</td>
+<td style="text-align:left;">
+1st Qu.:120.8
+</td>
+<td style="text-align:left;">
+1st Qu.: 96.5
+</td>
+<td style="text-align:left;">
+1st Qu.:3.080
+</td>
+<td style="text-align:left;">
+1st Qu.:2.581
+</td>
+<td style="text-align:left;">
+1st Qu.:16.89
+</td>
+<td style="text-align:left;">
+1st Qu.:0.0000
+</td>
+<td style="text-align:left;">
+1st Qu.:0.0000
+</td>
+<td style="text-align:left;">
+1st Qu.:3.000
+</td>
+<td style="text-align:left;">
+1st Qu.:2.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Median :19.20
+</td>
+<td style="text-align:left;">
+Median :6.000
+</td>
+<td style="text-align:left;">
+Median :196.3
+</td>
+<td style="text-align:left;">
+Median :123.0
+</td>
+<td style="text-align:left;">
+Median :3.695
+</td>
+<td style="text-align:left;">
+Median :3.325
+</td>
+<td style="text-align:left;">
+Median :17.71
+</td>
+<td style="text-align:left;">
+Median :0.0000
+</td>
+<td style="text-align:left;">
+Median :0.0000
+</td>
+<td style="text-align:left;">
+Median :4.000
+</td>
+<td style="text-align:left;">
+Median :2.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mean :20.09
+</td>
+<td style="text-align:left;">
+Mean :6.188
+</td>
+<td style="text-align:left;">
+Mean :230.7
+</td>
+<td style="text-align:left;">
+Mean :146.7
+</td>
+<td style="text-align:left;">
+Mean :3.597
+</td>
+<td style="text-align:left;">
+Mean :3.217
+</td>
+<td style="text-align:left;">
+Mean :17.85
+</td>
+<td style="text-align:left;">
+Mean :0.4375
+</td>
+<td style="text-align:left;">
+Mean :0.4062
+</td>
+<td style="text-align:left;">
+Mean :3.688
+</td>
+<td style="text-align:left;">
+Mean :2.812
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3rd Qu.:22.80
+</td>
+<td style="text-align:left;">
+3rd Qu.:8.000
+</td>
+<td style="text-align:left;">
+3rd Qu.:326.0
+</td>
+<td style="text-align:left;">
+3rd Qu.:180.0
+</td>
+<td style="text-align:left;">
+3rd Qu.:3.920
+</td>
+<td style="text-align:left;">
+3rd Qu.:3.610
+</td>
+<td style="text-align:left;">
+3rd Qu.:18.90
+</td>
+<td style="text-align:left;">
+3rd Qu.:1.0000
+</td>
+<td style="text-align:left;">
+3rd Qu.:1.0000
+</td>
+<td style="text-align:left;">
+3rd Qu.:4.000
+</td>
+<td style="text-align:left;">
+3rd Qu.:4.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Max. :33.90
+</td>
+<td style="text-align:left;">
+Max. :8.000
+</td>
+<td style="text-align:left;">
+Max. :472.0
+</td>
+<td style="text-align:left;">
+Max. :335.0
+</td>
+<td style="text-align:left;">
+Max. :4.930
+</td>
+<td style="text-align:left;">
+Max. :5.424
+</td>
+<td style="text-align:left;">
+Max. :22.90
+</td>
+<td style="text-align:left;">
+Max. :1.0000
+</td>
+<td style="text-align:left;">
+Max. :1.0000
+</td>
+<td style="text-align:left;">
+Max. :5.000
+</td>
+<td style="text-align:left;">
+Max. :8.000
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="escritura-texto-con-separador" class="section level4" number="7.0.1.2">
+<h4><span class="header-section-number">7.0.1.2</span> ESCRITURA TEXTO CON SEPARADOR</h4>
+<p>Para la escritura, puedes utilizar sus equivalentes: <code>write.table()</code>, <code>write.csv()</code>, <code>write.csv2()</code>. Cabe destacar algunas pequeñas variaciones.</p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="lectura-escritura.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv2</span>(mtcars, <span class="at">file=</span><span class="st">&quot;www/temp/mtcars2.csv&quot;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>, <span class="at">na=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<ul>
+<li><code>row.names</code>: Si no se especifica, por defecto, se inserta el número de fila.</li>
+<li><code>na</code>: Si no se especifica, introduce el texto <code>NA</code>.</li>
+</ul>
+<p>Observa como el nuevo csv ahora tiene el formato de csv europeo.</p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="lectura-escritura.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="fu">readLines</span>(<span class="st">&quot;www/temp/mtcars2.csv&quot;</span>, <span class="at">n =</span> <span class="dv">6</span>), <span class="at">collapse=</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<pre><code>## &quot;mpg&quot;;&quot;cyl&quot;;&quot;disp&quot;;&quot;hp&quot;;&quot;drat&quot;;&quot;wt&quot;;&quot;qsec&quot;;&quot;vs&quot;;&quot;am&quot;;&quot;gear&quot;;&quot;carb&quot;
+## 21;6;160;110;3,9;2,62;16,46;0;1;4;4
+## 21;6;160;110;3,9;2,875;17,02;0;1;4;4
+## 22,8;4;108;93;3,85;2,32;18,61;1;1;4;1
+## 21,4;6;258;110;3,08;3,215;19,44;1;0;3;1
+## 18,7;8;360;175;3,15;3,44;17,02;0;0;3;2</code></pre>
+</div>
+<div id="texto-con-ancho-fijo" class="section level4" number="7.0.1.3">
+<h4><span class="header-section-number">7.0.1.3</span> TEXTO CON ANCHO FIJO</h4>
+<p>Veamos un ejemplo de fichero de ancho fijo:</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="lectura-escritura.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="fu">readLines</span>(<span class="st">&quot;www/data/fwf-sample.txt&quot;</span>, <span class="at">n =</span> <span class="dv">6</span>), <span class="at">collapse=</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<pre><code>## John Smith          WA        418-Y11-4111
+## Mary Hartford       CA        319-Z19-4341
+## Evan Nolan          IL        219-532-c301</code></pre>
+<p>Para leer texto de ancho fijo, se utiliza <code>read.fwf()</code>.</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="lectura-escritura.html#cb212-1" aria-hidden="true" tabindex="-1"></a>fwf_sample <span class="ot">&lt;-</span> <span class="fu">read.fwf</span>(<span class="st">&quot;www/data/fwf-sample.txt&quot;</span>, <span class="at">widths=</span><span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">10</span>,<span class="dv">12</span>)</span>
+<span id="cb212-2"><a href="lectura-escritura.html#cb212-2" aria-hidden="true" tabindex="-1"></a>                     , <span class="at">col.names=</span><span class="fu">c</span>(<span class="st">&quot;name&quot;</span>, <span class="st">&quot;state&quot;</span>, <span class="st">&quot;ssn&quot;</span>))</span></code></pre></div>
+<ul>
+<li><code>widths</code>: Son los anchos de cada variable.</li>
+<li><code>col.names</code>: Nombres de las variables.</li>
+</ul>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="lectura-escritura.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(fwf_sample)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+name
+</th>
+<th style="text-align:left;">
+state
+</th>
+<th style="text-align:left;">
+ssn
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+John Smith
+</td>
+<td style="text-align:left;">
+WA
+</td>
+<td style="text-align:left;">
+418-Y11-4111
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mary Hartford
+</td>
+<td style="text-align:left;">
+CA
+</td>
+<td style="text-align:left;">
+319-Z19-4341
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Evan Nolan
+</td>
+<td style="text-align:left;">
+IL
+</td>
+<td style="text-align:left;">
+219-532-c301
+</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="posta-a-punt.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="gráficos-con-ggplot2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="fuentes-de-dades.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -377,7 +990,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/griu/meacp/edit/master/index.Rmd",
+"link": "https://github.com/griu/meacp/edit/master/050-data.Rmd",
 "text": "Edit"
 },
 "history": {

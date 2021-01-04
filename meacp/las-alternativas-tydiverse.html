@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mètodes Estadístics Aplicats a Ciències Polítiques</title>
+  <title>Capítol 11 Las alternativas tydiverse | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
   <meta name="description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta property="og:title" content="Capítol 11 Las alternativas tydiverse | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta name="twitter:title" content="Capítol 11 Las alternativas tydiverse | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   
   <meta name="twitter:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="posta-a-punt.html"/>
+<link rel="prev" href="resumenes-de-agregados.html"/>
+<link rel="next" href="regressió-lineal.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -322,28 +322,409 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Mètodes Estadístics Aplicats a Ciències Polítiques</h1>
-<p class="author"><em>Ferran Carrascosa Mallafrè</em></p>
-<p class="date"><em>2021-01-03</em></p>
-</div>
-<div id="introducció" class="section level1 unnumbered">
-<h1>Introducció</h1>
-<p>Aquest material está enfocat a</p>
-<hr>
-<p>Aquest llibre digital es troba sota la llicencia <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ca">Reconeixement-NoComercial-SenseObraDerivada 4.0 Internacional (CC BY-NC-ND 4.0)</a>.</p>
-<hr>
-<div id="estructura-del-llibre" class="section level2 unnumbered">
-<h2>Estructura del llibre</h2>
+<div id="las-alternativas-tydiverse" class="section level1" number="11">
+<h1><span class="header-section-number">Capítol 11</span> Las alternativas tydiverse</h1>
+<p>El universo de <a href="https://www.tidyverse.org/">Tydiverse</a> consiste en una colección de packages de R orientados al Data Science. Se recomienda la consulta del libro online <a href="https://es.r4ds.hadley.nz/index.html">R para Ciencia de Datos</a>.</p>
+<p>El package <em>dplyr</em>, al igual que <em>ggplot2</em>, está desarrollado por Hadley Wickham. Este paquete, supone un cambio de filosofía en la forma de trabajar con los datos y se está transformando en un nuevo estándar en R.</p>
+<div id="dplyr-arrange-filter-select" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Dplyr: arrange, filter, select</h2>
 <ul>
-<li>Computació en R</li>
-<li>Model de regressió simple i múltiple</li>
-<li>Regressió amb variable dependent dicotòmica</li>
-<li>Reducció de la dimensión o anàlisi de components principals i factorial</li>
-<li>Classificació i anàlisi d’agrupaments</li>
-<li>L’anàlisi de correspondències i altres mètodes d’anàlisi multivariada</li>
+<li><code>arange</code>: Ordena los registros de un data frame.</li>
+<li><code>filter</code>: Filtra a partir de un conjunto condiciones lógicas.</li>
+<li><code>select</code>: Selecciona las variables.</li>
 </ul>
+<blockquote>
+<p>Paises asiaticos con PIB per cápita inferior a 1000 $ en 2007.</p>
+</blockquote>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="las-alternativas-tydiverse.html#cb275-1" aria-hidden="true" tabindex="-1"></a>pais07dplyr <span class="ot">&lt;-</span> paises07 <span class="sc">%&gt;%</span> </span>
+<span id="cb275-2"><a href="las-alternativas-tydiverse.html#cb275-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(esperanza_de_vida)) <span class="sc">%&gt;%</span> </span>
+<span id="cb275-3"><a href="las-alternativas-tydiverse.html#cb275-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continente<span class="sc">==</span><span class="st">&#39;Asia&#39;</span> <span class="sc">&amp;</span> pib_per_capita <span class="sc">&lt;</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb275-4"><a href="las-alternativas-tydiverse.html#cb275-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(pais,esperanza_de_vida,pib_per_capita)</span>
+<span id="cb275-5"><a href="las-alternativas-tydiverse.html#cb275-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb275-6"><a href="las-alternativas-tydiverse.html#cb275-6" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pais07dplyr)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Myanmar
+</td>
+<td style="text-align:right;">
+62.069
+</td>
+<td style="text-align:right;">
+944.0000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Afganistán
+</td>
+<td style="text-align:right;">
+43.828
+</td>
+<td style="text-align:right;">
+974.5803
+</td>
+</tr>
+</tbody>
+</table>
+<p>Las 3 comparten el hecho que no necesitan de comillas para referirse a las variables. También utilizan el operador <code>%&gt;%</code> llamado <em>pipe</em>. Éste sustituye el parámetro de entrada de datos. De esta forma, permite escribir las operaciones de izquierda a derecha facilitando así su lectura.</p>
+</div>
+<div id="dplyr-mutate-group_by-summarise" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Dplyr: mutate, group_by, summarise</h2>
+<ul>
+<li><code>mutate</code>: Crea o modifica las variables del data frame.</li>
+<li><code>group_by</code>: Especifica una o varias variables de agrupación.</li>
+<li><code>summarise</code>: define los agregados de las variables originales.</li>
+</ul>
+<blockquote>
+<p>Esperanza de vida y PIB per cápita medio por continente y año.</p>
+</blockquote>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="las-alternativas-tydiverse.html#cb276-1" aria-hidden="true" tabindex="-1"></a>continentes_anio <span class="ot">&lt;-</span> paises <span class="sc">%&gt;%</span> </span>
+<span id="cb276-2"><a href="las-alternativas-tydiverse.html#cb276-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(continente,anio) <span class="sc">%&gt;%</span> </span>
+<span id="cb276-3"><a href="las-alternativas-tydiverse.html#cb276-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">esperanza_de_vida_total =</span> esperanza_de_vida <span class="sc">*</span> poblacion</span>
+<span id="cb276-4"><a href="las-alternativas-tydiverse.html#cb276-4" aria-hidden="true" tabindex="-1"></a>         , <span class="at">pib_total =</span> pib_per_capita <span class="sc">*</span> poblacion) <span class="sc">%&gt;%</span> </span>
+<span id="cb276-5"><a href="las-alternativas-tydiverse.html#cb276-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continente,anio) <span class="sc">%&gt;%</span> </span>
+<span id="cb276-6"><a href="las-alternativas-tydiverse.html#cb276-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">n_paises=</span><span class="fu">n</span>()</span>
+<span id="cb276-7"><a href="las-alternativas-tydiverse.html#cb276-7" aria-hidden="true" tabindex="-1"></a>            , <span class="at">esperanza_de_vida =</span> <span class="fu">sum</span>(esperanza_de_vida_total ) <span class="sc">/</span></span>
+<span id="cb276-8"><a href="las-alternativas-tydiverse.html#cb276-8" aria-hidden="true" tabindex="-1"></a>                <span class="fu">sum</span>(poblacion )</span>
+<span id="cb276-9"><a href="las-alternativas-tydiverse.html#cb276-9" aria-hidden="true" tabindex="-1"></a>            , <span class="at">pib_per_capita =</span> <span class="fu">sum</span>(pib_total) <span class="sc">/</span> </span>
+<span id="cb276-10"><a href="las-alternativas-tydiverse.html#cb276-10" aria-hidden="true" tabindex="-1"></a>              <span class="fu">sum</span>(poblacion)</span>
+<span id="cb276-11"><a href="las-alternativas-tydiverse.html#cb276-11" aria-hidden="true" tabindex="-1"></a>            , <span class="at">poblacion =</span> <span class="fu">sum</span>(poblacion))</span>
+<span id="cb276-12"><a href="las-alternativas-tydiverse.html#cb276-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb276-13"><a href="las-alternativas-tydiverse.html#cb276-13" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(continentes_anio <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">10</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:right;">
+anio
+</th>
+<th style="text-align:right;">
+n_paises
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+<th style="text-align:right;">
+poblacion
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+1952
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+38.79973
+</td>
+<td style="text-align:right;">
+1311.221
+</td>
+<td style="text-align:right;">
+237640501
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+1957
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+40.94031
+</td>
+<td style="text-align:right;">
+1444.952
+</td>
+<td style="text-align:right;">
+264837738
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+1962
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+43.09925
+</td>
+<td style="text-align:right;">
+1540.599
+</td>
+<td style="text-align:right;">
+296516865
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+1967
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+45.17721
+</td>
+<td style="text-align:right;">
+1774.847
+</td>
+<td style="text-align:right;">
+335289489
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+1972
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+47.21229
+</td>
+<td style="text-align:right;">
+2063.171
+</td>
+<td style="text-align:right;">
+379879541
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+49.20883
+</td>
+<td style="text-align:right;">
+2244.799
+</td>
+<td style="text-align:right;">
+433061021
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+51.01744
+</td>
+<td style="text-align:right;">
+2295.192
+</td>
+<td style="text-align:right;">
+499348587
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+1987
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+52.82479
+</td>
+<td style="text-align:right;">
+2180.764
+</td>
+<td style="text-align:right;">
+574834110
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+1992
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+53.37292
+</td>
+<td style="text-align:right;">
+2071.615
+</td>
+<td style="text-align:right;">
+659081517
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+1997
+</td>
+<td style="text-align:right;">
+52
+</td>
+<td style="text-align:right;">
+53.28327
+</td>
+<td style="text-align:right;">
+2098.865
+</td>
+<td style="text-align:right;">
+743832984
+</td>
+</tr>
+</tbody>
+</table>
+<p>Para la evolución de los continentes en ggplot2, es útil el <a href="https://ggplot2.tidyverse.org/reference/geom_path.html.">geom_path()</a></p>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="las-alternativas-tydiverse.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(continentes_anio, <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita</span>
+<span id="cb277-2"><a href="las-alternativas-tydiverse.html#cb277-2" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">y=</span>esperanza_de_vida</span>
+<span id="cb277-3"><a href="las-alternativas-tydiverse.html#cb277-3" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">color =</span>continente)) <span class="sc">+</span></span>
+<span id="cb277-4"><a href="las-alternativas-tydiverse.html#cb277-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>() <span class="sc">+</span></span>
+<span id="cb277-5"><a href="las-alternativas-tydiverse.html#cb277-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb277-6"><a href="las-alternativas-tydiverse.html#cb277-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>anio), <span class="at">size=</span><span class="dv">2</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb277-7"><a href="las-alternativas-tydiverse.html#cb277-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Evolución continentes (ponderado)&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-150"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-150-1.png" alt="Fuente: Elaboración propia con datos de Gapminder" width="672" />
+<p class="caption">
+Figura 11.1: Fuente: Elaboración propia con datos de Gapminder
+</p>
+</div>
+</div>
+<div id="actividad-guiada-1.4." class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> Actividad guiada 1.4.</h2>
+<p>Vamos a incorporar los gráficos de evolución de los continentes en el informe teniendo en cuenta los siguientes cambios:</p>
+<ul>
+<li>Recodifica Oceanía como Asia y Modifica los colores de los continentes.</li>
+<li>Utiliza la paleta de colores de la actividad guiada 1.3.</li>
+</ul>
+<p>Observa:</p>
+<ul>
+<li>Se ha utilizado dplyr: arrange,mutate,group_by y summarize.</li>
+<li>Se ha utilizado geom_path.</li>
+</ul>
+</div>
+<div id="act14" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> Actividad guiada 1.4</h2>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="las-alternativas-tydiverse.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb278-2"><a href="las-alternativas-tydiverse.html#cb278-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datos)</span>
+<span id="cb278-3"><a href="las-alternativas-tydiverse.html#cb278-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb278-4"><a href="las-alternativas-tydiverse.html#cb278-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb278-5"><a href="las-alternativas-tydiverse.html#cb278-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb278-6"><a href="las-alternativas-tydiverse.html#cb278-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb278-7"><a href="las-alternativas-tydiverse.html#cb278-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb278-8"><a href="las-alternativas-tydiverse.html#cb278-8" aria-hidden="true" tabindex="-1"></a>paises_informe <span class="ot">&lt;-</span> paises</span>
+<span id="cb278-9"><a href="las-alternativas-tydiverse.html#cb278-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Recodifica Oceanía por Asia</span></span>
+<span id="cb278-10"><a href="las-alternativas-tydiverse.html#cb278-10" aria-hidden="true" tabindex="-1"></a>paises_informe<span class="sc">$</span>continente[paises_informe<span class="sc">$</span>continente<span class="sc">==</span><span class="st">&quot;Oceanía&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Asia&quot;</span></span>
+<span id="cb278-11"><a href="las-alternativas-tydiverse.html#cb278-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Elimina Oceanía de los levels</span></span>
+<span id="cb278-12"><a href="las-alternativas-tydiverse.html#cb278-12" aria-hidden="true" tabindex="-1"></a>paises_informe<span class="sc">$</span>continente <span class="ot">&lt;-</span> <span class="fu">factor</span>(paises_informe<span class="sc">$</span>continente)</span>
+<span id="cb278-13"><a href="las-alternativas-tydiverse.html#cb278-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Paleta de colores</span></span>
+<span id="cb278-14"><a href="las-alternativas-tydiverse.html#cb278-14" aria-hidden="true" tabindex="-1"></a>colores_continente <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;green&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>) </span>
+<span id="cb278-15"><a href="las-alternativas-tydiverse.html#cb278-15" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(colores_continente) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;África&quot;</span>, <span class="st">&quot;Américas&quot;</span>, <span class="st">&quot;Asia&quot;</span>, <span class="st">&quot;Europa&quot;</span>)</span>
+<span id="cb278-16"><a href="las-alternativas-tydiverse.html#cb278-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Etiquetas</span></span>
+<span id="cb278-17"><a href="las-alternativas-tydiverse.html#cb278-17" aria-hidden="true" tabindex="-1"></a>etiquetas_paises <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;España&quot;</span>,<span class="st">&quot;China&quot;</span>,<span class="st">&quot;Etiopía&quot;</span>,<span class="st">&quot;Canadá&quot;</span>)</span>
+<span id="cb278-18"><a href="las-alternativas-tydiverse.html#cb278-18" aria-hidden="true" tabindex="-1"></a><span class="co"># funcion describir</span></span>
+<span id="cb278-19"><a href="las-alternativas-tydiverse.html#cb278-19" aria-hidden="true" tabindex="-1"></a>describir <span class="ot">&lt;-</span> <span class="cf">function</span>(data, colores, etiquetas) {</span>
+<span id="cb278-20"><a href="las-alternativas-tydiverse.html#cb278-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb278-21"><a href="las-alternativas-tydiverse.html#cb278-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filtra paises con etiqueta</span></span>
+<span id="cb278-22"><a href="las-alternativas-tydiverse.html#cb278-22" aria-hidden="true" tabindex="-1"></a>  data_etiquetas <span class="ot">&lt;-</span> data[data<span class="sc">$</span>pais <span class="sc">%in%</span> etiquetas, ]</span>
+<span id="cb278-23"><a href="las-alternativas-tydiverse.html#cb278-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb278-24"><a href="las-alternativas-tydiverse.html#cb278-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Agrega continentes</span></span>
+<span id="cb278-25"><a href="las-alternativas-tydiverse.html#cb278-25" aria-hidden="true" tabindex="-1"></a>  data_continente <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb278-26"><a href="las-alternativas-tydiverse.html#cb278-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(continente, anio) <span class="sc">%&gt;%</span> </span>
+<span id="cb278-27"><a href="las-alternativas-tydiverse.html#cb278-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">esperanza_de_vida_total =</span> esperanza_de_vida <span class="sc">*</span> poblacion</span>
+<span id="cb278-28"><a href="las-alternativas-tydiverse.html#cb278-28" aria-hidden="true" tabindex="-1"></a>      , <span class="at">pib_total =</span> pib_per_capita <span class="sc">*</span> poblacion) <span class="sc">%&gt;%</span> </span>
+<span id="cb278-29"><a href="las-alternativas-tydiverse.html#cb278-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(continente, anio) <span class="sc">%&gt;%</span> </span>
+<span id="cb278-30"><a href="las-alternativas-tydiverse.html#cb278-30" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">n_paises=</span><span class="fu">n</span>()</span>
+<span id="cb278-31"><a href="las-alternativas-tydiverse.html#cb278-31" aria-hidden="true" tabindex="-1"></a>      , <span class="at">esperanza_de_vida =</span> <span class="fu">sum</span>(esperanza_de_vida_total ) <span class="sc">/</span></span>
+<span id="cb278-32"><a href="las-alternativas-tydiverse.html#cb278-32" aria-hidden="true" tabindex="-1"></a>          <span class="fu">sum</span>(poblacion )</span>
+<span id="cb278-33"><a href="las-alternativas-tydiverse.html#cb278-33" aria-hidden="true" tabindex="-1"></a>      , <span class="at">pib_per_capita =</span> <span class="fu">sum</span>(pib_total) <span class="sc">/</span> </span>
+<span id="cb278-34"><a href="las-alternativas-tydiverse.html#cb278-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sum</span>(poblacion)</span>
+<span id="cb278-35"><a href="las-alternativas-tydiverse.html#cb278-35" aria-hidden="true" tabindex="-1"></a>      , <span class="at">poblacion =</span> <span class="fu">sum</span>(poblacion))</span>
+<span id="cb278-36"><a href="las-alternativas-tydiverse.html#cb278-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb278-37"><a href="las-alternativas-tydiverse.html#cb278-37" aria-hidden="true" tabindex="-1"></a>  resultados <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb278-38"><a href="las-alternativas-tydiverse.html#cb278-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb278-39"><a href="las-alternativas-tydiverse.html#cb278-39" aria-hidden="true" tabindex="-1"></a>  resultados[[<span class="st">&quot;continentes&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data_continente, <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita, <span class="at">y=</span>esperanza_de_vida</span>
+<span id="cb278-40"><a href="las-alternativas-tydiverse.html#cb278-40" aria-hidden="true" tabindex="-1"></a>      , <span class="at">color=</span>continente)) <span class="sc">+</span></span>
+<span id="cb278-41"><a href="las-alternativas-tydiverse.html#cb278-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_path</span>() <span class="sc">+</span></span>
+<span id="cb278-42"><a href="las-alternativas-tydiverse.html#cb278-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb278-43"><a href="las-alternativas-tydiverse.html#cb278-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> colores) <span class="sc">+</span></span>
+<span id="cb278-44"><a href="las-alternativas-tydiverse.html#cb278-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>anio), <span class="at">size=</span><span class="dv">2</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb278-45"><a href="las-alternativas-tydiverse.html#cb278-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Evolución de los Continentes de 1952 a 2007&quot;</span></span>
+<span id="cb278-46"><a href="las-alternativas-tydiverse.html#cb278-46" aria-hidden="true" tabindex="-1"></a>      , <span class="at">x =</span> <span class="st">&quot;Logaritmo base 10 del PIB per cápita ($ americanos, ajustados según inflación)&quot;</span></span>
+<span id="cb278-47"><a href="las-alternativas-tydiverse.html#cb278-47" aria-hidden="true" tabindex="-1"></a>      , <span class="at">y =</span> <span class="st">&quot;Esperanza de vida (años)&quot;</span>)</span>
+<span id="cb278-48"><a href="las-alternativas-tydiverse.html#cb278-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb278-49"><a href="las-alternativas-tydiverse.html#cb278-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(resultados)</span>
+<span id="cb278-50"><a href="las-alternativas-tydiverse.html#cb278-50" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb278-51"><a href="las-alternativas-tydiverse.html#cb278-51" aria-hidden="true" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> <span class="fu">describir</span>(paises_informe, colores_continente, etiquetas_paises)</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;continente&#39; (override with `.groups` argument)</code></pre>
+<div id="evolución-de-los-continentes" class="section level3" number="11.4.1">
+<h3><span class="header-section-number">11.4.1</span> Evolución de los continentes</h3>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-152"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-152-1.png" alt="Evolución continentes (Fuente: Elaboración propia con datos de Gapminder)" width="1050" />
+<p class="caption">
+Figura 11.2: Evolución continentes (Fuente: Elaboración propia con datos de Gapminder)
+</p>
+</div>
+<p>El gráfico muestra la traza que han recorrido los continentes en sus valores medios de PIB per cápita y Esperanza de vida. Se confirma la mayor progresión de Asia. Vemos que como América y Europa, en media tienen un comportamiento bastante paralelo. Se observa como el recorrido de África, aunque partiendo de valores muy inferiores, ha sido positiva y ha incrementado de forma similar el resto de continentes.</p>
 
+</div>
 </div>
 </div>
 
@@ -354,8 +735,8 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
           </div>
         </div>
       </div>
-
-<a href="posta-a-punt.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="resumenes-de-agregados.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regressió-lineal.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -377,7 +758,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/griu/meacp/edit/master/index.Rmd",
+"link": "https://github.com/griu/meacp/edit/master/063-tydiverse.Rmd",
 "text": "Edit"
 },
 "history": {

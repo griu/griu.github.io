@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mètodes Estadístics Aplicats a Ciències Polítiques</title>
+  <title>Capítol 4 Filtrado de objetos | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
   <meta name="description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta property="og:title" content="Capítol 4 Filtrado de objetos | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta name="twitter:title" content="Capítol 4 Filtrado de objetos | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   
   <meta name="twitter:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="posta-a-punt.html"/>
+<link rel="prev" href="colecciones-de-objetos.html"/>
+<link rel="next" href="modificacion-objetos.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -322,40 +322,878 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Mètodes Estadístics Aplicats a Ciències Polítiques</h1>
-<p class="author"><em>Ferran Carrascosa Mallafrè</em></p>
-<p class="date"><em>2021-01-03</em></p>
+<div id="filtrado-de-objetos" class="section level1" number="4">
+<h1><span class="header-section-number">Capítol 4</span> Filtrado de objetos</h1>
+<p>Para filtrar matrices y data frames se utiliza corchetes separados por coma <code>[,]</code>. En el caso de vectores, corchetes simples <code>[]</code>.</p>
+<p>Los datos de <code>paises07</code> servirán de ejemplo.</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="filtrado-de-objetos.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb134-2"><a href="filtrado-de-objetos.html#cb134-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datos)</span>
+<span id="cb134-3"><a href="filtrado-de-objetos.html#cb134-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb134-4"><a href="filtrado-de-objetos.html#cb134-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-5"><a href="filtrado-de-objetos.html#cb134-5" aria-hidden="true" tabindex="-1"></a>paises07 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(paises <span class="sc">%&gt;%</span> <span class="fu">filter</span>(anio<span class="sc">==</span><span class="dv">2007</span>))</span>
+<span id="cb134-6"><a href="filtrado-de-objetos.html#cb134-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-7"><a href="filtrado-de-objetos.html#cb134-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(paises07)</span></code></pre></div>
+<pre><code>## [1] &quot;data.frame&quot;</code></pre>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="filtrado-de-objetos.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(paises07)</span></code></pre></div>
+<pre><code>## [1] 142   6</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="filtrado-de-objetos.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(paises07)</span></code></pre></div>
+<pre><code>## [1] &quot;pais&quot;              &quot;continente&quot;        &quot;anio&quot;             
+## [4] &quot;esperanza_de_vida&quot; &quot;poblacion&quot;         &quot;pib_per_capita&quot;</code></pre>
+<p>Con <code>head()</code> (respec. <code>tail()</code>), se obtiene las primeras (resp. últimas) 6 filas.</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="filtrado-de-objetos.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:right;">
+anio
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+poblacion
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Afganistán
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+43.828
+</td>
+<td style="text-align:right;">
+31889923
+</td>
+<td style="text-align:right;">
+974.5803
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Albania
+</td>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+76.423
+</td>
+<td style="text-align:right;">
+3600523
+</td>
+<td style="text-align:right;">
+5937.0295
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Argelia
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+72.301
+</td>
+<td style="text-align:right;">
+33333216
+</td>
+<td style="text-align:right;">
+6223.3675
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Angola
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+42.731
+</td>
+<td style="text-align:right;">
+12420476
+</td>
+<td style="text-align:right;">
+4797.2313
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Argentina
+</td>
+<td style="text-align:left;">
+Américas
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+75.320
+</td>
+<td style="text-align:right;">
+40301927
+</td>
+<td style="text-align:right;">
+12779.3796
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+81.235
+</td>
+<td style="text-align:right;">
+20434176
+</td>
+<td style="text-align:right;">
+34435.3674
+</td>
+</tr>
+</tbody>
+</table>
+<div id="enteros-positivos" class="section level2 unnumbered">
+<h2>Enteros positivos</h2>
+<p>Se puede indicar las posiciones fila y columna a seleccionar. Por ejemplo, la esperanza de vida de Angola y Australia.</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="filtrado-de-objetos.html#cb141-1" aria-hidden="true" tabindex="-1"></a>paises07[<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">6</span>),<span class="dv">4</span>]</span></code></pre></div>
+<pre><code>## [1] 42.731 81.235</code></pre>
+<p>Para evitar que el resultado pase de data frame a vector, se utiliza el parámetro <code>drop</code>.</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="filtrado-de-objetos.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07[<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">6</span>), <span class="dv">4</span>, <span class="at">drop=</span><span class="cn">FALSE</span>])</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+42.731
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:right;">
+81.235
+</td>
+</tr>
+</tbody>
+</table>
+<p>Si no se informa la columna (alternativamente fila), se seleccionan todos sus valores.</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="filtrado-de-objetos.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07[<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">6</span>),])</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:right;">
+anio
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+poblacion
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+Angola
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+42.731
+</td>
+<td style="text-align:right;">
+12420476
+</td>
+<td style="text-align:right;">
+4797.231
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+81.235
+</td>
+<td style="text-align:right;">
+20434176
+</td>
+<td style="text-align:right;">
+34435.367
+</td>
+</tr>
+</tbody>
+</table>
+<p>En el caso de vectores, se utiliza un solo corchete.</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="filtrado-de-objetos.html#cb145-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">9</span>)</span>
+<span id="cb145-2"><a href="filtrado-de-objetos.html#cb145-2" aria-hidden="true" tabindex="-1"></a>a[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">5</span>)]</span></code></pre></div>
+<pre><code>## [1] 2 2 5 9</code></pre>
+<p>Observa que se pueden repetir posiciones o índices. Tampoco es necesario mantener un orden monótono en los índices.</p>
 </div>
-<div id="introducció" class="section level1 unnumbered">
-<h1>Introducció</h1>
-<p>Aquest material está enfocat a</p>
-<hr>
-<p>Aquest llibre digital es troba sota la llicencia <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ca">Reconeixement-NoComercial-SenseObraDerivada 4.0 Internacional (CC BY-NC-ND 4.0)</a>.</p>
-<hr>
-<div id="estructura-del-llibre" class="section level2 unnumbered">
-<h2>Estructura del llibre</h2>
-<ul>
-<li>Computació en R</li>
-<li>Model de regressió simple i múltiple</li>
-<li>Regressió amb variable dependent dicotòmica</li>
-<li>Reducció de la dimensión o anàlisi de components principals i factorial</li>
-<li>Classificació i anàlisi d’agrupaments</li>
-<li>L’anàlisi de correspondències i altres mètodes d’anàlisi multivariada</li>
-</ul>
+<div id="enteros-negativos" class="section level2 unnumbered">
+<h2>Enteros negativos</h2>
+<p>Selecciona todas las columnas (alternativamente las filas) excepto las posiciones indicadas con valor negativo.</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="filtrado-de-objetos.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>)]))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Afganistán
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+43.828
+</td>
+<td style="text-align:right;">
+974.5803
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Albania
+</td>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+76.423
+</td>
+<td style="text-align:right;">
+5937.0295
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Argelia
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+72.301
+</td>
+<td style="text-align:right;">
+6223.3675
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Angola
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+42.731
+</td>
+<td style="text-align:right;">
+4797.2313
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Argentina
+</td>
+<td style="text-align:left;">
+Américas
+</td>
+<td style="text-align:right;">
+75.320
+</td>
+<td style="text-align:right;">
+12779.3796
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+81.235
+</td>
+<td style="text-align:right;">
+34435.3674
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="nombres-3" class="section level2 unnumbered">
+<h2>Nombres</h2>
+<p>Se utiliza habitualmente para seleccionar las columnas por su nombre.</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="filtrado-de-objetos.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07[, <span class="fu">c</span>(<span class="st">&quot;pais&quot;</span>,<span class="st">&quot;esperanza_de_vida&quot;</span>)]))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Afganistán
+</td>
+<td style="text-align:right;">
+43.828
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Albania
+</td>
+<td style="text-align:right;">
+76.423
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Argelia
+</td>
+<td style="text-align:right;">
+72.301
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Angola
+</td>
+<td style="text-align:right;">
+42.731
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Argentina
+</td>
+<td style="text-align:right;">
+75.320
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:right;">
+81.235
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="dolares-y-dobles-corchetes" class="section level2 unnumbered">
+<h2>Dolares y dobles corchetes</h2>
+<p>En listas y data frames se puede obtener un elemento con <code>$nombre</code> , o bien, con corchetes dobles</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="filtrado-de-objetos.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(paises07<span class="sc">$</span>pib_per_capita)</span></code></pre></div>
+<pre><code>## [1]   974.5803  5937.0295  6223.3675  4797.2313 12779.3796 34435.3674</code></pre>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="filtrado-de-objetos.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(paises07[[<span class="st">&quot;esperanza_de_vida&quot;</span>]])</span></code></pre></div>
+<pre><code>## [1] 43.828 76.423 72.301 42.731 75.320 81.235</code></pre>
+<blockquote>
+<p>Una fuente habitual de error es intentar seleccionar las columnas de un objeto <code>matrix</code> con <code>$nombre</code> o dobles corchetes. Esto produce un error.</p>
+</blockquote>
+</div>
+<div id="valores-lógicos" class="section level2 unnumbered">
+<h2>Valores lógicos</h2>
+<p>Se seleccionan las posiciones con valores <code>TRUE</code> o <code>T</code> y se descartan las posiciones <code>FALSE</code> o <code>F</code>.</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="filtrado-de-objetos.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07[,<span class="fu">c</span>(F, F, F, T, F, T)]))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+43.828
+</td>
+<td style="text-align:right;">
+974.5803
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+76.423
+</td>
+<td style="text-align:right;">
+5937.0295
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+72.301
+</td>
+<td style="text-align:right;">
+6223.3675
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+42.731
+</td>
+<td style="text-align:right;">
+4797.2313
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+75.320
+</td>
+<td style="text-align:right;">
+12779.3796
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+81.235
+</td>
+<td style="text-align:right;">
+34435.3674
+</td>
+</tr>
+</tbody>
+</table>
+<p>La forma habitual de seleccionar elementos de una matriz es mediante expresiones lógicas.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="filtrado-de-objetos.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07[paises07<span class="sc">$</span>continente<span class="sc">==</span><span class="st">&quot;Oceanía&quot;</span>,])</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:right;">
+anio
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+poblacion
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+81.235
+</td>
+<td style="text-align:right;">
+20434176
+</td>
+<td style="text-align:right;">
+34435.37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+92
+</td>
+<td style="text-align:left;">
+Nueva Zelanda
+</td>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+80.204
+</td>
+<td style="text-align:right;">
+4115771
+</td>
+<td style="text-align:right;">
+25185.01
+</td>
+</tr>
+</tbody>
+</table>
+<p>Para construir estas expresiones, puedes utilizar los siguientes operadores.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Operador
+</th>
+<th style="text-align:left;">
+Ejemplo
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+a &gt; b
+</td>
+<td style="text-align:left;">
+¿a mayor que b?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+a &gt;= b
+</td>
+<td style="text-align:left;">
+¿a mayor o igual que b?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+a &lt; b
+</td>
+<td style="text-align:left;">
+¿a menor que b?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+a &lt;= b
+</td>
+<td style="text-align:left;">
+¿a menor o igual que b?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+a == b
+</td>
+<td style="text-align:left;">
+¿a igual a b?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+a != b
+</td>
+<td style="text-align:left;">
+¿a distinto b?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+a %in% c(b,c,d)
+</td>
+<td style="text-align:left;">
+¿a esta en el vector b, c o d?
+</td>
+</tr>
+</tbody>
+</table>
+<p>Operadores lógicos: (fuente: elaboración propia)</p>
+<p>Estos operadores resultan extremadamente útiles en vectores.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="filtrado-de-objetos.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">&gt;</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="filtrado-de-objetos.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="sc">!=</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE  TRUE</code></pre>
+<p>El operador <code>%in%</code> tiene un funcionamiento un poco distinto. Evalúa cada elemento del objeto situado a su izquierda respecto a todos los elementos del objeto situado a su derecha.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="filtrado-de-objetos.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE  TRUE  TRUE</code></pre>
+<blockquote>
+<p>En operadores booleanos utiliza <code>==</code> en vez del operador ‘=.’ Este último, hace la misma operación que <code>&lt;-</code> de asignación de valores a objetos.</p>
+</blockquote>
+</div>
+<div id="operaciones-booleanas" class="section level2 unnumbered">
+<h2>Operaciones booleanas</h2>
+<p>Puedes construir expresiones lógicas complejas utilizando los operadores booleanos habituales:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Operador
+</th>
+<th style="text-align:left;">
+Significado
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+cond1 &amp; cond2
+</td>
+<td style="text-align:left;">
+¿Son las dos condiciones ciertas?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cond1 | cond1
+</td>
+<td style="text-align:left;">
+¿Es cierta alguna de las dos condiciones?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cond1 xor cond1
+</td>
+<td style="text-align:left;">
+¿Es cierta sólo una de las condiciones?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+!cond1
+</td>
+<td style="text-align:left;">
+¿Es falsa la condición?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+any(cond1,cond2,…)
+</td>
+<td style="text-align:left;">
+¿Es cierta alguna de las condiciones?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+all(cond1,cond2,…)
+</td>
+<td style="text-align:left;">
+¿Son ciertas todas las condiciones?
+</td>
+</tr>
+</tbody>
+</table>
+<p>Operaciones booleanas (fuente: elaboración propia).</p>
+<p>Para seleccionar los países asiáticos con esperanza de vida media en 2007 superior o igual a 80 años.</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="filtrado-de-objetos.html#cb161-1" aria-hidden="true" tabindex="-1"></a>consulta <span class="ot">&lt;-</span> paises07[paises07<span class="sc">$</span>continente<span class="sc">==</span><span class="st">&quot;Asia&quot;</span> <span class="sc">&amp;</span> paises07<span class="sc">$</span>esperanza_de_vida <span class="sc">&gt;=</span> <span class="dv">80</span> ,]</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="filtrado-de-objetos.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(consulta)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:right;">
+anio
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+poblacion
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+56
+</td>
+<td style="text-align:left;">
+Hong Kong, China
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+82.208
+</td>
+<td style="text-align:right;">
+6980412
+</td>
+<td style="text-align:right;">
+39724.98
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+64
+</td>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+80.745
+</td>
+<td style="text-align:right;">
+6426679
+</td>
+<td style="text-align:right;">
+25523.28
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+67
+</td>
+<td style="text-align:left;">
+Japón
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+82.603
+</td>
+<td style="text-align:right;">
+127467972
+</td>
+<td style="text-align:right;">
+31656.07
+</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="posta-a-punt.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="colecciones-de-objetos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modificacion-objetos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -377,7 +1215,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/griu/meacp/edit/master/index.Rmd",
+"link": "https://github.com/griu/meacp/edit/master/031-filtros.Rmd",
 "text": "Edit"
 },
 "history": {

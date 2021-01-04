@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mètodes Estadístics Aplicats a Ciències Polítiques</title>
+  <title>Capítol 2 Elementos básicos | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
   <meta name="description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta property="og:title" content="Capítol 2 Elementos básicos | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta name="twitter:title" content="Capítol 2 Elementos básicos | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   
   <meta name="twitter:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="posta-a-punt.html"/>
+<link rel="prev" href="posta-a-punt.html"/>
+<link rel="next" href="colecciones-de-objetos.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -322,40 +322,448 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Mètodes Estadístics Aplicats a Ciències Polítiques</h1>
-<p class="author"><em>Ferran Carrascosa Mallafrè</em></p>
-<p class="date"><em>2021-01-03</em></p>
+<div id="elementos-básicos" class="section level1" number="2">
+<h1><span class="header-section-number">Capítol 2</span> Elementos básicos</h1>
+<p>Aunque se presuponen unos conocimientos iniciales de R, a continuación se hace un repaso de R y RStudio.</p>
+<div id="objetos-de-r" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Objetos de R</h2>
+<div id="asignar-objetos" class="section level3 unnumbered">
+<h3>Asignar objetos</h3>
+<p>Puedes asignar datos a objetos R. Estos objetos se guardan en memoria.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="elementos-básicos.html#cb7-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb7-2"><a href="elementos-básicos.html#cb7-2" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="elementos-básicos.html#cb9-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> a <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb9-2"><a href="elementos-básicos.html#cb9-2" aria-hidden="true" tabindex="-1"></a>b</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<blockquote>
+<p>Se puede utilizar <code>=</code> , pero, en R se usa <code>&lt;-</code> para diferenciarlo de los valores de los parámetros de las funciones.</p>
+</blockquote>
+<p>Consulta la <a href="https://style.tidyverse.org/syntax.html#object-names">guía de estilo de Tydiverse</a> para crear nombres de objetos.</p>
 </div>
-<div id="introducció" class="section level1 unnumbered">
-<h1>Introducció</h1>
-<p>Aquest material está enfocat a</p>
-<hr>
-<p>Aquest llibre digital es troba sota la llicencia <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ca">Reconeixement-NoComercial-SenseObraDerivada 4.0 Internacional (CC BY-NC-ND 4.0)</a>.</p>
-<hr>
-<div id="estructura-del-llibre" class="section level2 unnumbered">
-<h2>Estructura del llibre</h2>
-<ul>
-<li>Computació en R</li>
-<li>Model de regressió simple i múltiple</li>
-<li>Regressió amb variable dependent dicotòmica</li>
-<li>Reducció de la dimensión o anàlisi de components principals i factorial</li>
-<li>Classificació i anàlisi d’agrupaments</li>
-<li>L’anàlisi de correspondències i altres mètodes d’anàlisi multivariada</li>
-</ul>
+<div id="listar-objetos" class="section level3 unnumbered">
+<h3>Listar objetos</h3>
+<p>Los objetos aparecen en la pestaña de <em>environment</em> (ventana superior derecha).</p>
+<p>También puedes acceder al listado con la función <code>ls()</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="elementos-básicos.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
+<pre><code>##  [1] &quot;a&quot;                  &quot;a_comparte&quot;         &quot;a_full&quot;            
+##  [4] &quot;a_inner&quot;            &quot;a_left&quot;             &quot;a_right&quot;           
+##  [7] &quot;a1&quot;                 &quot;a2&quot;                 &quot;agg1&quot;              
+## [10] &quot;agg2&quot;               &quot;agg3&quot;               &quot;b&quot;                 
+## [13] &quot;color_ojos&quot;         &quot;colores_continente&quot; &quot;consulta&quot;          
+## [16] &quot;continentes_anio&quot;   &quot;describir&quot;          &quot;etiquetas_paises&quot;  
+## [19] &quot;fwf_sample&quot;         &quot;galton&quot;             &quot;indices_ordenacion&quot;
+## [22] &quot;mtcars&quot;             &quot;p1&quot;                 &quot;p2&quot;                
+## [25] &quot;p3&quot;                 &quot;p4&quot;                 &quot;pais07dplyr&quot;       
+## [28] &quot;paises_informe&quot;     &quot;paises07&quot;           &quot;paises07_2VAR&quot;     
+## [31] &quot;paises07NA&quot;         &quot;paises07Ord&quot;        &quot;paises07Summ&quot;      
+## [34] &quot;paisesDup&quot;          &quot;resumen&quot;</code></pre>
+</div>
+<div id="guardar-objetos" class="section level3 unnumbered">
+<h3>Guardar objetos</h3>
+<p>Los objetos R, se pueden guardar en ficheros .RData con <code>save()</code>.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="elementos-básicos.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(a, b, <span class="at">file=</span><span class="st">&quot;www/temp/ejemploSave.RData&quot;</span>)</span></code></pre></div>
+<blockquote>
+<p><code>save.image(file="www/temp/ejemploSave.RData")</code> guarda todos lo objetos del environment actual</p>
+</blockquote>
+</div>
+<div id="borrar-objetos" class="section level3 unnumbered">
+<h3>Borrar objetos</h3>
+<p>Se pueden borrar de la memoria con <code>rm()</code>:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="elementos-básicos.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(a,b)</span>
+<span id="cb14-2"><a href="elementos-básicos.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>()) <span class="co"># borra todo el environment.</span></span>
+<span id="cb14-3"><a href="elementos-básicos.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
+<pre><code>## character(0)</code></pre>
+</div>
+<div id="cargar-objetos" class="section level3 unnumbered">
+<h3>Cargar objetos</h3>
+<p>Para cargar en memoria de nuevo los objetos, se utiliza <code>load()</code>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="elementos-básicos.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;www/temp/ejemploSave.RData&quot;</span>)</span>
+<span id="cb16-2"><a href="elementos-básicos.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;b&quot;</code></pre>
+<div id="actividad-guiada-1.2." class="section level5 unnumbered">
+<h5>Actividad guiada 1.2.</h5>
+<p>Consiste en comprender la evolución de la riqueza y la esperanza de vida de las personas a nivel de país y continente. Para ello, contamos con los datos de países coleccionados por Gapminder y traducidos al Castellano en el package datos.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="elementos-básicos.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb18-2"><a href="elementos-básicos.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datos)</span>
+<span id="cb18-3"><a href="elementos-básicos.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb18-4"><a href="elementos-básicos.html#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="elementos-básicos.html#cb18-5" aria-hidden="true" tabindex="-1"></a>paises07 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(paises <span class="sc">%&gt;%</span> <span class="fu">filter</span>(anio<span class="sc">==</span><span class="dv">2007</span>))</span>
+<span id="cb18-6"><a href="elementos-básicos.html#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="elementos-básicos.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07 <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">10</span>), <span class="at">caption =</span> <span class="st">&quot;Datos de Gapminder&quot;</span>)</span></code></pre></div>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-10">Taula 2.1: </span>Datos de Gapminder
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:right;">
+anio
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+poblacion
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Afganistán
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+43.828
+</td>
+<td style="text-align:right;">
+31889923
+</td>
+<td style="text-align:right;">
+974.5803
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Albania
+</td>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+76.423
+</td>
+<td style="text-align:right;">
+3600523
+</td>
+<td style="text-align:right;">
+5937.0295
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Argelia
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+72.301
+</td>
+<td style="text-align:right;">
+33333216
+</td>
+<td style="text-align:right;">
+6223.3675
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Angola
+</td>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+42.731
+</td>
+<td style="text-align:right;">
+12420476
+</td>
+<td style="text-align:right;">
+4797.2313
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Argentina
+</td>
+<td style="text-align:left;">
+Américas
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+75.320
+</td>
+<td style="text-align:right;">
+40301927
+</td>
+<td style="text-align:right;">
+12779.3796
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+81.235
+</td>
+<td style="text-align:right;">
+20434176
+</td>
+<td style="text-align:right;">
+34435.3674
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Austria
+</td>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+79.829
+</td>
+<td style="text-align:right;">
+8199783
+</td>
+<td style="text-align:right;">
+36126.4927
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Baréin
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+75.635
+</td>
+<td style="text-align:right;">
+708573
+</td>
+<td style="text-align:right;">
+29796.0483
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bangladesh
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+64.062
+</td>
+<td style="text-align:right;">
+150448339
+</td>
+<td style="text-align:right;">
+1391.2538
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bélgica
+</td>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+79.441
+</td>
+<td style="text-align:right;">
+10392226
+</td>
+<td style="text-align:right;">
+33692.6051
+</td>
+</tr>
+</tbody>
+</table>
+<p>Los datos muestran la esperanza de vida media en 142 países, población total y su nivel de riqueza medido con el Producto Interior Bruto (PIB) per cápita.</p>
+<p>Vamos a crear un resumen HTML de la <code>esperanza_de_vida</code> y el <code>pib_per_capita</code> en 2007 con datos de <code>países</code> del package <code>datos</code>.</p>
+<p>Puedes ver la solución en <a href="elementos-básicos.html#act12">2.3</a> .</p>
+</div>
+</div>
+</div>
+<div id="scripts" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Scripts</h2>
+<p>Para crear un nuevo script de R puedes ir al menú: <code>File &gt; New File &gt; R Script</code>. Por ejemplo, escribe:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="elementos-básicos.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Hello World!&quot;</span>)</span></code></pre></div>
+<p>Ejecuta la línea situando el cursor encima y clica el botón <strong>Run</strong> (o <code>Ctrl + Enter</code>).</p>
+<p>Guardar tu código: <code>File &gt; Save as &gt;</code> nombre del fichero.R (<code>www/temp/holaMundo.R</code>).</p>
+<p>Ejecuta tu código con <code>source()</code>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="elementos-básicos.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&#39;print(&quot;Hello World!&quot;)&#39;</span>, <span class="at">file=</span><span class="st">&quot;www/temp/holaMundo.R&quot;</span>)</span>
+<span id="cb20-2"><a href="elementos-básicos.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;www/temp/holaMundo.R&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Hello World!&quot;</code></pre>
+<blockquote>
+<p>Si no utilizas <code>print()</code>, al realizar <code>source()</code>, no va a devolver ningún valor por pantalla.</p>
+</blockquote>
+</div>
+<div id="act12" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Actividad guiada 1.2</h2>
+<pre><code>---
+title: &quot;Actividad 1.2&quot;
+output: html_document
+---</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="elementos-básicos.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb23-2"><a href="elementos-básicos.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datos)</span>
+<span id="cb23-3"><a href="elementos-básicos.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb23-4"><a href="elementos-básicos.html#cb23-4" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-5"><a href="elementos-básicos.html#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="elementos-básicos.html#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># DATOS: Esto se explica mas adelante en el temario</span></span>
+<span id="cb23-7"><a href="elementos-básicos.html#cb23-7" aria-hidden="true" tabindex="-1"></a>paises07_2VAR <span class="ot">&lt;-</span> paises <span class="sc">%&gt;%</span> </span>
+<span id="cb23-8"><a href="elementos-básicos.html#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(anio<span class="sc">==</span><span class="dv">2007</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-9"><a href="elementos-básicos.html#cb23-9" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(pib_per_capita, esperanza_de_vida)</span></code></pre></div>
+<div id="gráfico-de-dispersión-de-países" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Gráfico de dispersión de países</h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="elementos-básicos.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(paises07_2VAR, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">pch=</span><span class="dv">19</span></span>
+<span id="cb24-2"><a href="elementos-básicos.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  , <span class="at">main =</span> <span class="st">&quot;Países (Año: 2007)&quot;</span></span>
+<span id="cb24-3"><a href="elementos-básicos.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  , <span class="at">xlab =</span> <span class="st">&quot;PIB per cápita ($ americanos, ajustados según inflación)&quot;</span></span>
+<span id="cb24-4"><a href="elementos-básicos.html#cb24-4" aria-hidden="true" tabindex="-1"></a>  , <span class="at">ylab =</span> <span class="st">&quot;Esperanza de vida (años)&quot;</span>, <span class="at">cex.main=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-14"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-14-1.png" alt="Fuente: Elaboración propia con datos de Gapminder" width="672" />
+<p class="caption">
+Figura 2.1: Fuente: Elaboración propia con datos de Gapminder
+</p>
+</div>
+<p>Se observa cómo los países que tienen un valor de PIB per cápita inferior a 10.000$ tienen una esperanza de vida muy inferior al resto.</p>
+</div>
+<div id="tabla-descriptiva-de-países" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Tabla descriptiva de países</h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="elementos-básicos.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># utiliza el comando kable para &quot;resumen&quot; y añade un titulo </span></span>
+<span id="cb25-2"><a href="elementos-básicos.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(paises07_2VAR), <span class="at">caption =</span> <span class="st">&quot;Resumen (Fuente: Elaboración propia con datos de Gapminder)&quot;</span>)</span></code></pre></div>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-15">Taula 2.2: </span>Resumen (Fuente: Elaboración propia con datos de Gapminder)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+pib_per_capita
+</th>
+<th style="text-align:left;">
+esperanza_de_vida
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Min. : 277.6
+</td>
+<td style="text-align:left;">
+Min. :39.61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+1st Qu.: 1624.8
+</td>
+<td style="text-align:left;">
+1st Qu.:57.16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Median : 6124.4
+</td>
+<td style="text-align:left;">
+Median :71.94
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mean :11680.1
+</td>
+<td style="text-align:left;">
+Mean :67.01
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3rd Qu.:18008.8
+</td>
+<td style="text-align:left;">
+3rd Qu.:76.41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Max. :49357.2
+</td>
+<td style="text-align:left;">
+Max. :82.60
+</td>
+</tr>
+</tbody>
+</table>
+<p>Se observa los principales valores descriptivos del pib per cápita y la esperanza de vida de los países en 2007. Por ejemplo, el país con menor esperanza de vida tiene 39,61 años de esperanza de vida media. En cambio, el país mayor esperanza de vida tiene 82,60 años de esperanza de vida media. Es decir, las personas del segundo país viven, de media, el doble de años.</p>
 
 </div>
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="posta-a-punt.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="posta-a-punt.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="colecciones-de-objetos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -377,7 +785,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/griu/meacp/edit/master/index.Rmd",
+"link": "https://github.com/griu/meacp/edit/master/020-ele_bas.Rmd",
 "text": "Edit"
 },
 "history": {
