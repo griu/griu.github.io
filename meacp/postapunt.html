@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Referències | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
+  <title>Capítol 1 Posta a punt | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
   <meta name="description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Referències | Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta property="og:title" content="Capítol 1 Posta a punt | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Referències | Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta name="twitter:title" content="Capítol 1 Posta a punt | Mètodes Estadístics Aplicats a Ciències Polítiques" />
   
   <meta name="twitter:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="acorresp.html"/>
-
+<link rel="prev" href="agraïments.html"/>
+<link rel="next" href="basics.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -342,17 +342,204 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="referències" class="section level1 unnumbered">
-<h1>Referències</h1>
+<div id="postapunt" class="section level1" number="1">
+<h1><span class="header-section-number">Capítol 1</span> Posta a punt</h1>
+<div id="r" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> R</h2>
+<p>R és <a href="https://www.gnu.org/">GNU</a> i per tant Programari lliure). És un entorn i llenguatge per a als gràfics i la computació estadística.</p>
+<p>Si bien R funciona perfectamente des de consola de texto (R-GUI en windows o bien, ejecutando comando R desde xterm en Linux) en el curso se utilizará la interfaz gráfica de RStudio. Ejecuta la siguiente línea.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="postapunt.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span> <span class="sc">/</span> (<span class="dv">4</span> <span class="sc">-</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<blockquote>
+<p>Puedes recuperar las líneas ejecutadas previamente apretando la tecla Arriba del cursor.</p>
+</blockquote>
+<p>Pots instalar R tant en Linux, Mac com e Windows des de: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> .</p>
+<p>Para pedir ayuda sobre una función hay 2 opciones:</p>
+<ol style="list-style-type: decimal">
+<li>Con un ?</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="postapunt.html#cb3-1" aria-hidden="true" tabindex="-1"></a>?read.table</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Con dos ?</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="postapunt.html#cb4-1" aria-hidden="true" tabindex="-1"></a>??excel</span></code></pre></div>
+</div>
+<div id="rstudio" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> RStudio</h2>
+<p>El lenguaje R se puede escribir mediante editor de texto en ficheros con extensión <code>*.R</code>. El entorno RStudio (ver imagen), incorpora, además de un editor y de la consola de R, un conjunto de utilidades que facilitan las tareas de programación y análisis de datos: navegador de ficheros, ayuda, objetos en memoria, visor de gráficos…</p>
+<div class="figure" style="text-align: center"><span id="fig:bas-rstudio"></span>
+<img src="www/images/02_basics/rstudio.png" alt="Entorno RStudio (Fuente: Elaboración propia)." width="750px" />
+<p class="caption">
+Figura 1.1: Entorno RStudio (Fuente: Elaboración propia).
+</p>
+</div>
+<p>Per programar en R utilitzarem el IDE RStudio. Un cop hagis instal·lat R, pots instalar RStudio des de: <a href="https://rstudio.com/products/rstudio/download/#download" class="uri">https://rstudio.com/products/rstudio/download/#download</a> .</p>
+<p>Las combinaciones de teclas disponibles: <code>Alt + Shift + K</code></p>
+<ul>
+<li>Ejecutar código: <code>Ctrl + Enter</code></li>
+<li>Ir a la ventana de código: <code>Ctrl + 1</code></li>
+<li>Ir a la consola: <code>Ctrl + 2</code></li>
+</ul>
+<div id="gitproject" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Crear un proyecto</h3>
+<p>Opcionalmente, resulta útil crear un proyecto en RSTudio descargando el material y datos de este curso, des de la plataforma GitHub (compartir código y datos).</p>
+<p>Los pasos son los sigientes:</p>
+<ul>
+<li>File &gt; New Project…</li>
+<li>Versión Control &gt; Git</li>
+<li>Repository URL:
+<ul>
+<li><a href="https://github.com/griu/meacp.git" class="uri">https://github.com/griu/meacp.git</a></li>
+</ul></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:bas-git"></span>
+<img src="www/images/02_basics/proyectogit.png" alt="Crear proyecto Git del Curso (Fuente: Elaboración propia)." width="500px" />
+<p class="caption">
+Figura 1.2: Crear proyecto Git del Curso (Fuente: Elaboración propia).
+</p>
+</div>
+<p>Alternativamente, puedes descargar el material des del navegador y crear un proyecto de RSTudio:</p>
+<ul>
+<li>Descargar el material des del enlace:
+<ul>
+<li><a href="https://github.com/griu/meacp" class="uri">https://github.com/griu/meacp</a></li>
+<li>“Code” -&gt; “Download Zip”</li>
+</ul></li>
+<li>Descomprimir el código</li>
+<li>Crear el proyecto des de R
+<ul>
+<li>File -&gt; New Project … -&gt; New Directory -&gt; New project</li>
+<li>Buscar la carpeta con el código descomprimido</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="paquetes" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Paquets de R</h2>
+<p>Hi ha tota una comunitat de desenvolupadors que amplien les funcionalitats de R a través de llibreries o paquets. Per utilizar auquests funcionalitats, primer es necesari instalar els paquets.</p>
+<p>Se publican en <a href="https://cran.r-project.org/">CRAN</a>, un repositorio centralizado. Actualmente contiene más de 16 mil paquetes.</p>
+<p>Los más importantes, como <code>stats</code>, <code>graphics</code>, <code>methods</code>, <code>base...</code> están ya disponibles en la consola.</p>
+<p>Otros, por ejemplo <code>foreign</code> (leer datos de fuentes externas), vienen instalados, pero es necesario cargarlos con <code>library(foreign)</code> al abrir la sesión.</p>
+<p>Otros, la mayoría, es necesario instalarlos antes con <code>install.packages("nombre_paquete")</code>.</p>
+<p>A continuació, fes la instal·lació dels següents paquetes, executant, d’una en una, cadascuna de les següent comandes des de la consola de R o RStudio:</p>
+<pre><code>install.packages(&quot;pander&quot;)
+install.packages(&quot;kableExtra&quot;)
+install.packages(&quot;tidyverse&quot;)
+install.packages(&quot;ggrepel&quot;)
+install.packages(&#39;rmarkdown&#39;)
+install.packages(&quot;DT&quot;)
+install.packages(&quot;plotly&quot;)
+install.packages(&quot;cowplot&quot;)
+install.packages(&quot;car&quot;)
+install.packages(&quot;corrplot&quot;)
+install.packages(&quot;FactoMineR&quot;)
+install.packages(&quot;factoextra&quot;)
+install.packages(&quot;quantreg&quot;)
+install.packages(&quot;psych&quot;)
+install.packages(&quot;mice&quot;)
+install.packages(&quot;cluster&quot;)
+install.packages(&quot;readxl&quot;)
+install.packages(&quot;remotes&quot;)
+install.packages(&quot;WDI&quot;)
+install.packages(&quot;gapminder&quot;)
+install.packages(&quot;datos&quot;)
+install.packages(&quot;HistData&quot;)
+install.packages(&quot;poliscidata&quot;)</code></pre>
+</div>
+<div id="rmarkdown-.rmd" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Rmarkdown (*.Rmd)</h2>
+<p>Puedes generar de forma dinámica documentos PDF, Word (como éste que estás leyendo) o HTML mediante ficheros de tipo Rmarkdown (*.Rmd). Este formato, permite combinar texto con formato, código R y resultados (tablas y gráfcos) ejecutados por R.</p>
+<blockquote>
+<p>Puedes acceder al materialdel curso en formato Bookdown (un tipo de RMarkdown) en <a href="https://github.com/griu/meacp">Github.</a>.</p>
+</blockquote>
+<div id="comandos-rmarkdown" class="section level3 unnumbered">
+<h3>Comandos Rmarkdown</h3>
+<ul>
+<li><strong>R chunks</strong>: ```{r, options} CODIGO R ```: echo, eval, fig.cap, warning, message. Opciones:
+<ul>
+<li><code>include = FALSE</code> : Ejecuta pero no muestra el código ni resultados.</li>
+<li><code>echo = FALSE</code> : No muestra el código, pero sí el resultado (tablas, gráficos…).</li>
+<li><code>fig.cap = "..."</code> : Añade un texto al pie de imagen.</li>
+</ul></li>
+<li><strong>R inline</strong>: ` r CODIGO R`</li>
+<li><strong>Titulo</strong>: # TITULO1, ## TITULO2</li>
+<li><strong>Emphasis</strong>: Negrita con <code>**string**</code> . Cursiva con <code>*string*</code></li>
+<li><strong>Link externo</strong>: <code>[texto enlace](http://url)</code></li>
+<li><strong>Imagen</strong>: <code>![texto alternativo](url imagen o ruta del a imagen)</code></li>
+<li><strong>Lista de puntos</strong>: Al inicio de línea, usa guion <code>-</code></li>
+<li><strong>Lista numerada</strong>: Al inicio, pon <code>1.</code></li>
+<li><strong>Código látex</strong>: <code>$x^2$</code>. Salida: <span class="math inline">\(x^2\)</span></li>
+<li><strong>Línea en blanco</strong>: Una linea nueva con <code>&lt;br&gt;</code></li>
+<li><strong>Sangrado (Indented)</strong>: Al incio de línea, usa símbolo <code>&gt;</code></li>
+<li><strong>Tablas</strong>: <code>kintr::kable(tabla)</code></li>
+</ul>
+<p>Puedes ver la <a href="https://rstudio.com/resources/cheatsheets/">hoja resumen</a> y la <a href="https://bookdown.org/yihui/rmarkdown/">Guía completa</a>.</p>
+</div>
+<div id="recomendaciones" class="section level3 unnumbered">
+<h3>Recomendaciones</h3>
+</div>
+<div id="recomendaciones-1" class="section level3 unnumbered">
+<h3>Recomendaciones</h3>
+<ul>
+<li>Enriquece los informes con elmentos RMarkdown: Listas, cursiva…</li>
+<li>Combina código y texto con: inline R.</li>
+<li>Configura las Tablas de contenidos.</li>
+<li>Utiliza caption en tablas y gráficos.</li>
+<li>Muestra sólo el código indispensable.</li>
+<li>Los Gráficos con título (global y ejes) y leyenda.</li>
+</ul>
+<div id="actividad-guiada-1.1" class="section level5 unnumbered">
+<h5>Actividad guiada 1.1</h5>
+<p>Genera tu primer documento RMarkdown. En RStudio, accede al menú <code>File &gt; New File &gt; R Markdown &gt; Documentos &gt; html</code> y edita <code>Title</code>y <code>Author</code> del formulario de la imagen y el formato de salida HTML &gt; aprieta <code>OK</code>.</p>
+<div class="figure" style="text-align: center"><span id="fig:bas-rmarkdown"></span>
+<img src="www/images/02_basics/rmarkdown1.png" alt="Menú de nuevo RMarkdown (Fuente: Elaboración propia)." width="500px" />
+<p class="caption">
+Figura 1.3: Menú de nuevo RMarkdown (Fuente: Elaboración propia).
+</p>
+</div>
+<p>Guarda el documento generado automáticamente con el nombre <code>11_actividad.Rmd</code>. Ahora genera el documento apretando el botón <strong>Knit</strong>.</p>
+<p>Puedes ver la solución en <a href="postapunt.html#act11">1.5</a> .</p>
+</div>
+</div>
+</div>
+<div id="act11" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Actividad guiada 1.1</h2>
+<pre><code>---
+title: &quot;Actividad 1.1.&quot;
+author: &quot;FC&quot;
+date: &quot;8/15/2020&quot;
+output: html_document
+---</code></pre>
+<div id="r-markdown" class="section level3" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> R Markdown</h3>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="postapunt.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza el comando summary para mostrar un resumen general de cars</span></span>
+<span id="cb7-2"><a href="postapunt.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+</div>
+<div id="including-plots" class="section level3" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> Including Plots</h3>
+<p>You can also embed plots, for example:</p>
+<p><img src="meacp_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="acorresp.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="agraïments.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -374,7 +561,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/griu/meacp/edit/master/900-references.Rmd",
+"link": "https://github.com/griu/meacp/edit/master/010-install.Rmd",
 "text": "Edit"
 },
 "history": {

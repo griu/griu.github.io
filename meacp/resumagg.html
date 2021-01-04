@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítol 8 Resumenes de agregados | Mètodes Estadístics Aplicats a Ciències Polítiques</title>
+  <meta name="description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítol 8 Resumenes de agregados | Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítol 8 Resumenes de agregados | Mètodes Estadístics Aplicats a Ciències Polítiques" />
+  
+  <meta name="twitter:description" content="Curs de mètodes estadístics aplicats a l’àrea de ciències polítiques." />
+  
+
+<meta name="author" content="Ferran Carrascosa Mallafrè" />
+
+
+<meta name="date" content="2021-01-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="datacross.html"/>
+<link rel="next" href="tydiverse.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<script>
+% https://stackoverflow.com/a/4425214/8242291
+var links = document.links;
+
+for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+
+    if (links[i].hostname != window.location.hostname) {
+        links[i].target = '_blank';
+    }
+
+}
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #2a211c;
+    color: #bdae9d;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+div.sourceCode
+  { color: #bdae9d; background-color: #2a211c; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffff00; } /* Alert */
+code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #44aa43; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #049b0a; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.dv { color: #44aa43; } /* DecVal */
+code span.er { color: #ffff00; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #44aa43; } /* Float */
+code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+code span.op { } /* Operator */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.sc { color: #049b0a; } /* SpecialChar */
+code span.ss { color: #049b0a; } /* SpecialString */
+code span.st { color: #049b0a; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #049b0a; } /* VerbatimString */
+code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><b><a href="./index.html"><img style="float: left; margin-right: 5px;" src="www/images/01_general/logo.png" width="40" height="40"></img>Mètodes Estadístics Aplicats</a></b></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#lectura-recomanada"><i class="fa fa-check"></i>Lectura recomanada</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="agraïments.html"><a href="agraïments.html"><i class="fa fa-check"></i>Agraïments</a></li>
+<li class="part"><span><b>I Computació en R</b></span></li>
+<li class="chapter" data-level="1" data-path="postapunt.html"><a href="postapunt.html"><i class="fa fa-check"></i><b>1</b> Posta a punt</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="postapunt.html"><a href="postapunt.html#r"><i class="fa fa-check"></i><b>1.1</b> R</a></li>
+<li class="chapter" data-level="1.2" data-path="postapunt.html"><a href="postapunt.html#rstudio"><i class="fa fa-check"></i><b>1.2</b> RStudio</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="postapunt.html"><a href="postapunt.html#gitproject"><i class="fa fa-check"></i><b>1.2.1</b> Crear un proyecto</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="postapunt.html"><a href="postapunt.html#paquetes"><i class="fa fa-check"></i><b>1.3</b> Paquets de R</a></li>
+<li class="chapter" data-level="1.4" data-path="postapunt.html"><a href="postapunt.html#rmarkdown-.rmd"><i class="fa fa-check"></i><b>1.4</b> Rmarkdown (*.Rmd)</a>
+<ul>
+<li class="chapter" data-level="" data-path="postapunt.html"><a href="postapunt.html#comandos-rmarkdown"><i class="fa fa-check"></i>Comandos Rmarkdown</a></li>
+<li class="chapter" data-level="" data-path="postapunt.html"><a href="postapunt.html#recomendaciones"><i class="fa fa-check"></i>Recomendaciones</a></li>
+<li class="chapter" data-level="" data-path="postapunt.html"><a href="postapunt.html#recomendaciones-1"><i class="fa fa-check"></i>Recomendaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="postapunt.html"><a href="postapunt.html#act11"><i class="fa fa-check"></i><b>1.5</b> Actividad guiada 1.1</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="postapunt.html"><a href="postapunt.html#r-markdown"><i class="fa fa-check"></i><b>1.5.1</b> R Markdown</a></li>
+<li class="chapter" data-level="1.5.2" data-path="postapunt.html"><a href="postapunt.html#including-plots"><i class="fa fa-check"></i><b>1.5.2</b> Including Plots</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>2</b> Elementos básicos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basics.html"><a href="basics.html#objetos-de-r"><i class="fa fa-check"></i><b>2.1</b> Objetos de R</a>
+<ul>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html#asignar-objetos"><i class="fa fa-check"></i>Asignar objetos</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html#listar-objetos"><i class="fa fa-check"></i>Listar objetos</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html#guardar-objetos"><i class="fa fa-check"></i>Guardar objetos</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html#borrar-objetos"><i class="fa fa-check"></i>Borrar objetos</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html#cargar-objetos"><i class="fa fa-check"></i>Cargar objetos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#scripts"><i class="fa fa-check"></i><b>2.2</b> Scripts</a></li>
+<li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#act12"><i class="fa fa-check"></i><b>2.3</b> Actividad guiada 1.2</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#gráfico-de-dispersión-de-países"><i class="fa fa-check"></i><b>2.3.1</b> Gráfico de dispersión de países</a></li>
+<li class="chapter" data-level="2.3.2" data-path="basics.html"><a href="basics.html#tabla-descriptiva-de-países"><i class="fa fa-check"></i><b>2.3.2</b> Tabla descriptiva de países</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="objectesr.html"><a href="objectesr.html"><i class="fa fa-check"></i><b>3</b> Objetos de R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="objectesr.html"><a href="objectesr.html#colecciones-de-objetos"><i class="fa fa-check"></i><b>3.1</b> Colecciones de objetos</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="objectesr.html"><a href="objectesr.html#tipo-básicos"><i class="fa fa-check"></i><b>3.1.1</b> Tipo básicos</a></li>
+<li class="chapter" data-level="3.1.2" data-path="objectesr.html"><a href="objectesr.html#vectores"><i class="fa fa-check"></i><b>3.1.2</b> Vectores</a></li>
+<li class="chapter" data-level="3.1.3" data-path="objectesr.html"><a href="objectesr.html#matrices"><i class="fa fa-check"></i><b>3.1.3</b> Matrices</a></li>
+<li class="chapter" data-level="3.1.4" data-path="objectesr.html"><a href="objectesr.html#listas"><i class="fa fa-check"></i><b>3.1.4</b> Listas</a></li>
+<li class="chapter" data-level="3.1.5" data-path="objectesr.html"><a href="objectesr.html#data-frames"><i class="fa fa-check"></i><b>3.1.5</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="objectesr.html"><a href="objectesr.html#filtrado-de-objetos"><i class="fa fa-check"></i><b>3.2</b> Filtrado de objetos</a>
+<ul>
+<li class="chapter" data-level="" data-path="objectesr.html"><a href="objectesr.html#enteros-positivos"><i class="fa fa-check"></i>Enteros positivos</a></li>
+<li class="chapter" data-level="" data-path="objectesr.html"><a href="objectesr.html#enteros-negativos"><i class="fa fa-check"></i>Enteros negativos</a></li>
+<li class="chapter" data-level="" data-path="objectesr.html"><a href="objectesr.html#nombres-3"><i class="fa fa-check"></i>Nombres</a></li>
+<li class="chapter" data-level="" data-path="objectesr.html"><a href="objectesr.html#dolares-y-dobles-corchetes"><i class="fa fa-check"></i>Dolares y dobles corchetes</a></li>
+<li class="chapter" data-level="" data-path="objectesr.html"><a href="objectesr.html#valores-lógicos"><i class="fa fa-check"></i>Valores lógicos</a></li>
+<li class="chapter" data-level="" data-path="objectesr.html"><a href="objectesr.html#operaciones-booleanas"><i class="fa fa-check"></i>Operaciones booleanas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="objectesr.html"><a href="objectesr.html#modificacion-objetos"><i class="fa fa-check"></i><b>3.3</b> Modificacion objetos</a>
+<ul>
+<li><a href="objectesr.html#filtro-y-asignación--">Filtro y asignación “<code>]&lt;-</code>”</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="objectesr.html"><a href="objectesr.html#información-faltante"><i class="fa fa-check"></i><b>3.4</b> Información faltante</a>
+<ul>
+<li class="chapter" data-level="" data-path="objectesr.html"><a href="objectesr.html#seleccion-filas-missings"><i class="fa fa-check"></i>Seleccion filas missings</a></li>
+<li class="chapter" data-level="" data-path="objectesr.html"><a href="objectesr.html#filtros-missings"><i class="fa fa-check"></i>Filtros missings</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Trabajo con datos</b></span></li>
+<li class="chapter" data-level="4" data-path="dataio.html"><a href="dataio.html"><i class="fa fa-check"></i><b>4</b> Lectura escritura</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="dataio.html"><a href="dataio.html#datos-de-texto"><i class="fa fa-check"></i><b>4.1</b> Datos de texto</a>
+<ul>
+<li class="chapter" data-level="" data-path="dataio.html"><a href="dataio.html#lectura-texto-con-separador"><i class="fa fa-check"></i>Lectura texto con separador</a></li>
+<li class="chapter" data-level="" data-path="dataio.html"><a href="dataio.html#escritura-texto-con-separador"><i class="fa fa-check"></i>Escritura texto con separador</a></li>
+<li class="chapter" data-level="" data-path="dataio.html"><a href="dataio.html#texto-con-ancho-fijo"><i class="fa fa-check"></i>Texto con ancho fijo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="dataio.html"><a href="dataio.html#otros-formatos"><i class="fa fa-check"></i><b>4.2</b> Otros formatos</a>
+<ul>
+<li class="chapter" data-level="" data-path="dataio.html"><a href="dataio.html#leer-excel"><i class="fa fa-check"></i>Leer Excel</a></li>
+<li class="chapter" data-level="" data-path="dataio.html"><a href="dataio.html#leer-spss"><i class="fa fa-check"></i>Leer SPSS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="getdata.html"><a href="getdata.html"><i class="fa fa-check"></i><b>5</b> Fuentes de datos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="getdata.html"><a href="getdata.html#algunmos-orígenes"><i class="fa fa-check"></i><b>5.1</b> Algunmos orígenes:</a></li>
+<li class="chapter" data-level="5.2" data-path="getdata.html"><a href="getdata.html#más-origenes"><i class="fa fa-check"></i><b>5.2</b> Más origenes</a></li>
+<li class="chapter" data-level="5.3" data-path="getdata.html"><a href="getdata.html#crear-datos"><i class="fa fa-check"></i><b>5.3</b> Crear datos</a></li>
+<li class="chapter" data-level="5.4" data-path="getdata.html"><a href="getdata.html#criterios-selección"><i class="fa fa-check"></i><b>5.4</b> Criterios selección</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ggplot2graph.html"><a href="ggplot2graph.html"><i class="fa fa-check"></i><b>6</b> Gráficos con ggplot2</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ggplot2graph.html"><a href="ggplot2graph.html#estructura-básica"><i class="fa fa-check"></i><b>6.1</b> Estructura básica</a></li>
+<li class="chapter" data-level="6.2" data-path="ggplot2graph.html"><a href="ggplot2graph.html#otros-geoms"><i class="fa fa-check"></i><b>6.2</b> Otros geoms</a></li>
+<li class="chapter" data-level="6.3" data-path="ggplot2graph.html"><a href="ggplot2graph.html#otros-elmentos"><i class="fa fa-check"></i><b>6.3</b> Otros elmentos</a></li>
+<li class="chapter" data-level="6.4" data-path="ggplot2graph.html"><a href="ggplot2graph.html#más-ejemplos"><i class="fa fa-check"></i><b>6.4</b> Más ejemplos</a>
+<ul>
+<li class="chapter" data-level="" data-path="ggplot2graph.html"><a href="ggplot2graph.html#panel-de-datos"><i class="fa fa-check"></i>Panel de datos</a></li>
+<li class="chapter" data-level="" data-path="ggplot2graph.html"><a href="ggplot2graph.html#etiquetas"><i class="fa fa-check"></i>Etiquetas</a></li>
+<li class="chapter" data-level="" data-path="ggplot2graph.html"><a href="ggplot2graph.html#paleta-colores"><i class="fa fa-check"></i>Paleta colores</a></li>
+<li class="chapter" data-level="" data-path="ggplot2graph.html"><a href="ggplot2graph.html#zoom"><i class="fa fa-check"></i>Zoom</a></li>
+<li class="chapter" data-level="" data-path="ggplot2graph.html"><a href="ggplot2graph.html#temas"><i class="fa fa-check"></i>Temas</a></li>
+<li class="chapter" data-level="" data-path="ggplot2graph.html"><a href="ggplot2graph.html#gráficos-interactivos"><i class="fa fa-check"></i>Gráficos interactivos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="ggplot2graph.html"><a href="ggplot2graph.html#act13"><i class="fa fa-check"></i><b>6.5</b> Actividad guiada 1.3</a>
+<ul>
+<li class="chapter" data-level="" data-path="ggplot2graph.html"><a href="ggplot2graph.html#gráfico-de-dispersión-de-países-1"><i class="fa fa-check"></i>Gráfico de dispersión de países</a></li>
+<li class="chapter" data-level="6.5.1" data-path="ggplot2graph.html"><a href="ggplot2graph.html#preparación-de-datos"><i class="fa fa-check"></i><b>6.5.1</b> Preparación de datos</a></li>
+<li class="chapter" data-level="6.5.2" data-path="ggplot2graph.html"><a href="ggplot2graph.html#descriptivo-boxplot"><i class="fa fa-check"></i><b>6.5.2</b> Descriptivo boxplot</a></li>
+<li class="chapter" data-level="6.5.3" data-path="ggplot2graph.html"><a href="ggplot2graph.html#gráfico-de-dispersión-de-países-2"><i class="fa fa-check"></i><b>6.5.3</b> Gráfico de dispersión de países</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="datacross.html"><a href="datacross.html"><i class="fa fa-check"></i><b>7</b> Cruces entre tablas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="datacross.html"><a href="datacross.html#ordenación-y-union"><i class="fa fa-check"></i><b>7.1</b> Ordenación y Union</a>
+<ul>
+<li class="chapter" data-level="" data-path="datacross.html"><a href="datacross.html#ordenación"><i class="fa fa-check"></i>Ordenación</a></li>
+<li class="chapter" data-level="" data-path="datacross.html"><a href="datacross.html#unión-por-columnas"><i class="fa fa-check"></i>Unión por columnas</a></li>
+<li class="chapter" data-level="" data-path="datacross.html"><a href="datacross.html#unión-por-filas"><i class="fa fa-check"></i>Unión por filas</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="datacross.html"><a href="datacross.html#cruce-por-campos-clave"><i class="fa fa-check"></i><b>7.2</b> Cruce por campos clave</a>
+<ul>
+<li class="chapter" data-level="" data-path="datacross.html"><a href="datacross.html#unicidad"><i class="fa fa-check"></i>Unicidad</a></li>
+<li class="chapter" data-level="" data-path="datacross.html"><a href="datacross.html#fusión-con-claves"><i class="fa fa-check"></i>Fusión con claves</a></li>
+<li class="chapter" data-level="" data-path="datacross.html"><a href="datacross.html#definción-de-las-claves"><i class="fa fa-check"></i>Definción de las claves</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="resumagg.html"><a href="resumagg.html"><i class="fa fa-check"></i><b>8</b> Resumenes de agregados</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="resumagg.html"><a href="resumagg.html#summary"><i class="fa fa-check"></i><b>8.1</b> Summary</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="resumagg.html"><a href="resumagg.html#estadísticos-basicos"><i class="fa fa-check"></i><b>8.1.1</b> Estadísticos basicos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="resumagg.html"><a href="resumagg.html#tablas-de-frecuencias"><i class="fa fa-check"></i><b>8.2</b> Tablas de frecuencias</a></li>
+<li class="chapter" data-level="8.3" data-path="resumagg.html"><a href="resumagg.html#agregados-por-subgrupos"><i class="fa fa-check"></i><b>8.3</b> Agregados por subgrupos</a></li>
+<li class="chapter" data-level="8.4" data-path="resumagg.html"><a href="resumagg.html#la-familia-apply"><i class="fa fa-check"></i><b>8.4</b> La familia apply</a>
+<ul>
+<li class="chapter" data-level="" data-path="resumagg.html"><a href="resumagg.html#tapply"><i class="fa fa-check"></i>tapply</a></li>
+<li class="chapter" data-level="" data-path="resumagg.html"><a href="resumagg.html#lapply"><i class="fa fa-check"></i>lapply</a></li>
+<li class="chapter" data-level="" data-path="resumagg.html"><a href="resumagg.html#sapply"><i class="fa fa-check"></i>sapply</a></li>
+<li class="chapter" data-level="" data-path="resumagg.html"><a href="resumagg.html#apply"><i class="fa fa-check"></i>apply</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="tydiverse.html"><a href="tydiverse.html"><i class="fa fa-check"></i><b>9</b> Alternativas Tydiverse</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="tydiverse.html"><a href="tydiverse.html#dplyr-arrange-filter-select"><i class="fa fa-check"></i><b>9.1</b> Dplyr: arrange, filter, select</a></li>
+<li class="chapter" data-level="9.2" data-path="tydiverse.html"><a href="tydiverse.html#dplyr-mutate-group_by-summarise"><i class="fa fa-check"></i><b>9.2</b> Dplyr: mutate, group_by, summarise</a></li>
+<li class="chapter" data-level="9.3" data-path="tydiverse.html"><a href="tydiverse.html#actividad-guiada-1.4."><i class="fa fa-check"></i><b>9.3</b> Actividad guiada 1.4.</a></li>
+<li class="chapter" data-level="9.4" data-path="tydiverse.html"><a href="tydiverse.html#act14"><i class="fa fa-check"></i><b>9.4</b> Actividad guiada 1.4</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="tydiverse.html"><a href="tydiverse.html#evolución-de-los-continentes"><i class="fa fa-check"></i><b>9.4.1</b> Evolución de los continentes</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III Regressió</b></span></li>
+<li class="chapter" data-level="10" data-path="lineal.html"><a href="lineal.html"><i class="fa fa-check"></i><b>10</b> Regressió lineal</a></li>
+<li class="chapter" data-level="11" data-path="logistica.html"><a href="logistica.html"><i class="fa fa-check"></i><b>11</b> Regressió logística</a></li>
+<li class="part"><span><b>IV Reducció dimensió y Clustering</b></span></li>
+<li class="chapter" data-level="12" data-path="acp.html"><a href="acp.html"><i class="fa fa-check"></i><b>12</b> Componentes principales</a></li>
+<li class="chapter" data-level="13" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i><b>13</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="cluster.html"><a href="cluster.html#jerarquic"><i class="fa fa-check"></i><b>13.1</b> Cluster jerarquic</a></li>
+<li class="chapter" data-level="13.2" data-path="cluster.html"><a href="cluster.html#kmeans"><i class="fa fa-check"></i><b>13.2</b> Cluster no jerarquic</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="acorresp.html"><a href="acorresp.html"><i class="fa fa-check"></i><b>14</b> Análisis correspondencies</a></li>
+<li class="chapter" data-level="" data-path="referències.html"><a href="referències.html"><i class="fa fa-check"></i>Referències</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/griu/meacp" target="blank">Repositori GiutHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mètodes Estadístics Aplicats a Ciències Polítiques</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="resumagg" class="section level1" number="8">
+<h1><span class="header-section-number">Capítol 8</span> Resumenes de agregados</h1>
+<p>R tiene muchas opciones para construir agregados.</p>
+<div id="summary" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Summary</h2>
+<p>Para tener una primera impresión sobre los datos utiliza <code>summary()</code>.</p>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="resumagg.html#cb246-1" aria-hidden="true" tabindex="-1"></a>paises07Summ <span class="ot">&lt;-</span> paises07</span>
+<span id="cb246-2"><a href="resumagg.html#cb246-2" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>pais <span class="ot">&lt;-</span> <span class="fu">as.character</span>(paises07Summ<span class="sc">$</span>pais)</span>
+<span id="cb246-3"><a href="resumagg.html#cb246-3" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>fecha <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">paste</span>(paises07Summ<span class="sc">$</span>anio,<span class="st">&quot;12&quot;</span>,<span class="st">&quot;31&quot;</span>,<span class="at">sep=</span><span class="st">&quot;-&quot;</span>),<span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
+<span id="cb246-4"><a href="resumagg.html#cb246-4" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>es_grande <span class="ot">&lt;-</span> paises07Summ<span class="sc">$</span>poblacion <span class="sc">&gt;</span> <span class="dv">30</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span></span>
+<span id="cb246-5"><a href="resumagg.html#cb246-5" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>pib_per_capita[<span class="fu">c</span>(<span class="dv">34</span>,<span class="dv">70</span>,<span class="dv">108</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb246-6"><a href="resumagg.html#cb246-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb246-7"><a href="resumagg.html#cb246-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(paises07Summ[,<span class="fu">c</span>(<span class="st">&quot;pais&quot;</span>,<span class="st">&quot;continente&quot;</span>,<span class="st">&quot;pib_per_capita&quot;</span>,<span class="st">&quot;es_grande&quot;</span>,<span class="st">&quot;fecha&quot;</span>),]))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+pais
+</th>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:left;">
+pib_per_capita
+</th>
+<th style="text-align:left;">
+es_grande
+</th>
+<th style="text-align:left;">
+fecha
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Length:142
+</td>
+<td style="text-align:left;">
+África :52
+</td>
+<td style="text-align:left;">
+Min. : 277.6
+</td>
+<td style="text-align:left;">
+Mode :logical
+</td>
+<td style="text-align:left;">
+Min. :2007-12-31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Class :character
+</td>
+<td style="text-align:left;">
+Américas:25
+</td>
+<td style="text-align:left;">
+1st Qu.: 1708.3
+</td>
+<td style="text-align:left;">
+FALSE:106
+</td>
+<td style="text-align:left;">
+1st Qu.:2007-12-31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mode :character
+</td>
+<td style="text-align:left;">
+Asia :33
+</td>
+<td style="text-align:left;">
+Median : 6223.4
+</td>
+<td style="text-align:left;">
+TRUE :36
+</td>
+<td style="text-align:left;">
+Median :2007-12-31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Europa :30
+</td>
+<td style="text-align:left;">
+Mean :11750.2
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Mean :2007-12-31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Oceanía : 2
+</td>
+<td style="text-align:left;">
+3rd Qu.:18008.7
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+3rd Qu.:2007-12-31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Max. :49357.2
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Max. :2007-12-31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA’s :3
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+<p><code>summary</code> en <code>factor</code> y <code>logic</code> devuelve una tabla de frecuencias, en cambio en <code>character</code> no. En <code>numeric</code>y <code>Date</code> devuelve 6 estadísticos básicos de resumen más el conteo de <code>NA</code>s.</p>
+<div id="estadísticos-basicos" class="section level3" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Estadísticos basicos</h3>
+<p>Los 6 estadísticos básicos del summary son:</p>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="resumagg.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 277.5519</code></pre>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="resumagg.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="fl">0.25</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>##      25% 
+## 1708.268</code></pre>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="resumagg.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 6223.367</code></pre>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="resumagg.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 11750.22</code></pre>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="resumagg.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="fl">0.75</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>##      75% 
+## 18008.73</code></pre>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="resumagg.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 49357.19</code></pre>
+<p>El parámetro <code>na.rm=TRUE</code> evita que las funciones resumen, devuelvan un NA debido a la presencia de NA s en la variable <code>pib_por_capita</code>. Observa como esto sucede en la siguiente función.</p>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="resumagg.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(paises07Summ<span class="sc">$</span>pib_per_capita)</span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<p>La función <code>quantile()</code>, por sí sola, puede calcular todos los valores, excepto la media.</p>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="resumagg.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">quantile</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+x
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+0%
+</td>
+<td style="text-align:right;">
+277.5519
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+25%
+</td>
+<td style="text-align:right;">
+1708.2679
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+50%
+</td>
+<td style="text-align:right;">
+6223.3675
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+75%
+</td>
+<td style="text-align:right;">
+18008.7268
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+100%
+</td>
+<td style="text-align:right;">
+49357.1902
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tablas-de-frecuencias" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Tablas de frecuencias</h2>
+<p>Para obtener una tabla de frecuencias, utiliza <code>table()</code>. Para una variable.</p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="resumagg.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente))  <span class="co"># una variable</span></span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Var1
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+52
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Américas
+</td>
+<td style="text-align:right;">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+33
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+<p>Tablas cruzadas de dos o más variables.</p>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="resumagg.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente,paises07Summ<span class="sc">$</span>es_grande))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+FALSE
+</th>
+<th style="text-align:right;">
+TRUE
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+42
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Américas
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Asia es el continente con mayor número de países grandes (de más de 30M de hab.).</p>
+</blockquote>
+<p>En muchas ocasiones, es útil tramar las variables numéricas en intervalos. En R utiliza <code>cut()</code>.</p>
+<p>Vamos a crear la variable nivel de riqueza a partir del pib_per_capita cortando la variable por 1700$ y 18000$.</p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="resumagg.html#cb264-1" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>nivel_de_riqueza <span class="ot">&lt;-</span> <span class="fu">cut</span>(paises07Summ<span class="sc">$</span>pib_per_capita, </span>
+<span id="cb264-2"><a href="resumagg.html#cb264-2" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">breaks=</span><span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>,<span class="dv">1700</span>,<span class="dv">18000</span>,<span class="cn">Inf</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="resumagg.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07Summ[,<span class="fu">c</span>(<span class="st">&quot;pais&quot;</span>,<span class="st">&quot;pib_per_capita&quot;</span>,<span class="st">&quot;nivel_de_riqueza&quot;</span>)]))</span></code></pre></div>
+<blockquote>
+<p>Para definir los <code>breaks</code>, R permite utilizar <code>-Inf</code> e <code>Inf</code> (infinito) como si fueran números.</p>
+</blockquote>
+<p><code>cut()</code> crea un <code>factor</code> ordenado a partir de la variable <code>numeric</code> con los siguientes levels:</p>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="resumagg.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(paises07Summ<span class="sc">$</span>nivel_de_riqueza)</span></code></pre></div>
+<pre><code>## [1] &quot;(-Inf,1.7e+03]&quot;    &quot;(1.7e+03,1.8e+04]&quot; &quot;(1.8e+04, Inf]&quot;</code></pre>
+<p>Para modificar las etiquetas utiliza la misma función <code>levels()</code>.</p>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="resumagg.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(paises07Summ<span class="sc">$</span>nivel_de_riqueza) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pobres&quot;</span>,<span class="st">&quot;Medios&quot;</span>,<span class="st">&quot;Ricos&quot;</span>)</span></code></pre></div>
+<p>Mostramos a continuación la distribución de países ricos y pobres por continente en 2007.</p>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="resumagg.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente, paises07Summ<span class="sc">$</span>nivel_de_riqueza, <span class="at">useNA =</span> <span class="st">&quot;ifany&quot;</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Pobres
+</th>
+<th style="text-align:right;">
+Medios
+</th>
+<th style="text-align:right;">
+Ricos
+</th>
+<th style="text-align:right;">
+NA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+29
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Américas
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p>Gráficamente.</p>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="resumagg.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(paises07Summ) <span class="sc">+</span></span>
+<span id="cb270-2"><a href="resumagg.html#cb270-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x=</span>continente, <span class="at">fill=</span>nivel_de_riqueza), <span class="at">position =</span> <span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
+<span id="cb270-3"><a href="resumagg.html#cb270-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&quot;%&quot;</span>)</span></code></pre></div>
+<p><img src="meacp_files/figure-html/unnamed-chunk-147-1.png" width="672" /></p>
+<p>Para calcular la tabla de porcentajes que se observan en el gráfico se utiliza <code>prop.table(., margin = ?)</code>, dónde ? vale 1 para obtener el % fila y 2 para el % columna.</p>
+<p>Para incluir la suma marginal por filas se utiliza <code>addmargins(.,margin = ?)</code>, dónde ? vale 1 para incluir el total suma marginal fila y 2 para el total columna.</p>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="resumagg.html#cb271-1" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente, paises07Summ<span class="sc">$</span>nivel_de_riqueza, <span class="at">useNA =</span> <span class="st">&quot;ifany&quot;</span>)</span>
+<span id="cb271-2"><a href="resumagg.html#cb271-2" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">addmargins</span>(tabla1, <span class="at">margin =</span> <span class="dv">1</span>) <span class="co"># total marginal columna (antes que el %)</span></span>
+<span id="cb271-3"><a href="resumagg.html#cb271-3" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fu">prop.table</span>(tabla1, <span class="at">margin =</span> <span class="dv">1</span>)  <span class="co"># porcentaje fila</span></span>
+<span id="cb271-4"><a href="resumagg.html#cb271-4" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">addmargins</span>(tabla1, <span class="at">margin =</span> <span class="dv">2</span>) <span class="co"># total marginal fila </span></span>
+<span id="cb271-5"><a href="resumagg.html#cb271-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(tabla1,<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Pobres
+</th>
+<th style="text-align:right;">
+Medios
+</th>
+<th style="text-align:right;">
+Ricos
+</th>
+<th style="text-align:right;">
+NA
+</th>
+<th style="text-align:right;">
+Sum
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+55.8
+</td>
+<td style="text-align:right;">
+42.3
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+1.9
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Américas
+</td>
+<td style="text-align:right;">
+4.0
+</td>
+<td style="text-align:right;">
+80.0
+</td>
+<td style="text-align:right;">
+16.0
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+12.1
+</td>
+<td style="text-align:right;">
+54.5
+</td>
+<td style="text-align:right;">
+30.3
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+30.0
+</td>
+<td style="text-align:right;">
+66.7
+</td>
+<td style="text-align:right;">
+3.3
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+100.0
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sum
+</td>
+<td style="text-align:right;">
+23.9
+</td>
+<td style="text-align:right;">
+48.6
+</td>
+<td style="text-align:right;">
+25.4
+</td>
+<td style="text-align:right;">
+2.1
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Observa que para definir el nivel de riqueza de los países en 2007 se ha realizado la siguiente transformación:</p>
+</blockquote>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="resumagg.html#cb272-1" aria-hidden="true" tabindex="-1"></a>paises07<span class="sc">$</span>nivel_de_riqueza <span class="ot">&lt;-</span> <span class="fu">cut</span>(paises07<span class="sc">$</span>pib_per_capita, <span class="at">breaks=</span><span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>,<span class="dv">1700</span>,<span class="dv">18000</span>,<span class="cn">Inf</span>))</span>
+<span id="cb272-2"><a href="resumagg.html#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(paises07<span class="sc">$</span>nivel_de_riqueza) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pobres&quot;</span>,<span class="st">&quot;Medios&quot;</span>,<span class="st">&quot;Ricos&quot;</span>)</span></code></pre></div>
+</div>
+<div id="agregados-por-subgrupos" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Agregados por subgrupos</h2>
+<p>Además de frecuencias, es necesario saber calcular otros estadísticos básicos para subgrupo de un data frame. Por ejemplo, la media de esperanza de vida y del pib per cápita, así como, el total de población por continente y nivel de riqueza.</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="resumagg.html#cb273-1" aria-hidden="true" tabindex="-1"></a>agg1 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(paises07[,<span class="fu">c</span>(<span class="st">&quot;esperanza_de_vida&quot;</span>,<span class="st">&quot;pib_per_capita&quot;</span>)],</span>
+<span id="cb273-2"><a href="resumagg.html#cb273-2" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">list</span>(<span class="at">continente =</span> paises07<span class="sc">$</span>continente</span>
+<span id="cb273-3"><a href="resumagg.html#cb273-3" aria-hidden="true" tabindex="-1"></a>                       , <span class="at">nivel_de_riqueza=</span>paises07<span class="sc">$</span>nivel_de_riqueza),mean)</span>
+<span id="cb273-4"><a href="resumagg.html#cb273-4" aria-hidden="true" tabindex="-1"></a>agg2 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(paises07[,<span class="fu">c</span>(<span class="st">&quot;poblacion&quot;</span>),<span class="at">drop=</span><span class="cn">FALSE</span>],</span>
+<span id="cb273-5"><a href="resumagg.html#cb273-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">list</span>(<span class="at">continente =</span> paises07<span class="sc">$</span>continente</span>
+<span id="cb273-6"><a href="resumagg.html#cb273-6" aria-hidden="true" tabindex="-1"></a>                       , <span class="at">nivel_de_riqueza=</span>paises07<span class="sc">$</span>nivel_de_riqueza),sum)</span></code></pre></div>
+<blockquote>
+<p>&lt;recuerda&gt;aggregate() permite calcular un mismo estadístico sobre varias variables segmentando por más de un eje.&lt;/recuerda&gt;</p>
+</blockquote>
+<p>Se juntan ahora los dos agregados con <code>merge()</code> y se genera la variable combinada <code>continente_riqueza</code>.</p>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="resumagg.html#cb274-1" aria-hidden="true" tabindex="-1"></a>agg3 <span class="ot">&lt;-</span> <span class="fu">merge</span>(agg1,agg2)</span>
+<span id="cb274-2"><a href="resumagg.html#cb274-2" aria-hidden="true" tabindex="-1"></a>agg3<span class="sc">$</span>continente_riqueza <span class="ot">&lt;-</span> <span class="fu">paste</span>(agg3<span class="sc">$</span>continente,agg3<span class="sc">$</span>nivel_de_riqueza,<span class="at">sep=</span><span class="st">&quot;-&quot;</span>)</span>
+<span id="cb274-3"><a href="resumagg.html#cb274-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb274-4"><a href="resumagg.html#cb274-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(agg3)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+continente
+</th>
+<th style="text-align:left;">
+nivel_de_riqueza
+</th>
+<th style="text-align:right;">
+esperanza_de_vida
+</th>
+<th style="text-align:right;">
+pib_per_capita
+</th>
+<th style="text-align:right;">
+poblacion
+</th>
+<th style="text-align:left;">
+continente_riqueza
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:left;">
+Medios
+</td>
+<td style="text-align:right;">
+59.06305
+</td>
+<td style="text-align:right;">
+6014.4232
+</td>
+<td style="text-align:right;">
+454062366
+</td>
+<td style="text-align:left;">
+África-Medios
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:left;">
+Pobres
+</td>
+<td style="text-align:right;">
+51.68423
+</td>
+<td style="text-align:right;">
+943.7462
+</td>
+<td style="text-align:right;">
+475477326
+</td>
+<td style="text-align:left;">
+África-Pobres
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Américas
+</td>
+<td style="text-align:left;">
+Medios
+</td>
+<td style="text-align:right;">
+73.59135
+</td>
+<td style="text-align:right;">
+7863.3024
+</td>
+<td style="text-align:right;">
+550839183
+</td>
+<td style="text-align:left;">
+Américas-Medios
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Américas
+</td>
+<td style="text-align:left;">
+Pobres
+</td>
+<td style="text-align:right;">
+60.91600
+</td>
+<td style="text-align:right;">
+1201.6372
+</td>
+<td style="text-align:right;">
+8502814
+</td>
+<td style="text-align:left;">
+Américas-Pobres
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Américas
+</td>
+<td style="text-align:left;">
+Ricos
+</td>
+<td style="text-align:right;">
+76.86500
+</td>
+<td style="text-align:right;">
+29152.0266
+</td>
+<td style="text-align:right;">
+339529187
+</td>
+<td style="text-align:left;">
+Américas-Ricos
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:left;">
+Medios
+</td>
+<td style="text-align:right;">
+69.37822
+</td>
+<td style="text-align:right;">
+4912.6469
+</td>
+<td style="text-align:right;">
+3277982847
+</td>
+<td style="text-align:left;">
+Asia-Medios
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:left;">
+Pobres
+</td>
+<td style="text-align:right;">
+60.20820
+</td>
+<td style="text-align:right;">
+1198.8519
+</td>
+<td style="text-align:right;">
+282303757
+</td>
+<td style="text-align:left;">
+Asia-Pobres
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:left;">
+Ricos
+</td>
+<td style="text-align:right;">
+78.41910
+</td>
+<td style="text-align:right;">
+31718.7983
+</td>
+<td style="text-align:right;">
+251667223
+</td>
+<td style="text-align:left;">
+Asia-Ricos
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:left;">
+Medios
+</td>
+<td style="text-align:right;">
+74.26544
+</td>
+<td style="text-align:right;">
+10264.4946
+</td>
+<td style="text-align:right;">
+162756836
+</td>
+<td style="text-align:left;">
+Europa-Medios
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:left;">
+Ricos
+</td>
+<td style="text-align:right;">
+79.09852
+</td>
+<td style="text-align:right;">
+31393.0475
+</td>
+<td style="text-align:right;">
+423341693
+</td>
+<td style="text-align:left;">
+Europa-Ricos
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:left;">
+Ricos
+</td>
+<td style="text-align:right;">
+80.71950
+</td>
+<td style="text-align:right;">
+29810.1883
+</td>
+<td style="text-align:right;">
+24549947
+</td>
+<td style="text-align:left;">
+Oceanía-Ricos
+</td>
+</tr>
+</tbody>
+</table>
+<p>El mismo gráfico visto para países, ahora, agregado a nivel de continente y riqueza.</p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="resumagg.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(agg3, <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita</span>
+<span id="cb275-2"><a href="resumagg.html#cb275-2" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">y=</span>esperanza_de_vida</span>
+<span id="cb275-3"><a href="resumagg.html#cb275-3" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">label=</span>continente_riqueza</span>
+<span id="cb275-4"><a href="resumagg.html#cb275-4" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">color =</span>continente</span>
+<span id="cb275-5"><a href="resumagg.html#cb275-5" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">size=</span>poblacion)) <span class="sc">+</span></span>
+<span id="cb275-6"><a href="resumagg.html#cb275-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb275-7"><a href="resumagg.html#cb275-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">force=</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb275-8"><a href="resumagg.html#cb275-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb275-9"><a href="resumagg.html#cb275-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Continentes-riqueza en 2007 (no ponderado)&quot;</span>)</span></code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-152"></span>
+<img src="meacp_files/figure-html/unnamed-chunk-152-1.png" alt="Contienentes (Fuente: Elaboración propia, datos de Gapminder)" width="672" />
+<p class="caption">
+Figura 8.1: Contienentes (Fuente: Elaboración propia, datos de Gapminder)
+</p>
+</div>
+</div>
+<div id="la-familia-apply" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> La familia apply</h2>
+<p>Como se ha comentado, las funciones apply permiten vectorizar las operaciones de forma eficiente, sin utilizar bucles <code>for()</code>.</p>
+<div id="tapply" class="section level3 unnumbered">
+<h3>tapply</h3>
+<p>Es una alternativa a aggregate() para aplicar una función de agregación sobre una única variable y segmentando por un único eje.</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="resumagg.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(paises07<span class="sc">$</span>esperanza_de_vida,paises07<span class="sc">$</span>continente,quantile,<span class="at">probs=</span><span class="fl">0.25</span>)</span></code></pre></div>
+<pre><code>##   África Américas     Asia   Europa  Oceanía 
+## 47.83400 71.75200 65.48300 75.02975 80.46175</code></pre>
+</div>
+<div id="lapply" class="section level3 unnumbered">
+<h3>lapply</h3>
+<p>Permite aplicar una función sobre cada elemento de un vector o lista. Devuelve una lista.</p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="resumagg.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(paises07[,<span class="sc">-</span><span class="dv">1</span>], <span class="cf">function</span>(x) <span class="fu">summary</span>(x))</span></code></pre></div>
+<pre><code>## $continente
+##   África Américas     Asia   Europa  Oceanía 
+##       52       25       33       30        2 
+## 
+## $anio
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    2007    2007    2007    2007    2007    2007 
+## 
+## $esperanza_de_vida
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   39.61   57.16   71.94   67.01   76.41   82.60 
+## 
+## $poblacion
+##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+## 1.996e+05 4.508e+06 1.052e+07 4.402e+07 3.121e+07 1.319e+09 
+## 
+## $pib_per_capita
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   277.6  1624.8  6124.4 11680.1 18008.8 49357.2 
+## 
+## $nivel_de_riqueza
+## Pobres Medios  Ricos 
+##     36     69     37</code></pre>
+</div>
+<div id="sapply" class="section level3 unnumbered">
+<h3>sapply</h3>
+<p>Misma funcionalidad que lapply, pero simplificando el resultado a vector cuando es posible.</p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="resumagg.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(paises07, <span class="cf">function</span>(x) <span class="fu">class</span>(x))</span></code></pre></div>
+<pre><code>##              pais        continente              anio esperanza_de_vida         poblacion    pib_per_capita 
+##          &quot;factor&quot;          &quot;factor&quot;         &quot;integer&quot;         &quot;numeric&quot;         &quot;integer&quot;         &quot;numeric&quot; 
+##  nivel_de_riqueza 
+##          &quot;factor&quot;</code></pre>
+</div>
+<div id="apply" class="section level3 unnumbered">
+<h3>apply</h3>
+<p>Calcula agregados sobre cada una de los vectores marginas fila (<code>MARGIN = 1</code>), alternativamente columna (<code>MARGIN = 2</code>) de una matriz.</p>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="resumagg.html#cb282-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="at">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb282-2"><a href="resumagg.html#cb282-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(a,<span class="at">MARGIN =</span> <span class="dv">1</span>,sum)</span></code></pre></div>
+<pre><code>## [1]  7  9 11 13 15</code></pre>
+<p>Columnas,</p>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="resumagg.html#cb284-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="at">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb284-2"><a href="resumagg.html#cb284-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(a,<span class="dv">2</span>,sum)</span></code></pre></div>
+<pre><code>## [1] 15 40</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="datacross.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tydiverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/griu/meacp/edit/master/062-resumenes.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["meacp.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
