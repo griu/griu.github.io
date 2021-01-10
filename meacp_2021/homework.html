@@ -134,13 +134,13 @@ for (var i = 0, linksLength = links.length; i < linksLength; i++) {
 <li>Un diagrama de dispersió de ESPVIDA vs CALORIES. Comenta si s’observa o no associació entre aquests dues variables.</li>
 <li>Comenta si la associació observada justifica o no parlar de causalitat. Utiliza el program (Excel, SPSS o R) que coneguis. La lectura de les dades amb R seria</li>
 </ol>
-<p>dataXY&lt;-read.table(‘<a href="https://griu.github.io/meacp_2021/data/dataXY.dat" class="uri">https://griu.github.io/meacp_2021/data/dataXY.dat</a>,’ header=TRUE, dec=“,” sep=“;”)</p>
+<pre><code>dataXY&lt;-read.table(&#39;https://griu.github.io/meacp_2021/data/dataXY.dat&#39;, header=TRUE, dec=&quot;,&quot;, sep=&quot;;&quot;)</code></pre>
 </div>
 <div id="deure-2" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Deure 2</h2>
 <p>Considera les dades a PAISOS.SAV, lectura de dades en R:</p>
-<p>library(foreign)
-data &lt;- read.spss(“<a href="https://griu.github.io/meacp_2021/data/PAISOS.SAV" class="uri">https://griu.github.io/meacp_2021/data/PAISOS.SAV</a>,” use.value.labels = TRUE, to.data.frame = TRUE, use.missings =TRUE)</p>
+<pre><code>library(foreign)
+data &lt;- read.spss(&quot;https://griu.github.io/meacp_2021/data/PAISOS.SAV&quot;, use.value.labels = TRUE, to.data.frame = TRUE, use.missings =TRUE)</code></pre>
 <ol style="list-style-type: decimal">
 <li>Quins són els països que tenen menys de 47 anys d’esperança de vida?
 Quants països tenen menys d’un terç de la seva població alfabetitzada? I d’aquests, quants tenen un PIB per càpita superior a 1.000 dòlars?</li>
