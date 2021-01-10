@@ -35,7 +35,8 @@ pre code {
 }
 
 .part b {
-  color: #000000;
+  color: #F4F4F5;
+  opacity: 1;
   font-size: 18px;
 }
 
