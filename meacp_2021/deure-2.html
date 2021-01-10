@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítol 4 Deure 2 | Mètodes Estadístics Aplicats (21703). Curs 2020-2021</title>
+  <meta name="description" content="Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítol 4 Deure 2 | Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítol 4 Deure 2 | Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  
+  <meta name="twitter:description" content="Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+<meta name="author" content="Ferran Carrascosa Mallafrè" />
+
+
+<meta name="date" content="2021-01-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="deure-1.html"/>
+
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script>
+% https://stackoverflow.com/a/4425214/8242291
+var links = document.links;
+
+for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+
+    if (links[i].hostname != window.location.hostname) {
+        links[i].target = '_blank';
+    }
+
+}
+</script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><b><a href="./index.html"><img style="float: left; margin-right: 5px;" src="www/images/01_general/logo.png" width="40" height="40"></img>MEA 2020-2021 (21703)</a></b></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a></li>
+<li class="part"><span><b>I Diari classe Teoria</b></span></li>
+<li class="chapter" data-level="1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html"><i class="fa fa-check"></i><b>1</b> Teoria Setmana 1 (2020-01-13)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#operacions-básiques-amb-r"><i class="fa fa-check"></i><b>1.1</b> Operacions básiques amb R</a></li>
+</ul></li>
+<li class="part"><span><b>II Diari classe Seminaris</b></span></li>
+<li class="chapter" data-level="2" data-path="seminaris-setmana-1-2020-01-13.html"><a href="seminaris-setmana-1-2020-01-13.html"><i class="fa fa-check"></i><b>2</b> Seminaris Setmana 1 (2020-01-13)</a></li>
+<li class="part"><span><b>III Deures</b></span></li>
+<li class="chapter" data-level="3" data-path="deure-1.html"><a href="deure-1.html"><i class="fa fa-check"></i><b>3</b> Deure 1</a></li>
+<li class="chapter" data-level="4" data-path="deure-2.html"><a href="deure-2.html"><i class="fa fa-check"></i><b>4</b> Deure 2</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/griu/meacp_2021" target="blank">Repositori GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mètodes Estadístics Aplicats (21703). Curs 2020-2021</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="deure-2" class="section level1" number="4">
+<h1><span class="header-section-number">Capítol 4</span> Deure 2</h1>
+<p>Considera les dades a PAISOS.SAV, lectura de dades en R:
+library(foreign); data= read.spss(“<a href="http://84.89.132.1/~satorra/dades/PAISOS.SAV" class="uri">http://84.89.132.1/~satorra/dades/PAISOS.SAV</a>,” use.value.labels = TRUE, to.data.frame = TRUE, use.missings =TRUE); attach(data); names(data);
+Quins són els països que tenen menys de 47 anys d’esperança de vida?
+Quants països tenen menys d’un terç de la seva població alfabetitzada? I d’aquests, quants tenen un PIB per càpita superior a 1.000 dòlars?
+Quina és la mitjana del nombre de diaris que es llegeixen al món? Hi ha diferències en la lectura de diaris segons nivell de desenvolupament humà? Creus que a Espanya se’n llegeixen pocs? perquè?
+Quina és la mitjana d’habitants per metge? Quin és el valor d’aquesta mitjana en cada un dels tres nivells de desenvolupament humà en què s’han classificat els països? Hi ha diferències significatives entre elles?
+En relació al fitxer de dades PAISOS.SAV, tria una variable Y del teu interès i descriu la variació de la mateixa emprant un altre variable del fitxer de dades. En aquest procés, ajusta un model de regressió lineal simple entre la variable depenent i la variable explicativa, descriu els resultats de la regressió lineal simple, i comprova que la hipòtesi de linealitat es plausible en aquestes dades. Si veus que la linealitat no es plausible, efectua la corresponent transformació prèvia de les variables. Recull els residus, I fes un gràfic dels residus vs. la variable depenent ajustada.
+Fes un breu resum de les conclusions que creus que es desprenen de la teva anàlisi. Explica també les limitacions de l’anàlisi.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="deure-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/griu/meacp_2021/edit/master/03020-Homework_2.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["meacp_2021.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
