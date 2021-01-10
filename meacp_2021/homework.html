@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021</title>
+  <title>Capítol 3 Llista de Deures | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021</title>
   <meta name="description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  <meta property="og:title" content="Capítol 3 Llista de Deures | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  <meta name="twitter:title" content="Capítol 3 Llista de Deures | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
   
   <meta name="twitter:description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="seminaris-setmana-1-2020-01-13.html"/>
 
-<link rel="next" href="teoria-setmana-1-2020-01-13.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -124,32 +124,41 @@ for (var i = 0, linksLength = links.length; i < linksLength; i++) {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021</h1>
-<p class="author"><em>Ferran Carrascosa Mallafrè</em></p>
-<p class="date"><em>2021-01-10</em></p>
+<div id="homework" class="section level1" number="3">
+<h1><span class="header-section-number">Capítol 3</span> Llista de Deures</h1>
+<div id="deure-1" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Deure 1</h2>
+<p>En el link <a href="https://griu.github.io/meacp_2021/data/dataXY.dat" class="uri">https://griu.github.io/meacp_2021/data/dataXY.dat</a> hi han les dues variables ESPVIDA i CALORIES del fitxer PAISOS.SAV (són l’esperança de vida y les calories per habitant en diferents paisos del mon). Feu:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Una descripció breu univariant de cada una de les variables;</li>
+<li>Un diagrama de dispersió de ESPVIDA vs CALORIES. Comenta si s’observa o no associació entre aquests dues variables.</li>
+<li>Comenta si la associació observada justifica o no parlar de causalitat. Utiliza el program (Excel, SPSS o R) que coneguis. La lectura de les dades amb R seria</li>
+</ol>
+<p>dataXY&lt;-read.table(‘<a href="https://griu.github.io/meacp_2021/data/dataXY.dat" class="uri">https://griu.github.io/meacp_2021/data/dataXY.dat</a>,’ header=TRUE, dec=“,” sep=“;”)</p>
 </div>
-<div id="introducció" class="section level1 unnumbered">
-<h1>Introducció</h1>
-<p>Aquesta web té com a objectiu donar suport als continguts de les clases de teoría y seminaris del curs 2020-2021 de Mètodes Estadístics Aplicats (21703).</p>
-<p>Els continguts de la web s’estructuren de la següent forma:</p>
-<ul>
-<li>Diari d’apunts de clase de teoria</li>
-<li>Diari d’apunts dels seminaris</li>
-<li>Deures del curs</li>
-</ul>
+<div id="deure-2" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Deure 2</h2>
+<p>Considera les dades a PAISOS.SAV, lectura de dades en R:</p>
+<p>library(foreign)
+data &lt;- read.spss(“<a href="https://griu.github.io/meacp_2021/data/PAISOS.SAV" class="uri">https://griu.github.io/meacp_2021/data/PAISOS.SAV</a>,” use.value.labels = TRUE, to.data.frame = TRUE, use.missings =TRUE)</p>
+<ol style="list-style-type: decimal">
+<li>Quins són els països que tenen menys de 47 anys d’esperança de vida?
+Quants països tenen menys d’un terç de la seva població alfabetitzada? I d’aquests, quants tenen un PIB per càpita superior a 1.000 dòlars?</li>
+<li>Quina és la mitjana del nombre de diaris que es llegeixen al món? Hi ha diferències en la lectura de diaris segons nivell de desenvolupament humà? Creus que a Espanya se’n llegeixen pocs? perquè?</li>
+<li>Quina és la mitjana d’habitants per metge? Quin és el valor d’aquesta mitjana en cada un dels tres nivells de desenvolupament humà en què s’han classificat els països? Hi ha diferències significatives entre elles?</li>
+<li>En relació al fitxer de dades PAISOS.SAV, tria una variable Y del teu interès i descriu la variació de la mateixa emprant un altre variable del fitxer de dades. En aquest procés, ajusta un model de regressió lineal simple entre la variable depenent i la variable explicativa, descriu els resultats de la regressió lineal simple, i comprova que la hipòtesi de linealitat es plausible en aquestes dades. Si veus que la linealitat no es plausible, efectua la corresponent transformació prèvia de les variables. Recull els residus, I fes un gràfic dels residus vs. la variable depenent ajustada.</li>
+<li>Fes un breu resum de les conclusions que creus que es desprenen de la teva anàlisi. Explica també les limitacions de l’anàlisi.</li>
+</ol>
 
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="seminaris-setmana-1-2020-01-13.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="teoria-setmana-1-2020-01-13.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -171,7 +180,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/griu/meacp_2021/edit/master/index.Rmd",
+"link": "https://github.com/griu/meacp_2021/edit/master/03010-Homework_1.Rmd",
 "text": "Edit"
 },
 "history": {

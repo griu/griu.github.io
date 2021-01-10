@@ -1,5 +1,10 @@
 teoria-setmana-1-2020-01-13
-operacions-básiques-amb-r
+avaluació
+el-treball
+exàmens
+participació
+bibliografia
 seminaris-setmana-1-2020-01-13
+homework
 deure-1
 deure-2
