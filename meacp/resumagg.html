@@ -155,9 +155,8 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#lectura-recomanada"><i class="fa fa-check"></i>Lectura recomanada</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agraïments"><i class="fa fa-check"></i>Agraïments</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="agraïments.html"><a href="agraïments.html"><i class="fa fa-check"></i>Agraïments</a></li>
 <li class="part"><span><b>I Computació en R</b></span></li>
 <li class="chapter" data-level="1" data-path="postapunt.html"><a href="postapunt.html"><i class="fa fa-check"></i><b>1</b> Posta a punt</a>
 <ul>
@@ -348,13 +347,13 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <div id="summary" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Summary</h2>
 <p>Para tener una primera impresión sobre los datos utiliza <code>summary()</code>.</p>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="resumagg.html#cb246-1" aria-hidden="true" tabindex="-1"></a>paises07Summ <span class="ot">&lt;-</span> paises07</span>
-<span id="cb246-2"><a href="resumagg.html#cb246-2" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>pais <span class="ot">&lt;-</span> <span class="fu">as.character</span>(paises07Summ<span class="sc">$</span>pais)</span>
-<span id="cb246-3"><a href="resumagg.html#cb246-3" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>fecha <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">paste</span>(paises07Summ<span class="sc">$</span>anio,<span class="st">&quot;12&quot;</span>,<span class="st">&quot;31&quot;</span>,<span class="at">sep=</span><span class="st">&quot;-&quot;</span>),<span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
-<span id="cb246-4"><a href="resumagg.html#cb246-4" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>es_grande <span class="ot">&lt;-</span> paises07Summ<span class="sc">$</span>poblacion <span class="sc">&gt;</span> <span class="dv">30</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span></span>
-<span id="cb246-5"><a href="resumagg.html#cb246-5" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>pib_per_capita[<span class="fu">c</span>(<span class="dv">34</span>,<span class="dv">70</span>,<span class="dv">108</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb246-6"><a href="resumagg.html#cb246-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb246-7"><a href="resumagg.html#cb246-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(paises07Summ[,<span class="fu">c</span>(<span class="st">&quot;pais&quot;</span>,<span class="st">&quot;continente&quot;</span>,<span class="st">&quot;pib_per_capita&quot;</span>,<span class="st">&quot;es_grande&quot;</span>,<span class="st">&quot;fecha&quot;</span>),]))</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="resumagg.html#cb249-1" aria-hidden="true" tabindex="-1"></a>paises07Summ <span class="ot">&lt;-</span> paises07</span>
+<span id="cb249-2"><a href="resumagg.html#cb249-2" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>pais <span class="ot">&lt;-</span> <span class="fu">as.character</span>(paises07Summ<span class="sc">$</span>pais)</span>
+<span id="cb249-3"><a href="resumagg.html#cb249-3" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>fecha <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="fu">paste</span>(paises07Summ<span class="sc">$</span>anio,<span class="st">&quot;12&quot;</span>,<span class="st">&quot;31&quot;</span>,<span class="at">sep=</span><span class="st">&quot;-&quot;</span>),<span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
+<span id="cb249-4"><a href="resumagg.html#cb249-4" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>es_grande <span class="ot">&lt;-</span> paises07Summ<span class="sc">$</span>poblacion <span class="sc">&gt;</span> <span class="dv">30</span><span class="sc">*</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span></span>
+<span id="cb249-5"><a href="resumagg.html#cb249-5" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>pib_per_capita[<span class="fu">c</span>(<span class="dv">34</span>,<span class="dv">70</span>,<span class="dv">108</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb249-6"><a href="resumagg.html#cb249-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb249-7"><a href="resumagg.html#cb249-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(paises07Summ[,<span class="fu">c</span>(<span class="st">&quot;pais&quot;</span>,<span class="st">&quot;continente&quot;</span>,<span class="st">&quot;pib_per_capita&quot;</span>,<span class="st">&quot;es_grande&quot;</span>,<span class="st">&quot;fecha&quot;</span>),]))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -517,25 +516,25 @@ NA
 <div id="estadísticos-basicos" class="section level3" number="8.1.1">
 <h3><span class="header-section-number">8.1.1</span> Estadísticos basicos</h3>
 <p>Los 6 estadísticos básicos del summary son:</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="resumagg.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="resumagg.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 277.5519</code></pre>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="resumagg.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="fl">0.25</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="resumagg.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="fl">0.25</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##      25% 
 ## 1708.268</code></pre>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="resumagg.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="resumagg.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 6223.367</code></pre>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="resumagg.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="resumagg.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 11750.22</code></pre>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="resumagg.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="fl">0.75</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="resumagg.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="fl">0.75</span>, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##      75% 
 ## 18008.73</code></pre>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="resumagg.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="resumagg.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 49357.19</code></pre>
 <p>El parámetro <code>na.rm=TRUE</code> evita que las funciones resumen, devuelvan un NA debido a la presencia de NA s en la variable <code>pib_por_capita</code>. Observa como esto sucede en la siguiente función.</p>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="resumagg.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(paises07Summ<span class="sc">$</span>pib_per_capita)</span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="resumagg.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(paises07Summ<span class="sc">$</span>pib_per_capita)</span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
 <p>La función <code>quantile()</code>, por sí sola, puede calcular todos los valores, excepto la media.</p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="resumagg.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">quantile</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="resumagg.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">quantile</span>(paises07Summ<span class="sc">$</span>pib_per_capita, <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>), <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -594,7 +593,7 @@ x
 <div id="tablas-de-frecuencias" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Tablas de frecuencias</h2>
 <p>Para obtener una tabla de frecuencias, utiliza <code>table()</code>. Para una variable.</p>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="resumagg.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente))  <span class="co"># una variable</span></span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="resumagg.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente))  <span class="co"># una variable</span></span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -650,7 +649,7 @@ Oceanía
 </tbody>
 </table>
 <p>Tablas cruzadas de dos o más variables.</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="resumagg.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente,paises07Summ<span class="sc">$</span>es_grande))</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="resumagg.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente,paises07Summ<span class="sc">$</span>es_grande))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -727,19 +726,19 @@ Oceanía
 </blockquote>
 <p>En muchas ocasiones, es útil tramar las variables numéricas en intervalos. En R utiliza <code>cut()</code>.</p>
 <p>Vamos a crear la variable nivel de riqueza a partir del pib_per_capita cortando la variable por 1700$ y 18000$.</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="resumagg.html#cb264-1" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>nivel_de_riqueza <span class="ot">&lt;-</span> <span class="fu">cut</span>(paises07Summ<span class="sc">$</span>pib_per_capita, </span>
-<span id="cb264-2"><a href="resumagg.html#cb264-2" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">breaks=</span><span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>,<span class="dv">1700</span>,<span class="dv">18000</span>,<span class="cn">Inf</span>))</span></code></pre></div>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="resumagg.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07Summ[,<span class="fu">c</span>(<span class="st">&quot;pais&quot;</span>,<span class="st">&quot;pib_per_capita&quot;</span>,<span class="st">&quot;nivel_de_riqueza&quot;</span>)]))</span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="resumagg.html#cb267-1" aria-hidden="true" tabindex="-1"></a>paises07Summ<span class="sc">$</span>nivel_de_riqueza <span class="ot">&lt;-</span> <span class="fu">cut</span>(paises07Summ<span class="sc">$</span>pib_per_capita, </span>
+<span id="cb267-2"><a href="resumagg.html#cb267-2" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">breaks=</span><span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>,<span class="dv">1700</span>,<span class="dv">18000</span>,<span class="cn">Inf</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="resumagg.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07Summ[,<span class="fu">c</span>(<span class="st">&quot;pais&quot;</span>,<span class="st">&quot;pib_per_capita&quot;</span>,<span class="st">&quot;nivel_de_riqueza&quot;</span>)]))</span></code></pre></div>
 <blockquote>
 <p>Para definir los <code>breaks</code>, R permite utilizar <code>-Inf</code> e <code>Inf</code> (infinito) como si fueran números.</p>
 </blockquote>
 <p><code>cut()</code> crea un <code>factor</code> ordenado a partir de la variable <code>numeric</code> con los siguientes levels:</p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="resumagg.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(paises07Summ<span class="sc">$</span>nivel_de_riqueza)</span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="resumagg.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(paises07Summ<span class="sc">$</span>nivel_de_riqueza)</span></code></pre></div>
 <pre><code>## [1] &quot;(-Inf,1.7e+03]&quot;    &quot;(1.7e+03,1.8e+04]&quot; &quot;(1.8e+04, Inf]&quot;</code></pre>
 <p>Para modificar las etiquetas utiliza la misma función <code>levels()</code>.</p>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="resumagg.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(paises07Summ<span class="sc">$</span>nivel_de_riqueza) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pobres&quot;</span>,<span class="st">&quot;Medios&quot;</span>,<span class="st">&quot;Ricos&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="resumagg.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(paises07Summ<span class="sc">$</span>nivel_de_riqueza) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pobres&quot;</span>,<span class="st">&quot;Medios&quot;</span>,<span class="st">&quot;Ricos&quot;</span>)</span></code></pre></div>
 <p>Mostramos a continuación la distribución de países ricos y pobres por continente en 2007.</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="resumagg.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente, paises07Summ<span class="sc">$</span>nivel_de_riqueza, <span class="at">useNA =</span> <span class="st">&quot;ifany&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="resumagg.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente, paises07Summ<span class="sc">$</span>nivel_de_riqueza, <span class="at">useNA =</span> <span class="st">&quot;ifany&quot;</span>))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -848,17 +847,17 @@ Oceanía
 </tbody>
 </table>
 <p>Gráficamente.</p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="resumagg.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(paises07Summ) <span class="sc">+</span></span>
-<span id="cb270-2"><a href="resumagg.html#cb270-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x=</span>continente, <span class="at">fill=</span>nivel_de_riqueza), <span class="at">position =</span> <span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
-<span id="cb270-3"><a href="resumagg.html#cb270-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&quot;%&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="resumagg.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(paises07Summ) <span class="sc">+</span></span>
+<span id="cb273-2"><a href="resumagg.html#cb273-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x=</span>continente, <span class="at">fill=</span>nivel_de_riqueza), <span class="at">position =</span> <span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
+<span id="cb273-3"><a href="resumagg.html#cb273-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&quot;%&quot;</span>)</span></code></pre></div>
 <p><img src="meacp_files/figure-html/unnamed-chunk-147-1.png" width="672" /></p>
 <p>Para calcular la tabla de porcentajes que se observan en el gráfico se utiliza <code>prop.table(., margin = ?)</code>, dónde ? vale 1 para obtener el % fila y 2 para el % columna.</p>
 <p>Para incluir la suma marginal por filas se utiliza <code>addmargins(.,margin = ?)</code>, dónde ? vale 1 para incluir el total suma marginal fila y 2 para el total columna.</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="resumagg.html#cb271-1" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente, paises07Summ<span class="sc">$</span>nivel_de_riqueza, <span class="at">useNA =</span> <span class="st">&quot;ifany&quot;</span>)</span>
-<span id="cb271-2"><a href="resumagg.html#cb271-2" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">addmargins</span>(tabla1, <span class="at">margin =</span> <span class="dv">1</span>) <span class="co"># total marginal columna (antes que el %)</span></span>
-<span id="cb271-3"><a href="resumagg.html#cb271-3" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fu">prop.table</span>(tabla1, <span class="at">margin =</span> <span class="dv">1</span>)  <span class="co"># porcentaje fila</span></span>
-<span id="cb271-4"><a href="resumagg.html#cb271-4" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">addmargins</span>(tabla1, <span class="at">margin =</span> <span class="dv">2</span>) <span class="co"># total marginal fila </span></span>
-<span id="cb271-5"><a href="resumagg.html#cb271-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(tabla1,<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="resumagg.html#cb274-1" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">table</span>(paises07Summ<span class="sc">$</span>continente, paises07Summ<span class="sc">$</span>nivel_de_riqueza, <span class="at">useNA =</span> <span class="st">&quot;ifany&quot;</span>)</span>
+<span id="cb274-2"><a href="resumagg.html#cb274-2" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">addmargins</span>(tabla1, <span class="at">margin =</span> <span class="dv">1</span>) <span class="co"># total marginal columna (antes que el %)</span></span>
+<span id="cb274-3"><a href="resumagg.html#cb274-3" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fu">prop.table</span>(tabla1, <span class="at">margin =</span> <span class="dv">1</span>)  <span class="co"># porcentaje fila</span></span>
+<span id="cb274-4"><a href="resumagg.html#cb274-4" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">addmargins</span>(tabla1, <span class="at">margin =</span> <span class="dv">2</span>) <span class="co"># total marginal fila </span></span>
+<span id="cb274-5"><a href="resumagg.html#cb274-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(tabla1,<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1007,26 +1006,26 @@ Sum
 <blockquote>
 <p>Observa que para definir el nivel de riqueza de los países en 2007 se ha realizado la siguiente transformación:</p>
 </blockquote>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="resumagg.html#cb272-1" aria-hidden="true" tabindex="-1"></a>paises07<span class="sc">$</span>nivel_de_riqueza <span class="ot">&lt;-</span> <span class="fu">cut</span>(paises07<span class="sc">$</span>pib_per_capita, <span class="at">breaks=</span><span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>,<span class="dv">1700</span>,<span class="dv">18000</span>,<span class="cn">Inf</span>))</span>
-<span id="cb272-2"><a href="resumagg.html#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(paises07<span class="sc">$</span>nivel_de_riqueza) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pobres&quot;</span>,<span class="st">&quot;Medios&quot;</span>,<span class="st">&quot;Ricos&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="resumagg.html#cb275-1" aria-hidden="true" tabindex="-1"></a>paises07<span class="sc">$</span>nivel_de_riqueza <span class="ot">&lt;-</span> <span class="fu">cut</span>(paises07<span class="sc">$</span>pib_per_capita, <span class="at">breaks=</span><span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>,<span class="dv">1700</span>,<span class="dv">18000</span>,<span class="cn">Inf</span>))</span>
+<span id="cb275-2"><a href="resumagg.html#cb275-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(paises07<span class="sc">$</span>nivel_de_riqueza) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pobres&quot;</span>,<span class="st">&quot;Medios&quot;</span>,<span class="st">&quot;Ricos&quot;</span>)</span></code></pre></div>
 </div>
 <div id="agregados-por-subgrupos" class="section level2" number="8.3">
 <h2><span class="header-section-number">8.3</span> Agregados por subgrupos</h2>
 <p>Además de frecuencias, es necesario saber calcular otros estadísticos básicos para subgrupo de un data frame. Por ejemplo, la media de esperanza de vida y del pib per cápita, así como, el total de población por continente y nivel de riqueza.</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="resumagg.html#cb273-1" aria-hidden="true" tabindex="-1"></a>agg1 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(paises07[,<span class="fu">c</span>(<span class="st">&quot;esperanza_de_vida&quot;</span>,<span class="st">&quot;pib_per_capita&quot;</span>)],</span>
-<span id="cb273-2"><a href="resumagg.html#cb273-2" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">list</span>(<span class="at">continente =</span> paises07<span class="sc">$</span>continente</span>
-<span id="cb273-3"><a href="resumagg.html#cb273-3" aria-hidden="true" tabindex="-1"></a>                       , <span class="at">nivel_de_riqueza=</span>paises07<span class="sc">$</span>nivel_de_riqueza),mean)</span>
-<span id="cb273-4"><a href="resumagg.html#cb273-4" aria-hidden="true" tabindex="-1"></a>agg2 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(paises07[,<span class="fu">c</span>(<span class="st">&quot;poblacion&quot;</span>),<span class="at">drop=</span><span class="cn">FALSE</span>],</span>
-<span id="cb273-5"><a href="resumagg.html#cb273-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">list</span>(<span class="at">continente =</span> paises07<span class="sc">$</span>continente</span>
-<span id="cb273-6"><a href="resumagg.html#cb273-6" aria-hidden="true" tabindex="-1"></a>                       , <span class="at">nivel_de_riqueza=</span>paises07<span class="sc">$</span>nivel_de_riqueza),sum)</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="resumagg.html#cb276-1" aria-hidden="true" tabindex="-1"></a>agg1 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(paises07[,<span class="fu">c</span>(<span class="st">&quot;esperanza_de_vida&quot;</span>,<span class="st">&quot;pib_per_capita&quot;</span>)],</span>
+<span id="cb276-2"><a href="resumagg.html#cb276-2" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">list</span>(<span class="at">continente =</span> paises07<span class="sc">$</span>continente</span>
+<span id="cb276-3"><a href="resumagg.html#cb276-3" aria-hidden="true" tabindex="-1"></a>                       , <span class="at">nivel_de_riqueza=</span>paises07<span class="sc">$</span>nivel_de_riqueza),mean)</span>
+<span id="cb276-4"><a href="resumagg.html#cb276-4" aria-hidden="true" tabindex="-1"></a>agg2 <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(paises07[,<span class="fu">c</span>(<span class="st">&quot;poblacion&quot;</span>),<span class="at">drop=</span><span class="cn">FALSE</span>],</span>
+<span id="cb276-5"><a href="resumagg.html#cb276-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">list</span>(<span class="at">continente =</span> paises07<span class="sc">$</span>continente</span>
+<span id="cb276-6"><a href="resumagg.html#cb276-6" aria-hidden="true" tabindex="-1"></a>                       , <span class="at">nivel_de_riqueza=</span>paises07<span class="sc">$</span>nivel_de_riqueza),sum)</span></code></pre></div>
 <blockquote>
 <p>&lt;recuerda&gt;aggregate() permite calcular un mismo estadístico sobre varias variables segmentando por más de un eje.&lt;/recuerda&gt;</p>
 </blockquote>
 <p>Se juntan ahora los dos agregados con <code>merge()</code> y se genera la variable combinada <code>continente_riqueza</code>.</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="resumagg.html#cb274-1" aria-hidden="true" tabindex="-1"></a>agg3 <span class="ot">&lt;-</span> <span class="fu">merge</span>(agg1,agg2)</span>
-<span id="cb274-2"><a href="resumagg.html#cb274-2" aria-hidden="true" tabindex="-1"></a>agg3<span class="sc">$</span>continente_riqueza <span class="ot">&lt;-</span> <span class="fu">paste</span>(agg3<span class="sc">$</span>continente,agg3<span class="sc">$</span>nivel_de_riqueza,<span class="at">sep=</span><span class="st">&quot;-&quot;</span>)</span>
-<span id="cb274-3"><a href="resumagg.html#cb274-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb274-4"><a href="resumagg.html#cb274-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(agg3)</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="resumagg.html#cb277-1" aria-hidden="true" tabindex="-1"></a>agg3 <span class="ot">&lt;-</span> <span class="fu">merge</span>(agg1,agg2)</span>
+<span id="cb277-2"><a href="resumagg.html#cb277-2" aria-hidden="true" tabindex="-1"></a>agg3<span class="sc">$</span>continente_riqueza <span class="ot">&lt;-</span> <span class="fu">paste</span>(agg3<span class="sc">$</span>continente,agg3<span class="sc">$</span>nivel_de_riqueza,<span class="at">sep=</span><span class="st">&quot;-&quot;</span>)</span>
+<span id="cb277-3"><a href="resumagg.html#cb277-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb277-4"><a href="resumagg.html#cb277-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(agg3)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -1274,15 +1273,15 @@ Oceanía-Ricos
 </tbody>
 </table>
 <p>El mismo gráfico visto para países, ahora, agregado a nivel de continente y riqueza.</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="resumagg.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(agg3, <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita</span>
-<span id="cb275-2"><a href="resumagg.html#cb275-2" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">y=</span>esperanza_de_vida</span>
-<span id="cb275-3"><a href="resumagg.html#cb275-3" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">label=</span>continente_riqueza</span>
-<span id="cb275-4"><a href="resumagg.html#cb275-4" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">color =</span>continente</span>
-<span id="cb275-5"><a href="resumagg.html#cb275-5" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">size=</span>poblacion)) <span class="sc">+</span></span>
-<span id="cb275-6"><a href="resumagg.html#cb275-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb275-7"><a href="resumagg.html#cb275-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">force=</span><span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb275-8"><a href="resumagg.html#cb275-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb275-9"><a href="resumagg.html#cb275-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Continentes-riqueza en 2007 (no ponderado)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="resumagg.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(agg3, <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita</span>
+<span id="cb278-2"><a href="resumagg.html#cb278-2" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">y=</span>esperanza_de_vida</span>
+<span id="cb278-3"><a href="resumagg.html#cb278-3" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">label=</span>continente_riqueza</span>
+<span id="cb278-4"><a href="resumagg.html#cb278-4" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">color =</span>continente</span>
+<span id="cb278-5"><a href="resumagg.html#cb278-5" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">size=</span>poblacion)) <span class="sc">+</span></span>
+<span id="cb278-6"><a href="resumagg.html#cb278-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb278-7"><a href="resumagg.html#cb278-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">force=</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb278-8"><a href="resumagg.html#cb278-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb278-9"><a href="resumagg.html#cb278-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Continentes-riqueza en 2007 (no ponderado)&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:unnamed-chunk-152"></span>
 <img src="meacp_files/figure-html/unnamed-chunk-152-1.png" alt="Contienentes (Fuente: Elaboración propia, datos de Gapminder)" width="672" />
 <p class="caption">
@@ -1296,14 +1295,14 @@ Figura 8.1: Contienentes (Fuente: Elaboración propia, datos de Gapminder)
 <div id="tapply" class="section level3 unnumbered">
 <h3>tapply</h3>
 <p>Es una alternativa a aggregate() para aplicar una función de agregación sobre una única variable y segmentando por un único eje.</p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="resumagg.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(paises07<span class="sc">$</span>esperanza_de_vida,paises07<span class="sc">$</span>continente,quantile,<span class="at">probs=</span><span class="fl">0.25</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="resumagg.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(paises07<span class="sc">$</span>esperanza_de_vida,paises07<span class="sc">$</span>continente,quantile,<span class="at">probs=</span><span class="fl">0.25</span>)</span></code></pre></div>
 <pre><code>##   África Américas     Asia   Europa  Oceanía 
 ## 47.83400 71.75200 65.48300 75.02975 80.46175</code></pre>
 </div>
 <div id="lapply" class="section level3 unnumbered">
 <h3>lapply</h3>
 <p>Permite aplicar una función sobre cada elemento de un vector o lista. Devuelve una lista.</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="resumagg.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(paises07[,<span class="sc">-</span><span class="dv">1</span>], <span class="cf">function</span>(x) <span class="fu">summary</span>(x))</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="resumagg.html#cb281-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(paises07[,<span class="sc">-</span><span class="dv">1</span>], <span class="cf">function</span>(x) <span class="fu">summary</span>(x))</span></code></pre></div>
 <pre><code>## $continente
 ##   África Américas     Asia   Europa  Oceanía 
 ##       52       25       33       30        2 
@@ -1331,21 +1330,21 @@ Figura 8.1: Contienentes (Fuente: Elaboración propia, datos de Gapminder)
 <div id="sapply" class="section level3 unnumbered">
 <h3>sapply</h3>
 <p>Misma funcionalidad que lapply, pero simplificando el resultado a vector cuando es posible.</p>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="resumagg.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(paises07, <span class="cf">function</span>(x) <span class="fu">class</span>(x))</span></code></pre></div>
-<pre><code>##              pais        continente              anio esperanza_de_vida         poblacion    pib_per_capita 
-##          &quot;factor&quot;          &quot;factor&quot;         &quot;integer&quot;         &quot;numeric&quot;         &quot;integer&quot;         &quot;numeric&quot; 
-##  nivel_de_riqueza 
-##          &quot;factor&quot;</code></pre>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="resumagg.html#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(paises07, <span class="cf">function</span>(x) <span class="fu">class</span>(x))</span></code></pre></div>
+<pre><code>##              pais        continente              anio esperanza_de_vida 
+##          &quot;factor&quot;          &quot;factor&quot;         &quot;integer&quot;         &quot;numeric&quot; 
+##         poblacion    pib_per_capita  nivel_de_riqueza 
+##         &quot;integer&quot;         &quot;numeric&quot;          &quot;factor&quot;</code></pre>
 </div>
 <div id="apply" class="section level3 unnumbered">
 <h3>apply</h3>
 <p>Calcula agregados sobre cada una de los vectores marginas fila (<code>MARGIN = 1</code>), alternativamente columna (<code>MARGIN = 2</code>) de una matriz.</p>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="resumagg.html#cb282-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb282-2"><a href="resumagg.html#cb282-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(a,<span class="at">MARGIN =</span> <span class="dv">1</span>,sum)</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="resumagg.html#cb285-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="at">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb285-2"><a href="resumagg.html#cb285-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(a,<span class="at">MARGIN =</span> <span class="dv">1</span>,sum)</span></code></pre></div>
 <pre><code>## [1]  7  9 11 13 15</code></pre>
 <p>Columnas,</p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="resumagg.html#cb284-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb284-2"><a href="resumagg.html#cb284-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(a,<span class="dv">2</span>,sum)</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="resumagg.html#cb287-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="at">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb287-2"><a href="resumagg.html#cb287-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(a,<span class="dv">2</span>,sum)</span></code></pre></div>
 <pre><code>## [1] 15 40</code></pre>
 
 </div>

@@ -155,9 +155,8 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#lectura-recomanada"><i class="fa fa-check"></i>Lectura recomanada</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agraïments"><i class="fa fa-check"></i>Agraïments</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="agraïments.html"><a href="agraïments.html"><i class="fa fa-check"></i>Agraïments</a></li>
 <li class="part"><span><b>I Computació en R</b></span></li>
 <li class="chapter" data-level="1" data-path="postapunt.html"><a href="postapunt.html"><i class="fa fa-check"></i><b>1</b> Posta a punt</a>
 <ul>
@@ -366,15 +365,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <p>Los objetos aparecen en la pestaña de <em>environment</em> (ventana superior derecha).</p>
 <p>También puedes acceder al listado con la función <code>ls()</code>.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="basics.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;a&quot;                  &quot;a_comparte&quot;         &quot;a_full&quot;             &quot;a_inner&quot;            &quot;a_left&quot;            
-##  [6] &quot;a_right&quot;            &quot;a1&quot;                 &quot;a2&quot;                 &quot;aaa&quot;                &quot;agg1&quot;              
-## [11] &quot;agg2&quot;               &quot;agg3&quot;               &quot;b&quot;                  &quot;color_ojos&quot;         &quot;colores_continente&quot;
-## [16] &quot;consulta&quot;           &quot;continentes_anio&quot;   &quot;describir&quot;          &quot;etiquetas_paises&quot;   &quot;fit&quot;               
-## [21] &quot;fit0&quot;               &quot;fit1&quot;               &quot;fit2&quot;               &quot;fit3&quot;               &quot;fit4&quot;              
-## [26] &quot;fwf_sample&quot;         &quot;Galton&quot;             &quot;indices_ordenacion&quot; &quot;mtcars&quot;             &quot;p00&quot;               
-## [31] &quot;p07&quot;                &quot;p1&quot;                 &quot;p2&quot;                 &quot;p3&quot;                 &quot;p4&quot;                
-## [36] &quot;pais07dplyr&quot;        &quot;paises_informe&quot;     &quot;paises07&quot;           &quot;paises07_2VAR&quot;      &quot;paises07NA&quot;        
-## [41] &quot;paises07Ord&quot;        &quot;paises07Summ&quot;       &quot;paisesDup&quot;          &quot;resumen&quot;            &quot;tabla1&quot;</code></pre>
+<pre><code>## [1] &quot;a&quot;   &quot;aaa&quot; &quot;b&quot;</code></pre>
 </div>
 <div id="guardar-objetos" class="section level3 unnumbered">
 <h3>Guardar objetos</h3>
@@ -409,231 +400,97 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb20-6"><a href="basics.html#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-7"><a href="basics.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07 <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">10</span>), <span class="at">caption =</span> <span class="st">&quot;Datos de Gapminder&quot;</span>)</span></code></pre></div>
 <table>
-<caption>
-<span id="tab:unnamed-chunk-12">Taula 2.1: </span>Datos de Gapminder
-</caption>
+<caption><span id="tab:unnamed-chunk-12">Taula 2.1: </span>Datos de Gapminder</caption>
 <thead>
-<tr>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:left;">
-continente
-</th>
-<th style="text-align:right;">
-anio
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
-<th style="text-align:right;">
-poblacion
-</th>
-<th style="text-align:right;">
-pib_per_capita
-</th>
+<tr class="header">
+<th align="left">pais</th>
+<th align="left">continente</th>
+<th align="right">anio</th>
+<th align="right">esperanza_de_vida</th>
+<th align="right">poblacion</th>
+<th align="right">pib_per_capita</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Afganistán
-</td>
-<td style="text-align:left;">
-Asia
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-43.828
-</td>
-<td style="text-align:right;">
-31889923
-</td>
-<td style="text-align:right;">
-974.5803
-</td>
+<tr class="odd">
+<td align="left">Afganistán</td>
+<td align="left">Asia</td>
+<td align="right">2007</td>
+<td align="right">43.828</td>
+<td align="right">31889923</td>
+<td align="right">974.5803</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Albania
-</td>
-<td style="text-align:left;">
-Europa
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-76.423
-</td>
-<td style="text-align:right;">
-3600523
-</td>
-<td style="text-align:right;">
-5937.0295
-</td>
+<tr class="even">
+<td align="left">Albania</td>
+<td align="left">Europa</td>
+<td align="right">2007</td>
+<td align="right">76.423</td>
+<td align="right">3600523</td>
+<td align="right">5937.0295</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Argelia
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-72.301
-</td>
-<td style="text-align:right;">
-33333216
-</td>
-<td style="text-align:right;">
-6223.3675
-</td>
+<tr class="odd">
+<td align="left">Argelia</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">72.301</td>
+<td align="right">33333216</td>
+<td align="right">6223.3675</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Angola
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-42.731
-</td>
-<td style="text-align:right;">
-12420476
-</td>
-<td style="text-align:right;">
-4797.2313
-</td>
+<tr class="even">
+<td align="left">Angola</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">42.731</td>
+<td align="right">12420476</td>
+<td align="right">4797.2313</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Argentina
-</td>
-<td style="text-align:left;">
-Américas
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-75.320
-</td>
-<td style="text-align:right;">
-40301927
-</td>
-<td style="text-align:right;">
-12779.3796
-</td>
+<tr class="odd">
+<td align="left">Argentina</td>
+<td align="left">Américas</td>
+<td align="right">2007</td>
+<td align="right">75.320</td>
+<td align="right">40301927</td>
+<td align="right">12779.3796</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Australia
-</td>
-<td style="text-align:left;">
-Oceanía
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-81.235
-</td>
-<td style="text-align:right;">
-20434176
-</td>
-<td style="text-align:right;">
-34435.3674
-</td>
+<tr class="even">
+<td align="left">Australia</td>
+<td align="left">Oceanía</td>
+<td align="right">2007</td>
+<td align="right">81.235</td>
+<td align="right">20434176</td>
+<td align="right">34435.3674</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Austria
-</td>
-<td style="text-align:left;">
-Europa
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-79.829
-</td>
-<td style="text-align:right;">
-8199783
-</td>
-<td style="text-align:right;">
-36126.4927
-</td>
+<tr class="odd">
+<td align="left">Austria</td>
+<td align="left">Europa</td>
+<td align="right">2007</td>
+<td align="right">79.829</td>
+<td align="right">8199783</td>
+<td align="right">36126.4927</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Baréin
-</td>
-<td style="text-align:left;">
-Asia
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-75.635
-</td>
-<td style="text-align:right;">
-708573
-</td>
-<td style="text-align:right;">
-29796.0483
-</td>
+<tr class="even">
+<td align="left">Baréin</td>
+<td align="left">Asia</td>
+<td align="right">2007</td>
+<td align="right">75.635</td>
+<td align="right">708573</td>
+<td align="right">29796.0483</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Bangladesh
-</td>
-<td style="text-align:left;">
-Asia
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-64.062
-</td>
-<td style="text-align:right;">
-150448339
-</td>
-<td style="text-align:right;">
-1391.2538
-</td>
+<tr class="odd">
+<td align="left">Bangladesh</td>
+<td align="left">Asia</td>
+<td align="right">2007</td>
+<td align="right">64.062</td>
+<td align="right">150448339</td>
+<td align="right">1391.2538</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Bélgica
-</td>
-<td style="text-align:left;">
-Europa
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-79.441
-</td>
-<td style="text-align:right;">
-10392226
-</td>
-<td style="text-align:right;">
-33692.6051
-</td>
+<tr class="even">
+<td align="left">Bélgica</td>
+<td align="left">Europa</td>
+<td align="right">2007</td>
+<td align="right">79.441</td>
+<td align="right">10392226</td>
+<td align="right">33692.6051</td>
 </tr>
 </tbody>
 </table>
@@ -691,81 +548,44 @@ Figura 2.1: Fuente: Elaboración propia con datos de Gapminder
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="basics.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># utiliza el comando kable para &quot;resumen&quot; y añade un titulo </span></span>
 <span id="cb27-2"><a href="basics.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(paises07_2VAR), <span class="at">caption =</span> <span class="st">&quot;Resumen (Fuente: Elaboración propia con datos de Gapminder)&quot;</span>)</span></code></pre></div>
 <table>
-<caption>
-<span id="tab:unnamed-chunk-17">Taula 2.2: </span>Resumen (Fuente: Elaboración propia con datos de Gapminder)
-</caption>
+<caption><span id="tab:unnamed-chunk-17">Taula 2.2: </span>Resumen (Fuente: Elaboración propia con datos de Gapminder)</caption>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-pib_per_capita
-</th>
-<th style="text-align:left;">
-esperanza_de_vida
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="left">pib_per_capita</th>
+<th align="left">esperanza_de_vida</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Min. : 277.6
-</td>
-<td style="text-align:left;">
-Min. :39.61
-</td>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Min. : 277.6</td>
+<td align="left">Min. :39.61</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-1st Qu.: 1624.8
-</td>
-<td style="text-align:left;">
-1st Qu.:57.16
-</td>
+<tr class="even">
+<td align="left"></td>
+<td align="left">1st Qu.: 1624.8</td>
+<td align="left">1st Qu.:57.16</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Median : 6124.4
-</td>
-<td style="text-align:left;">
-Median :71.94
-</td>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Median : 6124.4</td>
+<td align="left">Median :71.94</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Mean :11680.1
-</td>
-<td style="text-align:left;">
-Mean :67.01
-</td>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Mean :11680.1</td>
+<td align="left">Mean :67.01</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-3rd Qu.:18008.8
-</td>
-<td style="text-align:left;">
-3rd Qu.:76.41
-</td>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">3rd Qu.:18008.8</td>
+<td align="left">3rd Qu.:76.41</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Max. :49357.2
-</td>
-<td style="text-align:left;">
-Max. :82.60
-</td>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Max. :49357.2</td>
+<td align="left">Max. :82.60</td>
 </tr>
 </tbody>
 </table>

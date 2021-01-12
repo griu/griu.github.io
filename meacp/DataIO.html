@@ -155,9 +155,8 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#lectura-recomanada"><i class="fa fa-check"></i>Lectura recomanada</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agraïments"><i class="fa fa-check"></i>Agraïments</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="agraïments.html"><a href="agraïments.html"><i class="fa fa-check"></i>Agraïments</a></li>
 <li class="part"><span><b>I Computació en R</b></span></li>
 <li class="chapter" data-level="1" data-path="postapunt.html"><a href="postapunt.html"><i class="fa fa-check"></i><b>1</b> Posta a punt</a>
 <ul>
@@ -354,9 +353,13 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <p>Para leer el siguiente fichero de texto:</p>
 <div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="dataio.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb192-2"><a href="dataio.html#cb192-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pander)</span>
-<span id="cb192-3"><a href="dataio.html#cb192-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb192-4"><a href="dataio.html#cb192-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb192-5"><a href="dataio.html#cb192-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="fu">readLines</span>(<span class="st">&quot;www/data/mtcars.csv&quot;</span>, <span class="at">n =</span> <span class="dv">6</span>), <span class="at">collapse=</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<span id="cb192-3"><a href="dataio.html#cb192-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;kableExtra&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     group_rows</code></pre>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="dataio.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="fu">readLines</span>(<span class="st">&quot;www/data/mtcars.csv&quot;</span>, <span class="at">n =</span> <span class="dv">6</span>), <span class="at">collapse=</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
 <pre><code>## &quot;mpg&quot;,&quot;cyl&quot;,&quot;disp&quot;,&quot;hp&quot;,&quot;drat&quot;,&quot;wt&quot;,&quot;qsec&quot;,&quot;vs&quot;,&quot;am&quot;,&quot;gear&quot;,&quot;carb&quot;
 ## 21,6,160,110,3.9,2.62,16.46,0,1,4,4
 ## 21,6,160,110,3.9,2.875,17.02,0,1,4,4
@@ -364,7 +367,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## 21.4,6,258,110,3.08,3.215,19.44,1,0,3,1
 ## 18.7,8,360,175,3.15,3.44,17.02,0,0,3,2</code></pre>
 <p>Dado que se trata de un fichero con un carácter separado, la función genérica para teste tipo de ficheros es <code>read.table()</code>.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="dataio.html#cb194-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;www/data/mtcars.csv&quot;</span>, <span class="at">dec=</span><span class="st">&quot;.&quot;</span>,<span class="at">sep=</span><span class="st">&quot;,&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="dataio.html#cb197-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;www/data/mtcars.csv&quot;</span>, <span class="at">dec=</span><span class="st">&quot;.&quot;</span>,<span class="at">sep=</span><span class="st">&quot;,&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p>Los parámetros especificados son:</p>
 <ul>
 <li><code>dec</code>: El separador decimal. En Europa se acostumbra a utilizar la coma “,”</li>
@@ -373,12 +376,12 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 </ul>
 <p>También es común el uso de <code>fileEncoding="Latin1"</code> cuando el fichero se ha creado con Windows y utiliza caracteres especiales de texto (tildes, …).</p>
 <p>Dada la estructura del fichero, con <code>read.csv()</code> la carga es más simple.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="dataio.html#cb195-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;www/data/mtcars.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="dataio.html#cb198-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;www/data/mtcars.csv&quot;</span>)</span></code></pre></div>
 <p>Cuando el csv es europeo, “,” decimal y “;” como separador, se utiliza <code>read.csv2()</code>.</p>
 <p>Es una buena práctica verificar su carga con <code>dim()</code>, <code>head()</code> y <code>summary()</code>.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="dataio.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="dataio.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(mtcars)</span></code></pre></div>
 <pre><code>## [1] 32 11</code></pre>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="dataio.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(mtcars))</span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="dataio.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(mtcars))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -630,7 +633,7 @@ carb
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="dataio.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(mtcars))</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="dataio.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(mtcars))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -900,13 +903,13 @@ Max. :8.000
 <div id="escritura-texto-con-separador" class="section level3 unnumbered">
 <h3>Escritura texto con separador</h3>
 <p>Para la escritura, puedes utilizar sus equivalentes: <code>write.table()</code>, <code>write.csv()</code>, <code>write.csv2()</code>. Cabe destacar algunas pequeñas variaciones.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="dataio.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv2</span>(mtcars, <span class="at">file=</span><span class="st">&quot;www/temp/mtcars2.csv&quot;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>, <span class="at">na=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="dataio.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv2</span>(mtcars, <span class="at">file=</span><span class="st">&quot;www/temp/mtcars2.csv&quot;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>, <span class="at">na=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <ul>
 <li><code>row.names</code>: Si no se especifica, por defecto, se inserta el número de fila.</li>
 <li><code>na</code>: Si no se especifica, introduce el texto <code>NA</code>.</li>
 </ul>
 <p>Observa como el nuevo csv ahora tiene el formato de csv europeo.</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="dataio.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="fu">readLines</span>(<span class="st">&quot;www/temp/mtcars2.csv&quot;</span>, <span class="at">n =</span> <span class="dv">6</span>), <span class="at">collapse=</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="dataio.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="fu">readLines</span>(<span class="st">&quot;www/temp/mtcars2.csv&quot;</span>, <span class="at">n =</span> <span class="dv">6</span>), <span class="at">collapse=</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
 <pre><code>## &quot;mpg&quot;;&quot;cyl&quot;;&quot;disp&quot;;&quot;hp&quot;;&quot;drat&quot;;&quot;wt&quot;;&quot;qsec&quot;;&quot;vs&quot;;&quot;am&quot;;&quot;gear&quot;;&quot;carb&quot;
 ## 21;6;160;110;3,9;2,62;16,46;0;1;4;4
 ## 21;6;160;110;3,9;2,875;17,02;0;1;4;4
@@ -917,18 +920,18 @@ Max. :8.000
 <div id="texto-con-ancho-fijo" class="section level3 unnumbered">
 <h3>Texto con ancho fijo</h3>
 <p>Veamos un ejemplo de fichero de ancho fijo:</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="dataio.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="fu">readLines</span>(<span class="st">&quot;www/data/fwf-sample.txt&quot;</span>, <span class="at">n =</span> <span class="dv">6</span>), <span class="at">collapse=</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="dataio.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="fu">readLines</span>(<span class="st">&quot;www/data/fwf-sample.txt&quot;</span>, <span class="at">n =</span> <span class="dv">6</span>), <span class="at">collapse=</span><span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
 <pre><code>## John Smith          WA        418-Y11-4111
 ## Mary Hartford       CA        319-Z19-4341
 ## Evan Nolan          IL        219-532-c301</code></pre>
 <p>Para leer texto de ancho fijo, se utiliza <code>read.fwf()</code>.</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="dataio.html#cb205-1" aria-hidden="true" tabindex="-1"></a>fwf_sample <span class="ot">&lt;-</span> <span class="fu">read.fwf</span>(<span class="st">&quot;www/data/fwf-sample.txt&quot;</span>, <span class="at">widths=</span><span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">10</span>,<span class="dv">12</span>)</span>
-<span id="cb205-2"><a href="dataio.html#cb205-2" aria-hidden="true" tabindex="-1"></a>                     , <span class="at">col.names=</span><span class="fu">c</span>(<span class="st">&quot;name&quot;</span>, <span class="st">&quot;state&quot;</span>, <span class="st">&quot;ssn&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="dataio.html#cb208-1" aria-hidden="true" tabindex="-1"></a>fwf_sample <span class="ot">&lt;-</span> <span class="fu">read.fwf</span>(<span class="st">&quot;www/data/fwf-sample.txt&quot;</span>, <span class="at">widths=</span><span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">10</span>,<span class="dv">12</span>)</span>
+<span id="cb208-2"><a href="dataio.html#cb208-2" aria-hidden="true" tabindex="-1"></a>                     , <span class="at">col.names=</span><span class="fu">c</span>(<span class="st">&quot;name&quot;</span>, <span class="st">&quot;state&quot;</span>, <span class="st">&quot;ssn&quot;</span>))</span></code></pre></div>
 <ul>
 <li><code>widths</code>: Son los anchos de cada variable.</li>
 <li><code>col.names</code>: Nombres de las variables.</li>
 </ul>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="dataio.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(fwf_sample)</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="dataio.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(fwf_sample)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -985,13 +988,13 @@ IL
 <h2><span class="header-section-number">4.2</span> Otros formatos</h2>
 <div id="leer-excel" class="section level3 unnumbered">
 <h3>Leer Excel</h3>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="dataio.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb207-2"><a href="dataio.html#cb207-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;www/data/data.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="dataio.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb210-2"><a href="dataio.html#cb210-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;www/data/data.xlsx&quot;</span>)</span></code></pre></div>
 </div>
 <div id="leer-spss" class="section level3 unnumbered">
 <h3>Leer SPSS</h3>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="dataio.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
-<span id="cb208-2"><a href="dataio.html#cb208-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read.spss</span>(<span class="st">&quot;http://psych.colorado.edu/~carey/Courses/PSYC7291/DataSets/SPSS/crime.sav&quot;</span>, <span class="at">to.data.frame =</span><span class="cn">TRUE</span>, <span class="at">use.value.labels =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="dataio.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
+<span id="cb211-2"><a href="dataio.html#cb211-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read.spss</span>(<span class="st">&quot;http://psych.colorado.edu/~carey/Courses/PSYC7291/DataSets/SPSS/crime.sav&quot;</span>, <span class="at">to.data.frame =</span><span class="cn">TRUE</span>, <span class="at">use.value.labels =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>Recuerda que también puedes utilizar <code>load</code> y <code>save</code> para leer y escribir objetos de R.</p>
 
 </div>

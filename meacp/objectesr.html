@@ -155,9 +155,8 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#lectura-recomanada"><i class="fa fa-check"></i>Lectura recomanada</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agraïments"><i class="fa fa-check"></i>Agraïments</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="agraïments.html"><a href="agraïments.html"><i class="fa fa-check"></i>Agraïments</a></li>
 <li class="part"><span><b>I Computació en R</b></span></li>
 <li class="chapter" data-level="1" data-path="postapunt.html"><a href="postapunt.html"><i class="fa fa-check"></i><b>1</b> Posta a punt</a>
 <ul>
@@ -405,25 +404,25 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <p>Las fechas y horarios, son una clase compleja. Internamente son de tipo <code>"double"</code> con dos clases: <code>"POSIXct"</code> <code>"POSIXt"</code>.</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="objectesr.html#cb50-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb50-2"><a href="objectesr.html#cb50-2" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
-<pre><code>## [1] &quot;2021-01-04 20:21:00 CET&quot;</code></pre>
+<pre><code>## [1] &quot;2021-01-12 23:54:16 CET&quot;</code></pre>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="objectesr.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(a)</span></code></pre></div>
 <pre><code>## [1] &quot;POSIXct&quot; &quot;POSIXt&quot;</code></pre>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="objectesr.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(a)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 <p>La clase <code>"POSIXct"</code> internamente almacena el número de <strong>segundos</strong> transcurridos entre la fecha y las 12:00 AM del 1 de enero de 1970 (en la zona del Tiempo Universal Coordinado (UTC)). Se puede obtener este valor con <code>unclass()</code>.</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="objectesr.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unclass</span>(a)  <span class="co"># muestra el valor interno de a</span></span></code></pre></div>
-<pre><code>## [1] 1609788061</code></pre>
+<pre><code>## [1] 1610492056</code></pre>
 <p>La clase <code>Date</code>, almacena sólo la fecha.</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="objectesr.html#cb58-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(a)</span>
 <span id="cb58-2"><a href="objectesr.html#cb58-2" aria-hidden="true" tabindex="-1"></a>b</span></code></pre></div>
-<pre><code>## [1] &quot;2021-01-04&quot;</code></pre>
+<pre><code>## [1] &quot;2021-01-12&quot;</code></pre>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="objectesr.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(a)</span></code></pre></div>
 <pre><code>## [1] &quot;POSIXct&quot; &quot;POSIXt&quot;</code></pre>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="objectesr.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(a)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 <p>La clase <code>Date</code> contiene el número de <strong>días</strong> transcurridos des de 1 de enero de 1970.</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="objectesr.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unclass</span>(b)</span></code></pre></div>
-<pre><code>## [1] 18631</code></pre>
+<pre><code>## [1] 18639</code></pre>
 <p>Se ampliará esta clase en el capítulo dedicado al package <code>lubridate</code>.</p>
 </div>
 </div>
@@ -598,51 +597,27 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="objectesr.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(a)</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:right;">
-V1
-</th>
-<th style="text-align:left;">
-V2
-</th>
-<th style="text-align:left;">
-V3
-</th>
+<tr class="header">
+<th align="right">V1</th>
+<th align="left">V2</th>
+<th align="left">V3</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:left;">
-R
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">R</td>
+<td align="left">TRUE</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:left;">
-S
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">S</td>
+<td align="left">FALSE</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:left;">
-T
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">T</td>
+<td align="left">TRUE</td>
 </tr>
 </tbody>
 </table>
@@ -671,152 +646,69 @@ TRUE
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="objectesr.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(paises07)</span></code></pre></div>
 <pre><code>## [1] 142   6</code></pre>
 <div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="objectesr.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(paises07)</span></code></pre></div>
-<pre><code>## [1] &quot;pais&quot;              &quot;continente&quot;        &quot;anio&quot;              &quot;esperanza_de_vida&quot; &quot;poblacion&quot;         &quot;pib_per_capita&quot;</code></pre>
+<pre><code>## [1] &quot;pais&quot;              &quot;continente&quot;        &quot;anio&quot;              &quot;esperanza_de_vida&quot;
+## [5] &quot;poblacion&quot;         &quot;pib_per_capita&quot;</code></pre>
 <p>Con <code>head()</code> (respec. <code>tail()</code>), se obtiene las primeras (resp. últimas) 6 filas.</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="objectesr.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07))</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:left;">
-continente
-</th>
-<th style="text-align:right;">
-anio
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
-<th style="text-align:right;">
-poblacion
-</th>
-<th style="text-align:right;">
-pib_per_capita
-</th>
+<tr class="header">
+<th align="left">pais</th>
+<th align="left">continente</th>
+<th align="right">anio</th>
+<th align="right">esperanza_de_vida</th>
+<th align="right">poblacion</th>
+<th align="right">pib_per_capita</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Afganistán
-</td>
-<td style="text-align:left;">
-Asia
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-43.828
-</td>
-<td style="text-align:right;">
-31889923
-</td>
-<td style="text-align:right;">
-974.5803
-</td>
+<tr class="odd">
+<td align="left">Afganistán</td>
+<td align="left">Asia</td>
+<td align="right">2007</td>
+<td align="right">43.828</td>
+<td align="right">31889923</td>
+<td align="right">974.5803</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Albania
-</td>
-<td style="text-align:left;">
-Europa
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-76.423
-</td>
-<td style="text-align:right;">
-3600523
-</td>
-<td style="text-align:right;">
-5937.0295
-</td>
+<tr class="even">
+<td align="left">Albania</td>
+<td align="left">Europa</td>
+<td align="right">2007</td>
+<td align="right">76.423</td>
+<td align="right">3600523</td>
+<td align="right">5937.0295</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Argelia
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-72.301
-</td>
-<td style="text-align:right;">
-33333216
-</td>
-<td style="text-align:right;">
-6223.3675
-</td>
+<tr class="odd">
+<td align="left">Argelia</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">72.301</td>
+<td align="right">33333216</td>
+<td align="right">6223.3675</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Angola
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-42.731
-</td>
-<td style="text-align:right;">
-12420476
-</td>
-<td style="text-align:right;">
-4797.2313
-</td>
+<tr class="even">
+<td align="left">Angola</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">42.731</td>
+<td align="right">12420476</td>
+<td align="right">4797.2313</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Argentina
-</td>
-<td style="text-align:left;">
-Américas
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-75.320
-</td>
-<td style="text-align:right;">
-40301927
-</td>
-<td style="text-align:right;">
-12779.3796
-</td>
+<tr class="odd">
+<td align="left">Argentina</td>
+<td align="left">Américas</td>
+<td align="right">2007</td>
+<td align="right">75.320</td>
+<td align="right">40301927</td>
+<td align="right">12779.3796</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Australia
-</td>
-<td style="text-align:left;">
-Oceanía
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-81.235
-</td>
-<td style="text-align:right;">
-20434176
-</td>
-<td style="text-align:right;">
-34435.3674
-</td>
+<tr class="even">
+<td align="left">Australia</td>
+<td align="left">Oceanía</td>
+<td align="right">2007</td>
+<td align="right">81.235</td>
+<td align="right">20434176</td>
+<td align="right">34435.3674</td>
 </tr>
 </tbody>
 </table>
@@ -829,30 +721,19 @@ Oceanía
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="objectesr.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07[<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">6</span>), <span class="dv">4</span>, <span class="at">drop=</span><span class="cn">FALSE</span>])</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="right">esperanza_de_vida</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:right;">
-42.731
-</td>
+<tr class="odd">
+<td align="left">4</td>
+<td align="right">42.731</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:right;">
-81.235
-</td>
+<tr class="even">
+<td align="left">6</td>
+<td align="right">81.235</td>
 </tr>
 </tbody>
 </table>
@@ -860,75 +741,34 @@ esperanza_de_vida
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="objectesr.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07[<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">6</span>),])</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:left;">
-continente
-</th>
-<th style="text-align:right;">
-anio
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
-<th style="text-align:right;">
-poblacion
-</th>
-<th style="text-align:right;">
-pib_per_capita
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="left">pais</th>
+<th align="left">continente</th>
+<th align="right">anio</th>
+<th align="right">esperanza_de_vida</th>
+<th align="right">poblacion</th>
+<th align="right">pib_per_capita</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:left;">
-Angola
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-42.731
-</td>
-<td style="text-align:right;">
-12420476
-</td>
-<td style="text-align:right;">
-4797.231
-</td>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">Angola</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">42.731</td>
+<td align="right">12420476</td>
+<td align="right">4797.231</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-Australia
-</td>
-<td style="text-align:left;">
-Oceanía
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-81.235
-</td>
-<td style="text-align:right;">
-20434176
-</td>
-<td style="text-align:right;">
-34435.367
-</td>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">Australia</td>
+<td align="left">Oceanía</td>
+<td align="right">2007</td>
+<td align="right">81.235</td>
+<td align="right">20434176</td>
+<td align="right">34435.367</td>
 </tr>
 </tbody>
 </table>
@@ -944,105 +784,49 @@ Oceanía
 <div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="objectesr.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>)]))</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:left;">
-continente
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
-<th style="text-align:right;">
-pib_per_capita
-</th>
+<tr class="header">
+<th align="left">pais</th>
+<th align="left">continente</th>
+<th align="right">esperanza_de_vida</th>
+<th align="right">pib_per_capita</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Afganistán
-</td>
-<td style="text-align:left;">
-Asia
-</td>
-<td style="text-align:right;">
-43.828
-</td>
-<td style="text-align:right;">
-974.5803
-</td>
+<tr class="odd">
+<td align="left">Afganistán</td>
+<td align="left">Asia</td>
+<td align="right">43.828</td>
+<td align="right">974.5803</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Albania
-</td>
-<td style="text-align:left;">
-Europa
-</td>
-<td style="text-align:right;">
-76.423
-</td>
-<td style="text-align:right;">
-5937.0295
-</td>
+<tr class="even">
+<td align="left">Albania</td>
+<td align="left">Europa</td>
+<td align="right">76.423</td>
+<td align="right">5937.0295</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Argelia
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-72.301
-</td>
-<td style="text-align:right;">
-6223.3675
-</td>
+<tr class="odd">
+<td align="left">Argelia</td>
+<td align="left">África</td>
+<td align="right">72.301</td>
+<td align="right">6223.3675</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Angola
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-42.731
-</td>
-<td style="text-align:right;">
-4797.2313
-</td>
+<tr class="even">
+<td align="left">Angola</td>
+<td align="left">África</td>
+<td align="right">42.731</td>
+<td align="right">4797.2313</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Argentina
-</td>
-<td style="text-align:left;">
-Américas
-</td>
-<td style="text-align:right;">
-75.320
-</td>
-<td style="text-align:right;">
-12779.3796
-</td>
+<tr class="odd">
+<td align="left">Argentina</td>
+<td align="left">Américas</td>
+<td align="right">75.320</td>
+<td align="right">12779.3796</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Australia
-</td>
-<td style="text-align:left;">
-Oceanía
-</td>
-<td style="text-align:right;">
-81.235
-</td>
-<td style="text-align:right;">
-34435.3674
-</td>
+<tr class="even">
+<td align="left">Australia</td>
+<td align="left">Oceanía</td>
+<td align="right">81.235</td>
+<td align="right">34435.3674</td>
 </tr>
 </tbody>
 </table>
@@ -1053,63 +837,35 @@ Oceanía
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="objectesr.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07[, <span class="fu">c</span>(<span class="st">&quot;pais&quot;</span>,<span class="st">&quot;esperanza_de_vida&quot;</span>)]))</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
+<tr class="header">
+<th align="left">pais</th>
+<th align="right">esperanza_de_vida</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Afganistán
-</td>
-<td style="text-align:right;">
-43.828
-</td>
+<tr class="odd">
+<td align="left">Afganistán</td>
+<td align="right">43.828</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Albania
-</td>
-<td style="text-align:right;">
-76.423
-</td>
+<tr class="even">
+<td align="left">Albania</td>
+<td align="right">76.423</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Argelia
-</td>
-<td style="text-align:right;">
-72.301
-</td>
+<tr class="odd">
+<td align="left">Argelia</td>
+<td align="right">72.301</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Angola
-</td>
-<td style="text-align:right;">
-42.731
-</td>
+<tr class="even">
+<td align="left">Angola</td>
+<td align="right">42.731</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Argentina
-</td>
-<td style="text-align:right;">
-75.320
-</td>
+<tr class="odd">
+<td align="left">Argentina</td>
+<td align="right">75.320</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Australia
-</td>
-<td style="text-align:right;">
-81.235
-</td>
+<tr class="even">
+<td align="left">Australia</td>
+<td align="right">81.235</td>
 </tr>
 </tbody>
 </table>
@@ -1131,63 +887,35 @@ Australia
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="objectesr.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07[,<span class="fu">c</span>(F, F, F, T, F, T)]))</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
-<th style="text-align:right;">
-pib_per_capita
-</th>
+<tr class="header">
+<th align="right">esperanza_de_vida</th>
+<th align="right">pib_per_capita</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:right;">
-43.828
-</td>
-<td style="text-align:right;">
-974.5803
-</td>
+<tr class="odd">
+<td align="right">43.828</td>
+<td align="right">974.5803</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-76.423
-</td>
-<td style="text-align:right;">
-5937.0295
-</td>
+<tr class="even">
+<td align="right">76.423</td>
+<td align="right">5937.0295</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-72.301
-</td>
-<td style="text-align:right;">
-6223.3675
-</td>
+<tr class="odd">
+<td align="right">72.301</td>
+<td align="right">6223.3675</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-42.731
-</td>
-<td style="text-align:right;">
-4797.2313
-</td>
+<tr class="even">
+<td align="right">42.731</td>
+<td align="right">4797.2313</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-75.320
-</td>
-<td style="text-align:right;">
-12779.3796
-</td>
+<tr class="odd">
+<td align="right">75.320</td>
+<td align="right">12779.3796</td>
 </tr>
-<tr>
-<td style="text-align:right;">
-81.235
-</td>
-<td style="text-align:right;">
-34435.3674
-</td>
+<tr class="even">
+<td align="right">81.235</td>
+<td align="right">34435.3674</td>
 </tr>
 </tbody>
 </table>
@@ -1195,146 +923,73 @@ pib_per_capita
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="objectesr.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07[paises07<span class="sc">$</span>continente<span class="sc">==</span><span class="st">&quot;Oceanía&quot;</span>,])</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:left;">
-continente
-</th>
-<th style="text-align:right;">
-anio
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
-<th style="text-align:right;">
-poblacion
-</th>
-<th style="text-align:right;">
-pib_per_capita
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="left">pais</th>
+<th align="left">continente</th>
+<th align="right">anio</th>
+<th align="right">esperanza_de_vida</th>
+<th align="right">poblacion</th>
+<th align="right">pib_per_capita</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-Australia
-</td>
-<td style="text-align:left;">
-Oceanía
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-81.235
-</td>
-<td style="text-align:right;">
-20434176
-</td>
-<td style="text-align:right;">
-34435.37
-</td>
+<tr class="odd">
+<td align="left">6</td>
+<td align="left">Australia</td>
+<td align="left">Oceanía</td>
+<td align="right">2007</td>
+<td align="right">81.235</td>
+<td align="right">20434176</td>
+<td align="right">34435.37</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-92
-</td>
-<td style="text-align:left;">
-Nueva Zelanda
-</td>
-<td style="text-align:left;">
-Oceanía
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-80.204
-</td>
-<td style="text-align:right;">
-4115771
-</td>
-<td style="text-align:right;">
-25185.01
-</td>
+<tr class="even">
+<td align="left">92</td>
+<td align="left">Nueva Zelanda</td>
+<td align="left">Oceanía</td>
+<td align="right">2007</td>
+<td align="right">80.204</td>
+<td align="right">4115771</td>
+<td align="right">25185.01</td>
 </tr>
 </tbody>
 </table>
 <p>Para construir estas expresiones, puedes utilizar los siguientes operadores.</p>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-Operador
-</th>
-<th style="text-align:left;">
-Ejemplo
-</th>
+<tr class="header">
+<th align="left">Operador</th>
+<th align="left">Ejemplo</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-a &gt; b
-</td>
-<td style="text-align:left;">
-¿a mayor que b?
-</td>
+<tr class="odd">
+<td align="left">a &gt; b</td>
+<td align="left">¿a mayor que b?</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-a &gt;= b
-</td>
-<td style="text-align:left;">
-¿a mayor o igual que b?
-</td>
+<tr class="even">
+<td align="left">a &gt;= b</td>
+<td align="left">¿a mayor o igual que b?</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-a &lt; b
-</td>
-<td style="text-align:left;">
-¿a menor que b?
-</td>
+<tr class="odd">
+<td align="left">a &lt; b</td>
+<td align="left">¿a menor que b?</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-a &lt;= b
-</td>
-<td style="text-align:left;">
-¿a menor o igual que b?
-</td>
+<tr class="even">
+<td align="left">a &lt;= b</td>
+<td align="left">¿a menor o igual que b?</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-a == b
-</td>
-<td style="text-align:left;">
-¿a igual a b?
-</td>
+<tr class="odd">
+<td align="left">a == b</td>
+<td align="left">¿a igual a b?</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-a != b
-</td>
-<td style="text-align:left;">
-¿a distinto b?
-</td>
+<tr class="even">
+<td align="left">a != b</td>
+<td align="left">¿a distinto b?</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-a %in% c(b,c,d)
-</td>
-<td style="text-align:left;">
-¿a esta en el vector b, c o d?
-</td>
+<tr class="odd">
+<td align="left">a %in% c(b,c,d)</td>
+<td align="left">¿a esta en el vector b, c o d?</td>
 </tr>
 </tbody>
 </table>
@@ -1356,63 +1011,35 @@ a %in% c(b,c,d)
 <p>Puedes construir expresiones lógicas complejas utilizando los operadores booleanos habituales:</p>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-Operador
-</th>
-<th style="text-align:left;">
-Significado
-</th>
+<tr class="header">
+<th align="left">Operador</th>
+<th align="left">Significado</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-cond1 &amp; cond2
-</td>
-<td style="text-align:left;">
-¿Son las dos condiciones ciertas?
-</td>
+<tr class="odd">
+<td align="left">cond1 &amp; cond2</td>
+<td align="left">¿Son las dos condiciones ciertas?</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-cond1 | cond1
-</td>
-<td style="text-align:left;">
-¿Es cierta alguna de las dos condiciones?
-</td>
+<tr class="even">
+<td align="left">cond1 | cond1</td>
+<td align="left">¿Es cierta alguna de las dos condiciones?</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-cond1 xor cond1
-</td>
-<td style="text-align:left;">
-¿Es cierta sólo una de las condiciones?
-</td>
+<tr class="odd">
+<td align="left">cond1 xor cond1</td>
+<td align="left">¿Es cierta sólo una de las condiciones?</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-!cond1
-</td>
-<td style="text-align:left;">
-¿Es falsa la condición?
-</td>
+<tr class="even">
+<td align="left">!cond1</td>
+<td align="left">¿Es falsa la condición?</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-any(cond1,cond2,…)
-</td>
-<td style="text-align:left;">
-¿Es cierta alguna de las condiciones?
-</td>
+<tr class="odd">
+<td align="left">any(cond1,cond2,…)</td>
+<td align="left">¿Es cierta alguna de las condiciones?</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-all(cond1,cond2,…)
-</td>
-<td style="text-align:left;">
-¿Son ciertas todas las condiciones?
-</td>
+<tr class="even">
+<td align="left">all(cond1,cond2,…)</td>
+<td align="left">¿Son ciertas todas las condiciones?</td>
 </tr>
 </tbody>
 </table>
@@ -1422,98 +1049,43 @@ all(cond1,cond2,…)
 <div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="objectesr.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(consulta)</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:left;">
-continente
-</th>
-<th style="text-align:right;">
-anio
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
-<th style="text-align:right;">
-poblacion
-</th>
-<th style="text-align:right;">
-pib_per_capita
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="left">pais</th>
+<th align="left">continente</th>
+<th align="right">anio</th>
+<th align="right">esperanza_de_vida</th>
+<th align="right">poblacion</th>
+<th align="right">pib_per_capita</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-56
-</td>
-<td style="text-align:left;">
-Hong Kong, China
-</td>
-<td style="text-align:left;">
-Asia
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-82.208
-</td>
-<td style="text-align:right;">
-6980412
-</td>
-<td style="text-align:right;">
-39724.98
-</td>
+<tr class="odd">
+<td align="left">56</td>
+<td align="left">Hong Kong, China</td>
+<td align="left">Asia</td>
+<td align="right">2007</td>
+<td align="right">82.208</td>
+<td align="right">6980412</td>
+<td align="right">39724.98</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-64
-</td>
-<td style="text-align:left;">
-Israel
-</td>
-<td style="text-align:left;">
-Asia
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-80.745
-</td>
-<td style="text-align:right;">
-6426679
-</td>
-<td style="text-align:right;">
-25523.28
-</td>
+<tr class="even">
+<td align="left">64</td>
+<td align="left">Israel</td>
+<td align="left">Asia</td>
+<td align="right">2007</td>
+<td align="right">80.745</td>
+<td align="right">6426679</td>
+<td align="right">25523.28</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-67
-</td>
-<td style="text-align:left;">
-Japón
-</td>
-<td style="text-align:left;">
-Asia
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-82.603
-</td>
-<td style="text-align:right;">
-127467972
-</td>
-<td style="text-align:right;">
-31656.07
-</td>
+<tr class="odd">
+<td align="left">67</td>
+<td align="left">Japón</td>
+<td align="left">Asia</td>
+<td align="right">2007</td>
+<td align="right">82.603</td>
+<td align="right">127467972</td>
+<td align="right">31656.07</td>
 </tr>
 </tbody>
 </table>
@@ -1554,180 +1126,83 @@ Asia
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="objectesr.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(paises07))</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:left;">
-continente
-</th>
-<th style="text-align:right;">
-anio
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
-<th style="text-align:right;">
-poblacion
-</th>
-<th style="text-align:right;">
-pib_per_capita
-</th>
-<th style="text-align:right;">
-id
-</th>
+<tr class="header">
+<th align="left">pais</th>
+<th align="left">continente</th>
+<th align="right">anio</th>
+<th align="right">esperanza_de_vida</th>
+<th align="right">poblacion</th>
+<th align="right">pib_per_capita</th>
+<th align="right">id</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Afganistán
-</td>
-<td style="text-align:left;">
-Asia
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-43.828
-</td>
-<td style="text-align:right;">
-31889923
-</td>
-<td style="text-align:right;">
-974.5803
-</td>
-<td style="text-align:right;">
-1
-</td>
+<tr class="odd">
+<td align="left">Afganistán</td>
+<td align="left">Asia</td>
+<td align="right">2007</td>
+<td align="right">43.828</td>
+<td align="right">31889923</td>
+<td align="right">974.5803</td>
+<td align="right">1</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Albania
-</td>
-<td style="text-align:left;">
-Europa
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-76.423
-</td>
-<td style="text-align:right;">
-3600523
-</td>
-<td style="text-align:right;">
-5937.0295
-</td>
-<td style="text-align:right;">
-2
-</td>
+<tr class="even">
+<td align="left">Albania</td>
+<td align="left">Europa</td>
+<td align="right">2007</td>
+<td align="right">76.423</td>
+<td align="right">3600523</td>
+<td align="right">5937.0295</td>
+<td align="right">2</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Argelia
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-72.301
-</td>
-<td style="text-align:right;">
-33333216
-</td>
-<td style="text-align:right;">
-6223.3675
-</td>
-<td style="text-align:right;">
-3
-</td>
+<tr class="odd">
+<td align="left">Argelia</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">72.301</td>
+<td align="right">33333216</td>
+<td align="right">6223.3675</td>
+<td align="right">3</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Angola
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-42.731
-</td>
-<td style="text-align:right;">
-12420476
-</td>
-<td style="text-align:right;">
-4797.2313
-</td>
-<td style="text-align:right;">
-4
-</td>
+<tr class="even">
+<td align="left">Angola</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">42.731</td>
+<td align="right">12420476</td>
+<td align="right">4797.2313</td>
+<td align="right">4</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Argentina
-</td>
-<td style="text-align:left;">
-Américas
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-75.320
-</td>
-<td style="text-align:right;">
-40301927
-</td>
-<td style="text-align:right;">
-12779.3796
-</td>
-<td style="text-align:right;">
-5
-</td>
+<tr class="odd">
+<td align="left">Argentina</td>
+<td align="left">Américas</td>
+<td align="right">2007</td>
+<td align="right">75.320</td>
+<td align="right">40301927</td>
+<td align="right">12779.3796</td>
+<td align="right">5</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Australia
-</td>
-<td style="text-align:left;">
-Oceanía
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-81.235
-</td>
-<td style="text-align:right;">
-20434176
-</td>
-<td style="text-align:right;">
-34435.3674
-</td>
-<td style="text-align:right;">
-6
-</td>
+<tr class="even">
+<td align="left">Australia</td>
+<td align="left">Oceanía</td>
+<td align="right">2007</td>
+<td align="right">81.235</td>
+<td align="right">20434176</td>
+<td align="right">34435.3674</td>
+<td align="right">6</td>
 </tr>
 </tbody>
 </table>
 <p>Modificar el nombre de una columna.</p>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="objectesr.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(paises07)[<span class="fu">colnames</span>(paises07)<span class="sc">==</span><span class="st">&quot;id&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;identificador&quot;</span></span>
 <span id="cb177-2"><a href="objectesr.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(paises07)</span></code></pre></div>
-<pre><code>## [1] &quot;pais&quot;              &quot;continente&quot;        &quot;anio&quot;              &quot;esperanza_de_vida&quot; &quot;poblacion&quot;         &quot;pib_per_capita&quot;   
-## [7] &quot;identificador&quot;</code></pre>
+<pre><code>## [1] &quot;pais&quot;              &quot;continente&quot;        &quot;anio&quot;              &quot;esperanza_de_vida&quot;
+## [5] &quot;poblacion&quot;         &quot;pib_per_capita&quot;    &quot;identificador&quot;</code></pre>
 <p>Eliminar las columnas (resp. elmentos) con el objeto <code>NULL</code>.</p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="objectesr.html#cb179-1" aria-hidden="true" tabindex="-1"></a>paises07<span class="sc">$</span>identificador <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
 <span id="cb179-2"><a href="objectesr.html#cb179-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(paises07)</span></code></pre></div>
-<pre><code>## [1] &quot;pais&quot;              &quot;continente&quot;        &quot;anio&quot;              &quot;esperanza_de_vida&quot; &quot;poblacion&quot;         &quot;pib_per_capita&quot;</code></pre>
+<pre><code>## [1] &quot;pais&quot;              &quot;continente&quot;        &quot;anio&quot;              &quot;esperanza_de_vida&quot;
+## [5] &quot;poblacion&quot;         &quot;pib_per_capita&quot;</code></pre>
 </div>
 </div>
 <div id="información-faltante" class="section level2" number="3.4">
@@ -1747,184 +1222,89 @@ Oceanía
 <span id="cb185-3"><a href="objectesr.html#cb185-3" aria-hidden="true" tabindex="-1"></a>paises07NA<span class="sc">$</span>pib_per_capita[<span class="fu">c</span>(<span class="dv">34</span>,<span class="dv">70</span>,<span class="dv">108</span>)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
 <div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="objectesr.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(paises07NA))</span></code></pre></div>
 <table>
+<colgroup>
+<col width="3%" />
+<col width="15%" />
+<col width="14%" />
+<col width="13%" />
+<col width="18%" />
+<col width="18%" />
+<col width="16%" />
+</colgroup>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:left;">
-continente
-</th>
-<th style="text-align:left;">
-anio
-</th>
-<th style="text-align:left;">
-esperanza_de_vida
-</th>
-<th style="text-align:left;">
-poblacion
-</th>
-<th style="text-align:left;">
-pib_per_capita
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="left">pais</th>
+<th align="left">continente</th>
+<th align="left">anio</th>
+<th align="left">esperanza_de_vida</th>
+<th align="left">poblacion</th>
+<th align="left">pib_per_capita</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Afganistán: 1
-</td>
-<td style="text-align:left;">
-África :52
-</td>
-<td style="text-align:left;">
-Min. :2007
-</td>
-<td style="text-align:left;">
-Min. :39.61
-</td>
-<td style="text-align:left;">
-Min. :1.996e+05
-</td>
-<td style="text-align:left;">
-Min. : 277.6
-</td>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Afganistán: 1</td>
+<td align="left">África :52</td>
+<td align="left">Min. :2007</td>
+<td align="left">Min. :39.61</td>
+<td align="left">Min. :1.996e+05</td>
+<td align="left">Min. : 277.6</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Albania : 1
-</td>
-<td style="text-align:left;">
-Américas:25
-</td>
-<td style="text-align:left;">
-1st Qu.:2007
-</td>
-<td style="text-align:left;">
-1st Qu.:57.16
-</td>
-<td style="text-align:left;">
-1st Qu.:4.508e+06
-</td>
-<td style="text-align:left;">
-1st Qu.: 1708.3
-</td>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Albania : 1</td>
+<td align="left">Américas:25</td>
+<td align="left">1st Qu.:2007</td>
+<td align="left">1st Qu.:57.16</td>
+<td align="left">1st Qu.:4.508e+06</td>
+<td align="left">1st Qu.: 1708.3</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Argelia : 1
-</td>
-<td style="text-align:left;">
-Asia :33
-</td>
-<td style="text-align:left;">
-Median :2007
-</td>
-<td style="text-align:left;">
-Median :71.94
-</td>
-<td style="text-align:left;">
-Median :1.052e+07
-</td>
-<td style="text-align:left;">
-Median : 6223.4
-</td>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Argelia : 1</td>
+<td align="left">Asia :33</td>
+<td align="left">Median :2007</td>
+<td align="left">Median :71.94</td>
+<td align="left">Median :1.052e+07</td>
+<td align="left">Median : 6223.4</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Angola : 1
-</td>
-<td style="text-align:left;">
-Europa :30
-</td>
-<td style="text-align:left;">
-Mean :2007
-</td>
-<td style="text-align:left;">
-Mean :67.01
-</td>
-<td style="text-align:left;">
-Mean :4.402e+07
-</td>
-<td style="text-align:left;">
-Mean :11750.2
-</td>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Angola : 1</td>
+<td align="left">Europa :30</td>
+<td align="left">Mean :2007</td>
+<td align="left">Mean :67.01</td>
+<td align="left">Mean :4.402e+07</td>
+<td align="left">Mean :11750.2</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Argentina : 1
-</td>
-<td style="text-align:left;">
-Oceanía : 2
-</td>
-<td style="text-align:left;">
-3rd Qu.:2007
-</td>
-<td style="text-align:left;">
-3rd Qu.:76.41
-</td>
-<td style="text-align:left;">
-3rd Qu.:3.121e+07
-</td>
-<td style="text-align:left;">
-3rd Qu.:18008.7
-</td>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Argentina : 1</td>
+<td align="left">Oceanía : 2</td>
+<td align="left">3rd Qu.:2007</td>
+<td align="left">3rd Qu.:76.41</td>
+<td align="left">3rd Qu.:3.121e+07</td>
+<td align="left">3rd Qu.:18008.7</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-Australia : 1
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Max. :2007
-</td>
-<td style="text-align:left;">
-Max. :82.60
-</td>
-<td style="text-align:left;">
-Max. :1.319e+09
-</td>
-<td style="text-align:left;">
-Max. :49357.2
-</td>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Australia : 1</td>
+<td align="left">NA</td>
+<td align="left">Max. :2007</td>
+<td align="left">Max. :82.60</td>
+<td align="left">Max. :1.319e+09</td>
+<td align="left">Max. :49357.2</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-(Other) :136
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA’s :3
-</td>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">(Other) :136</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA’s :3</td>
 </tr>
 </tbody>
 </table>
@@ -1932,98 +1312,43 @@ NA’s :3
 <div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="objectesr.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07NA[<span class="fu">is.na</span>(paises07NA<span class="sc">$</span>pib_per_capita),])</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:left;">
-continente
-</th>
-<th style="text-align:right;">
-anio
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
-<th style="text-align:right;">
-poblacion
-</th>
-<th style="text-align:right;">
-pib_per_capita
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="left">pais</th>
+<th align="left">continente</th>
+<th align="right">anio</th>
+<th align="right">esperanza_de_vida</th>
+<th align="right">poblacion</th>
+<th align="right">pib_per_capita</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-34
-</td>
-<td style="text-align:left;">
-República Checa
-</td>
-<td style="text-align:left;">
-Europa
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-76.486
-</td>
-<td style="text-align:right;">
-10228744
-</td>
-<td style="text-align:right;">
-NA
-</td>
+<tr class="odd">
+<td align="left">34</td>
+<td align="left">República Checa</td>
+<td align="left">Europa</td>
+<td align="right">2007</td>
+<td align="right">76.486</td>
+<td align="right">10228744</td>
+<td align="right">NA</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-70
-</td>
-<td style="text-align:left;">
-Corea, Rep. Dem.
-</td>
-<td style="text-align:left;">
-Asia
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-67.297
-</td>
-<td style="text-align:right;">
-23301725
-</td>
-<td style="text-align:right;">
-NA
-</td>
+<tr class="even">
+<td align="left">70</td>
+<td align="left">Corea, Rep. Dem.</td>
+<td align="left">Asia</td>
+<td align="right">2007</td>
+<td align="right">67.297</td>
+<td align="right">23301725</td>
+<td align="right">NA</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-108
-</td>
-<td style="text-align:left;">
-Ruanda
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-46.242
-</td>
-<td style="text-align:right;">
-8860588
-</td>
-<td style="text-align:right;">
-NA
-</td>
+<tr class="odd">
+<td align="left">108</td>
+<td align="left">Ruanda</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">46.242</td>
+<td align="right">8860588</td>
+<td align="right">NA</td>
 </tr>
 </tbody>
 </table>
@@ -2034,190 +1359,79 @@ NA
 <div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="objectesr.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07NA[paises07NA<span class="sc">$</span>pib_per_capita<span class="sc">&lt;</span><span class="dv">500</span>,])</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:left;">
-continente
-</th>
-<th style="text-align:right;">
-anio
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
-<th style="text-align:right;">
-poblacion
-</th>
-<th style="text-align:right;">
-pib_per_capita
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="left">pais</th>
+<th align="left">continente</th>
+<th align="right">anio</th>
+<th align="right">esperanza_de_vida</th>
+<th align="right">poblacion</th>
+<th align="right">pib_per_capita</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-18
-</td>
-<td style="text-align:left;">
-Burundi
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-49.580
-</td>
-<td style="text-align:right;">
-8390505
-</td>
-<td style="text-align:right;">
-430.0707
-</td>
+<tr class="odd">
+<td align="left">18</td>
+<td align="left">Burundi</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">49.580</td>
+<td align="right">8390505</td>
+<td align="right">430.0707</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-28
-</td>
-<td style="text-align:left;">
-República Democrática del Congo
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-46.462
-</td>
-<td style="text-align:right;">
-64606759
-</td>
-<td style="text-align:right;">
-277.5519
-</td>
+<tr class="even">
+<td align="left">28</td>
+<td align="left">República Democrática del Congo</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">46.462</td>
+<td align="right">64606759</td>
+<td align="right">277.5519</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
+<tr class="odd">
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-NA.1
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
+<tr class="even">
+<td align="left">NA.1</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-75
-</td>
-<td style="text-align:left;">
-Liberia
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-45.678
-</td>
-<td style="text-align:right;">
-3193942
-</td>
-<td style="text-align:right;">
-414.5073
-</td>
+<tr class="odd">
+<td align="left">75</td>
+<td align="left">Liberia</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">45.678</td>
+<td align="right">3193942</td>
+<td align="right">414.5073</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-NA.2
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
+<tr class="even">
+<td align="left">NA.2</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-142
-</td>
-<td style="text-align:left;">
-Zimbabue
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-43.487
-</td>
-<td style="text-align:right;">
-12311143
-</td>
-<td style="text-align:right;">
-469.7093
-</td>
+<tr class="odd">
+<td align="left">142</td>
+<td align="left">Zimbabue</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">43.487</td>
+<td align="right">12311143</td>
+<td align="right">469.7093</td>
 </tr>
 </tbody>
 </table>
@@ -2225,121 +1439,52 @@ Zimbabue
 <div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="objectesr.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(paises07NA[<span class="fu">which</span>(paises07NA<span class="sc">$</span>pib_per_capita<span class="sc">&lt;</span><span class="dv">500</span>),])</span></code></pre></div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-pais
-</th>
-<th style="text-align:left;">
-continente
-</th>
-<th style="text-align:right;">
-anio
-</th>
-<th style="text-align:right;">
-esperanza_de_vida
-</th>
-<th style="text-align:right;">
-poblacion
-</th>
-<th style="text-align:right;">
-pib_per_capita
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="left">pais</th>
+<th align="left">continente</th>
+<th align="right">anio</th>
+<th align="right">esperanza_de_vida</th>
+<th align="right">poblacion</th>
+<th align="right">pib_per_capita</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-18
-</td>
-<td style="text-align:left;">
-Burundi
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-49.580
-</td>
-<td style="text-align:right;">
-8390505
-</td>
-<td style="text-align:right;">
-430.0707
-</td>
+<tr class="odd">
+<td align="left">18</td>
+<td align="left">Burundi</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">49.580</td>
+<td align="right">8390505</td>
+<td align="right">430.0707</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-28
-</td>
-<td style="text-align:left;">
-República Democrática del Congo
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-46.462
-</td>
-<td style="text-align:right;">
-64606759
-</td>
-<td style="text-align:right;">
-277.5519
-</td>
+<tr class="even">
+<td align="left">28</td>
+<td align="left">República Democrática del Congo</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">46.462</td>
+<td align="right">64606759</td>
+<td align="right">277.5519</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-75
-</td>
-<td style="text-align:left;">
-Liberia
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-45.678
-</td>
-<td style="text-align:right;">
-3193942
-</td>
-<td style="text-align:right;">
-414.5073
-</td>
+<tr class="odd">
+<td align="left">75</td>
+<td align="left">Liberia</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">45.678</td>
+<td align="right">3193942</td>
+<td align="right">414.5073</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-142
-</td>
-<td style="text-align:left;">
-Zimbabue
-</td>
-<td style="text-align:left;">
-África
-</td>
-<td style="text-align:right;">
-2007
-</td>
-<td style="text-align:right;">
-43.487
-</td>
-<td style="text-align:right;">
-12311143
-</td>
-<td style="text-align:right;">
-469.7093
-</td>
+<tr class="even">
+<td align="left">142</td>
+<td align="left">Zimbabue</td>
+<td align="left">África</td>
+<td align="right">2007</td>
+<td align="right">43.487</td>
+<td align="right">12311143</td>
+<td align="right">469.7093</td>
 </tr>
 </tbody>
 </table>
