@@ -209,11 +209,11 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <h2><span class="header-section-number">3.1</span> Deure 1</h2>
 <p>En el link <a href="https://griu.github.io/meacp_2021/data/dataXY.dat" class="uri">https://griu.github.io/meacp_2021/data/dataXY.dat</a> hi han les dues variables ESPVIDA i CALORIES del fitxer PAISOS.SAV (són l’esperança de vida y les calories per habitant en diferents paisos del mon). Feu:</p>
 <p>Utiliza el program (Excel, SPSS o R) que coneguis. La lectura de les dades amb R seria</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="homework.html#cb75-1" aria-hidden="true" tabindex="-1"></a>dataXY<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&#39;https://griu.github.io/meacp_2021/data/dataXY.dat&#39;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">dec=</span><span class="st">&quot;,&quot;</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="homework.html#cb68-1" aria-hidden="true" tabindex="-1"></a>dataXY<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&#39;https://griu.github.io/meacp_2021/data/dataXY.dat&#39;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">dec=</span><span class="st">&quot;,&quot;</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span>)</span></code></pre></div>
 <ol style="list-style-type: lower-alpha">
 <li>Una descripció breu univariant de cada una de les variables;</li>
 </ol>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="homework.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dataXY)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="homework.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dataXY)</span></code></pre></div>
 <pre><code>##     CALORIES       ESPVIDA     
 ##  Min.   :1505   Min.   :39.00  
 ##  1st Qu.:2248   1st Qu.:55.77  
@@ -224,15 +224,15 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Un diagrama de dispersió de ESPVIDA vs CALORIES. Comenta si s’observa o no associació entre aquests dues variables.</li>
 </ol>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="homework.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb78-2"><a href="homework.html#cb78-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-3"><a href="homework.html#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataXY, <span class="fu">aes</span>(<span class="at">x=</span>CALORIES, <span class="at">y=</span>ESPVIDA)) <span class="sc">+</span></span>
-<span id="cb78-4"><a href="homework.html#cb78-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="homework.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb71-2"><a href="homework.html#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-3"><a href="homework.html#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataXY, <span class="fu">aes</span>(<span class="at">x=</span>CALORIES, <span class="at">y=</span>ESPVIDA)) <span class="sc">+</span></span>
+<span id="cb71-4"><a href="homework.html#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Comenta si la associació observada justifica o no parlar de causalitat.</li>
 </ol>
-<p><strong>NOTA: Descarrega la <a href="www/Rmd/_Deure1.Rmd">plantilla de solució deure 1 en Rmd</a>.</strong></p>
+<p><strong>NOTA: Descarrega la <a href="https://griu.github.io/meacp_2021/www/Rmd/_Deure1.Rmd">plantilla de solució deure 1 en Rmd</a>.</strong></p>
 </div>
 <div id="deure-2" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Deure 2</h2>
