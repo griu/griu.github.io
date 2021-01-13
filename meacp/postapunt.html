@@ -455,13 +455,20 @@ install.packages(&quot;poliscidata&quot;)</code></pre>
 <div id="comandos-rmarkdown" class="section level3 unnumbered">
 <h3>Comandos Rmarkdown</h3>
 <ul>
-<li><strong>R chunks</strong>: ```{r, options} CODIGO R ```: echo, eval, fig.cap, warning, message. Opciones:
+<li><strong>R chunks</strong>:</li>
+</ul>
+<pre><code>### ```{r, options} 
+### CODIGO de R 
+### ```</code></pre>
+<p>Parámetros: echo, eval, fig.cap, warning, message. Opciones:</p>
 <ul>
-<li><code>include = FALSE</code> : Ejecuta pero no muestra el código ni resultados.</li>
-<li><code>echo = FALSE</code> : No muestra el código, pero sí el resultado (tablas, gráficos…).</li>
-<li><code>fig.cap = "..."</code> : Añade un texto al pie de imagen.</li>
-</ul></li>
-<li><strong>R inline</strong>: ` r CODIGO R`</li>
+<li><p><code>include = FALSE</code> : Ejecuta pero no muestra el código ni resultados.</p></li>
+<li><p><code>echo = FALSE</code> : No muestra el código, pero sí el resultado (tablas, gráficos…).</p></li>
+<li><p><code>fig.cap = "..."</code> : Añade un texto al pie de imagen.</p></li>
+<li><p><strong>R inline</strong>:</p></li>
+</ul>
+<pre><code>### ` r CODIGO R\`</code></pre>
+<ul>
 <li><strong>Titulo</strong>: # TITULO1, ## TITULO2</li>
 <li><strong>Emphasis</strong>: Negrita con <code>**string**</code> . Cursiva con <code>*string*</code></li>
 <li><strong>Link externo</strong>: <code>[texto enlace](http://url)</code></li>
@@ -514,8 +521,8 @@ output: html_document
 <h3><span class="header-section-number">1.5.1</span> R Markdown</h3>
 <p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
 <p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="postapunt.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza el comando summary para mostrar un resumen general de cars</span></span>
-<span id="cb7-2"><a href="postapunt.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="postapunt.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza el comando summary para mostrar un resumen general de cars</span></span>
+<span id="cb9-2"><a href="postapunt.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
 <pre><code>##      speed           dist       
 ##  Min.   : 4.0   Min.   :  2.00  
 ##  1st Qu.:12.0   1st Qu.: 26.00  

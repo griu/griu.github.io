@@ -355,12 +355,12 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <blockquote>
 <p>Paises asiaticos con PIB per cápita inferior a 1000 $ en 2007.</p>
 </blockquote>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="tydiverse.html#cb289-1" aria-hidden="true" tabindex="-1"></a>pais07dplyr <span class="ot">&lt;-</span> paises07 <span class="sc">%&gt;%</span> </span>
-<span id="cb289-2"><a href="tydiverse.html#cb289-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(esperanza_de_vida)) <span class="sc">%&gt;%</span> </span>
-<span id="cb289-3"><a href="tydiverse.html#cb289-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continente<span class="sc">==</span><span class="st">&#39;Asia&#39;</span> <span class="sc">&amp;</span> pib_per_capita <span class="sc">&lt;</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb289-4"><a href="tydiverse.html#cb289-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(pais,esperanza_de_vida,pib_per_capita)</span>
-<span id="cb289-5"><a href="tydiverse.html#cb289-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb289-6"><a href="tydiverse.html#cb289-6" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pais07dplyr)</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="tydiverse.html#cb291-1" aria-hidden="true" tabindex="-1"></a>pais07dplyr <span class="ot">&lt;-</span> paises07 <span class="sc">%&gt;%</span> </span>
+<span id="cb291-2"><a href="tydiverse.html#cb291-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(esperanza_de_vida)) <span class="sc">%&gt;%</span> </span>
+<span id="cb291-3"><a href="tydiverse.html#cb291-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continente<span class="sc">==</span><span class="st">&#39;Asia&#39;</span> <span class="sc">&amp;</span> pib_per_capita <span class="sc">&lt;</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb291-4"><a href="tydiverse.html#cb291-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(pais,esperanza_de_vida,pib_per_capita)</span>
+<span id="cb291-5"><a href="tydiverse.html#cb291-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb291-6"><a href="tydiverse.html#cb291-6" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(pais07dplyr)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -412,19 +412,19 @@ Afganistán
 <blockquote>
 <p>Esperanza de vida y PIB per cápita medio por continente y año.</p>
 </blockquote>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="tydiverse.html#cb290-1" aria-hidden="true" tabindex="-1"></a>continentes_anio <span class="ot">&lt;-</span> paises <span class="sc">%&gt;%</span> </span>
-<span id="cb290-2"><a href="tydiverse.html#cb290-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(continente,anio) <span class="sc">%&gt;%</span> </span>
-<span id="cb290-3"><a href="tydiverse.html#cb290-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">esperanza_de_vida_total =</span> esperanza_de_vida <span class="sc">*</span> poblacion</span>
-<span id="cb290-4"><a href="tydiverse.html#cb290-4" aria-hidden="true" tabindex="-1"></a>         , <span class="at">pib_total =</span> pib_per_capita <span class="sc">*</span> poblacion) <span class="sc">%&gt;%</span> </span>
-<span id="cb290-5"><a href="tydiverse.html#cb290-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continente,anio) <span class="sc">%&gt;%</span> </span>
-<span id="cb290-6"><a href="tydiverse.html#cb290-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">n_paises=</span><span class="fu">n</span>()</span>
-<span id="cb290-7"><a href="tydiverse.html#cb290-7" aria-hidden="true" tabindex="-1"></a>            , <span class="at">esperanza_de_vida =</span> <span class="fu">sum</span>(esperanza_de_vida_total ) <span class="sc">/</span></span>
-<span id="cb290-8"><a href="tydiverse.html#cb290-8" aria-hidden="true" tabindex="-1"></a>                <span class="fu">sum</span>(poblacion )</span>
-<span id="cb290-9"><a href="tydiverse.html#cb290-9" aria-hidden="true" tabindex="-1"></a>            , <span class="at">pib_per_capita =</span> <span class="fu">sum</span>(pib_total) <span class="sc">/</span> </span>
-<span id="cb290-10"><a href="tydiverse.html#cb290-10" aria-hidden="true" tabindex="-1"></a>              <span class="fu">sum</span>(poblacion)</span>
-<span id="cb290-11"><a href="tydiverse.html#cb290-11" aria-hidden="true" tabindex="-1"></a>            , <span class="at">poblacion =</span> <span class="fu">sum</span>(poblacion))</span>
-<span id="cb290-12"><a href="tydiverse.html#cb290-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb290-13"><a href="tydiverse.html#cb290-13" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(continentes_anio <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="tydiverse.html#cb292-1" aria-hidden="true" tabindex="-1"></a>continentes_anio <span class="ot">&lt;-</span> paises <span class="sc">%&gt;%</span> </span>
+<span id="cb292-2"><a href="tydiverse.html#cb292-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(continente,anio) <span class="sc">%&gt;%</span> </span>
+<span id="cb292-3"><a href="tydiverse.html#cb292-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">esperanza_de_vida_total =</span> esperanza_de_vida <span class="sc">*</span> poblacion</span>
+<span id="cb292-4"><a href="tydiverse.html#cb292-4" aria-hidden="true" tabindex="-1"></a>         , <span class="at">pib_total =</span> pib_per_capita <span class="sc">*</span> poblacion) <span class="sc">%&gt;%</span> </span>
+<span id="cb292-5"><a href="tydiverse.html#cb292-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continente,anio) <span class="sc">%&gt;%</span> </span>
+<span id="cb292-6"><a href="tydiverse.html#cb292-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">n_paises=</span><span class="fu">n</span>()</span>
+<span id="cb292-7"><a href="tydiverse.html#cb292-7" aria-hidden="true" tabindex="-1"></a>            , <span class="at">esperanza_de_vida =</span> <span class="fu">sum</span>(esperanza_de_vida_total ) <span class="sc">/</span></span>
+<span id="cb292-8"><a href="tydiverse.html#cb292-8" aria-hidden="true" tabindex="-1"></a>                <span class="fu">sum</span>(poblacion )</span>
+<span id="cb292-9"><a href="tydiverse.html#cb292-9" aria-hidden="true" tabindex="-1"></a>            , <span class="at">pib_per_capita =</span> <span class="fu">sum</span>(pib_total) <span class="sc">/</span> </span>
+<span id="cb292-10"><a href="tydiverse.html#cb292-10" aria-hidden="true" tabindex="-1"></a>              <span class="fu">sum</span>(poblacion)</span>
+<span id="cb292-11"><a href="tydiverse.html#cb292-11" aria-hidden="true" tabindex="-1"></a>            , <span class="at">poblacion =</span> <span class="fu">sum</span>(poblacion))</span>
+<span id="cb292-12"><a href="tydiverse.html#cb292-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-13"><a href="tydiverse.html#cb292-13" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(continentes_anio <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">10</span>))</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -652,13 +652,13 @@ poblacion
 </tbody>
 </table>
 <p>Para la evolución de los continentes en ggplot2, es útil el <a href="https://ggplot2.tidyverse.org/reference/geom_path.html.">geom_path()</a></p>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="tydiverse.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(continentes_anio, <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita</span>
-<span id="cb291-2"><a href="tydiverse.html#cb291-2" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">y=</span>esperanza_de_vida</span>
-<span id="cb291-3"><a href="tydiverse.html#cb291-3" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">color =</span>continente)) <span class="sc">+</span></span>
-<span id="cb291-4"><a href="tydiverse.html#cb291-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>() <span class="sc">+</span></span>
-<span id="cb291-5"><a href="tydiverse.html#cb291-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb291-6"><a href="tydiverse.html#cb291-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>anio), <span class="at">size=</span><span class="dv">2</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb291-7"><a href="tydiverse.html#cb291-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Evolución continentes (ponderado)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="tydiverse.html#cb293-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(continentes_anio, <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita</span>
+<span id="cb293-2"><a href="tydiverse.html#cb293-2" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">y=</span>esperanza_de_vida</span>
+<span id="cb293-3"><a href="tydiverse.html#cb293-3" aria-hidden="true" tabindex="-1"></a>                          , <span class="at">color =</span>continente)) <span class="sc">+</span></span>
+<span id="cb293-4"><a href="tydiverse.html#cb293-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>() <span class="sc">+</span></span>
+<span id="cb293-5"><a href="tydiverse.html#cb293-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb293-6"><a href="tydiverse.html#cb293-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>anio), <span class="at">size=</span><span class="dv">2</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb293-7"><a href="tydiverse.html#cb293-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Evolución continentes (ponderado)&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:unnamed-chunk-161"></span>
 <img src="meacp_files/figure-html/unnamed-chunk-161-1.png" alt="Fuente: Elaboración propia con datos de Gapminder" width="672" />
 <p class="caption">
@@ -681,57 +681,57 @@ Figura 9.1: Fuente: Elaboración propia con datos de Gapminder
 </div>
 <div id="act14" class="section level2" number="9.4">
 <h2><span class="header-section-number">9.4</span> Actividad guiada 1.4</h2>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="tydiverse.html#cb292-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb292-2"><a href="tydiverse.html#cb292-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datos)</span>
-<span id="cb292-3"><a href="tydiverse.html#cb292-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
-<span id="cb292-4"><a href="tydiverse.html#cb292-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb292-5"><a href="tydiverse.html#cb292-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb292-6"><a href="tydiverse.html#cb292-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb292-7"><a href="tydiverse.html#cb292-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb292-8"><a href="tydiverse.html#cb292-8" aria-hidden="true" tabindex="-1"></a>paises_informe <span class="ot">&lt;-</span> paises</span>
-<span id="cb292-9"><a href="tydiverse.html#cb292-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Recodifica Oceanía por Asia</span></span>
-<span id="cb292-10"><a href="tydiverse.html#cb292-10" aria-hidden="true" tabindex="-1"></a>paises_informe<span class="sc">$</span>continente[paises_informe<span class="sc">$</span>continente<span class="sc">==</span><span class="st">&quot;Oceanía&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Asia&quot;</span></span>
-<span id="cb292-11"><a href="tydiverse.html#cb292-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Elimina Oceanía de los levels</span></span>
-<span id="cb292-12"><a href="tydiverse.html#cb292-12" aria-hidden="true" tabindex="-1"></a>paises_informe<span class="sc">$</span>continente <span class="ot">&lt;-</span> <span class="fu">factor</span>(paises_informe<span class="sc">$</span>continente)</span>
-<span id="cb292-13"><a href="tydiverse.html#cb292-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Paleta de colores</span></span>
-<span id="cb292-14"><a href="tydiverse.html#cb292-14" aria-hidden="true" tabindex="-1"></a>colores_continente <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;green&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>) </span>
-<span id="cb292-15"><a href="tydiverse.html#cb292-15" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(colores_continente) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;África&quot;</span>, <span class="st">&quot;Américas&quot;</span>, <span class="st">&quot;Asia&quot;</span>, <span class="st">&quot;Europa&quot;</span>)</span>
-<span id="cb292-16"><a href="tydiverse.html#cb292-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Etiquetas</span></span>
-<span id="cb292-17"><a href="tydiverse.html#cb292-17" aria-hidden="true" tabindex="-1"></a>etiquetas_paises <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;España&quot;</span>,<span class="st">&quot;China&quot;</span>,<span class="st">&quot;Etiopía&quot;</span>,<span class="st">&quot;Canadá&quot;</span>)</span>
-<span id="cb292-18"><a href="tydiverse.html#cb292-18" aria-hidden="true" tabindex="-1"></a><span class="co"># funcion describir</span></span>
-<span id="cb292-19"><a href="tydiverse.html#cb292-19" aria-hidden="true" tabindex="-1"></a>describir <span class="ot">&lt;-</span> <span class="cf">function</span>(data, colores, etiquetas) {</span>
-<span id="cb292-20"><a href="tydiverse.html#cb292-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb292-21"><a href="tydiverse.html#cb292-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filtra paises con etiqueta</span></span>
-<span id="cb292-22"><a href="tydiverse.html#cb292-22" aria-hidden="true" tabindex="-1"></a>  data_etiquetas <span class="ot">&lt;-</span> data[data<span class="sc">$</span>pais <span class="sc">%in%</span> etiquetas, ]</span>
-<span id="cb292-23"><a href="tydiverse.html#cb292-23" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb292-24"><a href="tydiverse.html#cb292-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Agrega continentes</span></span>
-<span id="cb292-25"><a href="tydiverse.html#cb292-25" aria-hidden="true" tabindex="-1"></a>  data_continente <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
-<span id="cb292-26"><a href="tydiverse.html#cb292-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(continente, anio) <span class="sc">%&gt;%</span> </span>
-<span id="cb292-27"><a href="tydiverse.html#cb292-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">esperanza_de_vida_total =</span> esperanza_de_vida <span class="sc">*</span> poblacion</span>
-<span id="cb292-28"><a href="tydiverse.html#cb292-28" aria-hidden="true" tabindex="-1"></a>      , <span class="at">pib_total =</span> pib_per_capita <span class="sc">*</span> poblacion) <span class="sc">%&gt;%</span> </span>
-<span id="cb292-29"><a href="tydiverse.html#cb292-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(continente, anio) <span class="sc">%&gt;%</span> </span>
-<span id="cb292-30"><a href="tydiverse.html#cb292-30" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">n_paises=</span><span class="fu">n</span>()</span>
-<span id="cb292-31"><a href="tydiverse.html#cb292-31" aria-hidden="true" tabindex="-1"></a>      , <span class="at">esperanza_de_vida =</span> <span class="fu">sum</span>(esperanza_de_vida_total ) <span class="sc">/</span></span>
-<span id="cb292-32"><a href="tydiverse.html#cb292-32" aria-hidden="true" tabindex="-1"></a>          <span class="fu">sum</span>(poblacion )</span>
-<span id="cb292-33"><a href="tydiverse.html#cb292-33" aria-hidden="true" tabindex="-1"></a>      , <span class="at">pib_per_capita =</span> <span class="fu">sum</span>(pib_total) <span class="sc">/</span> </span>
-<span id="cb292-34"><a href="tydiverse.html#cb292-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sum</span>(poblacion)</span>
-<span id="cb292-35"><a href="tydiverse.html#cb292-35" aria-hidden="true" tabindex="-1"></a>      , <span class="at">poblacion =</span> <span class="fu">sum</span>(poblacion))</span>
-<span id="cb292-36"><a href="tydiverse.html#cb292-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb292-37"><a href="tydiverse.html#cb292-37" aria-hidden="true" tabindex="-1"></a>  resultados <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb292-38"><a href="tydiverse.html#cb292-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb292-39"><a href="tydiverse.html#cb292-39" aria-hidden="true" tabindex="-1"></a>  resultados[[<span class="st">&quot;continentes&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data_continente, <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita, <span class="at">y=</span>esperanza_de_vida</span>
-<span id="cb292-40"><a href="tydiverse.html#cb292-40" aria-hidden="true" tabindex="-1"></a>      , <span class="at">color=</span>continente)) <span class="sc">+</span></span>
-<span id="cb292-41"><a href="tydiverse.html#cb292-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_path</span>() <span class="sc">+</span></span>
-<span id="cb292-42"><a href="tydiverse.html#cb292-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb292-43"><a href="tydiverse.html#cb292-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> colores) <span class="sc">+</span></span>
-<span id="cb292-44"><a href="tydiverse.html#cb292-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>anio), <span class="at">size=</span><span class="dv">2</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb292-45"><a href="tydiverse.html#cb292-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Evolución de los Continentes de 1952 a 2007&quot;</span></span>
-<span id="cb292-46"><a href="tydiverse.html#cb292-46" aria-hidden="true" tabindex="-1"></a>      , <span class="at">x =</span> <span class="st">&quot;Logaritmo base 10 del PIB per cápita ($ americanos, ajustados según inflación)&quot;</span></span>
-<span id="cb292-47"><a href="tydiverse.html#cb292-47" aria-hidden="true" tabindex="-1"></a>      , <span class="at">y =</span> <span class="st">&quot;Esperanza de vida (años)&quot;</span>)</span>
-<span id="cb292-48"><a href="tydiverse.html#cb292-48" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb292-49"><a href="tydiverse.html#cb292-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(resultados)</span>
-<span id="cb292-50"><a href="tydiverse.html#cb292-50" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb292-51"><a href="tydiverse.html#cb292-51" aria-hidden="true" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> <span class="fu">describir</span>(paises_informe, colores_continente, etiquetas_paises)</span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="tydiverse.html#cb294-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb294-2"><a href="tydiverse.html#cb294-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datos)</span>
+<span id="cb294-3"><a href="tydiverse.html#cb294-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb294-4"><a href="tydiverse.html#cb294-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb294-5"><a href="tydiverse.html#cb294-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb294-6"><a href="tydiverse.html#cb294-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb294-7"><a href="tydiverse.html#cb294-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb294-8"><a href="tydiverse.html#cb294-8" aria-hidden="true" tabindex="-1"></a>paises_informe <span class="ot">&lt;-</span> paises</span>
+<span id="cb294-9"><a href="tydiverse.html#cb294-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Recodifica Oceanía por Asia</span></span>
+<span id="cb294-10"><a href="tydiverse.html#cb294-10" aria-hidden="true" tabindex="-1"></a>paises_informe<span class="sc">$</span>continente[paises_informe<span class="sc">$</span>continente<span class="sc">==</span><span class="st">&quot;Oceanía&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Asia&quot;</span></span>
+<span id="cb294-11"><a href="tydiverse.html#cb294-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Elimina Oceanía de los levels</span></span>
+<span id="cb294-12"><a href="tydiverse.html#cb294-12" aria-hidden="true" tabindex="-1"></a>paises_informe<span class="sc">$</span>continente <span class="ot">&lt;-</span> <span class="fu">factor</span>(paises_informe<span class="sc">$</span>continente)</span>
+<span id="cb294-13"><a href="tydiverse.html#cb294-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Paleta de colores</span></span>
+<span id="cb294-14"><a href="tydiverse.html#cb294-14" aria-hidden="true" tabindex="-1"></a>colores_continente <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;green&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;yellow&quot;</span>) </span>
+<span id="cb294-15"><a href="tydiverse.html#cb294-15" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(colores_continente) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;África&quot;</span>, <span class="st">&quot;Américas&quot;</span>, <span class="st">&quot;Asia&quot;</span>, <span class="st">&quot;Europa&quot;</span>)</span>
+<span id="cb294-16"><a href="tydiverse.html#cb294-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Etiquetas</span></span>
+<span id="cb294-17"><a href="tydiverse.html#cb294-17" aria-hidden="true" tabindex="-1"></a>etiquetas_paises <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;España&quot;</span>,<span class="st">&quot;China&quot;</span>,<span class="st">&quot;Etiopía&quot;</span>,<span class="st">&quot;Canadá&quot;</span>)</span>
+<span id="cb294-18"><a href="tydiverse.html#cb294-18" aria-hidden="true" tabindex="-1"></a><span class="co"># funcion describir</span></span>
+<span id="cb294-19"><a href="tydiverse.html#cb294-19" aria-hidden="true" tabindex="-1"></a>describir <span class="ot">&lt;-</span> <span class="cf">function</span>(data, colores, etiquetas) {</span>
+<span id="cb294-20"><a href="tydiverse.html#cb294-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb294-21"><a href="tydiverse.html#cb294-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filtra paises con etiqueta</span></span>
+<span id="cb294-22"><a href="tydiverse.html#cb294-22" aria-hidden="true" tabindex="-1"></a>  data_etiquetas <span class="ot">&lt;-</span> data[data<span class="sc">$</span>pais <span class="sc">%in%</span> etiquetas, ]</span>
+<span id="cb294-23"><a href="tydiverse.html#cb294-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb294-24"><a href="tydiverse.html#cb294-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Agrega continentes</span></span>
+<span id="cb294-25"><a href="tydiverse.html#cb294-25" aria-hidden="true" tabindex="-1"></a>  data_continente <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb294-26"><a href="tydiverse.html#cb294-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(continente, anio) <span class="sc">%&gt;%</span> </span>
+<span id="cb294-27"><a href="tydiverse.html#cb294-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">esperanza_de_vida_total =</span> esperanza_de_vida <span class="sc">*</span> poblacion</span>
+<span id="cb294-28"><a href="tydiverse.html#cb294-28" aria-hidden="true" tabindex="-1"></a>      , <span class="at">pib_total =</span> pib_per_capita <span class="sc">*</span> poblacion) <span class="sc">%&gt;%</span> </span>
+<span id="cb294-29"><a href="tydiverse.html#cb294-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(continente, anio) <span class="sc">%&gt;%</span> </span>
+<span id="cb294-30"><a href="tydiverse.html#cb294-30" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">summarize</span>(<span class="at">n_paises=</span><span class="fu">n</span>()</span>
+<span id="cb294-31"><a href="tydiverse.html#cb294-31" aria-hidden="true" tabindex="-1"></a>      , <span class="at">esperanza_de_vida =</span> <span class="fu">sum</span>(esperanza_de_vida_total ) <span class="sc">/</span></span>
+<span id="cb294-32"><a href="tydiverse.html#cb294-32" aria-hidden="true" tabindex="-1"></a>          <span class="fu">sum</span>(poblacion )</span>
+<span id="cb294-33"><a href="tydiverse.html#cb294-33" aria-hidden="true" tabindex="-1"></a>      , <span class="at">pib_per_capita =</span> <span class="fu">sum</span>(pib_total) <span class="sc">/</span> </span>
+<span id="cb294-34"><a href="tydiverse.html#cb294-34" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sum</span>(poblacion)</span>
+<span id="cb294-35"><a href="tydiverse.html#cb294-35" aria-hidden="true" tabindex="-1"></a>      , <span class="at">poblacion =</span> <span class="fu">sum</span>(poblacion))</span>
+<span id="cb294-36"><a href="tydiverse.html#cb294-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb294-37"><a href="tydiverse.html#cb294-37" aria-hidden="true" tabindex="-1"></a>  resultados <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb294-38"><a href="tydiverse.html#cb294-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb294-39"><a href="tydiverse.html#cb294-39" aria-hidden="true" tabindex="-1"></a>  resultados[[<span class="st">&quot;continentes&quot;</span>]] <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data_continente, <span class="fu">aes</span>(<span class="at">x=</span>pib_per_capita, <span class="at">y=</span>esperanza_de_vida</span>
+<span id="cb294-40"><a href="tydiverse.html#cb294-40" aria-hidden="true" tabindex="-1"></a>      , <span class="at">color=</span>continente)) <span class="sc">+</span></span>
+<span id="cb294-41"><a href="tydiverse.html#cb294-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_path</span>() <span class="sc">+</span></span>
+<span id="cb294-42"><a href="tydiverse.html#cb294-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb294-43"><a href="tydiverse.html#cb294-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> colores) <span class="sc">+</span></span>
+<span id="cb294-44"><a href="tydiverse.html#cb294-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label=</span>anio), <span class="at">size=</span><span class="dv">2</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb294-45"><a href="tydiverse.html#cb294-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Evolución de los Continentes de 1952 a 2007&quot;</span></span>
+<span id="cb294-46"><a href="tydiverse.html#cb294-46" aria-hidden="true" tabindex="-1"></a>      , <span class="at">x =</span> <span class="st">&quot;Logaritmo base 10 del PIB per cápita ($ americanos, ajustados según inflación)&quot;</span></span>
+<span id="cb294-47"><a href="tydiverse.html#cb294-47" aria-hidden="true" tabindex="-1"></a>      , <span class="at">y =</span> <span class="st">&quot;Esperanza de vida (años)&quot;</span>)</span>
+<span id="cb294-48"><a href="tydiverse.html#cb294-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb294-49"><a href="tydiverse.html#cb294-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(resultados)</span>
+<span id="cb294-50"><a href="tydiverse.html#cb294-50" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb294-51"><a href="tydiverse.html#cb294-51" aria-hidden="true" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> <span class="fu">describir</span>(paises_informe, colores_continente, etiquetas_paises)</span></code></pre></div>
 <pre><code>## `summarise()` regrouping output by &#39;continente&#39; (override with `.groups` argument)</code></pre>
 <div id="evolución-de-los-continentes" class="section level3" number="9.4.1">
 <h3><span class="header-section-number">9.4.1</span> Evolución de los continentes</h3>
