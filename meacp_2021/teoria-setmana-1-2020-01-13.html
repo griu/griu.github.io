@@ -289,30 +289,42 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <pre><code>## [1] 82  3</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="teoria-setmana-1-2020-01-13.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(dat)</span></code></pre></div>
 <pre><code>## [1] &quot;year&quot;  &quot;boys&quot;  &quot;girls&quot;</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="teoria-setmana-1-2020-01-13.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(dat)</span>
-<span id="cb7-2"><a href="teoria-setmana-1-2020-01-13.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(boys)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="teoria-setmana-1-2020-01-13.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(dat)</span></code></pre></div>
+<pre><code>## The following objects are masked from dat (pos = 5):
+## 
+##     boys, girls, year</code></pre>
+<pre><code>## The following objects are masked from dat (pos = 8):
+## 
+##     boys, girls, year</code></pre>
+<pre><code>## The following objects are masked from dat (pos = 11):
+## 
+##     boys, girls, year</code></pre>
+<pre><code>## The following objects are masked from dat (pos = 16):
+## 
+##     boys, girls, year</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="teoria-setmana-1-2020-01-13.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(boys)</span></code></pre></div>
 <pre><code>## [1] 5907.098</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="teoria-setmana-1-2020-01-13.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(girls)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="teoria-setmana-1-2020-01-13.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(girls)</span></code></pre></div>
 <pre><code>## [1] 5534.646</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="teoria-setmana-1-2020-01-13.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(boys<span class="sc">/</span>girls)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="teoria-setmana-1-2020-01-13.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(boys<span class="sc">/</span>girls)</span></code></pre></div>
 <pre><code>## [1] 1.070748</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="teoria-setmana-1-2020-01-13.html#cb13-1" aria-hidden="true" tabindex="-1"></a>total<span class="ot">&lt;-</span> boys<span class="sc">+</span>girls</span>
-<span id="cb13-2"><a href="teoria-setmana-1-2020-01-13.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(year,total, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">main=</span><span class="st">&quot;total birth along the years&quot;</span>)</span>
-<span id="cb13-3"><a href="teoria-setmana-1-2020-01-13.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(boys<span class="sc">/</span>(boys<span class="sc">+</span>girls))</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="teoria-setmana-1-2020-01-13.html#cb18-1" aria-hidden="true" tabindex="-1"></a>total<span class="ot">&lt;-</span> boys<span class="sc">+</span>girls</span>
+<span id="cb18-2"><a href="teoria-setmana-1-2020-01-13.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(year,total, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">main=</span><span class="st">&quot;total birth along the years&quot;</span>)</span>
+<span id="cb18-3"><a href="teoria-setmana-1-2020-01-13.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(boys<span class="sc">/</span>(boys<span class="sc">+</span>girls))</span></code></pre></div>
 <pre><code>## [1] 0.5169751</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="teoria-setmana-1-2020-01-13.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(stats) <span class="co"># for lowess, rpois, rnorm</span></span>
-<span id="cb15-2"><a href="teoria-setmana-1-2020-01-13.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(year,<span class="fu">lowess</span>(total,<span class="at">f=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>)<span class="sc">$</span>y, <span class="at">lty=</span><span class="dv">3</span>, <span class="at">lwd=</span><span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="teoria-setmana-1-2020-01-13.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(stats) <span class="co"># for lowess, rpois, rnorm</span></span>
+<span id="cb20-2"><a href="teoria-setmana-1-2020-01-13.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(year,<span class="fu">lowess</span>(total,<span class="at">f=</span><span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>)<span class="sc">$</span>y, <span class="at">lty=</span><span class="dv">3</span>, <span class="at">lwd=</span><span class="dv">4</span>)</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="teoria-setmana-1-2020-01-13.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(boys, girls, <span class="at">names=</span><span class="fu">c</span>(<span class="st">&quot;boys&quot;</span>,<span class="st">&quot;girls&quot;</span>), <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;magenta&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="teoria-setmana-1-2020-01-13.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(boys, girls, <span class="at">names=</span><span class="fu">c</span>(<span class="st">&quot;boys&quot;</span>,<span class="st">&quot;girls&quot;</span>), <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;magenta&quot;</span>))</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="teoria-setmana-1-2020-01-13.html#cb17-1" aria-hidden="true" tabindex="-1"></a>boysrate<span class="ot">&lt;-</span>  boys<span class="sc">/</span>(boys<span class="sc">+</span>girls)</span>
-<span id="cb17-2"><a href="teoria-setmana-1-2020-01-13.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(year, boysrate, <span class="at">ylim =</span> <span class="fu">c</span>(.<span class="dv">49</span>,.<span class="dv">53</span>), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb17-3"><a href="teoria-setmana-1-2020-01-13.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.5</span>,  <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">3</span>, <span class="at">lty=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="teoria-setmana-1-2020-01-13.html#cb22-1" aria-hidden="true" tabindex="-1"></a>boysrate<span class="ot">&lt;-</span>  boys<span class="sc">/</span>(boys<span class="sc">+</span>girls)</span>
+<span id="cb22-2"><a href="teoria-setmana-1-2020-01-13.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(year, boysrate, <span class="at">ylim =</span> <span class="fu">c</span>(.<span class="dv">49</span>,.<span class="dv">53</span>), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb22-3"><a href="teoria-setmana-1-2020-01-13.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.5</span>,  <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">3</span>, <span class="at">lty=</span><span class="dv">3</span>)</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-3-3.png" width="672" /></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="teoria-setmana-1-2020-01-13.html#cb18-1" aria-hidden="true" tabindex="-1"></a>t<span class="ot">&lt;-</span>   (<span class="fu">mean</span>(boysrate) <span class="sc">-</span> <span class="fl">0.5</span>)<span class="sc">/</span>(<span class="fu">sd</span>(boysrate)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(boysrate)))</span>
-<span id="cb18-2"><a href="teoria-setmana-1-2020-01-13.html#cb18-2" aria-hidden="true" tabindex="-1"></a>t</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="teoria-setmana-1-2020-01-13.html#cb23-1" aria-hidden="true" tabindex="-1"></a>t<span class="ot">&lt;-</span>   (<span class="fu">mean</span>(boysrate) <span class="sc">-</span> <span class="fl">0.5</span>)<span class="sc">/</span>(<span class="fu">sd</span>(boysrate)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(boysrate)))</span>
+<span id="cb23-2"><a href="teoria-setmana-1-2020-01-13.html#cb23-2" aria-hidden="true" tabindex="-1"></a>t</span></code></pre></div>
 <pre><code>## [1] 21.29243</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="teoria-setmana-1-2020-01-13.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(boysrate, <span class="at">mu=</span><span class="fl">0.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="teoria-setmana-1-2020-01-13.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(boysrate, <span class="at">mu=</span><span class="fl">0.5</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -324,20 +336,20 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## sample estimates:
 ## mean of x 
 ## 0.5169751</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="teoria-setmana-1-2020-01-13.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(year, boysrate, <span class="at">ylim =</span> <span class="fu">c</span>(.<span class="dv">49</span>,.<span class="dv">53</span>), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">main=</span><span class="st">&quot;Boysrate values with 95% confidence bound (green lines) &quot;</span>)</span>
-<span id="cb22-2"><a href="teoria-setmana-1-2020-01-13.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.5</span>,  <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">3</span>, <span class="at">lty=</span><span class="dv">3</span>)</span>
-<span id="cb22-3"><a href="teoria-setmana-1-2020-01-13.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervals</span></span>
-<span id="cb22-4"><a href="teoria-setmana-1-2020-01-13.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(boysrate),  <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">lwd=</span>.<span class="dv">8</span>)</span>
-<span id="cb22-5"><a href="teoria-setmana-1-2020-01-13.html#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(year, <span class="fu">rep</span>(<span class="fl">0.5153889</span>, <span class="fu">length</span>(year)) , <span class="at">lty =</span> <span class="st">&#39;dashed&#39;</span>, <span class="at">col =</span> <span class="st">&#39;green&#39;</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span>
-<span id="cb22-6"><a href="teoria-setmana-1-2020-01-13.html#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(year, <span class="fu">rep</span>(<span class="fl">0.5186</span>,  <span class="fu">length</span>(year)) , <span class="at">lty =</span> <span class="st">&#39;dashed&#39;</span>, <span class="at">col =</span> <span class="st">&#39;green&#39;</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span>
-<span id="cb22-7"><a href="teoria-setmana-1-2020-01-13.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># add fill</span></span>
-<span id="cb22-8"><a href="teoria-setmana-1-2020-01-13.html#cb22-8" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span> <span class="fu">length</span>(year)</span>
-<span id="cb22-9"><a href="teoria-setmana-1-2020-01-13.html#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(<span class="fu">rev</span>(year), year), <span class="fu">c</span>( <span class="fu">rev</span>(<span class="fu">rep</span>(<span class="fl">0.5153889</span>, n )), <span class="fu">rep</span>(<span class="fl">0.5186</span>, n )),  <span class="at">border =</span> <span class="cn">NA</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="teoria-setmana-1-2020-01-13.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(year, boysrate, <span class="at">ylim =</span> <span class="fu">c</span>(.<span class="dv">49</span>,.<span class="dv">53</span>), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">main=</span><span class="st">&quot;Boysrate values with 95% confidence bound (green lines) &quot;</span>)</span>
+<span id="cb27-2"><a href="teoria-setmana-1-2020-01-13.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.5</span>,  <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">3</span>, <span class="at">lty=</span><span class="dv">3</span>)</span>
+<span id="cb27-3"><a href="teoria-setmana-1-2020-01-13.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervals</span></span>
+<span id="cb27-4"><a href="teoria-setmana-1-2020-01-13.html#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(boysrate),  <span class="at">col=</span><span class="st">&quot;blue&quot;</span>, <span class="at">lwd=</span>.<span class="dv">8</span>)</span>
+<span id="cb27-5"><a href="teoria-setmana-1-2020-01-13.html#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(year, <span class="fu">rep</span>(<span class="fl">0.5153889</span>, <span class="fu">length</span>(year)) , <span class="at">lty =</span> <span class="st">&#39;dashed&#39;</span>, <span class="at">col =</span> <span class="st">&#39;green&#39;</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span>
+<span id="cb27-6"><a href="teoria-setmana-1-2020-01-13.html#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(year, <span class="fu">rep</span>(<span class="fl">0.5186</span>,  <span class="fu">length</span>(year)) , <span class="at">lty =</span> <span class="st">&#39;dashed&#39;</span>, <span class="at">col =</span> <span class="st">&#39;green&#39;</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span>
+<span id="cb27-7"><a href="teoria-setmana-1-2020-01-13.html#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># add fill</span></span>
+<span id="cb27-8"><a href="teoria-setmana-1-2020-01-13.html#cb27-8" aria-hidden="true" tabindex="-1"></a>n<span class="ot">&lt;-</span> <span class="fu">length</span>(year)</span>
+<span id="cb27-9"><a href="teoria-setmana-1-2020-01-13.html#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(<span class="fu">rev</span>(year), year), <span class="fu">c</span>( <span class="fu">rev</span>(<span class="fu">rep</span>(<span class="fl">0.5153889</span>, n )), <span class="fu">rep</span>(<span class="fl">0.5186</span>, n )),  <span class="at">border =</span> <span class="cn">NA</span>)</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-3-4.png" width="672" /></p>
 <div id="now-with-recent-usas-data-present-day-birth-records-in-the-united-states" class="section level3" number="1.5.1">
 <h3><span class="header-section-number">1.5.1</span> Now with recent USA’s data, present day birth records in the United States</h3>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="teoria-setmana-1-2020-01-13.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;http://www.openintro.org/stat/data/present.R&quot;</span>)</span>
-<span id="cb23-2"><a href="teoria-setmana-1-2020-01-13.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(present)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="teoria-setmana-1-2020-01-13.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;http://www.openintro.org/stat/data/present.R&quot;</span>)</span>
+<span id="cb28-2"><a href="teoria-setmana-1-2020-01-13.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(present)</span></code></pre></div>
 <pre><code>##   year    boys   girls
 ## 1 1940 1211684 1148715
 ## 2 1941 1289734 1223693
@@ -345,12 +357,12 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## 4 1943 1508959 1427901
 ## 5 1944 1435301 1359499
 ## 6 1945 1404587 1330869</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="teoria-setmana-1-2020-01-13.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(present)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="teoria-setmana-1-2020-01-13.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(present)</span></code></pre></div>
 <pre><code>## [1] 63  3</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="teoria-setmana-1-2020-01-13.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(present<span class="sc">$</span>boys<span class="sc">/</span>(present<span class="sc">$</span>boys<span class="sc">+</span>present<span class="sc">$</span>girls))</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="teoria-setmana-1-2020-01-13.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(present<span class="sc">$</span>boys<span class="sc">/</span>(present<span class="sc">$</span>boys<span class="sc">+</span>present<span class="sc">$</span>girls))</span></code></pre></div>
 <pre><code>## [1] 0.512516</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="teoria-setmana-1-2020-01-13.html#cb29-1" aria-hidden="true" tabindex="-1"></a>boysrate<span class="ot">&lt;-</span>  present<span class="sc">$</span>boys<span class="sc">/</span>(present<span class="sc">$</span>boys<span class="sc">+</span>present<span class="sc">$</span>girls)</span>
-<span id="cb29-2"><a href="teoria-setmana-1-2020-01-13.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(boysrate, <span class="at">mu=</span><span class="fl">0.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="teoria-setmana-1-2020-01-13.html#cb34-1" aria-hidden="true" tabindex="-1"></a>boysrate<span class="ot">&lt;-</span>  present<span class="sc">$</span>boys<span class="sc">/</span>(present<span class="sc">$</span>boys<span class="sc">+</span>present<span class="sc">$</span>girls)</span>
+<span id="cb34-2"><a href="teoria-setmana-1-2020-01-13.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(boysrate, <span class="at">mu=</span><span class="fl">0.5</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -367,41 +379,55 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <div id="distribució-duna-variable-distribució-normal-altres-distribucions" class="section level2" number="1.6">
 <h2><span class="header-section-number">1.6</span> Distribució d’una variable, distribució normal, altres distribucions</h2>
 <p>Distribució d’una variable quantitativa (variable numérica): anàlisi de variància.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="teoria-setmana-1-2020-01-13.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
-<span id="cb31-2"><a href="teoria-setmana-1-2020-01-13.html#cb31-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span> <span class="fu">read.spss</span>( <span class="st">&quot;http://84.89.132.1/~satorra/dades/PAISOS.SAV&quot;</span>, <span class="at">use.value.labels =</span> <span class="cn">TRUE</span>, <span class="at">to.data.frame =</span> <span class="cn">TRUE</span> )  </span>
-<span id="cb31-3"><a href="teoria-setmana-1-2020-01-13.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(data)   </span>
-<span id="cb31-4"><a href="teoria-setmana-1-2020-01-13.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data)</span></code></pre></div>
-<pre><code>##  [1] &quot;IDH&quot;      &quot;NIVELL&quot;   &quot;PAIS&quot;     &quot;ESPVIDA&quot;  &quot;PIB&quot;      &quot;ALFAB&quot;    &quot;CONT&quot;    
-##  [8] &quot;CALORIES&quot; &quot;HABMETG&quot;  &quot;DIARIS&quot;   &quot;TV&quot;       &quot;SANITAT&quot;  &quot;AGRICULT&quot; &quot;INDUST&quot;</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="teoria-setmana-1-2020-01-13.html#cb33-1" aria-hidden="true" tabindex="-1"></a>ESPVIDA</span></code></pre></div>
-<pre><code>##   [1] 46.4 52.1 47.5 39.0 50.7 53.5 44.9 50.2 55.6 43.5 47.5 56.5 45.6 47.3 51.0
-##  [16] 46.5 60.4 46.0 47.4 65.2 50.4 55.7 48.0 66.7 48.9 45.0 65.5 55.0 47.6 49.4
-##  [31] 61.5 56.0 68.5 44.5 56.0 51.5 71.9 67.7 53.7 60.5 63.6 51.0 62.7 62.1 70.4
-##  [46] 59.4 49.3 66.3 56.0 64.7 67.6 55.8 64.8 63.3 69.6 57.5 68.8 51.3 67.9 69.9
-##  [61] 66.4 65.2 70.3 69.3 66.0 73.6 71.2 70.0 58.8 67.8 69.0 67.1 71.1 76.3 66.5
-##  [76] 70.9 70.0 71.5 67.5 71.5 73.6 64.9 72.8 76.0 71.3 73.8 70.2 66.3 67.6 62.9
-##  [91] 70.8 70.5 71.7 69.0 72.5 70.8 71.6 67.5 53.5 70.0 72.0 72.1 75.6 69.6 71.1
-## [106] 77.6 74.6 69.7 71.6 77.0 73.1 75.5 75.3 76.5 77.6 78.6 70.5 74.8 77.6 76.2
-## [121] 74.9 77.5 77.4 77.4 76.4 76.9 73.8 75.7 76.2 76.0 76.0 78.2 76.9 75.3 78.2
-## [136] 79.5 75.7 78.0 72.0 76.1 68.5 66.0 63.1 67.1 75.3 63.7 71.1 43.5 50.2 65.2
-## [151] 56.6 57.6 52.0 53.0 46.5 51.6 55.4 47.0 74.2 48.3</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="teoria-setmana-1-2020-01-13.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ESPVIDA)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="teoria-setmana-1-2020-01-13.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
+<span id="cb36-2"><a href="teoria-setmana-1-2020-01-13.html#cb36-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span> <span class="fu">read.spss</span>( <span class="st">&quot;http://84.89.132.1/~satorra/dades/PAISOS.SAV&quot;</span>, <span class="at">use.value.labels =</span> <span class="cn">TRUE</span>, <span class="at">to.data.frame =</span> <span class="cn">TRUE</span> )  </span>
+<span id="cb36-3"><a href="teoria-setmana-1-2020-01-13.html#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(data)   </span></code></pre></div>
+<pre><code>## The following objects are masked from data (pos = 5):
+## 
+##     AGRICULT, ALFAB, CALORIES, CONT, DIARIS, ESPVIDA, HABMETG, IDH, INDUST, NIVELL,
+##     PAIS, PIB, SANITAT, TV</code></pre>
+<pre><code>## The following objects are masked from data (pos = 8):
+## 
+##     AGRICULT, ALFAB, CALORIES, CONT, DIARIS, ESPVIDA, HABMETG, IDH, INDUST, NIVELL,
+##     PAIS, PIB, SANITAT, TV</code></pre>
+<pre><code>## The following objects are masked from data (pos = 11):
+## 
+##     AGRICULT, ALFAB, CALORIES, CONT, DIARIS, ESPVIDA, HABMETG, IDH, INDUST, NIVELL,
+##     PAIS, PIB, SANITAT, TV</code></pre>
+<pre><code>## The following objects are masked from data (pos = 15):
+## 
+##     AGRICULT, ALFAB, CALORIES, CONT, DIARIS, ESPVIDA, HABMETG, IDH, INDUST, NIVELL,
+##     PAIS, PIB, SANITAT, TV</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="teoria-setmana-1-2020-01-13.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data)</span></code></pre></div>
+<pre><code>##  [1] &quot;IDH&quot;      &quot;NIVELL&quot;   &quot;PAIS&quot;     &quot;ESPVIDA&quot;  &quot;PIB&quot;      &quot;ALFAB&quot;    &quot;CONT&quot;     &quot;CALORIES&quot;
+##  [9] &quot;HABMETG&quot;  &quot;DIARIS&quot;   &quot;TV&quot;       &quot;SANITAT&quot;  &quot;AGRICULT&quot; &quot;INDUST&quot;</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="teoria-setmana-1-2020-01-13.html#cb43-1" aria-hidden="true" tabindex="-1"></a>ESPVIDA</span></code></pre></div>
+<pre><code>##   [1] 46.4 52.1 47.5 39.0 50.7 53.5 44.9 50.2 55.6 43.5 47.5 56.5 45.6 47.3 51.0 46.5 60.4 46.0
+##  [19] 47.4 65.2 50.4 55.7 48.0 66.7 48.9 45.0 65.5 55.0 47.6 49.4 61.5 56.0 68.5 44.5 56.0 51.5
+##  [37] 71.9 67.7 53.7 60.5 63.6 51.0 62.7 62.1 70.4 59.4 49.3 66.3 56.0 64.7 67.6 55.8 64.8 63.3
+##  [55] 69.6 57.5 68.8 51.3 67.9 69.9 66.4 65.2 70.3 69.3 66.0 73.6 71.2 70.0 58.8 67.8 69.0 67.1
+##  [73] 71.1 76.3 66.5 70.9 70.0 71.5 67.5 71.5 73.6 64.9 72.8 76.0 71.3 73.8 70.2 66.3 67.6 62.9
+##  [91] 70.8 70.5 71.7 69.0 72.5 70.8 71.6 67.5 53.5 70.0 72.0 72.1 75.6 69.6 71.1 77.6 74.6 69.7
+## [109] 71.6 77.0 73.1 75.5 75.3 76.5 77.6 78.6 70.5 74.8 77.6 76.2 74.9 77.5 77.4 77.4 76.4 76.9
+## [127] 73.8 75.7 76.2 76.0 76.0 78.2 76.9 75.3 78.2 79.5 75.7 78.0 72.0 76.1 68.5 66.0 63.1 67.1
+## [145] 75.3 63.7 71.1 43.5 50.2 65.2 56.6 57.6 52.0 53.0 46.5 51.6 55.4 47.0 74.2 48.3</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="teoria-setmana-1-2020-01-13.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ESPVIDA)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   39.00   55.67   67.60   64.50   72.58   79.50</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="teoria-setmana-1-2020-01-13.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ESPVIDA,  <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="teoria-setmana-1-2020-01-13.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(ESPVIDA,  <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="teoria-setmana-1-2020-01-13.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ESPVIDA, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="teoria-setmana-1-2020-01-13.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ESPVIDA, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
 <div id="valor-estandarditzat-duna-variable" class="section level3" number="1.6.1">
 <h3><span class="header-section-number">1.6.1</span> Valor estandarditzat d’una variable</h3>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="teoria-setmana-1-2020-01-13.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># variable centrads</span></span>
-<span id="cb39-2"><a href="teoria-setmana-1-2020-01-13.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ESPVIDA <span class="sc">-</span> <span class="fu">mean</span>(ESPVIDA))</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="teoria-setmana-1-2020-01-13.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># variable centrads</span></span>
+<span id="cb49-2"><a href="teoria-setmana-1-2020-01-13.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ESPVIDA <span class="sc">-</span> <span class="fu">mean</span>(ESPVIDA))</span></code></pre></div>
 <pre><code>## [1] -18.10437 -12.40437 -17.00437 -25.50437 -13.80437 -11.00437</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="teoria-setmana-1-2020-01-13.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># variable estandarditzada </span></span>
-<span id="cb41-2"><a href="teoria-setmana-1-2020-01-13.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>((ESPVIDA <span class="sc">-</span> <span class="fu">mean</span>(ESPVIDA))<span class="sc">/</span><span class="fu">sd</span>(ESPVIDA))</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="teoria-setmana-1-2020-01-13.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># variable estandarditzada </span></span>
+<span id="cb51-2"><a href="teoria-setmana-1-2020-01-13.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>((ESPVIDA <span class="sc">-</span> <span class="fu">mean</span>(ESPVIDA))<span class="sc">/</span><span class="fu">sd</span>(ESPVIDA))</span></code></pre></div>
 <pre><code>## [1] -1.715521 -1.175405 -1.611288 -2.416725 -1.308065 -1.042744</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="teoria-setmana-1-2020-01-13.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Amb R</span></span>
-<span id="cb43-2"><a href="teoria-setmana-1-2020-01-13.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">scale</span>(ESPVIDA))</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="teoria-setmana-1-2020-01-13.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Amb R</span></span>
+<span id="cb53-2"><a href="teoria-setmana-1-2020-01-13.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">scale</span>(ESPVIDA))</span></code></pre></div>
 <pre><code>##           [,1]
 ## [1,] -1.715521
 ## [2,] -1.175405
@@ -422,39 +448,51 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <div id="exemple-amb-la-variable-diners-en-butxaca-estudiants-de-mq-iii" class="section level3" number="1.6.3">
 <h3><span class="header-section-number">1.6.3</span> Exemple amb la variable diners en butxaca (estudiants de MQ III)</h3>
 <p>Dades_enq_paper (diners en butxaca, genere):</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="teoria-setmana-1-2020-01-13.html#cb45-1" aria-hidden="true" tabindex="-1"></a>datadiners<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&quot;http://84.89.132.1/~satorra/dades/ECP2019diners.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
-<span id="cb45-2"><a href="teoria-setmana-1-2020-01-13.html#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-3"><a href="teoria-setmana-1-2020-01-13.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(datadiners)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="teoria-setmana-1-2020-01-13.html#cb55-1" aria-hidden="true" tabindex="-1"></a>datadiners<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&quot;http://84.89.132.1/~satorra/dades/ECP2019diners.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb55-2"><a href="teoria-setmana-1-2020-01-13.html#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="teoria-setmana-1-2020-01-13.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(datadiners)</span></code></pre></div>
 <pre><code>## [1] &quot;diners&quot; &quot;genere&quot;</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="teoria-setmana-1-2020-01-13.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(datadiners) </span>
-<span id="cb47-2"><a href="teoria-setmana-1-2020-01-13.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(diners)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="teoria-setmana-1-2020-01-13.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(datadiners) </span></code></pre></div>
+<pre><code>## The following objects are masked from datadiners (pos = 5):
+## 
+##     diners, genere</code></pre>
+<pre><code>## The following objects are masked from datadiners (pos = 8):
+## 
+##     diners, genere</code></pre>
+<pre><code>## The following objects are masked from datadiners (pos = 11):
+## 
+##     diners, genere</code></pre>
+<pre><code>## The following objects are masked from datadiners (pos = 15):
+## 
+##     diners, genere</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="teoria-setmana-1-2020-01-13.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(diners)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   0.000   1.000   7.995  16.249  21.625 100.000</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="teoria-setmana-1-2020-01-13.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(diners)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="teoria-setmana-1-2020-01-13.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(diners)</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="teoria-setmana-1-2020-01-13.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(diners)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="teoria-setmana-1-2020-01-13.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(diners)</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="teoria-setmana-1-2020-01-13.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(diners <span class="sc">~</span> genere, <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;violet&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="teoria-setmana-1-2020-01-13.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(diners <span class="sc">~</span> genere, <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;violet&quot;</span>))</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-7-3.png" width="672" /></p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="teoria-setmana-1-2020-01-13.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(diners, <span class="fu">list</span>(genere), mean) </span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="teoria-setmana-1-2020-01-13.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(diners, <span class="fu">list</span>(genere), mean) </span></code></pre></div>
 <pre><code>##   Group.1        x
 ## 1       0 18.30667
 ## 2       1 13.30833</code></pre>
 <p>Diners en butxaca: distribució normal?</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="teoria-setmana-1-2020-01-13.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(datadiners<span class="sc">$</span>diners)</span>
-<span id="cb54-2"><a href="teoria-setmana-1-2020-01-13.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(datadiners<span class="sc">$</span>diners ,<span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="teoria-setmana-1-2020-01-13.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(datadiners<span class="sc">$</span>diners)</span>
+<span id="cb69-2"><a href="teoria-setmana-1-2020-01-13.html#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(datadiners<span class="sc">$</span>diners ,<span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <div id="log-de-diners-en-butxaca-distribució-normal" class="section level4" number="1.6.3.1">
 <h4><span class="header-section-number">1.6.3.1</span> Log de diners en butxaca: distribució normal?</h4>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="teoria-setmana-1-2020-01-13.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">log</span>(datadiners<span class="sc">$</span>diners<span class="sc">+</span> .<span class="dv">1</span>))</span>
-<span id="cb55-2"><a href="teoria-setmana-1-2020-01-13.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">log</span>(datadiners<span class="sc">$</span>diners <span class="sc">+</span>.<span class="dv">1</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="teoria-setmana-1-2020-01-13.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">log</span>(datadiners<span class="sc">$</span>diners<span class="sc">+</span> .<span class="dv">1</span>))</span>
+<span id="cb70-2"><a href="teoria-setmana-1-2020-01-13.html#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">log</span>(datadiners<span class="sc">$</span>diners <span class="sc">+</span>.<span class="dv">1</span>),<span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 <div id="log-de-diners-en-butxaca-no-zero-distribució-normal" class="section level4" number="1.6.3.2">
 <h4><span class="header-section-number">1.6.3.2</span> log de diners en butxaca (no zero): distribució normal?</h4>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="teoria-setmana-1-2020-01-13.html#cb56-1" aria-hidden="true" tabindex="-1"></a>ind<span class="ot">&lt;-</span> datadiners<span class="sc">$</span>diners <span class="sc">&gt;</span> <span class="dv">0</span></span>
-<span id="cb56-2"><a href="teoria-setmana-1-2020-01-13.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">log</span>(datadiners<span class="sc">$</span>diners[ind]))</span>
-<span id="cb56-3"><a href="teoria-setmana-1-2020-01-13.html#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">log</span>(datadiners<span class="sc">$</span>diners[ind]),<span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="teoria-setmana-1-2020-01-13.html#cb71-1" aria-hidden="true" tabindex="-1"></a>ind<span class="ot">&lt;-</span> datadiners<span class="sc">$</span>diners <span class="sc">&gt;</span> <span class="dv">0</span></span>
+<span id="cb71-2"><a href="teoria-setmana-1-2020-01-13.html#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">log</span>(datadiners<span class="sc">$</span>diners[ind]))</span>
+<span id="cb71-3"><a href="teoria-setmana-1-2020-01-13.html#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(<span class="fu">log</span>(datadiners<span class="sc">$</span>diners[ind]),<span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">lwd=</span><span class="dv">3</span>)</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 </div>
@@ -464,33 +502,33 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <div id="variables-quantitatives-i-qualitatives" class="section level4" number="1.6.4.1">
 <h4><span class="header-section-number">1.6.4.1</span> Variables quantitatives i qualitatives</h4>
 <p>Dades Enquesta Socrative</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="teoria-setmana-1-2020-01-13.html#cb57-1" aria-hidden="true" tabindex="-1"></a>d<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">scan</span>(<span class="st">&quot;http://84.89.132.1/~satorra/dades/ECP2019enquestasocrativeG1.txt&quot;</span>, <span class="at">what=</span><span class="st">&quot;character&quot;</span>,<span class="at">skip=</span><span class="dv">1</span>),<span class="at">ncol=</span><span class="dv">20</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>);</span>
-<span id="cb57-2"><a href="teoria-setmana-1-2020-01-13.html#cb57-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span>d[<span class="sc">-</span><span class="dv">1</span>,];</span>
-<span id="cb57-3"><a href="teoria-setmana-1-2020-01-13.html#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data)<span class="ot">&lt;-</span>d[<span class="dv">1</span>,];</span>
-<span id="cb57-4"><a href="teoria-setmana-1-2020-01-13.html#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data[,<span class="dv">4</span>]); </span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="teoria-setmana-1-2020-01-13.html#cb72-1" aria-hidden="true" tabindex="-1"></a>d<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">scan</span>(<span class="st">&quot;http://84.89.132.1/~satorra/dades/ECP2019enquestasocrativeG1.txt&quot;</span>, <span class="at">what=</span><span class="st">&quot;character&quot;</span>,<span class="at">skip=</span><span class="dv">1</span>),<span class="at">ncol=</span><span class="dv">20</span>,<span class="at">byrow=</span><span class="cn">TRUE</span>);</span>
+<span id="cb72-2"><a href="teoria-setmana-1-2020-01-13.html#cb72-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span>d[<span class="sc">-</span><span class="dv">1</span>,];</span>
+<span id="cb72-3"><a href="teoria-setmana-1-2020-01-13.html#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data)<span class="ot">&lt;-</span>d[<span class="dv">1</span>,];</span>
+<span id="cb72-4"><a href="teoria-setmana-1-2020-01-13.html#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data[,<span class="dv">4</span>]); </span></code></pre></div>
 <pre><code>## 
 ##  av  cd mai 
 ##  12  13   7</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="teoria-setmana-1-2020-01-13.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">prop.table</span>(<span class="fu">table</span>(data[,<span class="dv">4</span>], data[,<span class="dv">1</span>]),<span class="dv">2</span>),<span class="dv">1</span>);  </span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="teoria-setmana-1-2020-01-13.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">prop.table</span>(<span class="fu">table</span>(data[,<span class="dv">4</span>], data[,<span class="dv">1</span>]),<span class="dv">2</span>),<span class="dv">1</span>);  </span></code></pre></div>
 <pre><code>##      
 ##          0    1
 ##   av  42.1 30.8
 ##   cd  36.8 46.2
 ##   mai 21.1 23.1</code></pre>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="teoria-setmana-1-2020-01-13.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">table</span>(data[,<span class="dv">4</span>]), <span class="at">main=</span><span class="st">&quot;fer-se el llit&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="teoria-setmana-1-2020-01-13.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">table</span>(data[,<span class="dv">4</span>]), <span class="at">main=</span><span class="st">&quot;fer-se el llit&quot;</span>)</span></code></pre></div>
 <p><img src="meacp_2021_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="teoria-setmana-1-2020-01-13.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="do">## interess assignatura</span></span>
-<span id="cb62-2"><a href="teoria-setmana-1-2020-01-13.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="fu">as.numeric</span>(data[,<span class="dv">7</span>]), <span class="fu">list</span>(data[,<span class="dv">4</span>]), mean)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="teoria-setmana-1-2020-01-13.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="do">## interess assignatura</span></span>
+<span id="cb77-2"><a href="teoria-setmana-1-2020-01-13.html#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="fu">as.numeric</span>(data[,<span class="dv">7</span>]), <span class="fu">list</span>(data[,<span class="dv">4</span>]), mean)</span></code></pre></div>
 <pre><code>##   Group.1        x
 ## 1      av 6.625000
 ## 2      cd 5.923077
 ## 3     mai 4.571429</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="teoria-setmana-1-2020-01-13.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="do">## tirada de dues monedes</span></span>
-<span id="cb64-2"><a href="teoria-setmana-1-2020-01-13.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data[,<span class="dv">14</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="teoria-setmana-1-2020-01-13.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="do">## tirada de dues monedes</span></span>
+<span id="cb79-2"><a href="teoria-setmana-1-2020-01-13.html#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data[,<span class="dv">14</span>])</span></code></pre></div>
 <pre><code>## 
 ##  0  1  2  3 
 ##  2 11 15  4</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="teoria-setmana-1-2020-01-13.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">prop.table</span>(<span class="fu">table</span>(data[,<span class="dv">14</span>])),<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="teoria-setmana-1-2020-01-13.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">prop.table</span>(<span class="fu">table</span>(data[,<span class="dv">14</span>])),<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## 
 ##    0    1    2    3 
 ## 0.06 0.34 0.47 0.12</code></pre>
