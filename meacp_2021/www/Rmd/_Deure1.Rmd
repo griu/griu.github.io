@@ -1,0 +1,45 @@
+---
+title: "Deure 1"
+author: "Nom Alumne"
+date: "12/1/2021"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Deure 1
+
+En el link https://griu.github.io/meacp_2021/data/dataXY.dat hi han les dues variables ESPVIDA i CALORIES del fitxer PAISOS.SAV (són l'esperança de vida y les calories per habitant en diferents paisos del mon). Feu: 
+
+Utiliza el program (Excel, SPSS o R) que coneguis. La lectura de les dades amb R seria
+
+```{r echo=TRUE}
+dataXY<-read.table('https://griu.github.io/meacp_2021/data/dataXY.dat', header=TRUE, dec=",", sep=";")
+```
+
+### Apartat A
+
+Una descripció breu univariant de cada una de les variables; 
+
+```{r}
+summary(dataXY)
+```
+
+### Apartat B
+
+Un diagrama de dispersió de ESPVIDA vs CALORIES. Comenta si s'observa o no associació entre aquests dues variables.
+
+```{r}
+library(ggplot2)
+
+ggplot(dataXY, aes(x=CALORIES, y=ESPVIDA)) +
+  geom_point()
+```
+
+### Apartat C
+
+Comenta si la associació observada justifica o no parlar de causalitat. 
+
+NOTA: DEscarrega la plantilla de solució en Rmd.

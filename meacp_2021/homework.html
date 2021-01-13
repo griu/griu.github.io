@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítol 3 Llista de Deures | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021</title>
+  <meta name="description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítol 3 Llista de Deures | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítol 3 Llista de Deures | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  
+  <meta name="twitter:description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+<meta name="author" content="Ferran Carrascosa Mallafrè" />
+
+
+<meta name="date" content="2021-01-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="seminaris-setmana-1-2020-01-13.html"/>
+
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script>
+% https://stackoverflow.com/a/4425214/8242291
+var links = document.links;
+
+for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+
+    if (links[i].hostname != window.location.hostname) {
+        links[i].target = '_blank';
+    }
+
+}
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #2a211c;
+    color: #bdae9d;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+div.sourceCode
+  { color: #bdae9d; background-color: #2a211c; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffff00; } /* Alert */
+code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #44aa43; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #049b0a; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.dv { color: #44aa43; } /* DecVal */
+code span.er { color: #ffff00; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #44aa43; } /* Float */
+code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+code span.op { } /* Operator */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.sc { color: #049b0a; } /* SpecialChar */
+code span.ss { color: #049b0a; } /* SpecialString */
+code span.st { color: #049b0a; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #049b0a; } /* VerbatimString */
+code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><b><a href="./index.html"><img style="float: left; margin-right: 5px;" src="www/images/01_general/logo.png" width="40" height="40"></img>Diari Classes MEA (21703) 2020-2021</a></b></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a></li>
+<li class="part"><span><b>I Diari classe Teoria</b></span></li>
+<li class="chapter" data-level="1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html"><i class="fa fa-check"></i><b>1</b> Teoria Setmana 1 (2020-01-13)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#avaluació"><i class="fa fa-check"></i><b>1.1</b> Avaluació</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#el-treball"><i class="fa fa-check"></i><b>1.1.1</b> El treball</a></li>
+<li class="chapter" data-level="1.1.2" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#exàmens"><i class="fa fa-check"></i><b>1.1.2</b> Exàmens</a></li>
+<li class="chapter" data-level="1.1.3" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#participació"><i class="fa fa-check"></i><b>1.1.3</b> Participació</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#bibliografia"><i class="fa fa-check"></i><b>1.2</b> Bibliografia</a></li>
+<li class="chapter" data-level="1.3" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#introducció-conceptes-estadística"><i class="fa fa-check"></i><b>1.3</b> Introducció conceptes Estadística</a></li>
+<li class="chapter" data-level="1.4" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#gender-gap-at-birth"><i class="fa fa-check"></i><b>1.4</b> Gender gap, at birth</a></li>
+<li class="chapter" data-level="1.5" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#with-arbuthnotts-data-collected-on-years-1629-to-1710"><i class="fa fa-check"></i><b>1.5</b> With Arbuthnott’s data, collected on years 1629 to 1710</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#now-with-recent-usas-data-present-day-birth-records-in-the-united-states"><i class="fa fa-check"></i><b>1.5.1</b> Now with recent USA’s data, present day birth records in the United States</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#distribució-duna-variable-distribució-normal-altres-distribucions"><i class="fa fa-check"></i><b>1.6</b> Distribució d’una variable, distribució normal, altres distribucions</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#valor-estandarditzat-duna-variable"><i class="fa fa-check"></i><b>1.6.1</b> Valor estandarditzat d’una variable</a></li>
+<li class="chapter" data-level="1.6.2" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#distribució-normal"><i class="fa fa-check"></i><b>1.6.2</b> Distribució Normal</a></li>
+<li class="chapter" data-level="1.6.3" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#exemple-amb-la-variable-diners-en-butxaca-estudiants-de-mq-iii"><i class="fa fa-check"></i><b>1.6.3</b> Exemple amb la variable diners en butxaca (estudiants de MQ III)</a></li>
+<li class="chapter" data-level="1.6.4" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#altres-distribucions-univariants"><i class="fa fa-check"></i><b>1.6.4</b> Altres distribucions univariants</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Diari classe Seminaris</b></span></li>
+<li class="chapter" data-level="2" data-path="seminaris-setmana-1-2020-01-13.html"><a href="seminaris-setmana-1-2020-01-13.html"><i class="fa fa-check"></i><b>2</b> Seminaris Setmana 1 (2020-01-13)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="seminaris-setmana-1-2020-01-13.html"><a href="seminaris-setmana-1-2020-01-13.html#programació-amb-r"><i class="fa fa-check"></i><b>2.1</b> Programació amb R</a></li>
+<li class="chapter" data-level="2.2" data-path="seminaris-setmana-1-2020-01-13.html"><a href="seminaris-setmana-1-2020-01-13.html#comentari-deure-1."><i class="fa fa-check"></i><b>2.2</b> Comentari Deure 1.</a></li>
+</ul></li>
+<li class="part"><span><b>III Deures</b></span></li>
+<li class="chapter" data-level="3" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>3</b> Llista de Deures</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="homework.html"><a href="homework.html#deure-1"><i class="fa fa-check"></i><b>3.1</b> Deure 1</a></li>
+<li class="chapter" data-level="3.2" data-path="homework.html"><a href="homework.html#deure-2"><i class="fa fa-check"></i><b>3.2</b> Deure 2</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/griu/meacp_2021" target="blank">Repositori GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="homework" class="section level1" number="3">
+<h1><span class="header-section-number">Capítol 3</span> Llista de Deures</h1>
+<div id="deure-1" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Deure 1</h2>
+<p><strong>NOTA: Descarrega la <a href="https://raw.githubusercontent.com/griu/meacp_2021/main/www/Rmd/_Deure1.Rmd">plantilla de solució deure 1 en Rmd</a>.</strong></p>
+<p>En el link <a href="https://griu.github.io/meacp_2021/data/dataXY.dat" class="uri">https://griu.github.io/meacp_2021/data/dataXY.dat</a> hi han les dues variables ESPVIDA i CALORIES del fitxer PAISOS.SAV (són l’esperança de vida y les calories per habitant en diferents paisos del mon). Feu:</p>
+<p>Utiliza el program (Excel, SPSS o R) que coneguis. La lectura de les dades amb R seria</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="homework.html#cb68-1" aria-hidden="true" tabindex="-1"></a>dataXY<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&#39;https://griu.github.io/meacp_2021/data/dataXY.dat&#39;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">dec=</span><span class="st">&quot;,&quot;</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span>)</span></code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li>Una descripció breu univariant de cada una de les variables;</li>
+</ol>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="homework.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dataXY)</span></code></pre></div>
+<pre><code>##     CALORIES       ESPVIDA     
+##  Min.   :1505   Min.   :39.00  
+##  1st Qu.:2248   1st Qu.:55.77  
+##  Median :2614   Median :67.55  
+##  Mean   :2661   Mean   :64.57  
+##  3rd Qu.:3166   3rd Qu.:72.88  
+##  Max.   :3947   Max.   :79.50</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Un diagrama de dispersió de ESPVIDA vs CALORIES. Comenta si s’observa o no associació entre aquests dues variables.</li>
+</ol>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="homework.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb71-2"><a href="homework.html#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-3"><a href="homework.html#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataXY, <span class="fu">aes</span>(<span class="at">x=</span>CALORIES, <span class="at">y=</span>ESPVIDA)) <span class="sc">+</span></span>
+<span id="cb71-4"><a href="homework.html#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Comenta si la associació observada justifica o no parlar de causalitat.</li>
+</ol>
+</div>
+<div id="deure-2" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Deure 2</h2>
+<p>Considera les dades a PAISOS.SAV, lectura de dades en R:</p>
+<pre><code>library(foreign)
+data &lt;- read.spss(&quot;https://griu.github.io/meacp_2021/data/PAISOS.SAV&quot;, use.value.labels = TRUE, to.data.frame = TRUE, use.missings =TRUE)</code></pre>
+<ol style="list-style-type: decimal">
+<li>Quins són els països que tenen menys de 47 anys d’esperança de vida?
+Quants països tenen menys d’un terç de la seva població alfabetitzada? I d’aquests, quants tenen un PIB per càpita superior a 1.000 dòlars?</li>
+<li>Quina és la mitjana del nombre de diaris que es llegeixen al món? Hi ha diferències en la lectura de diaris segons nivell de desenvolupament humà? Creus que a Espanya se’n llegeixen pocs? perquè?</li>
+<li>Quina és la mitjana d’habitants per metge? Quin és el valor d’aquesta mitjana en cada un dels tres nivells de desenvolupament humà en què s’han classificat els països? Hi ha diferències significatives entre elles?</li>
+<li>En relació al fitxer de dades PAISOS.SAV, tria una variable Y del teu interès i descriu la variació de la mateixa emprant un altre variable del fitxer de dades. En aquest procés, ajusta un model de regressió lineal simple entre la variable depenent i la variable explicativa, descriu els resultats de la regressió lineal simple, i comprova que la hipòtesi de linealitat es plausible en aquestes dades. Si veus que la linealitat no es plausible, efectua la corresponent transformació prèvia de les variables. Recull els residus, I fes un gràfic dels residus vs. la variable depenent ajustada.</li>
+<li>Fes un breu resum de les conclusions que creus que es desprenen de la teva anàlisi. Explica també les limitacions de l’anàlisi.</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="seminaris-setmana-1-2020-01-13.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/griu/meacp_2021/edit/master/03010-Homework_1.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["meacp_2021.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
