@@ -54,10 +54,10 @@ paleta-colores
 zoom
 temas
 gráficos-interactivos
-modelar-regressio-simple
-ingresos-i-despeses
+modelar-regressió-simple
+ingressos-i-despeses
 paisos.sav
-regressio-simple
+regressió-simple
 residus-versus-predicció
 regressió-lineal-simple
 regressió-lineal-múltiple
