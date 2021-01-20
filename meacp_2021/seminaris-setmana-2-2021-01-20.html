@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítol 5 Llista de Deures | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021</title>
+  <title>Capítol 4 Seminaris Setmana 2 (2021-01-20) | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021</title>
   <meta name="description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítol 5 Llista de Deures | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  <meta property="og:title" content="Capítol 4 Seminaris Setmana 2 (2021-01-20) | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítol 5 Llista de Deures | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  <meta name="twitter:title" content="Capítol 4 Seminaris Setmana 2 (2021-01-20) | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
   
   <meta name="twitter:description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="seminaris-setmana-2-2021-01-20.html"/>
-
+<link rel="prev" href="seminaris-setmana-1-2021-01-13.html"/>
+<link rel="next" href="homework.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -236,60 +236,47 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="homework" class="section level1" number="5">
-<h1><span class="header-section-number">Capítol 5</span> Llista de Deures</h1>
-<div id="deure-1" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Deure 1</h2>
-<p><strong>NOTA: Descarrega la <a href="https://raw.githubusercontent.com/griu/meacp_2021/main/www/Rmd/_Deure1.Rmd">plantilla de solució deure 1 en Rmd</a>.</strong></p>
-<p>En el link <a href="https://griu.github.io/meacp_2021/data/dataXY.dat" class="uri">https://griu.github.io/meacp_2021/data/dataXY.dat</a> hi han les dues variables ESPVIDA i CALORIES del fitxer PAISOS.SAV (són l’esperança de vida y les calories per habitant en diferents paisos del mon). Feu:</p>
-<p>Utiliza el program (Excel, SPSS o R) que coneguis. La lectura de les dades amb R seria</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="homework.html#cb170-1" aria-hidden="true" tabindex="-1"></a>dataXY<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&#39;https://raw.githubusercontent.com/griu/griu.github.io/main/meacp_2021/data/dataXY.dat&#39;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">dec=</span><span class="st">&quot;,&quot;</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span>)</span></code></pre></div>
-<ol style="list-style-type: lower-alpha">
-<li>Una descripció breu univariant de cada una de les variables;</li>
-</ol>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="homework.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dataXY)</span></code></pre></div>
-<pre><code>##     CALORIES       ESPVIDA     
-##  Min.   :1505   Min.   :39.00  
-##  1st Qu.:2248   1st Qu.:55.77  
-##  Median :2614   Median :67.55  
-##  Mean   :2661   Mean   :64.57  
-##  3rd Qu.:3166   3rd Qu.:72.88  
-##  Max.   :3947   Max.   :79.50</code></pre>
-<ol start="2" style="list-style-type: lower-alpha">
-<li>Un diagrama de dispersió de ESPVIDA vs CALORIES. Comenta si s’observa o no associació entre aquests dues variables.</li>
-</ol>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="homework.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb173-2"><a href="homework.html#cb173-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb173-3"><a href="homework.html#cb173-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataXY, <span class="fu">aes</span>(<span class="at">x=</span>CALORIES, <span class="at">y=</span>ESPVIDA)) <span class="sc">+</span></span>
-<span id="cb173-4"><a href="homework.html#cb173-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
-<ol start="3" style="list-style-type: lower-alpha">
-<li>Comenta si la associació observada justifica o no parlar de causalitat.</li>
-</ol>
+<div id="seminaris-setmana-2-2021-01-20" class="section level1" number="4">
+<h1><span class="header-section-number">Capítol 4</span> Seminaris Setmana 2 (2021-01-20)</h1>
+<div id="comentari-dels-projectes-en-grup" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Comentari dels projectes en grup</h2>
+<ul>
+<li>Formació de grups setmana 2021-01-27. Pensar tema.</li>
+<li>Exploració de propostes de <a href="https://griu.github.io/meacp/getdata.html">dades pel projecte</a></li>
+</ul>
 </div>
-<div id="deure-2" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Deure 2</h2>
-<p>Considera les dades a PAISOS.SAV, lectura de dades en R:</p>
-<pre><code>library(foreign)
-data &lt;- read.spss(&quot;https://griu.github.io/meacp_2021/data/PAISOS.SAV&quot;, use.value.labels = TRUE, to.data.frame = TRUE, use.missings =TRUE)</code></pre>
-<ol style="list-style-type: decimal">
-<li>Quins són els països que tenen menys de 47 anys d’esperança de vida?
-Quants països tenen menys d’un terç de la seva població alfabetitzada? I d’aquests, quants tenen un PIB per càpita superior a 1.000 dòlars?</li>
-<li>Quina és la mitjana del nombre de diaris que es llegeixen al món? Hi ha diferències en la lectura de diaris segons nivell de desenvolupament humà? Creus que a Espanya se’n llegeixen pocs? perquè?</li>
-<li>Quina és la mitjana d’habitants per metge? Quin és el valor d’aquesta mitjana en cada un dels tres nivells de desenvolupament humà en què s’han classificat els països? Hi ha diferències significatives entre elles?</li>
-<li>En relació al fitxer de dades PAISOS.SAV, tria una variable Y del teu interès i descriu la variació de la mateixa emprant un altre variable del fitxer de dades. En aquest procés, ajusta un model de regressió lineal simple entre la variable depenent i la variable explicativa, descriu els resultats de la regressió lineal simple, i comprova que la hipòtesi de linealitat es plausible en aquestes dades. Si veus que la linealitat no es plausible, efectua la corresponent transformació prèvia de les variables. Recull els residus, I fes un gràfic dels residus vs. la variable depenent ajustada.</li>
-<li>Fes un breu resum de les conclusions que creus que es desprenen de la teva anàlisi. Explica també les limitacions de l’anàlisi.</li>
-</ol>
+<div id="paquets-addicionals" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Paquets addicionals</h2>
+<ul>
+<li>Revisió posada a apunt del R</li>
+</ul>
+<pre><code>install.packages(&quot;stargazer&quot;)
+install.packages(&quot;ggcorrplot&quot;)</code></pre>
+</div>
+<div id="correcció-deure-1" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Correcció deure 1</h2>
+<ul>
+<li>Solució a l’aula</li>
+</ul>
+</div>
+<div id="comentari-deure-2" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Comentari Deure 2</h2>
+<ul>
+<li>Veure aparatat deures: <a href="homework.html#homework">5</a>.</li>
+</ul>
 
 </div>
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="seminaris-setmana-2-2021-01-20.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="seminaris-setmana-1-2021-01-13.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -311,7 +298,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/griu/meacp_2021/edit/master/03010-Homework_1.Rmd",
+"link": "https://github.com/griu/meacp_2021/edit/master/02020-seminar_class_journal_w2.Rmd",
 "text": "Edit"
 },
 "history": {

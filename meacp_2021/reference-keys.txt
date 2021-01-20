@@ -61,9 +61,14 @@ regressió-simple
 residus-versus-predicció
 regressió-lineal-simple
 regressió-lineal-múltiple
-seminaris-setmana-1-2020-01-13
+seminaris-setmana-1-2021-01-13
 programació-amb-r
 comentari-deure-1.
+seminaris-setmana-2-2021-01-20
+comentari-dels-projectes-en-grup
+paquets-addicionals
+correcció-deure-1
+comentari-deure-2
 homework
 deure-1
 deure-2
