@@ -215,6 +215,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <ul>
 <li class="chapter" data-level="5.1" data-path="homework.html"><a href="homework.html#deure-1"><i class="fa fa-check"></i><b>5.1</b> Deure 1</a></li>
 <li class="chapter" data-level="5.2" data-path="homework.html"><a href="homework.html#deure-2"><i class="fa fa-check"></i><b>5.2</b> Deure 2</a></li>
+<li class="chapter" data-level="5.3" data-path="homework.html"><a href="homework.html#deure-3"><i class="fa fa-check"></i><b>5.3</b> Deure 3</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/griu/meacp_2021" target="blank">Repositori GitHub</a></li>
@@ -243,11 +244,11 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <p><strong>NOTA: Descarrega la <a href="https://raw.githubusercontent.com/griu/meacp_2021/main/www/Rmd/_Deure1.Rmd">plantilla de solució deure 1 en Rmd</a>.</strong></p>
 <p>En el link <a href="https://griu.github.io/meacp_2021/data/dataXY.dat" class="uri">https://griu.github.io/meacp_2021/data/dataXY.dat</a> hi han les dues variables ESPVIDA i CALORIES del fitxer PAISOS.SAV (són l’esperança de vida y les calories per habitant en diferents paisos del mon). Feu:</p>
 <p>Utiliza el program (Excel, SPSS o R) que coneguis. La lectura de les dades amb R seria</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="homework.html#cb170-1" aria-hidden="true" tabindex="-1"></a>dataXY<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&#39;https://raw.githubusercontent.com/griu/griu.github.io/main/meacp_2021/data/dataXY.dat&#39;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">dec=</span><span class="st">&quot;,&quot;</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="homework.html#cb145-1" aria-hidden="true" tabindex="-1"></a>dataXY<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&#39;https://raw.githubusercontent.com/griu/griu.github.io/main/meacp_2021/data/dataXY.dat&#39;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">dec=</span><span class="st">&quot;,&quot;</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span>)</span></code></pre></div>
 <ol style="list-style-type: lower-alpha">
 <li>Una descripció breu univariant de cada una de les variables;</li>
 </ol>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="homework.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dataXY)</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="homework.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dataXY)</span></code></pre></div>
 <pre><code>##     CALORIES       ESPVIDA     
 ##  Min.   :1505   Min.   :39.00  
 ##  1st Qu.:2248   1st Qu.:55.77  
@@ -258,11 +259,11 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Un diagrama de dispersió de ESPVIDA vs CALORIES. Comenta si s’observa o no associació entre aquests dues variables.</li>
 </ol>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="homework.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb173-2"><a href="homework.html#cb173-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb173-3"><a href="homework.html#cb173-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataXY, <span class="fu">aes</span>(<span class="at">x=</span>CALORIES, <span class="at">y=</span>ESPVIDA)) <span class="sc">+</span></span>
-<span id="cb173-4"><a href="homework.html#cb173-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="homework.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb148-2"><a href="homework.html#cb148-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb148-3"><a href="homework.html#cb148-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataXY, <span class="fu">aes</span>(<span class="at">x=</span>CALORIES, <span class="at">y=</span>ESPVIDA)) <span class="sc">+</span></span>
+<span id="cb148-4"><a href="homework.html#cb148-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-162-1.png" width="672" /></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Comenta si la associació observada justifica o no parlar de causalitat.</li>
 </ol>
@@ -280,6 +281,15 @@ Quants països tenen menys d’un terç de la seva població alfabetitzada? I d�
 <li>En relació al fitxer de dades PAISOS.SAV, tria una variable Y del teu interès i descriu la variació de la mateixa emprant un altre variable del fitxer de dades. En aquest procés, ajusta un model de regressió lineal simple entre la variable depenent i la variable explicativa, descriu els resultats de la regressió lineal simple, i comprova que la hipòtesi de linealitat es plausible en aquestes dades. Si veus que la linealitat no es plausible, efectua la corresponent transformació prèvia de les variables. Recull els residus, I fes un gràfic dels residus vs. la variable depenent ajustada.</li>
 <li>Fes un breu resum de les conclusions que creus que es desprenen de la teva anàlisi. Explica també les limitacions de l’anàlisi.</li>
 </ol>
+</div>
+<div id="deure-3" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Deure 3</h2>
+<p>En relació a les dades de PAISOS.SAV.</p>
+<ul>
+<li>Investiga la variació de ESPVIDA en funció de CALORIES, controlant o no per altres variables explicatives.</li>
+<li>Inspecciona els residus de la regressió.</li>
+<li>Fes un breu resum de les conclusions que creus que es desprenen de la dependencia de ESPVIDA i CALORIES.</li>
+</ul>
 
 </div>
 </div>
