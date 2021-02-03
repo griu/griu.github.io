@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítol 4 Teoria Setmana 4 (2020-02-3) | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021</title>
+  <meta name="description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítol 4 Teoria Setmana 4 (2020-02-3) | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítol 4 Teoria Setmana 4 (2020-02-3) | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  
+  <meta name="twitter:description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+<meta name="author" content="Ferran Carrascosa Mallafrè" />
+
+
+<meta name="date" content="2021-01-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="teoria-setmana-3-2020-01-27.html"/>
+<link rel="next" href="seminaris-setmana-1-2021-01-13.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<script>
+% https://stackoverflow.com/a/4425214/8242291
+var links = document.links;
+
+for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+
+    if (links[i].hostname != window.location.hostname) {
+        links[i].target = '_blank';
+    }
+
+}
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #2a211c;
+    color: #bdae9d;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+div.sourceCode
+  { color: #bdae9d; background-color: #2a211c; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffff00; } /* Alert */
+code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #44aa43; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #049b0a; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.dv { color: #44aa43; } /* DecVal */
+code span.er { color: #ffff00; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #44aa43; } /* Float */
+code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+code span.op { } /* Operator */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.sc { color: #049b0a; } /* SpecialChar */
+code span.ss { color: #049b0a; } /* SpecialString */
+code span.st { color: #049b0a; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #049b0a; } /* VerbatimString */
+code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><b><a href="./index.html"><img style="float: left; margin-right: 5px;" src="www/images/01_general/logo.png" width="40" height="40"></img>Diari Classes MEA (21703) 2020-2021</a></b></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a></li>
+<li class="part"><span><b>I Diari classe Teoria</b></span></li>
+<li class="chapter" data-level="1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html"><i class="fa fa-check"></i><b>1</b> Teoria Setmana 1 (2020-01-13)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#avaluació"><i class="fa fa-check"></i><b>1.1</b> Avaluació</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#el-treball"><i class="fa fa-check"></i><b>1.1.1</b> El treball</a></li>
+<li class="chapter" data-level="1.1.2" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#exàmens"><i class="fa fa-check"></i><b>1.1.2</b> Exàmens</a></li>
+<li class="chapter" data-level="1.1.3" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#participació"><i class="fa fa-check"></i><b>1.1.3</b> Participació</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#bibliografia"><i class="fa fa-check"></i><b>1.2</b> Bibliografia</a></li>
+<li class="chapter" data-level="1.3" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#introducció-conceptes-estadística"><i class="fa fa-check"></i><b>1.3</b> Introducció conceptes Estadística</a></li>
+<li class="chapter" data-level="1.4" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#gender-gap-at-birth"><i class="fa fa-check"></i><b>1.4</b> Gender gap, at birth</a></li>
+<li class="chapter" data-level="1.5" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#with-arbuthnotts-data-collected-on-years-1629-to-1710"><i class="fa fa-check"></i><b>1.5</b> With Arbuthnott’s data, collected on years 1629 to 1710</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#now-with-recent-usas-data-present-day-birth-records-in-the-united-states"><i class="fa fa-check"></i><b>1.5.1</b> Now with recent USA’s data, present day birth records in the United States</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#distribució-duna-variable-distribució-normal-altres-distribucions"><i class="fa fa-check"></i><b>1.6</b> Distribució d’una variable, distribució normal, altres distribucions</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#valor-estandarditzat-duna-variable"><i class="fa fa-check"></i><b>1.6.1</b> Valor estandarditzat d’una variable</a></li>
+<li class="chapter" data-level="1.6.2" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#distribució-normal"><i class="fa fa-check"></i><b>1.6.2</b> Distribució Normal</a></li>
+<li class="chapter" data-level="1.6.3" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#exemple-amb-la-variable-diners-en-butxaca-estudiants-de-mq-iii"><i class="fa fa-check"></i><b>1.6.3</b> Exemple amb la variable diners en butxaca (estudiants de MQ III)</a></li>
+<li class="chapter" data-level="1.6.4" data-path="teoria-setmana-1-2020-01-13.html"><a href="teoria-setmana-1-2020-01-13.html#altres-distribucions-univariants"><i class="fa fa-check"></i><b>1.6.4</b> Altres distribucions univariants</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html"><i class="fa fa-check"></i><b>2</b> Teoria Setmana 2 (2020-01-20)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#data-wrangling"><i class="fa fa-check"></i><b>2.1</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#els-data-frames"><i class="fa fa-check"></i><b>2.1.1</b> Els data frames</a></li>
+<li class="chapter" data-level="2.1.2" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#importació-de-dades"><i class="fa fa-check"></i><b>2.1.2</b> Importació de dades</a></li>
+<li class="chapter" data-level="2.1.3" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#dades-ordenades"><i class="fa fa-check"></i><b>2.1.3</b> Dades ordenades</a></li>
+<li class="chapter" data-level="2.1.4" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#transformació"><i class="fa fa-check"></i><b>2.1.4</b> Transformació</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#visualización"><i class="fa fa-check"></i><b>2.2</b> Visualización</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#estructura-básica"><i class="fa fa-check"></i><b>2.2.1</b> Estructura básica</a></li>
+<li class="chapter" data-level="2.2.2" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#otros-geoms"><i class="fa fa-check"></i><b>2.2.2</b> Otros geoms</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#modelar-regressió-simple"><i class="fa fa-check"></i><b>2.3</b> Modelar: Regressió simple</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#regressió-simple"><i class="fa fa-check"></i><b>2.3.1</b> Regressió simple</a></li>
+<li class="chapter" data-level="2.3.2" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#regressió-lineal-simple"><i class="fa fa-check"></i><b>2.3.2</b> Regressió lineal simple</a></li>
+<li class="chapter" data-level="2.3.3" data-path="teoria-setmana-2-2020-01-20.html"><a href="teoria-setmana-2-2020-01-20.html#regressió-lineal-múltiple"><i class="fa fa-check"></i><b>2.3.3</b> Regressió lineal múltiple</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="teoria-setmana-3-2020-01-27.html"><a href="teoria-setmana-3-2020-01-27.html"><i class="fa fa-check"></i><b>3</b> Teoria Setmana 3 (2020-01-27)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="teoria-setmana-3-2020-01-27.html"><a href="teoria-setmana-3-2020-01-27.html#repas-dia-anterior"><i class="fa fa-check"></i><b>3.1</b> Repas dia anterior</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="teoria-setmana-3-2020-01-27.html"><a href="teoria-setmana-3-2020-01-27.html#regressió-simple-1"><i class="fa fa-check"></i><b>3.1.1</b> Regressió simple</a></li>
+<li class="chapter" data-level="3.1.2" data-path="teoria-setmana-3-2020-01-27.html"><a href="teoria-setmana-3-2020-01-27.html#regressió-lineal-simple-1"><i class="fa fa-check"></i><b>3.1.2</b> Regressió lineal simple</a></li>
+<li class="chapter" data-level="3.1.3" data-path="teoria-setmana-3-2020-01-27.html"><a href="teoria-setmana-3-2020-01-27.html#regressió-lineal-múltiple-1"><i class="fa fa-check"></i><b>3.1.3</b> Regressió lineal múltiple</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="teoria-setmana-3-2020-01-27.html"><a href="teoria-setmana-3-2020-01-27.html#interpretació-del-model"><i class="fa fa-check"></i><b>3.2</b> Interpretació del model</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="teoria-setmana-3-2020-01-27.html"><a href="teoria-setmana-3-2020-01-27.html#gráficament"><i class="fa fa-check"></i><b>3.2.1</b> Gráficament</a></li>
+<li class="chapter" data-level="3.2.2" data-path="teoria-setmana-3-2020-01-27.html"><a href="teoria-setmana-3-2020-01-27.html#gràfics-de-regressio-parcial"><i class="fa fa-check"></i><b>3.2.2</b> Gràfics de regressio parcial</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="teoria-setmana-3-2020-01-27.html"><a href="teoria-setmana-3-2020-01-27.html#variance-inflation-factor-vif"><i class="fa fa-check"></i><b>3.3</b> Variance Inflation Factor (VIF)</a></li>
+<li class="chapter" data-level="3.4" data-path="teoria-setmana-3-2020-01-27.html"><a href="teoria-setmana-3-2020-01-27.html#dades-del-bank"><i class="fa fa-check"></i><b>3.4</b> Dades del Bank</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="teoria-setmana-4-2020-02-3.html"><a href="teoria-setmana-4-2020-02-3.html"><i class="fa fa-check"></i><b>4</b> Teoria Setmana 4 (2020-02-3)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="teoria-setmana-4-2020-02-3.html"><a href="teoria-setmana-4-2020-02-3.html#packages"><i class="fa fa-check"></i><b>4.1</b> Packages</a></li>
+<li class="chapter" data-level="4.2" data-path="teoria-setmana-4-2020-02-3.html"><a href="teoria-setmana-4-2020-02-3.html#salaries"><i class="fa fa-check"></i><b>4.2</b> Salaries</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="teoria-setmana-4-2020-02-3.html"><a href="teoria-setmana-4-2020-02-3.html#anàlisis-univariant"><i class="fa fa-check"></i><b>4.2.1</b> Anàlisis univariant</a></li>
+<li class="chapter" data-level="4.2.2" data-path="teoria-setmana-4-2020-02-3.html"><a href="teoria-setmana-4-2020-02-3.html#anàlisis-bivariant"><i class="fa fa-check"></i><b>4.2.2</b> Anàlisis bivariant</a></li>
+<li class="chapter" data-level="4.2.3" data-path="teoria-setmana-4-2020-02-3.html"><a href="teoria-setmana-4-2020-02-3.html#realció-log-log"><i class="fa fa-check"></i><b>4.2.3</b> Realció log-log</a></li>
+<li class="chapter" data-level="4.2.4" data-path="teoria-setmana-4-2020-02-3.html"><a href="teoria-setmana-4-2020-02-3.html#realció-x2"><i class="fa fa-check"></i><b>4.2.4</b> Realció x**2</a></li>
+<li class="chapter" data-level="4.2.5" data-path="teoria-setmana-4-2020-02-3.html"><a href="teoria-setmana-4-2020-02-3.html#interaccions"><i class="fa fa-check"></i><b>4.2.5</b> Interaccions</a></li>
+<li class="chapter" data-level="4.2.6" data-path="teoria-setmana-4-2020-02-3.html"><a href="teoria-setmana-4-2020-02-3.html#estimadors-robustos"><i class="fa fa-check"></i><b>4.2.6</b> Estimadors robustos</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Diari classe Seminaris</b></span></li>
+<li class="chapter" data-level="5" data-path="seminaris-setmana-1-2021-01-13.html"><a href="seminaris-setmana-1-2021-01-13.html"><i class="fa fa-check"></i><b>5</b> Seminaris Setmana 1 (2021-01-13)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="seminaris-setmana-1-2021-01-13.html"><a href="seminaris-setmana-1-2021-01-13.html#programació-amb-r"><i class="fa fa-check"></i><b>5.1</b> Programació amb R</a></li>
+<li class="chapter" data-level="5.2" data-path="seminaris-setmana-1-2021-01-13.html"><a href="seminaris-setmana-1-2021-01-13.html#comentari-deure-1."><i class="fa fa-check"></i><b>5.2</b> Comentari Deure 1.</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="seminaris-setmana-2-2021-01-20.html"><a href="seminaris-setmana-2-2021-01-20.html"><i class="fa fa-check"></i><b>6</b> Seminaris Setmana 2 (2021-01-20)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="seminaris-setmana-2-2021-01-20.html"><a href="seminaris-setmana-2-2021-01-20.html#comentari-dels-projectes-en-grup"><i class="fa fa-check"></i><b>6.1</b> Comentari dels projectes en grup</a></li>
+<li class="chapter" data-level="6.2" data-path="seminaris-setmana-2-2021-01-20.html"><a href="seminaris-setmana-2-2021-01-20.html#paquets-addicionals"><i class="fa fa-check"></i><b>6.2</b> Paquets addicionals</a></li>
+<li class="chapter" data-level="6.3" data-path="seminaris-setmana-2-2021-01-20.html"><a href="seminaris-setmana-2-2021-01-20.html#correcció-deure-1"><i class="fa fa-check"></i><b>6.3</b> Correcció deure 1</a></li>
+<li class="chapter" data-level="6.4" data-path="seminaris-setmana-2-2021-01-20.html"><a href="seminaris-setmana-2-2021-01-20.html#comentari-deure-2"><i class="fa fa-check"></i><b>6.4</b> Comentari Deure 2</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="seminaris-setmana-3-2021-01-27.html"><a href="seminaris-setmana-3-2021-01-27.html"><i class="fa fa-check"></i><b>7</b> Seminaris Setmana 3 (2021-01-27)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="seminaris-setmana-3-2021-01-27.html"><a href="seminaris-setmana-3-2021-01-27.html#comentari-dels-projectes-en-grup-1"><i class="fa fa-check"></i><b>7.1</b> Comentari dels projectes en grup</a></li>
+<li class="chapter" data-level="7.2" data-path="seminaris-setmana-3-2021-01-27.html"><a href="seminaris-setmana-3-2021-01-27.html#correcció-deure-2"><i class="fa fa-check"></i><b>7.2</b> Correcció deure 2</a></li>
+<li class="chapter" data-level="7.3" data-path="seminaris-setmana-3-2021-01-27.html"><a href="seminaris-setmana-3-2021-01-27.html#comentari-deure-3"><i class="fa fa-check"></i><b>7.3</b> Comentari Deure 3</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="seminaris-setmana-4-2021-02-3.html"><a href="seminaris-setmana-4-2021-02-3.html"><i class="fa fa-check"></i><b>8</b> Seminaris Setmana 4 (2021-02-3)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="seminaris-setmana-4-2021-02-3.html"><a href="seminaris-setmana-4-2021-02-3.html#correcció-deure-3"><i class="fa fa-check"></i><b>8.1</b> Correcció Deure 3</a></li>
+<li class="chapter" data-level="8.2" data-path="seminaris-setmana-4-2021-02-3.html"><a href="seminaris-setmana-4-2021-02-3.html#comentari-deure-4"><i class="fa fa-check"></i><b>8.2</b> Comentari Deure 4</a></li>
+<li class="chapter" data-level="8.3" data-path="seminaris-setmana-4-2021-02-3.html"><a href="seminaris-setmana-4-2021-02-3.html#projectes-en-grup"><i class="fa fa-check"></i><b>8.3</b> Projectes en grup</a></li>
+</ul></li>
+<li class="part"><span><b>III Deures</b></span></li>
+<li class="chapter" data-level="9" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>9</b> Llista de Deures</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="homework.html"><a href="homework.html#deure-1"><i class="fa fa-check"></i><b>9.1</b> Deure 1</a></li>
+<li class="chapter" data-level="9.2" data-path="homework.html"><a href="homework.html#deure-2"><i class="fa fa-check"></i><b>9.2</b> Deure 2</a></li>
+<li class="chapter" data-level="9.3" data-path="homework.html"><a href="homework.html#deure-3"><i class="fa fa-check"></i><b>9.3</b> Deure 3</a></li>
+<li class="chapter" data-level="9.4" data-path="homework.html"><a href="homework.html#deure-4"><i class="fa fa-check"></i><b>9.4</b> Deure 4</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/griu/meacp_2021" target="blank">Repositori GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="teoria-setmana-4-2020-02-3" class="section level1" number="4">
+<h1><span class="header-section-number">Capítol 4</span> Teoria Setmana 4 (2020-02-3)</h1>
+<div id="packages" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Packages</h2>
+<pre><code>install.packages(texreg)
+install.packages(lmtest)
+install.packages(sandwich)</code></pre>
+</div>
+<div id="salaries" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Salaries</h2>
+<p>El conjunt de dades Salary informa d’una mostra de salaris de professors universitaris recopilats durant l’any acadèmic 2008-2009 a USA. Addicionalment als salaris en dòlars, les dades inclouen les següents 5 variables: gènere, anys des del Doctorat, anys de servei, disciplina (teoria (1) o aplicat (2)) i rang acadèmic.</p>
+<p>Hi ha una consulta sobre la possible discriminació salarial per gènere.</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="teoria-setmana-4-2020-02-3.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb162-2"><a href="teoria-setmana-4-2020-02-3.html#cb162-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Salaries)</span></code></pre></div>
+<pre><code>##  [1] &quot;rank&quot;              &quot;discipline&quot;        &quot;yrs.since.phd&quot;     &quot;yrs.service&quot;      
+##  [5] &quot;sex&quot;               &quot;salary&quot;            &quot;log_salary&quot;        &quot;log_yrs.service&quot;  
+##  [9] &quot;log_yrs.since.phd&quot; &quot;yrs.since.phd2&quot;    &quot;yrs.service2&quot;</code></pre>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="teoria-setmana-4-2020-02-3.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(Salaries)</span></code></pre></div>
+<pre><code>## [1] 397  11</code></pre>
+<div id="anàlisis-univariant" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Anàlisis univariant</h3>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="teoria-setmana-4-2020-02-3.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb166-2"><a href="teoria-setmana-4-2020-02-3.html#cb166-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-3"><a href="teoria-setmana-4-2020-02-3.html#cb166-3" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb166-4"><a href="teoria-setmana-4-2020-02-3.html#cb166-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>salary)) <span class="sc">+</span></span>
+<span id="cb166-5"><a href="teoria-setmana-4-2020-02-3.html#cb166-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb166-6"><a href="teoria-setmana-4-2020-02-3.html#cb166-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Densitat Salaris&quot;</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="teoria-setmana-4-2020-02-3.html#cb167-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb167-2"><a href="teoria-setmana-4-2020-02-3.html#cb167-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log</span>(salary))) <span class="sc">+</span></span>
+<span id="cb167-3"><a href="teoria-setmana-4-2020-02-3.html#cb167-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb167-4"><a href="teoria-setmana-4-2020-02-3.html#cb167-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Densitat Log-Salaris&quot;</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="teoria-setmana-4-2020-02-3.html#cb168-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb168-2"><a href="teoria-setmana-4-2020-02-3.html#cb168-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>sex)) <span class="sc">+</span></span>
+<span id="cb168-3"><a href="teoria-setmana-4-2020-02-3.html#cb168-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="teoria-setmana-4-2020-02-3.html#cb169-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb169-2"><a href="teoria-setmana-4-2020-02-3.html#cb169-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>rank)) <span class="sc">+</span></span>
+<span id="cb169-3"><a href="teoria-setmana-4-2020-02-3.html#cb169-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="teoria-setmana-4-2020-02-3.html#cb170-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb170-2"><a href="teoria-setmana-4-2020-02-3.html#cb170-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>discipline)) <span class="sc">+</span></span>
+<span id="cb170-3"><a href="teoria-setmana-4-2020-02-3.html#cb170-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="teoria-setmana-4-2020-02-3.html#cb171-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb171-2"><a href="teoria-setmana-4-2020-02-3.html#cb171-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>yrs.since.phd)) <span class="sc">+</span></span>
+<span id="cb171-3"><a href="teoria-setmana-4-2020-02-3.html#cb171-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="teoria-setmana-4-2020-02-3.html#cb172-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb172-2"><a href="teoria-setmana-4-2020-02-3.html#cb172-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log</span>(yrs.since.phd))) <span class="sc">+</span></span>
+<span id="cb172-3"><a href="teoria-setmana-4-2020-02-3.html#cb172-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="teoria-setmana-4-2020-02-3.html#cb173-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb173-2"><a href="teoria-setmana-4-2020-02-3.html#cb173-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>yrs.service)) <span class="sc">+</span></span>
+<span id="cb173-3"><a href="teoria-setmana-4-2020-02-3.html#cb173-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="teoria-setmana-4-2020-02-3.html#cb174-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb174-2"><a href="teoria-setmana-4-2020-02-3.html#cb174-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log</span>(yrs.service))) <span class="sc">+</span></span>
+<span id="cb174-3"><a href="teoria-setmana-4-2020-02-3.html#cb174-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
+<pre><code>## Warning: Removed 11 rows containing non-finite values (stat_density).</code></pre>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
+</div>
+<div id="anàlisis-bivariant" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Anàlisis bivariant</h3>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="teoria-setmana-4-2020-02-3.html#cb176-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="ot">&lt;-</span> Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb176-2"><a href="teoria-setmana-4-2020-02-3.html#cb176-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">log_salary =</span> <span class="fu">log</span>(salary)</span>
+<span id="cb176-3"><a href="teoria-setmana-4-2020-02-3.html#cb176-3" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">log_yrs.since.phd =</span> <span class="fu">log</span>(yrs.since.phd)</span>
+<span id="cb176-4"><a href="teoria-setmana-4-2020-02-3.html#cb176-4" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">yrs.since.phd2 =</span> yrs.since.phd<span class="sc">**</span><span class="dv">2</span></span>
+<span id="cb176-5"><a href="teoria-setmana-4-2020-02-3.html#cb176-5" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">log_yrs.service =</span> <span class="fu">log</span>(yrs.service<span class="sc">+</span><span class="dv">1</span>)</span>
+<span id="cb176-6"><a href="teoria-setmana-4-2020-02-3.html#cb176-6" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">yrs.service2 =</span> yrs.service<span class="sc">**</span><span class="dv">2</span></span>
+<span id="cb176-7"><a href="teoria-setmana-4-2020-02-3.html#cb176-7" aria-hidden="true" tabindex="-1"></a>         )</span>
+<span id="cb176-8"><a href="teoria-setmana-4-2020-02-3.html#cb176-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb176-9"><a href="teoria-setmana-4-2020-02-3.html#cb176-9" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span> <span class="fu">select</span>(salary,log_salary,yrs.since.phd,log_yrs.since.phd,yrs.since.phd2) <span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="teoria-setmana-4-2020-02-3.html#cb177-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span> <span class="fu">select</span>(salary,log_salary,yrs.since.phd,log_yrs.since.phd,yrs.since.phd2) <span class="sc">%&gt;%</span> <span class="fu">cor</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##                   salary log_salary yrs.since.phd log_yrs.since.phd yrs.since.phd2
+## salary             1.000      0.988         0.419             0.496          0.305
+## log_salary         0.988      1.000         0.426             0.520          0.297
+## yrs.since.phd      0.419      0.426         1.000             0.915          0.963
+## log_yrs.since.phd  0.496      0.520         0.915             1.000          0.790
+## yrs.since.phd2     0.305      0.297         0.963             0.790          1.000</code></pre>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="teoria-setmana-4-2020-02-3.html#cb179-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb179-2"><a href="teoria-setmana-4-2020-02-3.html#cb179-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>sex,<span class="at">y=</span>salary)) <span class="sc">+</span></span>
+<span id="cb179-3"><a href="teoria-setmana-4-2020-02-3.html#cb179-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="teoria-setmana-4-2020-02-3.html#cb180-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb180-2"><a href="teoria-setmana-4-2020-02-3.html#cb180-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>sex,<span class="at">y=</span><span class="fu">log</span>(salary))) <span class="sc">+</span></span>
+<span id="cb180-3"><a href="teoria-setmana-4-2020-02-3.html#cb180-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="teoria-setmana-4-2020-02-3.html#cb181-1" aria-hidden="true" tabindex="-1"></a>reg1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(salary<span class="sc">~</span>sex, <span class="at">data=</span>Salaries)</span>
+<span id="cb181-2"><a href="teoria-setmana-4-2020-02-3.html#cb181-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = salary ~ sex, data = Salaries)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -57290 -23502  -6828  19710 116455 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   101002       4809  21.001  &lt; 2e-16 ***
+## sexMale        14088       5065   2.782  0.00567 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 30030 on 395 degrees of freedom
+## Multiple R-squared:  0.01921,    Adjusted R-squared:  0.01673 
+## F-statistic: 7.738 on 1 and 395 DF,  p-value: 0.005667</code></pre>
+<p>Observem que els salaris en homes són $14.088 superiors que en les dones. Això ens diu que, quan comparem els salaris de forma directe, entre homes i dones, amb un nivell de confiança del 95%, hi ha diferències significatives.</p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="teoria-setmana-4-2020-02-3.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb183-2"><a href="teoria-setmana-4-2020-02-3.html#cb183-2" aria-hidden="true" tabindex="-1"></a>logreg1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(salary)<span class="sc">~</span>sex, <span class="at">data=</span>Salaries)</span>
+<span id="cb183-3"><a href="teoria-setmana-4-2020-02-3.html#cb183-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(reg1,logreg1, <span class="at">type=</span><span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ===========================================================
+##                                    Dependent variable:     
+##                                ----------------------------
+##                                    salary      log(salary) 
+##                                      (1)           (2)     
+## -----------------------------------------------------------
+## sexMale                         14,088.010***    0.129***  
+##                                  (5,064.579)     (0.043)   
+##                                                            
+## Constant                       101,002.400***   11.491***  
+##                                  (4,809.386)     (0.041)   
+##                                                            
+## -----------------------------------------------------------
+## Observations                         397           397     
+## R2                                  0.019         0.022    
+## Adjusted R2                         0.017         0.019    
+## Residual Std. Error (df = 395)   30,034.610       0.258    
+## F Statistic (df = 1; 395)         7.738***       8.810***  
+## ===========================================================
+## Note:                           *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+<p>La comparativa en termes de logaritme neperià del salari, mostra igualment diferencies significatives amb un 95% de confiança. El coeficient 0,129 del gènere, ens diu que els homes, tenen un salari un 12,9% (aproximadament) per sobre de les dones.</p>
+<p>Incorporem ara nous factor.</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="teoria-setmana-4-2020-02-3.html#cb185-1" aria-hidden="true" tabindex="-1"></a>logreg2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(salary) <span class="sc">~</span> sex <span class="sc">+</span> yrs.since.phd, <span class="at">data=</span> Salaries)</span>
+<span id="cb185-2"><a href="teoria-setmana-4-2020-02-3.html#cb185-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb185-3"><a href="teoria-setmana-4-2020-02-3.html#cb185-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(logreg1, logreg2, <span class="at">type=</span><span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ==================================================================
+##                                  Dependent variable:              
+##                     ----------------------------------------------
+##                                      log(salary)                  
+##                              (1)                     (2)          
+## ------------------------------------------------------------------
+## sexMale                    0.129***                0.075*         
+##                            (0.043)                 (0.040)        
+##                                                                   
+## yrs.since.phd                                     0.008***        
+##                                                    (0.001)        
+##                                                                   
+## Constant                  11.491***               11.353***       
+##                            (0.041)                 (0.041)        
+##                                                                   
+## ------------------------------------------------------------------
+## Observations                 397                     397          
+## R2                          0.022                   0.188         
+## Adjusted R2                 0.019                   0.184         
+## Residual Std. Error    0.258 (df = 395)       0.235 (df = 394)    
+## F Statistic         8.810*** (df = 1; 395) 45.715*** (df = 2; 394)
+## ==================================================================
+## Note:                                  *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+<p>Observem que la variable “anys des del doctorat” guanya molt pes en la regressió, i produeix que la variables gènere informi que els homes guanyen un 7,5% més les dones (a igual nombre de anys des del doctorat), essent ara, aquesta relació, no significativa amb un nivell del confiança del 95%.</p>
+<p>En aquest cas, el coeficient 0.008 ens diu que per cada any addicional, hi ha un augment del 0,8% del salari.</p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="teoria-setmana-4-2020-02-3.html#cb187-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span> </span>
+<span id="cb187-2"><a href="teoria-setmana-4-2020-02-3.html#cb187-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>yrs.since.phd, <span class="at">y=</span><span class="fu">log</span>(salary), <span class="at">color=</span>sex))<span class="sc">+</span></span>
+<span id="cb187-3"><a href="teoria-setmana-4-2020-02-3.html#cb187-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+</div>
+<div id="realció-log-log" class="section level3" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Realció log-log</h3>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="teoria-setmana-4-2020-02-3.html#cb188-1" aria-hidden="true" tabindex="-1"></a>loglogreg2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(salary) <span class="sc">~</span> sex <span class="sc">+</span> <span class="fu">log</span>(yrs.since.phd), <span class="at">data=</span> Salaries)</span>
+<span id="cb188-2"><a href="teoria-setmana-4-2020-02-3.html#cb188-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-3"><a href="teoria-setmana-4-2020-02-3.html#cb188-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(logreg1, logreg2, loglogreg2, <span class="at">type=</span><span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ==========================================================================================
+##                                              Dependent variable:                          
+##                     ----------------------------------------------------------------------
+##                                                  log(salary)                              
+##                              (1)                     (2)                     (3)          
+## ------------------------------------------------------------------------------------------
+## sexMale                    0.129***                0.075*                  0.076**        
+##                            (0.043)                 (0.040)                 (0.038)        
+##                                                                                           
+## yrs.since.phd                                     0.008***                                
+##                                                    (0.001)                                
+##                                                                                           
+## log(yrs.since.phd)                                                        0.167***        
+##                                                                            (0.014)        
+##                                                                                           
+## Constant                  11.491***               11.353***               11.061***       
+##                            (0.041)                 (0.041)                 (0.051)        
+##                                                                                           
+## ------------------------------------------------------------------------------------------
+## Observations                 397                     397                     397          
+## R2                          0.022                   0.188                   0.278         
+## Adjusted R2                 0.019                   0.184                   0.274         
+## Residual Std. Error    0.258 (df = 395)       0.235 (df = 394)        0.222 (df = 394)    
+## F Statistic         8.810*** (df = 1; 395) 45.715*** (df = 2; 394) 75.904*** (df = 2; 394)
+## ==========================================================================================
+## Note:                                                          *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+<p>Si agafem els anys d’experiència en termes de logaritme observem 3 coses:</p>
+<ul>
+<li>El coeficient 0,167 indica que per cada augment del 100% (duplicar) els anys des del doctorat, el salari augmenta un 16,7%.</li>
+<li>Per altra banda la variable gènere, passa a ser significativa amb un 95% de confiança.</li>
+<li>La regressió passa a explicar del 18,8% a un 27,8% de la variabilitat del logaritme dels salaris.</li>
+</ul>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="teoria-setmana-4-2020-02-3.html#cb190-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span> </span>
+<span id="cb190-2"><a href="teoria-setmana-4-2020-02-3.html#cb190-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log</span>(yrs.since.phd), <span class="at">y=</span><span class="fu">log</span>(salary), <span class="at">color=</span>sex))<span class="sc">+</span></span>
+<span id="cb190-3"><a href="teoria-setmana-4-2020-02-3.html#cb190-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-101-1.png" width="672" /></p>
+</div>
+<div id="realció-x2" class="section level3" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Realció x**2</h3>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="teoria-setmana-4-2020-02-3.html#cb191-1" aria-hidden="true" tabindex="-1"></a>logreg22 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(salary) <span class="sc">~</span> sex <span class="sc">+</span> yrs.since.phd <span class="sc">+</span>yrs.since.phd2, <span class="at">data=</span> Salaries)</span>
+<span id="cb191-2"><a href="teoria-setmana-4-2020-02-3.html#cb191-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb191-3"><a href="teoria-setmana-4-2020-02-3.html#cb191-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(logreg1, logreg2, loglogreg2, logreg22, <span class="at">type=</span><span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ==================================================================================================================
+##                                                          Dependent variable:                                      
+##                     ----------------------------------------------------------------------------------------------
+##                                                              log(salary)                                          
+##                              (1)                     (2)                     (3)                     (4)          
+## ------------------------------------------------------------------------------------------------------------------
+## sexMale                    0.129***                0.075*                  0.076**                 0.087**        
+##                            (0.043)                 (0.040)                 (0.038)                 (0.035)        
+##                                                                                                                   
+## yrs.since.phd                                     0.008***                                        0.039***        
+##                                                    (0.001)                                         (0.003)        
+##                                                                                                                   
+## log(yrs.since.phd)                                                        0.167***                                
+##                                                                            (0.014)                                
+##                                                                                                                   
+## yrs.since.phd2                                                                                    -0.001***       
+##                                                                                                   (0.0001)        
+##                                                                                                                   
+## Constant                  11.491***               11.353***               11.061***               11.081***       
+##                            (0.041)                 (0.041)                 (0.051)                 (0.044)        
+##                                                                                                                   
+## ------------------------------------------------------------------------------------------------------------------
+## Observations                 397                     397                     397                     397          
+## R2                          0.022                   0.188                   0.278                   0.366         
+## Adjusted R2                 0.019                   0.184                   0.274                   0.361         
+## Residual Std. Error    0.258 (df = 395)       0.235 (df = 394)        0.222 (df = 394)        0.208 (df = 393)    
+## F Statistic         8.810*** (df = 1; 395) 45.715*** (df = 2; 394) 75.904*** (df = 2; 394) 75.720*** (df = 3; 393)
+## ==================================================================================================================
+## Note:                                                                                  *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+<p>Ara no hi ha una interpretació directa. Veiem que és una realció significativa al 95% de confiança en tots els factors.</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="teoria-setmana-4-2020-02-3.html#cb193-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span> </span>
+<span id="cb193-2"><a href="teoria-setmana-4-2020-02-3.html#cb193-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>yrs.since.phd, <span class="at">y=</span><span class="fu">log</span>(salary), <span class="at">color=</span>sex))<span class="sc">+</span></span>
+<span id="cb193-3"><a href="teoria-setmana-4-2020-02-3.html#cb193-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>), <span class="at">size =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb193-4"><a href="teoria-setmana-4-2020-02-3.html#cb193-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+</div>
+<div id="interaccions" class="section level3" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> Interaccions</h3>
+<p>Anem a analitzar la interacció entre gènere i anys des del doctorat.</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="teoria-setmana-4-2020-02-3.html#cb194-1" aria-hidden="true" tabindex="-1"></a>logreg3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(salary) <span class="sc">~</span> sex <span class="sc">*</span> yrs.since.phd , <span class="at">data=</span> Salaries)</span>
+<span id="cb194-2"><a href="teoria-setmana-4-2020-02-3.html#cb194-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(logreg1, logreg2, logreg3, <span class="at">type=</span><span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ============================================================================================
+##                                                Dependent variable:                          
+##                       ----------------------------------------------------------------------
+##                                                    log(salary)                              
+##                                (1)                     (2)                     (3)          
+## --------------------------------------------------------------------------------------------
+## sexMale                      0.129***                0.075*                 0.210***        
+##                              (0.043)                 (0.040)                 (0.078)        
+##                                                                                             
+## yrs.since.phd                                       0.008***                0.016***        
+##                                                      (0.001)                 (0.004)        
+##                                                                                             
+## sexMale:yrs.since.phd                                                       -0.008**        
+##                                                                              (0.004)        
+##                                                                                             
+## Constant                    11.491***               11.353***               11.229***       
+##                              (0.041)                 (0.041)                 (0.074)        
+##                                                                                             
+## --------------------------------------------------------------------------------------------
+## Observations                   397                     397                     397          
+## R2                            0.022                   0.188                   0.197         
+## Adjusted R2                   0.019                   0.184                   0.190         
+## Residual Std. Error      0.258 (df = 395)       0.235 (df = 394)        0.234 (df = 393)    
+## F Statistic           8.810*** (df = 1; 395) 45.715*** (df = 2; 394) 32.040*** (df = 3; 393)
+## ============================================================================================
+## Note:                                                            *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="teoria-setmana-4-2020-02-3.html#cb196-1" aria-hidden="true" tabindex="-1"></a>logreg4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(salary) <span class="sc">~</span> sex <span class="sc">*</span> yrs.since.phd <span class="sc">+</span> rank <span class="sc">+</span> discipline , <span class="at">data=</span> Salaries)</span>
+<span id="cb196-2"><a href="teoria-setmana-4-2020-02-3.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(logreg4)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = log(salary) ~ sex * yrs.since.phd + rank + discipline, 
+##     data = Salaries)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.68720 -0.11114 -0.00746  0.09789  0.57698 
+## 
+## Coefficients:
+##                         Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)           11.1613950  0.0593982 187.908  &lt; 2e-16 ***
+## sexMale                0.0627753  0.0617296   1.017    0.310    
+## yrs.since.phd          0.0006863  0.0032390   0.212    0.832    
+## rankAssocProf          0.1536658  0.0337357   4.555 7.02e-06 ***
+## rankProf               0.4550346  0.0344904  13.193  &lt; 2e-16 ***
+## disciplineB            0.1279222  0.0188376   6.791 4.17e-11 ***
+## sexMale:yrs.since.phd -0.0012207  0.0031494  -0.388    0.699    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.1819 on 390 degrees of freedom
+## Multiple R-squared:  0.5185, Adjusted R-squared:  0.5111 
+## F-statistic:    70 on 6 and 390 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="teoria-setmana-4-2020-02-3.html#cb198-1" aria-hidden="true" tabindex="-1"></a>logreg5 <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(salary) <span class="sc">~</span> sex <span class="sc">+</span> yrs.since.phd <span class="sc">+</span> yrs.since.phd2 <span class="sc">+</span> rank <span class="sc">+</span> discipline , <span class="at">data=</span> Salaries)</span>
+<span id="cb198-2"><a href="teoria-setmana-4-2020-02-3.html#cb198-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(logreg5)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = log(salary) ~ sex + yrs.since.phd + yrs.since.phd2 + 
+##     rank + discipline, data = Salaries)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.62180 -0.10560 -0.00586  0.10151  0.59825 
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)     1.111e+01  4.262e-02 260.719  &lt; 2e-16 ***
+## sexMale         5.020e-02  3.088e-02   1.626  0.10481    
+## yrs.since.phd   1.277e-02  4.522e-03   2.824  0.00498 ** 
+## yrs.since.phd2 -2.290e-04  7.604e-05  -3.012  0.00277 ** 
+## rankAssocProf   8.627e-02  4.025e-02   2.143  0.03270 *  
+## rankProf        3.481e-01  4.945e-02   7.038 8.81e-12 ***
+## disciplineB     1.304e-01  1.864e-02   6.997 1.15e-11 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.1799 on 390 degrees of freedom
+## Multiple R-squared:  0.5293, Adjusted R-squared:  0.522 
+## F-statistic: 73.09 on 6 and 390 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="teoria-setmana-4-2020-02-3.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="fu">avPlots</span>(logreg5)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="teoria-setmana-4-2020-02-3.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(logreg5)</span></code></pre></div>
+<pre><code>##                     GVIF Df GVIF^(1/(2*Df))
+## sex             1.036197  1        1.017938
+## yrs.since.phd  41.568673  1        6.447377
+## yrs.since.phd2 29.791275  1        5.458138
+## rank            4.291107  2        1.439270
+## discipline      1.057661  1        1.028426</code></pre>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="teoria-setmana-4-2020-02-3.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(logreg5,<span class="dv">1</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
+</div>
+<div id="estimadors-robustos" class="section level3" number="4.2.6">
+<h3><span class="header-section-number">4.2.6</span> Estimadors robustos</h3>
+<p><a href="https://arcruz0.github.io/libroadp/linear.html">AnalizaR Datos Políticos</a></p>
+<ul>
+<li>HC0 = es el original de White (Wooldridge 2016)</li>
+<li>HC1 = Es el que usa el software de Stata</li>
+<li>HC3 =Es el más conservador, por lo tanto, es muy recomendable</li>
+</ul>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="teoria-setmana-4-2020-02-3.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(texreg)</span>
+<span id="cb204-2"><a href="teoria-setmana-4-2020-02-3.html#cb204-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb204-3"><a href="teoria-setmana-4-2020-02-3.html#cb204-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span>
+<span id="cb204-4"><a href="teoria-setmana-4-2020-02-3.html#cb204-4" aria-hidden="true" tabindex="-1"></a>logreg5_robust_3 <span class="ot">&lt;-</span> <span class="fu">coeftest</span>(logreg5, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(logreg5, <span class="st">&quot;HC3&quot;</span>))</span>
+<span id="cb204-5"><a href="teoria-setmana-4-2020-02-3.html#cb204-5" aria-hidden="true" tabindex="-1"></a>logreg5_robust_1 <span class="ot">&lt;-</span> <span class="fu">coeftest</span>(logreg5, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(logreg5, <span class="st">&quot;HC1&quot;</span>))</span>
+<span id="cb204-6"><a href="teoria-setmana-4-2020-02-3.html#cb204-6" aria-hidden="true" tabindex="-1"></a>logreg5_robust_0 <span class="ot">&lt;-</span> <span class="fu">coeftest</span>(logreg5, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(logreg5, <span class="st">&quot;HC0&quot;</span>))</span>
+<span id="cb204-7"><a href="teoria-setmana-4-2020-02-3.html#cb204-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-8"><a href="teoria-setmana-4-2020-02-3.html#cb204-8" aria-hidden="true" tabindex="-1"></a>models_robust <span class="ot">&lt;-</span> <span class="fu">list</span>(logreg5, logreg5_robust_0, </span>
+<span id="cb204-9"><a href="teoria-setmana-4-2020-02-3.html#cb204-9" aria-hidden="true" tabindex="-1"></a>                      logreg5_robust_1, logreg5_robust_3)</span>
+<span id="cb204-10"><a href="teoria-setmana-4-2020-02-3.html#cb204-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb204-11"><a href="teoria-setmana-4-2020-02-3.html#cb204-11" aria-hidden="true" tabindex="-1"></a><span class="fu">screenreg</span>(models_robust,</span>
+<span id="cb204-12"><a href="teoria-setmana-4-2020-02-3.html#cb204-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">custom.model.names =</span> <span class="fu">c</span>(<span class="st">&quot;sin ES robustos&quot;</span>, </span>
+<span id="cb204-13"><a href="teoria-setmana-4-2020-02-3.html#cb204-13" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">&quot;robustos HC0&quot;</span>, <span class="st">&quot;robustos HC1&quot;</span>, <span class="st">&quot;robustos HC3&quot;</span>))</span></code></pre></div>
+<pre><code>## 
+## =========================================================================
+##                 sin ES robustos  robustos HC0  robustos HC1  robustos HC3
+## -------------------------------------------------------------------------
+## (Intercept)      11.11 ***       11.11 ***     11.11 ***     11.11 ***   
+##                  (0.04)          (0.04)        (0.04)        (0.04)      
+## sexMale           0.05            0.05 *        0.05 *        0.05 *     
+##                  (0.03)          (0.02)        (0.02)        (0.02)      
+## yrs.since.phd     0.01 **         0.01 *        0.01 *        0.01 *     
+##                  (0.00)          (0.01)        (0.01)        (0.01)      
+## yrs.since.phd2   -0.00 **        -0.00 *       -0.00 *       -0.00 *     
+##                  (0.00)          (0.00)        (0.00)        (0.00)      
+## rankAssocProf     0.09 *          0.09 **       0.09 **       0.09 **    
+##                  (0.04)          (0.03)        (0.03)        (0.03)      
+## rankProf          0.35 ***        0.35 ***      0.35 ***      0.35 ***   
+##                  (0.05)          (0.04)        (0.04)        (0.04)      
+## disciplineB       0.13 ***        0.13 ***      0.13 ***      0.13 ***   
+##                  (0.02)          (0.02)        (0.02)        (0.02)      
+## -------------------------------------------------------------------------
+## R^2               0.53                                                   
+## Adj. R^2          0.52                                                   
+## Num. obs.       397                                                      
+## =========================================================================
+## *** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05</code></pre>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="teoria-setmana-4-2020-02-3.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span></code></pre></div>
+<p>Normalidad</p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="teoria-setmana-4-2020-02-3.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(logreg5,<span class="dv">2</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
+<p>Outlyers</p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="teoria-setmana-4-2020-02-3.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(logreg5,<span class="dv">5</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="teoria-setmana-3-2020-01-27.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="seminaris-setmana-1-2021-01-13.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/griu/meacp_2021/edit/master/01040-class_journal_w4.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["meacp_2021.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

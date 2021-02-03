@@ -16,7 +16,7 @@ En el link https://griu.github.io/meacp_2021/data/dataXY.dat hi han les dues var
 Utiliza el program (Excel, SPSS o R) que coneguis. La lectura de les dades amb R seria
 
 ```{r echo=TRUE}
-dataXY<-read.table('https://griu.github.io/meacp_2021/data/dataXY.dat', header=TRUE, dec=",", sep=";")
+dataXY<-read.table('https://raw.githubusercontent.com/griu/griu.github.io/main/meacp_2021/data/dataXY.dat', header=TRUE, dec=",", sep=";")
 ```
 
 ### Apartat A
@@ -42,4 +42,3 @@ ggplot(dataXY, aes(x=CALORIES, y=ESPVIDA)) +
 
 Comenta si la associació observada justifica o no parlar de causalitat. 
 
-NOTA: DEscarrega la plantilla de solució en Rmd.
