@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítol 12 Seminaris Setmana 6 (2021-02-17) | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021</title>
+  <meta name="description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítol 12 Seminaris Setmana 6 (2021-02-17) | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítol 12 Seminaris Setmana 6 (2021-02-17) | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021" />
+  
+  <meta name="twitter:description" content="Diari de les classes del Curs 2020-2021 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+<meta name="author" content="Ferran Carrascosa Mallafrè" />
+
+
+<meta name="date" content="2021-01-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="seminaris-setmana-4-2021-02-3.html"/>
+<link rel="next" href="homework.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<script>
+% https://stackoverflow.com/a/4425214/8242291
+var links = document.links;
+
+for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+
+    if (links[i].hostname != window.location.hostname) {
+        links[i].target = '_blank';
+    }
+
+}
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #2a211c;
+    color: #bdae9d;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+div.sourceCode
+  { color: #bdae9d; background-color: #2a211c; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffff00; } /* Alert */
+code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #44aa43; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #049b0a; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.dv { color: #44aa43; } /* DecVal */
+code span.er { color: #ffff00; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #44aa43; } /* Float */
+code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+code span.op { } /* Operator */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.sc { color: #049b0a; } /* SpecialChar */
+code span.ss { color: #049b0a; } /* SpecialString */
+code span.st { color: #049b0a; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #049b0a; } /* VerbatimString */
+code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><b><a href="./index.html"><img style="float: left; margin-right: 5px;" src="www/images/01_general/logo.png" width="40" height="40"></img>Diari Classes MEA (21703) 2020-2021</a></b></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a></li>
+<li class="part"><span><b>I Diari classe Teoria</b></span></li>
+<li class="chapter" data-level="1" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html"><i class="fa fa-check"></i><b>1</b> Teoria Setmana 1 (2021-01-13)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#avaluació"><i class="fa fa-check"></i><b>1.1</b> Avaluació</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#el-treball"><i class="fa fa-check"></i><b>1.1.1</b> El treball</a></li>
+<li class="chapter" data-level="1.1.2" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#exàmens"><i class="fa fa-check"></i><b>1.1.2</b> Exàmens</a></li>
+<li class="chapter" data-level="1.1.3" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#participació"><i class="fa fa-check"></i><b>1.1.3</b> Participació</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#bibliografia"><i class="fa fa-check"></i><b>1.2</b> Bibliografia</a></li>
+<li class="chapter" data-level="1.3" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#introducció-conceptes-estadística"><i class="fa fa-check"></i><b>1.3</b> Introducció conceptes Estadística</a></li>
+<li class="chapter" data-level="1.4" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#gender-gap-at-birth"><i class="fa fa-check"></i><b>1.4</b> Gender gap, at birth</a></li>
+<li class="chapter" data-level="1.5" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#with-arbuthnotts-data-collected-on-years-1629-to-1710"><i class="fa fa-check"></i><b>1.5</b> With Arbuthnott’s data, collected on years 1629 to 1710</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#now-with-recent-usas-data-present-day-birth-records-in-the-united-states"><i class="fa fa-check"></i><b>1.5.1</b> Now with recent USA’s data, present day birth records in the United States</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#distribució-duna-variable-distribució-normal-altres-distribucions"><i class="fa fa-check"></i><b>1.6</b> Distribució d’una variable, distribució normal, altres distribucions</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#valor-estandarditzat-duna-variable"><i class="fa fa-check"></i><b>1.6.1</b> Valor estandarditzat d’una variable</a></li>
+<li class="chapter" data-level="1.6.2" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#distribució-normal"><i class="fa fa-check"></i><b>1.6.2</b> Distribució Normal</a></li>
+<li class="chapter" data-level="1.6.3" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#exemple-amb-la-variable-diners-en-butxaca-estudiants-de-mq-iii"><i class="fa fa-check"></i><b>1.6.3</b> Exemple amb la variable diners en butxaca (estudiants de MQ III)</a></li>
+<li class="chapter" data-level="1.6.4" data-path="teoria-setmana-1-2021-01-13.html"><a href="teoria-setmana-1-2021-01-13.html#altres-distribucions-univariants"><i class="fa fa-check"></i><b>1.6.4</b> Altres distribucions univariants</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html"><i class="fa fa-check"></i><b>2</b> Teoria Setmana 2 (2021-01-20)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#data-wrangling"><i class="fa fa-check"></i><b>2.1</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#els-data-frames"><i class="fa fa-check"></i><b>2.1.1</b> Els data frames</a></li>
+<li class="chapter" data-level="2.1.2" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#importació-de-dades"><i class="fa fa-check"></i><b>2.1.2</b> Importació de dades</a></li>
+<li class="chapter" data-level="2.1.3" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#dades-ordenades"><i class="fa fa-check"></i><b>2.1.3</b> Dades ordenades</a></li>
+<li class="chapter" data-level="2.1.4" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#transformació"><i class="fa fa-check"></i><b>2.1.4</b> Transformació</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#visualización"><i class="fa fa-check"></i><b>2.2</b> Visualización</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#estructura-básica"><i class="fa fa-check"></i><b>2.2.1</b> Estructura básica</a></li>
+<li class="chapter" data-level="2.2.2" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#otros-geoms"><i class="fa fa-check"></i><b>2.2.2</b> Otros geoms</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#modelar-regressió-simple"><i class="fa fa-check"></i><b>2.3</b> Modelar: Regressió simple</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#regressió-simple"><i class="fa fa-check"></i><b>2.3.1</b> Regressió simple</a></li>
+<li class="chapter" data-level="2.3.2" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#regressió-lineal-simple"><i class="fa fa-check"></i><b>2.3.2</b> Regressió lineal simple</a></li>
+<li class="chapter" data-level="2.3.3" data-path="teoria-setmana-2-2021-01-20.html"><a href="teoria-setmana-2-2021-01-20.html#regressió-lineal-múltiple"><i class="fa fa-check"></i><b>2.3.3</b> Regressió lineal múltiple</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="teoria-setmana-3-2021-01-27.html"><a href="teoria-setmana-3-2021-01-27.html"><i class="fa fa-check"></i><b>3</b> Teoria Setmana 3 (2021-01-27)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="teoria-setmana-3-2021-01-27.html"><a href="teoria-setmana-3-2021-01-27.html#repas-dia-anterior"><i class="fa fa-check"></i><b>3.1</b> Repas dia anterior</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="teoria-setmana-3-2021-01-27.html"><a href="teoria-setmana-3-2021-01-27.html#regressió-simple-1"><i class="fa fa-check"></i><b>3.1.1</b> Regressió simple</a></li>
+<li class="chapter" data-level="3.1.2" data-path="teoria-setmana-3-2021-01-27.html"><a href="teoria-setmana-3-2021-01-27.html#regressió-lineal-simple-1"><i class="fa fa-check"></i><b>3.1.2</b> Regressió lineal simple</a></li>
+<li class="chapter" data-level="3.1.3" data-path="teoria-setmana-3-2021-01-27.html"><a href="teoria-setmana-3-2021-01-27.html#regressió-lineal-múltiple-1"><i class="fa fa-check"></i><b>3.1.3</b> Regressió lineal múltiple</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="teoria-setmana-3-2021-01-27.html"><a href="teoria-setmana-3-2021-01-27.html#interpretació-del-model"><i class="fa fa-check"></i><b>3.2</b> Interpretació del model</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="teoria-setmana-3-2021-01-27.html"><a href="teoria-setmana-3-2021-01-27.html#gráficament"><i class="fa fa-check"></i><b>3.2.1</b> Gráficament</a></li>
+<li class="chapter" data-level="3.2.2" data-path="teoria-setmana-3-2021-01-27.html"><a href="teoria-setmana-3-2021-01-27.html#gràfics-de-regressio-parcial"><i class="fa fa-check"></i><b>3.2.2</b> Gràfics de regressio parcial</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="teoria-setmana-3-2021-01-27.html"><a href="teoria-setmana-3-2021-01-27.html#variance-inflation-factor-vif"><i class="fa fa-check"></i><b>3.3</b> Variance Inflation Factor (VIF)</a></li>
+<li class="chapter" data-level="3.4" data-path="teoria-setmana-3-2021-01-27.html"><a href="teoria-setmana-3-2021-01-27.html#dades-del-bank"><i class="fa fa-check"></i><b>3.4</b> Dades del Bank</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="teoria-setmana-4-2021-02-3.html"><a href="teoria-setmana-4-2021-02-3.html"><i class="fa fa-check"></i><b>4</b> Teoria Setmana 4 (2021-02-3)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="teoria-setmana-4-2021-02-3.html"><a href="teoria-setmana-4-2021-02-3.html#packages"><i class="fa fa-check"></i><b>4.1</b> Packages</a></li>
+<li class="chapter" data-level="4.2" data-path="teoria-setmana-4-2021-02-3.html"><a href="teoria-setmana-4-2021-02-3.html#salaries"><i class="fa fa-check"></i><b>4.2</b> Salaries</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="teoria-setmana-4-2021-02-3.html"><a href="teoria-setmana-4-2021-02-3.html#anàlisis-univariant"><i class="fa fa-check"></i><b>4.2.1</b> Anàlisis univariant</a></li>
+<li class="chapter" data-level="4.2.2" data-path="teoria-setmana-4-2021-02-3.html"><a href="teoria-setmana-4-2021-02-3.html#anàlisis-bivariant"><i class="fa fa-check"></i><b>4.2.2</b> Anàlisis bivariant</a></li>
+<li class="chapter" data-level="4.2.3" data-path="teoria-setmana-4-2021-02-3.html"><a href="teoria-setmana-4-2021-02-3.html#realció-log-log"><i class="fa fa-check"></i><b>4.2.3</b> Realció log-log</a></li>
+<li class="chapter" data-level="4.2.4" data-path="teoria-setmana-4-2021-02-3.html"><a href="teoria-setmana-4-2021-02-3.html#realció-x2"><i class="fa fa-check"></i><b>4.2.4</b> Realció x**2</a></li>
+<li class="chapter" data-level="4.2.5" data-path="teoria-setmana-4-2021-02-3.html"><a href="teoria-setmana-4-2021-02-3.html#interaccions"><i class="fa fa-check"></i><b>4.2.5</b> Interaccions</a></li>
+<li class="chapter" data-level="4.2.6" data-path="teoria-setmana-4-2021-02-3.html"><a href="teoria-setmana-4-2021-02-3.html#estimadors-robustos"><i class="fa fa-check"></i><b>4.2.6</b> Estimadors robustos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="teoria-setmana-5-2021-02-10.html"><a href="teoria-setmana-5-2021-02-10.html"><i class="fa fa-check"></i><b>5</b> Teoria Setmana 5 (2021-02-10)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="teoria-setmana-5-2021-02-10.html"><a href="teoria-setmana-5-2021-02-10.html#packages-1"><i class="fa fa-check"></i><b>5.1</b> Packages</a></li>
+<li class="chapter" data-level="5.2" data-path="teoria-setmana-5-2021-02-10.html"><a href="teoria-setmana-5-2021-02-10.html#dades-de-intenció-de-vot"><i class="fa fa-check"></i><b>5.2</b> Dades de intenció de vot</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="teoria-setmana-5-2021-02-10.html"><a href="teoria-setmana-5-2021-02-10.html#la-regressió-lineal"><i class="fa fa-check"></i><b>5.2.1</b> La Regressió lineal</a></li>
+<li class="chapter" data-level="5.2.2" data-path="teoria-setmana-5-2021-02-10.html"><a href="teoria-setmana-5-2021-02-10.html#la-regressió-logística"><i class="fa fa-check"></i><b>5.2.2</b> La Regressió logística</a></li>
+<li class="chapter" data-level="5.2.3" data-path="teoria-setmana-5-2021-02-10.html"><a href="teoria-setmana-5-2021-02-10.html#interpretació-dels-paràmetres"><i class="fa fa-check"></i><b>5.2.3</b> Interpretació dels paràmetres</a></li>
+<li class="chapter" data-level="5.2.4" data-path="teoria-setmana-5-2021-02-10.html"><a href="teoria-setmana-5-2021-02-10.html#lineal-versus-logística"><i class="fa fa-check"></i><b>5.2.4</b> Lineal versus Logística</a></li>
+<li class="chapter" data-level="5.2.5" data-path="teoria-setmana-5-2021-02-10.html"><a href="teoria-setmana-5-2021-02-10.html#regressió-logística-amb-covariants-lrenda-gènere"><i class="fa fa-check"></i><b>5.2.5</b> Regressió logística amb covariants: Lrenda, gènere…</a></li>
+<li class="chapter" data-level="5.2.6" data-path="teoria-setmana-5-2021-02-10.html"><a href="teoria-setmana-5-2021-02-10.html#regressió-logística-amb-covariants-gràfic-defectes-condicionats"><i class="fa fa-check"></i><b>5.2.6</b> Regressió logística amb covariants: gràfic d’efectes condicionats</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="teoria-setmana-5-2021-02-10.html"><a href="teoria-setmana-5-2021-02-10.html#exemple-de-vtown-data"><i class="fa fa-check"></i><b>5.3</b> Exemple de Vtown data</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="teoria-setmana-5-2021-02-10.html"><a href="teoria-setmana-5-2021-02-10.html#anàlisis-bivariant-preliminar"><i class="fa fa-check"></i><b>5.3.1</b> Anàlisis bivariant preliminar</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html"><i class="fa fa-check"></i><b>6</b> Teoria Setmana 6 (2021-02-17)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html#packages-2"><i class="fa fa-check"></i><b>6.1</b> Packages</a></li>
+<li class="chapter" data-level="6.2" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html#barómetre-2021-01-29"><i class="fa fa-check"></i><b>6.2</b> Barómetre (2021-01-29)</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html#anàlisis-univariant-y-bivariant"><i class="fa fa-check"></i><b>6.2.1</b> Anàlisis univariant y bivariant</a></li>
+<li class="chapter" data-level="6.2.2" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html#section"><i class="fa fa-check"></i><b>6.2.2</b> </a></li>
+<li class="chapter" data-level="6.2.3" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html#regressió-logística-amb-covariants-gràfic-defectes-condicionats-1"><i class="fa fa-check"></i><b>6.2.3</b> Regressió logística amb covariants: gràfic d’efectes condicionats</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html#pca---anàlisis-de-components-principals"><i class="fa fa-check"></i><b>6.3</b> PCA - Anàlisis de Components principals</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html#components-principals-gràfics-dindividus-variables"><i class="fa fa-check"></i><b>6.3.1</b> Components Principals: gràfics d’individus, variables</a></li>
+<li class="chapter" data-level="6.3.2" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html#barómetre-2021-01-29-1"><i class="fa fa-check"></i><b>6.3.2</b> Barómetre (2021-01-29)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html#analisis-factorial-amb-dades-omeses"><i class="fa fa-check"></i><b>6.4</b> Analisis Factorial amb dades omeses</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html#representació-de-les-variables"><i class="fa fa-check"></i><b>6.4.1</b> Representació de les variables</a></li>
+<li class="chapter" data-level="6.4.2" data-path="teoria-setmana-6-2021-02-17.html"><a href="teoria-setmana-6-2021-02-17.html#anàlisis-factorial-amb-correlacions-dos-a-dos"><i class="fa fa-check"></i><b>6.4.2</b> Anàlisis factorial amb correlacions dos a dos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="teoria-setmana-8-2021-03-03.html"><a href="teoria-setmana-8-2021-03-03.html"><i class="fa fa-check"></i><b>7</b> Teoria Setmana 8 (2021-03-03)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="teoria-setmana-8-2021-03-03.html"><a href="teoria-setmana-8-2021-03-03.html#dades-de-comunitats"><i class="fa fa-check"></i><b>7.1</b> Dades de Comunitats</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="teoria-setmana-8-2021-03-03.html"><a href="teoria-setmana-8-2021-03-03.html#cluser-jerarquic"><i class="fa fa-check"></i><b>7.1.1</b> Cluser jerarquic</a></li>
+<li class="chapter" data-level="7.1.2" data-path="teoria-setmana-8-2021-03-03.html"><a href="teoria-setmana-8-2021-03-03.html#cluster-jerarquis-sobre-components-principals"><i class="fa fa-check"></i><b>7.1.2</b> Cluster jerarquis sobre components principals</a></li>
+<li class="chapter" data-level="7.1.3" data-path="teoria-setmana-8-2021-03-03.html"><a href="teoria-setmana-8-2021-03-03.html#cluster-no-jerarquic"><i class="fa fa-check"></i><b>7.1.3</b> Cluster no jerarquic</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="teoria-setmana-8-2021-03-03.html"><a href="teoria-setmana-8-2021-03-03.html#dades-eleccions-parlament-2021"><i class="fa fa-check"></i><b>7.2</b> Dades eleccions parlament 2021</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="teoria-setmana-8-2021-03-03.html"><a href="teoria-setmana-8-2021-03-03.html#cluster-no-jerarquic-1"><i class="fa fa-check"></i><b>7.2.1</b> Cluster no jerarquic</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Diari classe Seminaris</b></span></li>
+<li class="chapter" data-level="8" data-path="seminaris-setmana-1-2021-01-13.html"><a href="seminaris-setmana-1-2021-01-13.html"><i class="fa fa-check"></i><b>8</b> Seminaris Setmana 1 (2021-01-13)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="seminaris-setmana-1-2021-01-13.html"><a href="seminaris-setmana-1-2021-01-13.html#programació-amb-r"><i class="fa fa-check"></i><b>8.1</b> Programació amb R</a></li>
+<li class="chapter" data-level="8.2" data-path="seminaris-setmana-1-2021-01-13.html"><a href="seminaris-setmana-1-2021-01-13.html#comentari-deure-1."><i class="fa fa-check"></i><b>8.2</b> Comentari Deure 1.</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="seminaris-setmana-2-2021-01-20.html"><a href="seminaris-setmana-2-2021-01-20.html"><i class="fa fa-check"></i><b>9</b> Seminaris Setmana 2 (2021-01-20)</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="seminaris-setmana-2-2021-01-20.html"><a href="seminaris-setmana-2-2021-01-20.html#comentari-dels-projectes-en-grup"><i class="fa fa-check"></i><b>9.1</b> Comentari dels projectes en grup</a></li>
+<li class="chapter" data-level="9.2" data-path="seminaris-setmana-2-2021-01-20.html"><a href="seminaris-setmana-2-2021-01-20.html#paquets-addicionals"><i class="fa fa-check"></i><b>9.2</b> Paquets addicionals</a></li>
+<li class="chapter" data-level="9.3" data-path="seminaris-setmana-2-2021-01-20.html"><a href="seminaris-setmana-2-2021-01-20.html#correcció-deure-1"><i class="fa fa-check"></i><b>9.3</b> Correcció deure 1</a></li>
+<li class="chapter" data-level="9.4" data-path="seminaris-setmana-2-2021-01-20.html"><a href="seminaris-setmana-2-2021-01-20.html#comentari-deure-2"><i class="fa fa-check"></i><b>9.4</b> Comentari Deure 2</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="seminaris-setmana-3-2021-01-27.html"><a href="seminaris-setmana-3-2021-01-27.html"><i class="fa fa-check"></i><b>10</b> Seminaris Setmana 3 (2021-01-27)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="seminaris-setmana-3-2021-01-27.html"><a href="seminaris-setmana-3-2021-01-27.html#comentari-dels-projectes-en-grup-1"><i class="fa fa-check"></i><b>10.1</b> Comentari dels projectes en grup</a></li>
+<li class="chapter" data-level="10.2" data-path="seminaris-setmana-3-2021-01-27.html"><a href="seminaris-setmana-3-2021-01-27.html#correcció-deure-2"><i class="fa fa-check"></i><b>10.2</b> Correcció deure 2</a></li>
+<li class="chapter" data-level="10.3" data-path="seminaris-setmana-3-2021-01-27.html"><a href="seminaris-setmana-3-2021-01-27.html#comentari-deure-3"><i class="fa fa-check"></i><b>10.3</b> Comentari Deure 3</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="seminaris-setmana-4-2021-02-3.html"><a href="seminaris-setmana-4-2021-02-3.html"><i class="fa fa-check"></i><b>11</b> Seminaris Setmana 4 (2021-02-3)</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="seminaris-setmana-4-2021-02-3.html"><a href="seminaris-setmana-4-2021-02-3.html#correcció-deure-3"><i class="fa fa-check"></i><b>11.1</b> Correcció Deure 3</a></li>
+<li class="chapter" data-level="11.2" data-path="seminaris-setmana-4-2021-02-3.html"><a href="seminaris-setmana-4-2021-02-3.html#comentari-deure-4"><i class="fa fa-check"></i><b>11.2</b> Comentari Deure 4</a></li>
+<li class="chapter" data-level="11.3" data-path="seminaris-setmana-4-2021-02-3.html"><a href="seminaris-setmana-4-2021-02-3.html#projectes-en-grup"><i class="fa fa-check"></i><b>11.3</b> Projectes en grup</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="seminaris-setmana-6-2021-02-17.html"><a href="seminaris-setmana-6-2021-02-17.html"><i class="fa fa-check"></i><b>12</b> Seminaris Setmana 6 (2021-02-17)</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="seminaris-setmana-6-2021-02-17.html"><a href="seminaris-setmana-6-2021-02-17.html#projectes-en-grup-1"><i class="fa fa-check"></i><b>12.1</b> Projectes en grup</a></li>
+</ul></li>
+<li class="part"><span><b>III Deures</b></span></li>
+<li class="chapter" data-level="13" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>13</b> Llista de Deures</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="homework.html"><a href="homework.html#deure-1"><i class="fa fa-check"></i><b>13.1</b> Deure 1</a></li>
+<li class="chapter" data-level="13.2" data-path="homework.html"><a href="homework.html#deure-2"><i class="fa fa-check"></i><b>13.2</b> Deure 2</a></li>
+<li class="chapter" data-level="13.3" data-path="homework.html"><a href="homework.html#deure-3"><i class="fa fa-check"></i><b>13.3</b> Deure 3</a></li>
+<li class="chapter" data-level="13.4" data-path="homework.html"><a href="homework.html#deure-4"><i class="fa fa-check"></i><b>13.4</b> Deure 4</a></li>
+<li class="chapter" data-level="13.5" data-path="homework.html"><a href="homework.html#deure-5"><i class="fa fa-check"></i><b>13.5</b> Deure 5</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/griu/meacp_2021" target="blank">Repositori GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2020-2021</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="seminaris-setmana-6-2021-02-17" class="section level1" number="12">
+<h1><span class="header-section-number">Capítol 12</span> Seminaris Setmana 6 (2021-02-17)</h1>
+<div id="projectes-en-grup-1" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Projectes en grup</h2>
+<ul>
+<li>tutories per grups.</li>
+</ul>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="seminaris-setmana-4-2021-02-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="homework.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/griu/meacp_2021/edit/master/02050-seminar_class_journal_w5.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["meacp_2021.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
