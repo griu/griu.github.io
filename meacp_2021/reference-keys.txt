@@ -17,7 +17,7 @@ log-de-diners-en-butxaca-distribució-normal
 log-de-diners-en-butxaca-no-zero-distribució-normal
 altres-distribucions-univariants
 variables-quantitatives-i-qualitatives
-seminaris-setmana-1-2021-01-13
+seminaris-setmana-1
 programació-amb-r
 comentari-deure-1.
 homework
