@@ -75,6 +75,15 @@ outlyers
 gràfics-de-regressio-parcial
 variance-inflation-factor-vif
 dades-del-bank
+teoria-setmana-4
+packages
+salaries
+anàlisis-univariant
+anàlisis-bivariant
+realció-log-log
+realció-x2
+interaccions
+estimadors-robustos
 seminaris-setmana-1
 programació-amb-r
 comentari-deure-1.
@@ -87,6 +96,9 @@ seminaris-setmana-3
 comentari-dels-projectes-en-grup-1
 correcció-deure-2
 comentari-deure-3
+seminaris-setmana-4
+comentari-deure-4
+projectes-en-grup
 homework
 problema-1
 problema-2
