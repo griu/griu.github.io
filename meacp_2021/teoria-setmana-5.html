@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítol 5 Teoria Setmana 5 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022</title>
+  <meta name="description" content="Diari de les classes del Curs 2021-2022 de mètodes estadístics aplicats a ciències polítiques." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítol 5 Teoria Setmana 5 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Diari de les classes del Curs 2021-2022 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítol 5 Teoria Setmana 5 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022" />
+  
+  <meta name="twitter:description" content="Diari de les classes del Curs 2021-2022 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+<meta name="author" content="Ferran Carrascosa Mallafrè" />
+
+
+<meta name="date" content="2022-01-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="teoria-setmana-4.html"/>
+<link rel="next" href="teoria-setmana-6.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<script>
+% https://stackoverflow.com/a/4425214/8242291
+var links = document.links;
+
+for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+
+    if (links[i].hostname != window.location.hostname) {
+        links[i].target = '_blank';
+    }
+
+}
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #2a211c;
+    color: #bdae9d;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+div.sourceCode
+  { color: #bdae9d; background-color: #2a211c; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffff00; } /* Alert */
+code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #44aa43; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #049b0a; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.dv { color: #44aa43; } /* DecVal */
+code span.er { color: #ffff00; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #44aa43; } /* Float */
+code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+code span.op { } /* Operator */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.sc { color: #049b0a; } /* SpecialChar */
+code span.ss { color: #049b0a; } /* SpecialString */
+code span.st { color: #049b0a; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #049b0a; } /* VerbatimString */
+code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><b><a href="./index.html"><img style="float: left; margin-right: 5px;" src="www/images/01_general/logo.png" width="40" height="40"></img>Diari Classes MEA (21703) 2020-2021</a></b></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a></li>
+<li class="part"><span><b>I Diari classe Teoria</b></span></li>
+<li class="chapter" data-level="1" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html"><i class="fa fa-check"></i><b>1</b> Teoria Setmana 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#avaluació"><i class="fa fa-check"></i><b>1.1</b> Avaluació</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#el-treball"><i class="fa fa-check"></i><b>1.1.1</b> El treball</a></li>
+<li class="chapter" data-level="1.1.2" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#exàmens"><i class="fa fa-check"></i><b>1.1.2</b> Exàmens</a></li>
+<li class="chapter" data-level="1.1.3" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#participació"><i class="fa fa-check"></i><b>1.1.3</b> Participació</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#bibliografia"><i class="fa fa-check"></i><b>1.2</b> Bibliografia</a></li>
+<li class="chapter" data-level="1.3" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#introducció-conceptes-estadística"><i class="fa fa-check"></i><b>1.3</b> Introducció conceptes Estadística</a></li>
+<li class="chapter" data-level="1.4" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#gender-gap-at-birth"><i class="fa fa-check"></i><b>1.4</b> Gender gap, at birth</a></li>
+<li class="chapter" data-level="1.5" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#with-arbuthnotts-data-collected-on-years-1629-to-1710"><i class="fa fa-check"></i><b>1.5</b> With Arbuthnott’s data, collected on years 1629 to 1710</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#now-with-recent-usas-data-present-day-birth-records-in-the-united-states"><i class="fa fa-check"></i><b>1.5.1</b> Now with recent USA’s data, present day birth records in the United States</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#distribució-duna-variable-distribució-normal-altres-distribucions"><i class="fa fa-check"></i><b>1.6</b> Distribució d’una variable, distribució normal, altres distribucions</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#valor-estandarditzat-duna-variable"><i class="fa fa-check"></i><b>1.6.1</b> Valor estandarditzat d’una variable</a></li>
+<li class="chapter" data-level="1.6.2" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#distribució-normal"><i class="fa fa-check"></i><b>1.6.2</b> Distribució Normal</a></li>
+<li class="chapter" data-level="1.6.3" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#exemple-amb-la-variable-diners-en-butxaca-estudiants-de-mq-iii"><i class="fa fa-check"></i><b>1.6.3</b> Exemple amb la variable diners en butxaca (estudiants de MQ III)</a></li>
+<li class="chapter" data-level="1.6.4" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#altres-distribucions-univariants"><i class="fa fa-check"></i><b>1.6.4</b> Altres distribucions univariants</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html"><i class="fa fa-check"></i><b>2</b> Teoria Setmana 2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#data-wrangling"><i class="fa fa-check"></i><b>2.1</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#els-data-frames"><i class="fa fa-check"></i><b>2.1.1</b> Els data frames</a></li>
+<li class="chapter" data-level="2.1.2" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#importació-de-dades"><i class="fa fa-check"></i><b>2.1.2</b> Importació de dades</a></li>
+<li class="chapter" data-level="2.1.3" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#dades-ordenades"><i class="fa fa-check"></i><b>2.1.3</b> Dades ordenades</a></li>
+<li class="chapter" data-level="2.1.4" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#transformació"><i class="fa fa-check"></i><b>2.1.4</b> Transformació</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#visualización"><i class="fa fa-check"></i><b>2.2</b> Visualización</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#estructura-básica"><i class="fa fa-check"></i><b>2.2.1</b> Estructura básica</a></li>
+<li class="chapter" data-level="2.2.2" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#otros-geoms"><i class="fa fa-check"></i><b>2.2.2</b> Otros geoms</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#modelar-regressió-simple"><i class="fa fa-check"></i><b>2.3</b> Modelar: Regressió simple</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#regressió-simple"><i class="fa fa-check"></i><b>2.3.1</b> Regressió simple</a></li>
+<li class="chapter" data-level="2.3.2" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#regressió-lineal-simple"><i class="fa fa-check"></i><b>2.3.2</b> Regressió lineal simple</a></li>
+<li class="chapter" data-level="2.3.3" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#regressió-lineal-múltiple"><i class="fa fa-check"></i><b>2.3.3</b> Regressió lineal múltiple</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html"><i class="fa fa-check"></i><b>3</b> Teoria Setmana 3</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#repas-dia-anterior"><i class="fa fa-check"></i><b>3.1</b> Repas dia anterior</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#regressió-simple-1"><i class="fa fa-check"></i><b>3.1.1</b> Regressió simple</a></li>
+<li class="chapter" data-level="3.1.2" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#regressió-lineal-simple-1"><i class="fa fa-check"></i><b>3.1.2</b> Regressió lineal simple</a></li>
+<li class="chapter" data-level="3.1.3" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#regressió-lineal-múltiple-1"><i class="fa fa-check"></i><b>3.1.3</b> Regressió lineal múltiple</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#interpretació-del-model"><i class="fa fa-check"></i><b>3.2</b> Interpretació del model</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#gráficament"><i class="fa fa-check"></i><b>3.2.1</b> Gráficament</a></li>
+<li class="chapter" data-level="3.2.2" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#gràfics-de-regressio-parcial"><i class="fa fa-check"></i><b>3.2.2</b> Gràfics de regressio parcial</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#variance-inflation-factor-vif"><i class="fa fa-check"></i><b>3.3</b> Variance Inflation Factor (VIF)</a></li>
+<li class="chapter" data-level="3.4" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#dades-del-bank"><i class="fa fa-check"></i><b>3.4</b> Dades del Bank</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html"><i class="fa fa-check"></i><b>4</b> Teoria Setmana 4</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#packages"><i class="fa fa-check"></i><b>4.1</b> Packages</a></li>
+<li class="chapter" data-level="4.2" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#salaries"><i class="fa fa-check"></i><b>4.2</b> Salaries</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#anàlisis-univariant"><i class="fa fa-check"></i><b>4.2.1</b> Anàlisis univariant</a></li>
+<li class="chapter" data-level="4.2.2" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#anàlisis-bivariant"><i class="fa fa-check"></i><b>4.2.2</b> Anàlisis bivariant</a></li>
+<li class="chapter" data-level="4.2.3" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#realció-log-log"><i class="fa fa-check"></i><b>4.2.3</b> Realció log-log</a></li>
+<li class="chapter" data-level="4.2.4" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#realció-x2"><i class="fa fa-check"></i><b>4.2.4</b> Realció x**2</a></li>
+<li class="chapter" data-level="4.2.5" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#interaccions"><i class="fa fa-check"></i><b>4.2.5</b> Interaccions</a></li>
+<li class="chapter" data-level="4.2.6" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#estimadors-robustos"><i class="fa fa-check"></i><b>4.2.6</b> Estimadors robustos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html"><i class="fa fa-check"></i><b>5</b> Teoria Setmana 5</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#packages-1"><i class="fa fa-check"></i><b>5.1</b> Packages</a></li>
+<li class="chapter" data-level="5.2" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#dades-de-intenció-de-vot"><i class="fa fa-check"></i><b>5.2</b> Dades de intenció de vot</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#la-regressió-lineal"><i class="fa fa-check"></i><b>5.2.1</b> La Regressió lineal</a></li>
+<li class="chapter" data-level="5.2.2" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#la-regressió-logística"><i class="fa fa-check"></i><b>5.2.2</b> La Regressió logística</a></li>
+<li class="chapter" data-level="5.2.3" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#interpretació-dels-paràmetres"><i class="fa fa-check"></i><b>5.2.3</b> Interpretació dels paràmetres</a></li>
+<li class="chapter" data-level="5.2.4" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#lineal-versus-logística"><i class="fa fa-check"></i><b>5.2.4</b> Lineal versus Logística</a></li>
+<li class="chapter" data-level="5.2.5" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#regressió-logística-amb-covariants-lrenda-gènere"><i class="fa fa-check"></i><b>5.2.5</b> Regressió logística amb covariants: Lrenda, gènere…</a></li>
+<li class="chapter" data-level="5.2.6" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#regressió-logística-amb-covariants-gràfic-defectes-condicionats"><i class="fa fa-check"></i><b>5.2.6</b> Regressió logística amb covariants: gràfic d’efectes condicionats</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#exemple-de-vtown-data"><i class="fa fa-check"></i><b>5.3</b> Exemple de Vtown data</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#anàlisis-bivariant-preliminar"><i class="fa fa-check"></i><b>5.3.1</b> Anàlisis bivariant preliminar</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html"><i class="fa fa-check"></i><b>6</b> Teoria Setmana 6</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#packages-2"><i class="fa fa-check"></i><b>6.1</b> Packages</a></li>
+<li class="chapter" data-level="6.2" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#barómetre-2021-01-29"><i class="fa fa-check"></i><b>6.2</b> Barómetre (2021-01-29)</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#anàlisis-univariant-y-bivariant"><i class="fa fa-check"></i><b>6.2.1</b> Anàlisis univariant y bivariant</a></li>
+<li class="chapter" data-level="6.2.2" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#section"><i class="fa fa-check"></i><b>6.2.2</b> </a></li>
+<li class="chapter" data-level="6.2.3" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#regressió-logística-amb-covariants-gràfic-defectes-condicionats-1"><i class="fa fa-check"></i><b>6.2.3</b> Regressió logística amb covariants: gràfic d’efectes condicionats</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#pca---anàlisis-de-components-principals"><i class="fa fa-check"></i><b>6.3</b> PCA - Anàlisis de Components principals</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#components-principals-gràfics-dindividus-variables"><i class="fa fa-check"></i><b>6.3.1</b> Components Principals: gràfics d’individus, variables</a></li>
+<li class="chapter" data-level="6.3.2" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#barómetre-2021-01-29-1"><i class="fa fa-check"></i><b>6.3.2</b> Barómetre (2021-01-29)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#analisis-factorial-amb-dades-omeses"><i class="fa fa-check"></i><b>6.4</b> Analisis Factorial amb dades omeses</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#representació-de-les-variables"><i class="fa fa-check"></i><b>6.4.1</b> Representació de les variables</a></li>
+<li class="chapter" data-level="6.4.2" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#anàlisis-factorial-amb-correlacions-dos-a-dos"><i class="fa fa-check"></i><b>6.4.2</b> Anàlisis factorial amb correlacions dos a dos</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Diari classe Seminaris</b></span></li>
+<li class="chapter" data-level="7" data-path="seminaris-setmana-1.html"><a href="seminaris-setmana-1.html"><i class="fa fa-check"></i><b>7</b> Seminaris Setmana 1</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="seminaris-setmana-1.html"><a href="seminaris-setmana-1.html#programació-amb-r"><i class="fa fa-check"></i><b>7.1</b> Programació amb R</a></li>
+<li class="chapter" data-level="7.2" data-path="seminaris-setmana-1.html"><a href="seminaris-setmana-1.html#comentari-deure-1."><i class="fa fa-check"></i><b>7.2</b> Comentari Deure 1.</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="seminaris-setmana-2.html"><a href="seminaris-setmana-2.html"><i class="fa fa-check"></i><b>8</b> Seminaris Setmana 2</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="seminaris-setmana-2.html"><a href="seminaris-setmana-2.html#comentari-dels-projectes-en-grup"><i class="fa fa-check"></i><b>8.1</b> Comentari dels projectes en grup</a></li>
+<li class="chapter" data-level="8.2" data-path="seminaris-setmana-2.html"><a href="seminaris-setmana-2.html#paquets-addicionals"><i class="fa fa-check"></i><b>8.2</b> Paquets addicionals</a></li>
+<li class="chapter" data-level="8.3" data-path="seminaris-setmana-2.html"><a href="seminaris-setmana-2.html#correcció-deure-1"><i class="fa fa-check"></i><b>8.3</b> Correcció deure 1</a></li>
+<li class="chapter" data-level="8.4" data-path="seminaris-setmana-2.html"><a href="seminaris-setmana-2.html#comentari-deure-2"><i class="fa fa-check"></i><b>8.4</b> Comentari Deure 2</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="seminaris-setmana-3.html"><a href="seminaris-setmana-3.html"><i class="fa fa-check"></i><b>9</b> Seminaris Setmana 3</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="seminaris-setmana-3.html"><a href="seminaris-setmana-3.html#comentari-dels-projectes-en-grup-1"><i class="fa fa-check"></i><b>9.1</b> Comentari dels projectes en grup</a></li>
+<li class="chapter" data-level="9.2" data-path="seminaris-setmana-3.html"><a href="seminaris-setmana-3.html#correcció-deure-2"><i class="fa fa-check"></i><b>9.2</b> Correcció deure 2</a></li>
+<li class="chapter" data-level="9.3" data-path="seminaris-setmana-3.html"><a href="seminaris-setmana-3.html#comentari-deure-3"><i class="fa fa-check"></i><b>9.3</b> Comentari Deure 3</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="seminaris-setmana-4.html"><a href="seminaris-setmana-4.html"><i class="fa fa-check"></i><b>10</b> Seminaris Setmana 4</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="seminaris-setmana-4.html"><a href="seminaris-setmana-4.html#comentari-deure-4"><i class="fa fa-check"></i><b>10.1</b> Comentari Deure 4</a></li>
+<li class="chapter" data-level="10.2" data-path="seminaris-setmana-4.html"><a href="seminaris-setmana-4.html#projectes-en-grup"><i class="fa fa-check"></i><b>10.2</b> Projectes en grup</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="seminaris-setmana-5.html"><a href="seminaris-setmana-5.html"><i class="fa fa-check"></i><b>11</b> Seminaris Setmana 5</a></li>
+<li class="part"><span><b>III Problemes</b></span></li>
+<li class="chapter" data-level="12" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>12</b> Llista de problemes</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="homework.html"><a href="homework.html#problema-1"><i class="fa fa-check"></i><b>12.1</b> Problema 1</a></li>
+<li class="chapter" data-level="12.2" data-path="homework.html"><a href="homework.html#problema-2"><i class="fa fa-check"></i><b>12.2</b> Problema 2</a></li>
+<li class="chapter" data-level="12.3" data-path="homework.html"><a href="homework.html#problema-3"><i class="fa fa-check"></i><b>12.3</b> Problema 3</a></li>
+<li class="chapter" data-level="12.4" data-path="homework.html"><a href="homework.html#problema-4"><i class="fa fa-check"></i><b>12.4</b> Problema 4</a></li>
+<li class="chapter" data-level="12.5" data-path="homework.html"><a href="homework.html#problema-5"><i class="fa fa-check"></i><b>12.5</b> Problema 5</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/griu/meacp_2021" target="blank">Repositori GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="teoria-setmana-5" class="section level1" number="5">
+<h1><span class="header-section-number">Capítol 5</span> Teoria Setmana 5</h1>
+<div id="packages-1" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Packages</h2>
+<pre><code>install.packages(&quot;visreg&quot;)</code></pre>
+</div>
+<div id="dades-de-intenció-de-vot" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Dades de intenció de vot</h2>
+<ul>
+<li>Mostra aleatòria de mida n = 800 d’una població</li>
+<li>Variables: despesa, renda, gènere (1/0, home = 1), vot (1/0, partit A = 1)</li>
+</ul>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="teoria-setmana-5.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
+<span id="cb239-2"><a href="teoria-setmana-5.html#cb239-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.spss</span>(<span class="st">&quot;http://84.89.132.1/~satorra/dades/M2014dadesSIM.sav&quot;</span>, <span class="at">to.data.frame =</span> <span class="cn">TRUE</span>, <span class="at">use.value.labels =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb239-3"><a href="teoria-setmana-5.html#cb239-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data)</span></code></pre></div>
+<pre><code>## [1] 800   4</code></pre>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="teoria-setmana-5.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb241-2"><a href="teoria-setmana-5.html#cb241-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb241-3"><a href="teoria-setmana-5.html#cb241-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(<span class="fu">head</span>(data)))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Lrenda</th>
+<th align="right">Ldespeses</th>
+<th align="right">Genere</th>
+<th align="right">Vot</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">9.477</td>
+<td align="right">4.503</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">11.435</td>
+<td align="right">6.147</td>
+<td align="right">1</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">10.686</td>
+<td align="right">4.961</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">10.407</td>
+<td align="right">3.993</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">10.814</td>
+<td align="right">5.746</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">9.944</td>
+<td align="right">4.950</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="teoria-setmana-5.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">head</span>(data))</span></code></pre></div>
+<pre><code>##      Lrenda         Ldespeses         Genere            Vot        
+##  Min.   : 9.477   Min.   :3.993   Min.   :0.0000   Min.   :0.0000  
+##  1st Qu.:10.060   1st Qu.:4.615   1st Qu.:0.0000   1st Qu.:0.0000  
+##  Median :10.546   Median :4.955   Median :0.0000   Median :0.0000  
+##  Mean   :10.460   Mean   :5.050   Mean   :0.3333   Mean   :0.3333  
+##  3rd Qu.:10.782   3rd Qu.:5.550   3rd Qu.:0.7500   3rd Qu.:0.7500  
+##  Max.   :11.435   Max.   :6.147   Max.   :1.0000   Max.   :1.0000</code></pre>
+<p>S’observa un 33,3% en la intenció del vot del partit A.</p>
+<div id="la-regressió-lineal" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> La Regressió lineal</h3>
+<p>Fins ara, Y era una variable continua. Ara la Y es binaria (pren valors 0 o 1). Segueix essent vàlida la regressió lineal?</p>
+<p>Veiem com quedaria la regressió lineal versus la <a href="https://en.wikipedia.org/wiki/Local_regression">loess</a>.</p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="teoria-setmana-5.html#cb244-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb244-2"><a href="teoria-setmana-5.html#cb244-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Lrenda, Vot))<span class="sc">+</span></span>
+<span id="cb244-3"><a href="teoria-setmana-5.html#cb244-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span><span class="fl">0.02</span>)<span class="sc">+</span></span>
+<span id="cb244-4"><a href="teoria-setmana-5.html#cb244-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;lm&#39;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">formula =</span> y<span class="sc">~</span>x, <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;lm&quot;</span>))<span class="sc">+</span></span>
+<span id="cb244-5"><a href="teoria-setmana-5.html#cb244-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;loess&#39;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">formula =</span> y<span class="sc">~</span>x, <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;loess&quot;</span>))</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-117-1.png" width="672" /></p>
+<p>Mirem ara el resum de la regressió lineal.</p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="teoria-setmana-5.html#cb245-1" aria-hidden="true" tabindex="-1"></a>re0 <span class="ot">&lt;-</span><span class="fu">lm</span>(Vot <span class="sc">~</span> Lrenda, <span class="at">data=</span>data)</span>
+<span id="cb245-2"><a href="teoria-setmana-5.html#cb245-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(re0)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Vot ~ Lrenda, data = data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.10516 -0.39910  0.07352  0.37185  1.12443 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  2.89760    0.15615   18.56   &lt;2e-16 ***
+## Lrenda      -0.23403    0.01549  -15.11   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.4392 on 798 degrees of freedom
+## Multiple R-squared:  0.2224, Adjusted R-squared:  0.2215 
+## F-statistic: 228.3 on 1 and 798 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Problemes quan la Y es binaria:</p>
+<ul>
+<li>La relació es no-lineal</li>
+<li>Els termes d’error són heteroscedàstics</li>
+<li>El terme d’error no té distribució normal</li>
+</ul>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="teoria-setmana-5.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(re0,<span class="dv">1</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-119-1.png" width="672" /></p>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="teoria-setmana-5.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(re0,<span class="dv">2</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+</div>
+<div id="la-regressió-logística" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> La Regressió logística</h3>
+<p>L’alternativa és el model de regressió logística:</p>
+<p>Suposem que <span class="math inline">\(Y_{i} \sim \mbox{Bernoulli }(p_i)\)</span>, <span class="math inline">\(p_i = P(Y_i = 1), \, i = 1, \dots, n\)</span></p>
+<p>Transformem:</p>
+<p><span class="math display">\[p \rightarrow odds(p) \rightarrow Logit(p)\]</span></p>
+<p>on <span class="math inline">\(odds(p) = p/(1-p)\)</span>, en català raó de probabilitats.</p>
+<p><span class="math inline">\(p \rightarrow odds(p) \equiv p /(1- p) \rightarrow Logit(p) = \ln \, (odds (p)) = \ln \frac{p }{1 - p } \leftrightarrow p = \frac{1}{1 + e^{-L }}\)</span></p>
+<p>Model lineal pel <span class="math inline">\(L = Logit(p) = \ln \frac{p }{1 - p }\)</span>:</p>
+<p><span class="math inline">\(L = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3\)</span> Model no-lineal per p, on:</p>
+<p><span class="math inline">\(p \equiv E(Y \mid X_1, X_2, X_3) = \frac{1}{1 + e^{-( \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3)}}\)</span></p>
+<p>versus el model de regressió lineal clàssic que diu que <span class="math inline">\(p = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3\)</span>.</p>
+<p>Exemple: Y = Vot, X = Lrenda <span class="math inline">\(P(Y = 1) = p = \frac{1}{1 + e^{-L_i}} = \frac{1}{1 + e^{- (\alpha + \beta * Lrenda)}}\)</span>.</p>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="teoria-setmana-5.html#cb249-1" aria-hidden="true" tabindex="-1"></a>re1<span class="ot">&lt;-</span><span class="fu">glm</span>(Vot <span class="sc">~</span> Lrenda, <span class="at">data=</span>data, <span class="at">family =</span> <span class="st">&quot;binomial&quot;</span>) </span>
+<span id="cb249-2"><a href="teoria-setmana-5.html#cb249-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb249-3"><a href="teoria-setmana-5.html#cb249-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(re1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Vot ~ Lrenda, family = &quot;binomial&quot;, data = data)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.5206  -0.9692   0.4540   0.9087   2.5511  
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)   12.389      1.027   12.07   &lt;2e-16 ***
+## Lrenda        -1.208      0.101  -11.96   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 1101.02  on 799  degrees of freedom
+## Residual deviance:  900.73  on 798  degrees of freedom
+## AIC: 904.73
+## 
+## Number of Fisher Scoring iterations: 4</code></pre>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="teoria-setmana-5.html#cb251-1" aria-hidden="true" tabindex="-1"></a>re1 <span class="sc">%&gt;%</span> <span class="fu">coef</span>()</span></code></pre></div>
+<pre><code>## (Intercept)      Lrenda 
+##   12.388980   -1.208374</code></pre>
+<p><span class="math display">\[P(Y = 1) = p = \frac{1}{1 + e^{- (12.388980 - 1.208374 * Lrenda)}}\]</span></p>
+</div>
+<div id="interpretació-dels-paràmetres" class="section level3" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Interpretació dels paràmetres</h3>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="teoria-setmana-5.html#cb253-1" aria-hidden="true" tabindex="-1"></a>re1 <span class="sc">%&gt;%</span> <span class="fu">coef</span>() <span class="sc">%&gt;%</span> <span class="fu">exp</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## (Intercept)      Lrenda 
+## 240140.5549      0.2987</code></pre>
+<p><span class="math inline">\(\hat{L} = 12.388980 - 1.208374 * Lrenda\)</span></p>
+<p><span class="math inline">\(exp(-1.208374 )= 0.2987 \rightarrow 0.2987 - 1 = -0.7013 \rightarrow odds(p)\)</span></p>
+<p>Decreix un 70% en el canvi de x a X+1 (aproximadament duplicar ingressos ja que estan en escala log).</p>
+<p><span class="math inline">\((\exp(\beta) - 1)\times100\)</span> =% d’augment/decreixement dels odds</p>
+</div>
+<div id="lineal-versus-logística" class="section level3" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Lineal versus Logística</h3>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="teoria-setmana-5.html#cb255-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb255-2"><a href="teoria-setmana-5.html#cb255-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb255-3"><a href="teoria-setmana-5.html#cb255-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">P_lm_Vot  =</span> <span class="fl">2.8975953</span> <span class="sc">-</span> <span class="fl">0.2340296</span>  <span class="sc">*</span> Lrenda </span>
+<span id="cb255-4"><a href="teoria-setmana-5.html#cb255-4" aria-hidden="true" tabindex="-1"></a>  , <span class="at">P_glm_Vot =</span> <span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>(<span class="fl">12.388980</span> <span class="sc">-</span> <span class="fl">1.208374</span> <span class="sc">*</span> Lrenda  )))) <span class="sc">%&gt;%</span> </span>
+<span id="cb255-5"><a href="teoria-setmana-5.html#cb255-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Lrenda )</span>
+<span id="cb255-6"><a href="teoria-setmana-5.html#cb255-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb255-7"><a href="teoria-setmana-5.html#cb255-7" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(P_glm_Vot,P_lm_Vot) <span class="sc">%&gt;%</span> <span class="fu">summary</span>()</span></code></pre></div>
+<pre><code>##    P_glm_Vot          P_lm_Vot      
+##  Min.   :0.02833   Min.   :-0.1864  
+##  1st Qu.:0.36861   1st Qu.: 0.3939  
+##  Median :0.55061   Median : 0.5375  
+##  Mean   :0.55000   Mean   : 0.5500  
+##  3rd Qu.:0.75337   3rd Qu.: 0.7145  
+##  Max.   :0.97631   Max.   : 1.2184</code></pre>
+<p>Observem valors poc desitjables negatius i per sobre de 1 en la variable P_lm_Vot. Veiem gràficament</p>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="teoria-setmana-5.html#cb257-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb257-2"><a href="teoria-setmana-5.html#cb257-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(Lrenda, Vot))<span class="sc">+</span></span>
+<span id="cb257-3"><a href="teoria-setmana-5.html#cb257-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.15</span>, <span class="at">height =</span><span class="fl">0.05</span>)<span class="sc">+</span></span>
+<span id="cb257-4"><a href="teoria-setmana-5.html#cb257-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;lm&#39;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">formula =</span> y<span class="sc">~</span>x, <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;lm&quot;</span>))<span class="sc">+</span></span>
+<span id="cb257-5"><a href="teoria-setmana-5.html#cb257-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;loess&#39;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">formula =</span> y<span class="sc">~</span>x, <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;loess&quot;</span>))<span class="sc">+</span></span>
+<span id="cb257-6"><a href="teoria-setmana-5.html#cb257-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>P_glm_Vot,<span class="at">color =</span> <span class="st">&quot;glm-logit&quot;</span>))<span class="sc">+</span></span>
+<span id="cb257-7"><a href="teoria-setmana-5.html#cb257-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
+<p>Observa com la corba obtinguda per la regressió logística (glm-logit) captura millor la tendència observada a través de la regressió Loess. Addicionalment la regressió logística defineix una asímptota respecte el 0 i l’1 (s’acosta, però no arriba a creuar mai).</p>
+</div>
+<div id="regressió-logística-amb-covariants-lrenda-gènere" class="section level3" number="5.2.5">
+<h3><span class="header-section-number">5.2.5</span> Regressió logística amb covariants: Lrenda, gènere…</h3>
+<p>Ajustem un primer model.</p>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="teoria-setmana-5.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(stargazer))</span>
+<span id="cb258-2"><a href="teoria-setmana-5.html#cb258-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb258-3"><a href="teoria-setmana-5.html#cb258-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Lineal</span></span>
+<span id="cb258-4"><a href="teoria-setmana-5.html#cb258-4" aria-hidden="true" tabindex="-1"></a>re2<span class="ot">&lt;-</span><span class="fu">lm</span>(Vot <span class="sc">~</span> Lrenda <span class="sc">+</span> Genere, <span class="at">data=</span>data) </span>
+<span id="cb258-5"><a href="teoria-setmana-5.html#cb258-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb258-6"><a href="teoria-setmana-5.html#cb258-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Logística</span></span>
+<span id="cb258-7"><a href="teoria-setmana-5.html#cb258-7" aria-hidden="true" tabindex="-1"></a>re3<span class="ot">&lt;-</span><span class="fu">glm</span>(Vot <span class="sc">~</span> Lrenda <span class="sc">+</span> Genere, <span class="at">data=</span>data, <span class="at">family =</span> <span class="st">&quot;binomial&quot;</span>) </span>
+<span id="cb258-8"><a href="teoria-setmana-5.html#cb258-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb258-9"><a href="teoria-setmana-5.html#cb258-9" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(re0,re1,re2, <span class="at">type =</span> <span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ===============================================================================
+##                                         Dependent variable:                    
+##                     -----------------------------------------------------------
+##                                                 Vot                            
+##                               OLS            logistic            OLS           
+##                               (1)               (2)              (3)           
+## -------------------------------------------------------------------------------
+## Lrenda                     -0.234***         -1.208***        -0.182***        
+##                             (0.015)           (0.101)          (0.014)         
+##                                                                                
+## Genere                                                         0.460***        
+##                                                                (0.027)         
+##                                                                                
+## Constant                    2.898***         12.389***         2.139***        
+##                             (0.156)           (1.027)          (0.142)         
+##                                                                                
+## -------------------------------------------------------------------------------
+## Observations                  800               800              800           
+## R2                           0.222                              0.425          
+## Adjusted R2                  0.221                              0.423          
+## Log Likelihood                               -450.366                          
+## Akaike Inf. Crit.                             904.732                          
+## Residual Std. Error     0.439 (df = 798)                   0.378 (df = 797)    
+## F Statistic         228.283*** (df = 1; 798)           294.136*** (df = 2; 797)
+## ===============================================================================
+## Note:                                               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+<p>Els coeficients de la part lineal de la regressió logística.</p>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="teoria-setmana-5.html#cb260-1" aria-hidden="true" tabindex="-1"></a>re3 <span class="sc">%&gt;%</span> <span class="fu">coef</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## (Intercept)      Lrenda      Genere 
+##       12.30       -1.32        2.61</code></pre>
+<p>Interpretem els coeficients en termes de odds.</p>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="teoria-setmana-5.html#cb262-1" aria-hidden="true" tabindex="-1"></a>re3 <span class="sc">%&gt;%</span> <span class="fu">coef</span>() <span class="sc">%&gt;%</span> <span class="fu">exp</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">4</span>) <span class="sc">-</span> <span class="dv">1</span></span></code></pre></div>
+<pre><code>## (Intercept)      Lrenda      Genere 
+## 218904.9754     -0.7339     12.6663</code></pre>
+<ul>
+<li>La renta, a igualtat de gènere, ha incrementat en termes absoluts el seu efecte en una disminució de 73% sobre els odds de la intenció de Vot al duplicar els ingressos</li>
+<li>Per altra banda, els homes tenen un 12% d’increment en els odds de la intenció de Vot que les dones, a igualtat d’ingressos.</li>
+</ul>
+</div>
+<div id="regressió-logística-amb-covariants-gràfic-defectes-condicionats" class="section level3" number="5.2.6">
+<h3><span class="header-section-number">5.2.6</span> Regressió logística amb covariants: gràfic d’efectes condicionats</h3>
+<p>La funció visreg() ens resol la visualització del efecte de cada factor condicionat als valors fixes de la resta de variables (utilitza la mediana en numèriques o la moda en factors).</p>
+<p>En aquest cas veiem l’efecte de la renta sobre la intenció de vot, condicionat al gènere.</p>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="teoria-setmana-5.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visreg)</span>
+<span id="cb264-2"><a href="teoria-setmana-5.html#cb264-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb264-3"><a href="teoria-setmana-5.html#cb264-3" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(re3, <span class="st">&quot;Lrenda&quot;</span>, </span>
+<span id="cb264-4"><a href="teoria-setmana-5.html#cb264-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">by =</span> <span class="st">&quot;Genere&quot;</span>,</span>
+<span id="cb264-5"><a href="teoria-setmana-5.html#cb264-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">band =</span> <span class="cn">TRUE</span>,    <span class="co"># viualitzem bandes</span></span>
+<span id="cb264-6"><a href="teoria-setmana-5.html#cb264-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">gg =</span> <span class="cn">TRUE</span>,      <span class="co"># usem ggplot2</span></span>
+<span id="cb264-7"><a href="teoria-setmana-5.html#cb264-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">overlay=</span><span class="cn">TRUE</span>,   <span class="co"># un mateix grafic</span></span>
+<span id="cb264-8"><a href="teoria-setmana-5.html#cb264-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">scale=</span><span class="st">&quot;response&quot;</span>) <span class="sc">+</span></span>
+<span id="cb264-9"><a href="teoria-setmana-5.html#cb264-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Prob(Vot)&quot;</span>, </span>
+<span id="cb264-10"><a href="teoria-setmana-5.html#cb264-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Lrenda&quot;</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
+<p>Observem com els homes tenen una corba clarament per sobre. També, la variació de la intenció de vot es fa més pronunciada (mes pendent) en les dones en trams de rentes baixes que en homes (efecte no lineal).</p>
+<p>També podem retornar la variable de Renta a escala normal (Euros) transformant amb la exponencial.</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="teoria-setmana-5.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(re2, <span class="st">&quot;Lrenda&quot;</span>, </span>
+<span id="cb265-2"><a href="teoria-setmana-5.html#cb265-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">by =</span> <span class="st">&quot;Genere&quot;</span>,</span>
+<span id="cb265-3"><a href="teoria-setmana-5.html#cb265-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">xtrans =</span> exp,</span>
+<span id="cb265-4"><a href="teoria-setmana-5.html#cb265-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">band =</span> <span class="cn">TRUE</span>,    <span class="co"># viualitzem bandes</span></span>
+<span id="cb265-5"><a href="teoria-setmana-5.html#cb265-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">gg =</span> <span class="cn">TRUE</span>,      <span class="co"># usem ggplot2</span></span>
+<span id="cb265-6"><a href="teoria-setmana-5.html#cb265-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">overlay=</span><span class="cn">TRUE</span>,   <span class="co"># un mateix grafic</span></span>
+<span id="cb265-7"><a href="teoria-setmana-5.html#cb265-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">scale=</span><span class="st">&quot;response&quot;</span>) <span class="sc">+</span></span>
+<span id="cb265-8"><a href="teoria-setmana-5.html#cb265-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Prob(Vot)&quot;</span>, </span>
+<span id="cb265-9"><a href="teoria-setmana-5.html#cb265-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Lrenda&quot;</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
+<p>El canvi d’escala accentua la interpretació anterior, es a dir, major variació en trams de rentes baixes en dones que en homes.</p>
+<p>Pots profunditzar en el paràmetres de visreg a l’ajuda:</p>
+<pre><code>?visreg        # paràmetres dels càlculs.
+?plot.visreg   # paràmetres del gràfic.</code></pre>
+</div>
+</div>
+<div id="exemple-de-vtown-data" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Exemple de Vtown data</h2>
+<p>La contaminació per residus tòxics en el terreny de dos escoles públiques. Algunes persones pensaven que l’escola hauria d’estar tancada fins que el terreny fos declarat segur. Altres persones argumentaven que els costos no justificaven el risc i volien que es mantingués oberta l’escola afectada.</p>
+<ul>
+<li><p>SCHOOL: Resposta si volien que l’escola estigués tancada (CLOSE) o oberta (OPEN).</p></li>
+<li><p>GENDER: Gènere de l’enquestat.</p></li>
+<li><p>LIVED: Anys de residencia al municipi.</p></li>
+<li><p>KIDS: L’enquestat té nens, o no.</p></li>
+<li><p>EDUC: Anys d’estudis de l’enquestat.</p></li>
+<li><p>MEETINGS: L’enquestat ha anat als mítings sobre crisis provocada per la contaminació.</p></li>
+<li><p>CONTAM: L’enquestat creu que la seva propietat ha estat contaminada (o no).</p></li>
+<li><p>Motivació: llegir la noticia <a href="http://sociedad.elpais.com/sociedad/2013/02/05/actualidad/1360097440_151199.html">Exposició a contaminació de la mare i deficiència en pes (LBW) dels nadons</a></p></li>
+</ul>
+<p>Les dades.</p>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="teoria-setmana-5.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign) </span>
+<span id="cb267-2"><a href="teoria-setmana-5.html#cb267-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb267-3"><a href="teoria-setmana-5.html#cb267-3" aria-hidden="true" tabindex="-1"></a>da <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">read.spss</span>(<span class="st">&quot;http://84.89.132.1/~satorra/dades/VtTown.sav&quot;</span>, <span class="at">to.data.frame =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb267-4"><a href="teoria-setmana-5.html#cb267-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb267-5"><a href="teoria-setmana-5.html#cb267-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(da)</span></code></pre></div>
+<pre><code>##   ID GENDER LIVED KIDS EDUC MEETINGS CONTAM SCHOOL
+## 1  1   MALE    35  YES   12      YES    YES  CLOSE
+## 2  2   MALE     5  YES   14      YES     NO  CLOSE
+## 3  3   MALE    21   NO   12      YES    YES  CLOSE
+## 4  4   MALE     6   NO   16       NO     NO   OPEN
+## 5  5   MALE    12  YES   18       NO     NO   OPEN
+## 6  6   MALE    12  YES   16       NO     NO   OPEN</code></pre>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="teoria-setmana-5.html#cb269-1" aria-hidden="true" tabindex="-1"></a>da <span class="sc">%&gt;%</span> <span class="fu">count</span>(SCHOOL)</span></code></pre></div>
+<pre><code>##   SCHOOL  n
+## 1   OPEN 87
+## 2  CLOSE 66</code></pre>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="teoria-setmana-5.html#cb271-1" aria-hidden="true" tabindex="-1"></a>da <span class="ot">&lt;-</span> da <span class="sc">%&gt;%</span> </span>
+<span id="cb271-2"><a href="teoria-setmana-5.html#cb271-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Y =</span> <span class="fu">as.numeric</span>(SCHOOL) <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb271-3"><a href="teoria-setmana-5.html#cb271-3" aria-hidden="true" tabindex="-1"></a>da <span class="sc">%&gt;%</span> <span class="fu">count</span>(Y)</span></code></pre></div>
+<pre><code>##   Y  n
+## 1 0 87
+## 2 1 66</code></pre>
+<p>L’objectiu és analitzar la propensió de la intenció de tancar l’escola fins que no es confirmi que està des contaminada.</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="teoria-setmana-5.html#cb273-1" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">&lt;-</span>  <span class="fu">glm</span>(Y <span class="sc">~</span> LIVED <span class="sc">+</span> MEETINGS, binomial, <span class="at">data=</span>da )</span>
+<span id="cb273-2"><a href="teoria-setmana-5.html#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Y ~ LIVED + MEETINGS, family = binomial, data = da)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.0559  -0.8567  -0.5140   0.6189   2.3832  
+## 
+## Coefficients:
+##             Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept) -0.34850    0.31816  -1.095  0.27336    
+## LIVED       -0.03575    0.01355  -2.638  0.00833 ** 
+## MEETINGSYES  2.36882    0.44298   5.347 8.92e-08 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 209.21  on 152  degrees of freedom
+## Residual deviance: 160.27  on 150  degrees of freedom
+## AIC: 166.27
+## 
+## Number of Fisher Scoring iterations: 4</code></pre>
+<p>Gràficament,</p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="teoria-setmana-5.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(reg1, <span class="st">&quot;LIVED&quot;</span>, </span>
+<span id="cb275-2"><a href="teoria-setmana-5.html#cb275-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">by =</span> <span class="st">&quot;MEETINGS&quot;</span>,</span>
+<span id="cb275-3"><a href="teoria-setmana-5.html#cb275-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">band =</span> <span class="cn">TRUE</span>,    <span class="co"># viualitzem bandes</span></span>
+<span id="cb275-4"><a href="teoria-setmana-5.html#cb275-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">gg =</span> <span class="cn">TRUE</span>,      <span class="co"># usem ggplot2</span></span>
+<span id="cb275-5"><a href="teoria-setmana-5.html#cb275-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">overlay=</span><span class="cn">TRUE</span>,   <span class="co"># un mateix grafic</span></span>
+<span id="cb275-6"><a href="teoria-setmana-5.html#cb275-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">scale=</span><span class="st">&quot;response&quot;</span>) <span class="sc">+</span></span>
+<span id="cb275-7"><a href="teoria-setmana-5.html#cb275-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Prob(Close)&quot;</span>, </span>
+<span id="cb275-8"><a href="teoria-setmana-5.html#cb275-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;LIVED&quot;</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
+<p>Definim un model complert amb un factor de interacció de GENDER y KIDS.</p>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="teoria-setmana-5.html#cb276-1" aria-hidden="true" tabindex="-1"></a>da <span class="ot">&lt;-</span> da <span class="sc">%&gt;%</span> </span>
+<span id="cb276-2"><a href="teoria-setmana-5.html#cb276-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">MALE =</span>  <span class="fl">1.0</span><span class="sc">*</span>(GENDER<span class="sc">==</span><span class="st">&quot;MALE&quot;</span>))</span>
+<span id="cb276-3"><a href="teoria-setmana-5.html#cb276-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb276-4"><a href="teoria-setmana-5.html#cb276-4" aria-hidden="true" tabindex="-1"></a>lreg2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> LIVED <span class="sc">+</span> EDUC<span class="sc">+</span> CONTAM<span class="sc">+</span>MEETINGS<span class="sc">+</span>MALE<span class="sc">+</span>KIDS<span class="sc">+</span> KIDS<span class="sc">*</span>MALE ,<span class="at">family=</span>binomial, <span class="at">data=</span> da) </span>
+<span id="cb276-5"><a href="teoria-setmana-5.html#cb276-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb276-6"><a href="teoria-setmana-5.html#cb276-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lreg2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Y ~ LIVED + EDUC + CONTAM + MEETINGS + MALE + KIDS + 
+##     KIDS * MALE, family = binomial, data = da)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.6027  -0.7557  -0.3091   0.6316   2.3920  
+## 
+## Coefficients:
+##              Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)   2.84216    1.44277   1.970  0.04885 *  
+## LIVED        -0.04664    0.01698  -2.748  0.00600 ** 
+## EDUC         -0.20602    0.09320  -2.211  0.02706 *  
+## CONTAMYES     1.28208    0.48137   2.663  0.00774 ** 
+## MEETINGSYES   2.41800    0.50966   4.744 2.09e-06 ***
+## MALE         -2.17443    0.81906  -2.655  0.00794 ** 
+## KIDSYES      -0.67062    0.56561  -1.186  0.23576    
+## MALE:KIDSYES  2.22599    0.99911   2.228  0.02588 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 209.21  on 152  degrees of freedom
+## Residual deviance: 141.05  on 145  degrees of freedom
+## AIC: 157.05
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="teoria-setmana-5.html#cb278-1" aria-hidden="true" tabindex="-1"></a>da <span class="ot">&lt;-</span> da <span class="sc">%&gt;%</span> </span>
+<span id="cb278-2"><a href="teoria-setmana-5.html#cb278-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">INTER =</span>  (<span class="fl">1.0</span><span class="sc">*</span>(KIDS<span class="sc">==</span><span class="st">&quot;NO&quot;</span>))<span class="sc">*</span>MALE)</span>
+<span id="cb278-3"><a href="teoria-setmana-5.html#cb278-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb278-4"><a href="teoria-setmana-5.html#cb278-4" aria-hidden="true" tabindex="-1"></a>lreg3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Y <span class="sc">~</span> LIVED <span class="sc">+</span> EDUC <span class="sc">+</span> CONTAM <span class="sc">+</span> MEETINGS<span class="sc">+</span> INTER ,<span class="at">family=</span>binomial, <span class="at">data=</span> da)</span>
+<span id="cb278-5"><a href="teoria-setmana-5.html#cb278-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb278-6"><a href="teoria-setmana-5.html#cb278-6" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(lreg2, lreg3, <span class="at">type=</span><span class="st">&quot;text&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## ==============================================
+##                       Dependent variable:     
+##                   ----------------------------
+##                                Y              
+##                        (1)            (2)     
+## ----------------------------------------------
+## LIVED               -0.047***      -0.040**   
+##                      (0.017)        (0.015)   
+##                                               
+## EDUC                 -0.206**      -0.197**   
+##                      (0.093)        (0.093)   
+##                                               
+## CONTAMYES            1.282***      1.299***   
+##                      (0.481)        (0.477)   
+##                                               
+## MEETINGSYES          2.418***      2.279***   
+##                      (0.510)        (0.490)   
+##                                               
+## MALE                -2.174***                 
+##                      (0.819)                  
+##                                               
+## KIDSYES               -0.671                  
+##                      (0.566)                  
+##                                               
+## MALE:KIDSYES         2.226**                  
+##                      (0.999)                  
+##                                               
+## INTER                              -1.731**   
+##                                     (0.725)   
+##                                               
+## Constant             2.842**         2.182    
+##                      (1.443)        (1.330)   
+##                                               
+## ----------------------------------------------
+## Observations           153            153     
+## Log Likelihood       -70.525        -71.326   
+## Akaike Inf. Crit.    157.049        154.652   
+## ==============================================
+## Note:              *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+<p>Comparem l’ajust dels dos models.</p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="teoria-setmana-5.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>( lreg3, lreg2, <span class="at">test =</span> <span class="st">&quot;Chisq&quot;</span>)</span></code></pre></div>
+<pre><code>## Analysis of Deviance Table
+## 
+## Model 1: Y ~ LIVED + EDUC + CONTAM + MEETINGS + INTER
+## Model 2: Y ~ LIVED + EDUC + CONTAM + MEETINGS + MALE + KIDS + KIDS * MALE
+##   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)
+## 1       147     142.65                     
+## 2       145     141.05  2   1.6031   0.4486</code></pre>
+<p>Analitzem el canvi d’efecte dels anys de residencia condicionat a tenir (o no) nens, dins del grup d’homes.</p>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="teoria-setmana-5.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(lreg2, <span class="st">&quot;LIVED&quot;</span>, </span>
+<span id="cb282-2"><a href="teoria-setmana-5.html#cb282-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">by =</span> <span class="st">&quot;KIDS&quot;</span>,</span>
+<span id="cb282-3"><a href="teoria-setmana-5.html#cb282-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">cond=</span><span class="fu">list</span>(<span class="at">MALE=</span><span class="dv">1</span>),  <span class="co"># condicionem a ser home</span></span>
+<span id="cb282-4"><a href="teoria-setmana-5.html#cb282-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">band =</span> <span class="cn">TRUE</span>,    <span class="co"># viualitzem bandes</span></span>
+<span id="cb282-5"><a href="teoria-setmana-5.html#cb282-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">gg =</span> <span class="cn">TRUE</span>,      <span class="co"># usem ggplot2</span></span>
+<span id="cb282-6"><a href="teoria-setmana-5.html#cb282-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">overlay=</span><span class="cn">TRUE</span>,   <span class="co"># un mateix grafic</span></span>
+<span id="cb282-7"><a href="teoria-setmana-5.html#cb282-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">scale=</span><span class="st">&quot;response&quot;</span>) <span class="sc">+</span></span>
+<span id="cb282-8"><a href="teoria-setmana-5.html#cb282-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Prob(Close)&quot;</span>, </span>
+<span id="cb282-9"><a href="teoria-setmana-5.html#cb282-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;LIVED&quot;</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
+<div id="anàlisis-bivariant-preliminar" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Anàlisis bivariant preliminar</h3>
+<p>Fem un pas enrere. Com en el cas de la regressió lineal, abans de modelitzar, es interesant fer un breu anàlisis bivariant de les variables que es volen introduir en el model.</p>
+<p>Veiem un exemple a partir dels quantils de la variable LIVED .</p>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="teoria-setmana-5.html#cb283-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">quantile</span>(da<span class="sc">$</span>LIVED, <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.2</span>))</span></code></pre></div>
+<pre><code>##   0%  20%  40%  60%  80% 100% 
+##  1.0  5.0 10.0 20.0 31.6 81.0</code></pre>
+<p>A partir del quantils de la variable podem definir una partició de la variable lived.</p>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="teoria-setmana-5.html#cb285-1" aria-hidden="true" tabindex="-1"></a>da <span class="ot">&lt;-</span> da <span class="sc">%&gt;%</span> </span>
+<span id="cb285-2"><a href="teoria-setmana-5.html#cb285-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">LIVED_T =</span> <span class="fu">cut</span>(LIVED, <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="dv">5</span>,<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">32</span>,<span class="cn">Inf</span>)))</span>
+<span id="cb285-3"><a href="teoria-setmana-5.html#cb285-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb285-4"><a href="teoria-setmana-5.html#cb285-4" aria-hidden="true" tabindex="-1"></a>da <span class="sc">%&gt;%</span> <span class="fu">count</span>(LIVED_T)</span></code></pre></div>
+<pre><code>##     LIVED_T  n
+## 1  (-Inf,5] 40
+## 2    (5,10] 23
+## 3   (10,20] 33
+## 4   (20,32] 27
+## 5 (32, Inf] 30</code></pre>
+<p>Mirem-ho ara amb les freqüències relatives de cada fila.</p>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="teoria-setmana-5.html#cb287-1" aria-hidden="true" tabindex="-1"></a>da <span class="sc">%&gt;%</span> </span>
+<span id="cb287-2"><a href="teoria-setmana-5.html#cb287-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(LIVED_T) <span class="sc">%&gt;%</span> </span>
+<span id="cb287-3"><a href="teoria-setmana-5.html#cb287-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">freq_absolutes =</span> <span class="fu">n</span>()</span>
+<span id="cb287-4"><a href="teoria-setmana-5.html#cb287-4" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">propensio =</span> <span class="fu">mean</span>(Y))</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 3
+##   LIVED_T   freq_absolutes propensio
+##   &lt;fct&gt;              &lt;int&gt;     &lt;dbl&gt;
+## 1 (-Inf,5]              40     0.6  
+## 2 (5,10]                23     0.522
+## 3 (10,20]               33     0.394
+## 4 (20,32]               27     0.481
+## 5 (32, Inf]             30     0.133</code></pre>
+<p>Incorporem els intervals de confiança.</p>
+<p>Recorda que la desviació típica de una variable bernoulli(p) on p es la probabilitat de estar Indecís, val:</p>
+<p><span class="math display">\[ stdDesv(Y ) = \sqrt{p*q} \]</span></p>
+<p>on q = 1- p.</p>
+<p>Per altra banda, l’error estàndard es calcula com:</p>
+<p><span class="math display">\[ errStd(Y ) = \sqrt{p*q / n} \]</span></p>
+<p>on n es el nombre observacions.</p>
+<p>D’aquesta forma, l’interval de confiança (95%) es defineix com.</p>
+<p><span class="math display">\[\left[p - 1.96*\sqrt{p*q / n}, p + 1.96*\sqrt{p*q / n}\right]\]</span></p>
+<p>Ara en R.</p>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="teoria-setmana-5.html#cb289-1" aria-hidden="true" tabindex="-1"></a>errStd_bin <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { <span class="fu">sqrt</span>(<span class="fu">mean</span>(x)<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">mean</span>(x)) <span class="sc">/</span> <span class="fu">length</span>(x))}</span>
+<span id="cb289-2"><a href="teoria-setmana-5.html#cb289-2" aria-hidden="true" tabindex="-1"></a>minInt_bin <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { <span class="fu">mean</span>(x) <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span><span class="fu">errStd_bin</span>(x) }</span>
+<span id="cb289-3"><a href="teoria-setmana-5.html#cb289-3" aria-hidden="true" tabindex="-1"></a>maxInt_bin <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { <span class="fu">mean</span>(x) <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span><span class="fu">errStd_bin</span>(x) }</span>
+<span id="cb289-4"><a href="teoria-setmana-5.html#cb289-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-5"><a href="teoria-setmana-5.html#cb289-5" aria-hidden="true" tabindex="-1"></a>RESUM <span class="ot">&lt;-</span> da <span class="sc">%&gt;%</span> </span>
+<span id="cb289-6"><a href="teoria-setmana-5.html#cb289-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(LIVED_T) <span class="sc">%&gt;%</span> </span>
+<span id="cb289-7"><a href="teoria-setmana-5.html#cb289-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">freq_absolutes =</span> <span class="fu">n</span>()</span>
+<span id="cb289-8"><a href="teoria-setmana-5.html#cb289-8" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">I_minim =</span> <span class="fu">minInt_bin</span>(Y )</span>
+<span id="cb289-9"><a href="teoria-setmana-5.html#cb289-9" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">propensio =</span> <span class="fu">mean</span>(Y )</span>
+<span id="cb289-10"><a href="teoria-setmana-5.html#cb289-10" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">I_maxim =</span> <span class="fu">maxInt_bin</span>(Y )) <span class="sc">%&gt;%</span> </span>
+<span id="cb289-11"><a href="teoria-setmana-5.html#cb289-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq_relatives =</span> freq_absolutes <span class="sc">/</span> <span class="fu">sum</span>(freq_absolutes))</span>
+<span id="cb289-12"><a href="teoria-setmana-5.html#cb289-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb289-13"><a href="teoria-setmana-5.html#cb289-13" aria-hidden="true" tabindex="-1"></a>RESUM</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 6
+##   LIVED_T   freq_absolutes I_minim propensio I_maxim freq_relatives
+##   &lt;fct&gt;              &lt;int&gt;   &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;          &lt;dbl&gt;
+## 1 (-Inf,5]              40  0.448      0.6     0.752          0.261
+## 2 (5,10]                23  0.318      0.522   0.726          0.150
+## 3 (10,20]               33  0.227      0.394   0.561          0.216
+## 4 (20,32]               27  0.293      0.481   0.670          0.176
+## 5 (32, Inf]             30  0.0117     0.133   0.255          0.196</code></pre>
+<p>Gràficament,</p>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="teoria-setmana-5.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(cowplot))</span>
+<span id="cb291-2"><a href="teoria-setmana-5.html#cb291-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb291-3"><a href="teoria-setmana-5.html#cb291-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb291-4"><a href="teoria-setmana-5.html#cb291-4" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> RESUM <span class="sc">%&gt;%</span> </span>
+<span id="cb291-5"><a href="teoria-setmana-5.html#cb291-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(LIVED_T, freq_relatives)) <span class="sc">+</span></span>
+<span id="cb291-6"><a href="teoria-setmana-5.html#cb291-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
+<span id="cb291-7"><a href="teoria-setmana-5.html#cb291-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> freq_absolutes), <span class="at">vjust=</span><span class="fl">1.6</span>, <span class="at">color=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb291-8"><a href="teoria-setmana-5.html#cb291-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent)<span class="sc">+</span></span>
+<span id="cb291-9"><a href="teoria-setmana-5.html#cb291-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb291-10"><a href="teoria-setmana-5.html#cb291-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb291-11"><a href="teoria-setmana-5.html#cb291-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Freqüencies&quot;</span>)</span>
+<span id="cb291-12"><a href="teoria-setmana-5.html#cb291-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb291-13"><a href="teoria-setmana-5.html#cb291-13" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> RESUM <span class="sc">%&gt;%</span> </span>
+<span id="cb291-14"><a href="teoria-setmana-5.html#cb291-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(LIVED_T, propensio)) <span class="sc">+</span></span>
+<span id="cb291-15"><a href="teoria-setmana-5.html#cb291-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb291-16"><a href="teoria-setmana-5.html#cb291-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span>I_minim, <span class="at">ymax =</span> I_maxim, <span class="at">width =</span> .<span class="dv">2</span>))<span class="sc">+</span></span>
+<span id="cb291-17"><a href="teoria-setmana-5.html#cb291-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent)<span class="sc">+</span></span>
+<span id="cb291-18"><a href="teoria-setmana-5.html#cb291-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb291-19"><a href="teoria-setmana-5.html#cb291-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb291-20"><a href="teoria-setmana-5.html#cb291-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Intervals confiança Indecisió&quot;</span>)</span>
+<span id="cb291-21"><a href="teoria-setmana-5.html#cb291-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb291-22"><a href="teoria-setmana-5.html#cb291-22" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-144-1.png" width="864" /></p>
+<p>Mateix anàlisi, sobre la variable MEETINGS :</p>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="teoria-setmana-5.html#cb292-1" aria-hidden="true" tabindex="-1"></a>RESUM <span class="ot">&lt;-</span> da <span class="sc">%&gt;%</span> </span>
+<span id="cb292-2"><a href="teoria-setmana-5.html#cb292-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(MEETINGS ) <span class="sc">%&gt;%</span> </span>
+<span id="cb292-3"><a href="teoria-setmana-5.html#cb292-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">freq_absolutes =</span> <span class="fu">n</span>()</span>
+<span id="cb292-4"><a href="teoria-setmana-5.html#cb292-4" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">I_minim =</span> <span class="fu">minInt_bin</span>(Y )</span>
+<span id="cb292-5"><a href="teoria-setmana-5.html#cb292-5" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">propensio =</span> <span class="fu">mean</span>(Y )</span>
+<span id="cb292-6"><a href="teoria-setmana-5.html#cb292-6" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">I_maxim =</span> <span class="fu">maxInt_bin</span>(Y )) <span class="sc">%&gt;%</span> </span>
+<span id="cb292-7"><a href="teoria-setmana-5.html#cb292-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq_relatives =</span> freq_absolutes <span class="sc">/</span> <span class="fu">sum</span>(freq_absolutes))</span>
+<span id="cb292-8"><a href="teoria-setmana-5.html#cb292-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-9"><a href="teoria-setmana-5.html#cb292-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-10"><a href="teoria-setmana-5.html#cb292-10" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> RESUM <span class="sc">%&gt;%</span> </span>
+<span id="cb292-11"><a href="teoria-setmana-5.html#cb292-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(MEETINGS , freq_relatives)) <span class="sc">+</span></span>
+<span id="cb292-12"><a href="teoria-setmana-5.html#cb292-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>)<span class="sc">+</span></span>
+<span id="cb292-13"><a href="teoria-setmana-5.html#cb292-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> freq_absolutes), <span class="at">vjust=</span><span class="fl">1.6</span>, <span class="at">color=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb292-14"><a href="teoria-setmana-5.html#cb292-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent)<span class="sc">+</span></span>
+<span id="cb292-15"><a href="teoria-setmana-5.html#cb292-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb292-16"><a href="teoria-setmana-5.html#cb292-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb292-17"><a href="teoria-setmana-5.html#cb292-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Freqüencies&quot;</span>)</span>
+<span id="cb292-18"><a href="teoria-setmana-5.html#cb292-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-19"><a href="teoria-setmana-5.html#cb292-19" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> RESUM <span class="sc">%&gt;%</span> </span>
+<span id="cb292-20"><a href="teoria-setmana-5.html#cb292-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(MEETINGS , propensio)) <span class="sc">+</span></span>
+<span id="cb292-21"><a href="teoria-setmana-5.html#cb292-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb292-22"><a href="teoria-setmana-5.html#cb292-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span>I_minim, <span class="at">ymax =</span> I_maxim, <span class="at">width =</span> .<span class="dv">2</span>))<span class="sc">+</span></span>
+<span id="cb292-23"><a href="teoria-setmana-5.html#cb292-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent)<span class="sc">+</span></span>
+<span id="cb292-24"><a href="teoria-setmana-5.html#cb292-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb292-25"><a href="teoria-setmana-5.html#cb292-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb292-26"><a href="teoria-setmana-5.html#cb292-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Intervals confiança Indecisió&quot;</span>)</span>
+<span id="cb292-27"><a href="teoria-setmana-5.html#cb292-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb292-28"><a href="teoria-setmana-5.html#cb292-28" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-145-1.png" width="864" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="teoria-setmana-4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="teoria-setmana-6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/griu/meacp_2021/edit/master/01050-class_journal_w5.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["meacp_2021.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
