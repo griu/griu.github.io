@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítol 8 Teoria Setmana 8 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022</title>
+  <meta name="description" content="Diari de les classes del Curs 2021-2022 de mètodes estadístics aplicats a ciències polítiques." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítol 8 Teoria Setmana 8 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Diari de les classes del Curs 2021-2022 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítol 8 Teoria Setmana 8 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022" />
+  
+  <meta name="twitter:description" content="Diari de les classes del Curs 2021-2022 de mètodes estadístics aplicats a ciències polítiques." />
+  
+
+<meta name="author" content="Ferran Carrascosa Mallafrè" />
+
+
+<meta name="date" content="2022-01-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="teoria-setmana-7.html"/>
+<link rel="next" href="seminaris-setmana-1.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<script>
+% https://stackoverflow.com/a/4425214/8242291
+var links = document.links;
+
+for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+
+    if (links[i].hostname != window.location.hostname) {
+        links[i].target = '_blank';
+    }
+
+}
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #2a211c;
+    color: #bdae9d;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+div.sourceCode
+  { color: #bdae9d; background-color: #2a211c; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffff00; } /* Alert */
+code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #44aa43; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #049b0a; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.dv { color: #44aa43; } /* DecVal */
+code span.er { color: #ffff00; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #44aa43; } /* Float */
+code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+code span.op { } /* Operator */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.sc { color: #049b0a; } /* SpecialChar */
+code span.ss { color: #049b0a; } /* SpecialString */
+code span.st { color: #049b0a; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #049b0a; } /* VerbatimString */
+code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><b><a href="./index.html"><img style="float: left; margin-right: 5px;" src="www/images/01_general/logo.png" width="40" height="40"></img>Diari Classes MEA (21703) 2020-2021</a></b></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a></li>
+<li class="part"><span><b>I Diari classe Teoria</b></span></li>
+<li class="chapter" data-level="1" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html"><i class="fa fa-check"></i><b>1</b> Teoria Setmana 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#avaluació"><i class="fa fa-check"></i><b>1.1</b> Avaluació</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#el-treball"><i class="fa fa-check"></i><b>1.1.1</b> El treball</a></li>
+<li class="chapter" data-level="1.1.2" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#exàmens"><i class="fa fa-check"></i><b>1.1.2</b> Exàmens</a></li>
+<li class="chapter" data-level="1.1.3" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#participació"><i class="fa fa-check"></i><b>1.1.3</b> Participació</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#bibliografia"><i class="fa fa-check"></i><b>1.2</b> Bibliografia</a></li>
+<li class="chapter" data-level="1.3" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#introducció-conceptes-estadística"><i class="fa fa-check"></i><b>1.3</b> Introducció conceptes Estadística</a></li>
+<li class="chapter" data-level="1.4" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#gender-gap-at-birth"><i class="fa fa-check"></i><b>1.4</b> Gender gap, at birth</a></li>
+<li class="chapter" data-level="1.5" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#with-arbuthnotts-data-collected-on-years-1629-to-1710"><i class="fa fa-check"></i><b>1.5</b> With Arbuthnott’s data, collected on years 1629 to 1710</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#now-with-recent-usas-data-present-day-birth-records-in-the-united-states"><i class="fa fa-check"></i><b>1.5.1</b> Now with recent USA’s data, present day birth records in the United States</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#distribució-duna-variable-distribució-normal-altres-distribucions"><i class="fa fa-check"></i><b>1.6</b> Distribució d’una variable, distribució normal, altres distribucions</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#valor-estandarditzat-duna-variable"><i class="fa fa-check"></i><b>1.6.1</b> Valor estandarditzat d’una variable</a></li>
+<li class="chapter" data-level="1.6.2" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#distribució-normal"><i class="fa fa-check"></i><b>1.6.2</b> Distribució Normal</a></li>
+<li class="chapter" data-level="1.6.3" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#exemple-amb-la-variable-diners-en-butxaca-estudiants-de-mq-iii"><i class="fa fa-check"></i><b>1.6.3</b> Exemple amb la variable diners en butxaca (estudiants de MQ III)</a></li>
+<li class="chapter" data-level="1.6.4" data-path="teoria-setmana-1.html"><a href="teoria-setmana-1.html#altres-distribucions-univariants"><i class="fa fa-check"></i><b>1.6.4</b> Altres distribucions univariants</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html"><i class="fa fa-check"></i><b>2</b> Teoria Setmana 2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#data-wrangling"><i class="fa fa-check"></i><b>2.1</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#els-data-frames"><i class="fa fa-check"></i><b>2.1.1</b> Els data frames</a></li>
+<li class="chapter" data-level="2.1.2" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#importació-de-dades"><i class="fa fa-check"></i><b>2.1.2</b> Importació de dades</a></li>
+<li class="chapter" data-level="2.1.3" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#dades-ordenades"><i class="fa fa-check"></i><b>2.1.3</b> Dades ordenades</a></li>
+<li class="chapter" data-level="2.1.4" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#transformació"><i class="fa fa-check"></i><b>2.1.4</b> Transformació</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#visualización"><i class="fa fa-check"></i><b>2.2</b> Visualización</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#estructura-básica"><i class="fa fa-check"></i><b>2.2.1</b> Estructura básica</a></li>
+<li class="chapter" data-level="2.2.2" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#otros-geoms"><i class="fa fa-check"></i><b>2.2.2</b> Otros geoms</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#modelar-regressió-simple"><i class="fa fa-check"></i><b>2.3</b> Modelar: Regressió simple</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#regressió-simple"><i class="fa fa-check"></i><b>2.3.1</b> Regressió simple</a></li>
+<li class="chapter" data-level="2.3.2" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#regressió-lineal-simple"><i class="fa fa-check"></i><b>2.3.2</b> Regressió lineal simple</a></li>
+<li class="chapter" data-level="2.3.3" data-path="teoria-setmana-2.html"><a href="teoria-setmana-2.html#regressió-lineal-múltiple"><i class="fa fa-check"></i><b>2.3.3</b> Regressió lineal múltiple</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html"><i class="fa fa-check"></i><b>3</b> Teoria Setmana 3</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#repas-dia-anterior"><i class="fa fa-check"></i><b>3.1</b> Repas dia anterior</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#regressió-simple-1"><i class="fa fa-check"></i><b>3.1.1</b> Regressió simple</a></li>
+<li class="chapter" data-level="3.1.2" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#regressió-lineal-simple-1"><i class="fa fa-check"></i><b>3.1.2</b> Regressió lineal simple</a></li>
+<li class="chapter" data-level="3.1.3" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#regressió-lineal-múltiple-1"><i class="fa fa-check"></i><b>3.1.3</b> Regressió lineal múltiple</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#interpretació-del-model"><i class="fa fa-check"></i><b>3.2</b> Interpretació del model</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#gráficament"><i class="fa fa-check"></i><b>3.2.1</b> Gráficament</a></li>
+<li class="chapter" data-level="3.2.2" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#gràfics-de-regressio-parcial"><i class="fa fa-check"></i><b>3.2.2</b> Gràfics de regressio parcial</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#variance-inflation-factor-vif"><i class="fa fa-check"></i><b>3.3</b> Variance Inflation Factor (VIF)</a></li>
+<li class="chapter" data-level="3.4" data-path="teoria-setmana-3.html"><a href="teoria-setmana-3.html#dades-del-bank"><i class="fa fa-check"></i><b>3.4</b> Dades del Bank</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html"><i class="fa fa-check"></i><b>4</b> Teoria Setmana 4</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#packages"><i class="fa fa-check"></i><b>4.1</b> Packages</a></li>
+<li class="chapter" data-level="4.2" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#salaries"><i class="fa fa-check"></i><b>4.2</b> Salaries</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#anàlisis-univariant"><i class="fa fa-check"></i><b>4.2.1</b> Anàlisis univariant</a></li>
+<li class="chapter" data-level="4.2.2" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#anàlisis-bivariant"><i class="fa fa-check"></i><b>4.2.2</b> Anàlisis bivariant</a></li>
+<li class="chapter" data-level="4.2.3" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#realció-log-log"><i class="fa fa-check"></i><b>4.2.3</b> Realció log-log</a></li>
+<li class="chapter" data-level="4.2.4" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#realció-x2"><i class="fa fa-check"></i><b>4.2.4</b> Realció x**2</a></li>
+<li class="chapter" data-level="4.2.5" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#interaccions"><i class="fa fa-check"></i><b>4.2.5</b> Interaccions</a></li>
+<li class="chapter" data-level="4.2.6" data-path="teoria-setmana-4.html"><a href="teoria-setmana-4.html#estimadors-robustos"><i class="fa fa-check"></i><b>4.2.6</b> Estimadors robustos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html"><i class="fa fa-check"></i><b>5</b> Teoria Setmana 5</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#packages-1"><i class="fa fa-check"></i><b>5.1</b> Packages</a></li>
+<li class="chapter" data-level="5.2" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#dades-de-intenció-de-vot"><i class="fa fa-check"></i><b>5.2</b> Dades de intenció de vot</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#la-regressió-lineal"><i class="fa fa-check"></i><b>5.2.1</b> La Regressió lineal</a></li>
+<li class="chapter" data-level="5.2.2" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#la-regressió-logística"><i class="fa fa-check"></i><b>5.2.2</b> La Regressió logística</a></li>
+<li class="chapter" data-level="5.2.3" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#interpretació-dels-paràmetres"><i class="fa fa-check"></i><b>5.2.3</b> Interpretació dels paràmetres</a></li>
+<li class="chapter" data-level="5.2.4" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#lineal-versus-logística"><i class="fa fa-check"></i><b>5.2.4</b> Lineal versus Logística</a></li>
+<li class="chapter" data-level="5.2.5" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#regressió-logística-amb-covariants-lrenda-gènere"><i class="fa fa-check"></i><b>5.2.5</b> Regressió logística amb covariants: Lrenda, gènere…</a></li>
+<li class="chapter" data-level="5.2.6" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#regressió-logística-amb-covariants-gràfic-defectes-condicionats"><i class="fa fa-check"></i><b>5.2.6</b> Regressió logística amb covariants: gràfic d’efectes condicionats</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#exemple-de-vtown-data"><i class="fa fa-check"></i><b>5.3</b> Exemple de Vtown data</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="teoria-setmana-5.html"><a href="teoria-setmana-5.html#anàlisis-bivariant-preliminar"><i class="fa fa-check"></i><b>5.3.1</b> Anàlisis bivariant preliminar</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html"><i class="fa fa-check"></i><b>6</b> Teoria Setmana 6</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#packages-2"><i class="fa fa-check"></i><b>6.1</b> Packages</a></li>
+<li class="chapter" data-level="6.2" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#barómetre-2021-01-29"><i class="fa fa-check"></i><b>6.2</b> Barómetre (2021-01-29)</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#anàlisis-univariant-y-bivariant"><i class="fa fa-check"></i><b>6.2.1</b> Anàlisis univariant y bivariant</a></li>
+<li class="chapter" data-level="6.2.2" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#section"><i class="fa fa-check"></i><b>6.2.2</b> </a></li>
+<li class="chapter" data-level="6.2.3" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#regressió-logística-amb-covariants-gràfic-defectes-condicionats-1"><i class="fa fa-check"></i><b>6.2.3</b> Regressió logística amb covariants: gràfic d’efectes condicionats</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#pca---anàlisis-de-components-principals"><i class="fa fa-check"></i><b>6.3</b> PCA - Anàlisis de Components principals</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#components-principals-gràfics-dindividus-variables"><i class="fa fa-check"></i><b>6.3.1</b> Components Principals: gràfics d’individus, variables</a></li>
+<li class="chapter" data-level="6.3.2" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#barómetre-2021-01-29-1"><i class="fa fa-check"></i><b>6.3.2</b> Barómetre (2021-01-29)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#analisis-factorial-amb-dades-omeses"><i class="fa fa-check"></i><b>6.4</b> Analisis Factorial amb dades omeses</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#representació-de-les-variables"><i class="fa fa-check"></i><b>6.4.1</b> Representació de les variables</a></li>
+<li class="chapter" data-level="6.4.2" data-path="teoria-setmana-6.html"><a href="teoria-setmana-6.html#anàlisis-factorial-amb-correlacions-dos-a-dos"><i class="fa fa-check"></i><b>6.4.2</b> Anàlisis factorial amb correlacions dos a dos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="teoria-setmana-7.html"><a href="teoria-setmana-7.html"><i class="fa fa-check"></i><b>7</b> Teoria Setmana 7</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="teoria-setmana-7.html"><a href="teoria-setmana-7.html#european-statisticall-survey-2016-ess"><i class="fa fa-check"></i><b>7.1</b> European Statisticall Survey 2016 (ESS)</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="teoria-setmana-8.html"><a href="teoria-setmana-8.html"><i class="fa fa-check"></i><b>8</b> Teoria Setmana 8</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="teoria-setmana-8.html"><a href="teoria-setmana-8.html#dades-de-comunitats"><i class="fa fa-check"></i><b>8.1</b> Dades de Comunitats</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="teoria-setmana-8.html"><a href="teoria-setmana-8.html#cluser-jerarquic"><i class="fa fa-check"></i><b>8.1.1</b> Cluser jerarquic</a></li>
+<li class="chapter" data-level="8.1.2" data-path="teoria-setmana-8.html"><a href="teoria-setmana-8.html#cluster-jerarquis-sobre-components-principals"><i class="fa fa-check"></i><b>8.1.2</b> Cluster jerarquis sobre components principals</a></li>
+<li class="chapter" data-level="8.1.3" data-path="teoria-setmana-8.html"><a href="teoria-setmana-8.html#cluster-no-jerarquic"><i class="fa fa-check"></i><b>8.1.3</b> Cluster no jerarquic</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="teoria-setmana-8.html"><a href="teoria-setmana-8.html#dades-eleccions-parlament-2021"><i class="fa fa-check"></i><b>8.2</b> Dades eleccions parlament 2021</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="teoria-setmana-8.html"><a href="teoria-setmana-8.html#cluster-no-jerarquic-1"><i class="fa fa-check"></i><b>8.2.1</b> Cluster no jerarquic</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Diari classe Seminaris</b></span></li>
+<li class="chapter" data-level="9" data-path="seminaris-setmana-1.html"><a href="seminaris-setmana-1.html"><i class="fa fa-check"></i><b>9</b> Seminaris Setmana 1</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="seminaris-setmana-1.html"><a href="seminaris-setmana-1.html#programació-amb-r"><i class="fa fa-check"></i><b>9.1</b> Programació amb R</a></li>
+<li class="chapter" data-level="9.2" data-path="seminaris-setmana-1.html"><a href="seminaris-setmana-1.html#comentari-deure-1."><i class="fa fa-check"></i><b>9.2</b> Comentari Deure 1.</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="seminaris-setmana-2.html"><a href="seminaris-setmana-2.html"><i class="fa fa-check"></i><b>10</b> Seminaris Setmana 2</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="seminaris-setmana-2.html"><a href="seminaris-setmana-2.html#comentari-dels-projectes-en-grup"><i class="fa fa-check"></i><b>10.1</b> Comentari dels projectes en grup</a></li>
+<li class="chapter" data-level="10.2" data-path="seminaris-setmana-2.html"><a href="seminaris-setmana-2.html#paquets-addicionals"><i class="fa fa-check"></i><b>10.2</b> Paquets addicionals</a></li>
+<li class="chapter" data-level="10.3" data-path="seminaris-setmana-2.html"><a href="seminaris-setmana-2.html#correcció-deure-1"><i class="fa fa-check"></i><b>10.3</b> Correcció deure 1</a></li>
+<li class="chapter" data-level="10.4" data-path="seminaris-setmana-2.html"><a href="seminaris-setmana-2.html#comentari-deure-2"><i class="fa fa-check"></i><b>10.4</b> Comentari Deure 2</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="seminaris-setmana-3.html"><a href="seminaris-setmana-3.html"><i class="fa fa-check"></i><b>11</b> Seminaris Setmana 3</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="seminaris-setmana-3.html"><a href="seminaris-setmana-3.html#comentari-dels-projectes-en-grup-1"><i class="fa fa-check"></i><b>11.1</b> Comentari dels projectes en grup</a></li>
+<li class="chapter" data-level="11.2" data-path="seminaris-setmana-3.html"><a href="seminaris-setmana-3.html#correcció-deure-2"><i class="fa fa-check"></i><b>11.2</b> Correcció deure 2</a></li>
+<li class="chapter" data-level="11.3" data-path="seminaris-setmana-3.html"><a href="seminaris-setmana-3.html#comentari-deure-3"><i class="fa fa-check"></i><b>11.3</b> Comentari Deure 3</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="seminaris-setmana-4.html"><a href="seminaris-setmana-4.html"><i class="fa fa-check"></i><b>12</b> Seminaris Setmana 4</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="seminaris-setmana-4.html"><a href="seminaris-setmana-4.html#comentari-deure-4"><i class="fa fa-check"></i><b>12.1</b> Comentari Deure 4</a></li>
+<li class="chapter" data-level="12.2" data-path="seminaris-setmana-4.html"><a href="seminaris-setmana-4.html#projectes-en-grup"><i class="fa fa-check"></i><b>12.2</b> Projectes en grup</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="seminaris-setmana-5.html"><a href="seminaris-setmana-5.html"><i class="fa fa-check"></i><b>13</b> Seminaris Setmana 5</a></li>
+<li class="part"><span><b>III Problemes</b></span></li>
+<li class="chapter" data-level="14" data-path="homework.html"><a href="homework.html"><i class="fa fa-check"></i><b>14</b> Llista de problemes</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="homework.html"><a href="homework.html#problema-1"><i class="fa fa-check"></i><b>14.1</b> Problema 1</a></li>
+<li class="chapter" data-level="14.2" data-path="homework.html"><a href="homework.html#problema-2"><i class="fa fa-check"></i><b>14.2</b> Problema 2</a></li>
+<li class="chapter" data-level="14.3" data-path="homework.html"><a href="homework.html#problema-3"><i class="fa fa-check"></i><b>14.3</b> Problema 3</a></li>
+<li class="chapter" data-level="14.4" data-path="homework.html"><a href="homework.html#problema-4"><i class="fa fa-check"></i><b>14.4</b> Problema 4</a></li>
+<li class="chapter" data-level="14.5" data-path="homework.html"><a href="homework.html#problema-5"><i class="fa fa-check"></i><b>14.5</b> Problema 5</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/griu/meacp_2021" target="blank">Repositori GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="teoria-setmana-8" class="section level1" number="8">
+<h1><span class="header-section-number">Capítol 8</span> Teoria Setmana 8</h1>
+<div id="dades-de-comunitats" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Dades de Comunitats</h2>
+<div id="cluser-jerarquic" class="section level3" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Cluser jerarquic</h3>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="teoria-setmana-8.html#cb413-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb413-2"><a href="teoria-setmana-8.html#cb413-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
+<span id="cb413-3"><a href="teoria-setmana-8.html#cb413-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb413-4"><a href="teoria-setmana-8.html#cb413-4" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read.table</span>(<span class="st">&quot;http://www.econ.upf.edu/~satorra/dades/CommAA.dat&quot;</span>, <span class="at">header=</span>T)</span>
+<span id="cb413-5"><a href="teoria-setmana-8.html#cb413-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb413-6"><a href="teoria-setmana-8.html#cb413-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data)</span></code></pre></div>
+<pre><code>## [1] 14  5</code></pre>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="teoria-setmana-8.html#cb415-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>##    comm denpob pacagri pacind recap
+## 1 Andal   70.1   30.41  17.30 10.31
+## 2 Catal  176.9    7.99  42.81 13.75
+## 3 Madri  543.4    2.41  27.49 12.59
+## 4 Valen  144.9   16.84  35.14 12.24
+## 5 Casle   33.3   36.30  21.60 11.28
+## 6 Galic   91.0   51.26  15.66 10.59</code></pre>
+<p>Preparem dades. On veiem que cadascuna té una escala (concepte) diferent.</p>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="teoria-setmana-8.html#cb417-1" aria-hidden="true" tabindex="-1"></a>X<span class="ot">&lt;-</span> data[,<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb417-2"><a href="teoria-setmana-8.html#cb417-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb417-3"><a href="teoria-setmana-8.html#cb417-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(X) <span class="ot">&lt;-</span> data[,<span class="dv">1</span>]</span>
+<span id="cb417-4"><a href="teoria-setmana-8.html#cb417-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb417-5"><a href="teoria-setmana-8.html#cb417-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(X)</span></code></pre></div>
+<pre><code>##       denpob pacagri pacind recap
+## Andal   70.1   30.41  17.30 10.31
+## Catal  176.9    7.99  42.81 13.75
+## Madri  543.4    2.41  27.49 12.59
+## Valen  144.9   16.84  35.14 12.24
+## Casle   33.3   36.30  21.60 11.28
+## Galic   91.0   51.26  15.66 10.59</code></pre>
+<p>Estandarditzem per tal que totes tinguin un mateix per d’entrada.</p>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="teoria-setmana-8.html#cb419-1" aria-hidden="true" tabindex="-1"></a>Xs <span class="ot">&lt;-</span> <span class="fu">scale</span>(X)</span>
+<span id="cb419-2"><a href="teoria-setmana-8.html#cb419-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Xs)</span></code></pre></div>
+<pre><code>##           denpob    pacagri     pacind      recap
+## Andal -0.4150286  0.3279974 -0.7390670 -0.5798760
+## Catal  0.3927698 -1.2283417  1.7286816  0.9478498
+## Madri  3.1648497 -1.6156911  0.2466781  0.4326865
+## Valen  0.1507329 -0.6139973  0.9867125  0.2772493
+## Casle -0.6933711  0.7368662 -0.3231000 -0.1490928
+## Galic -0.2569482  1.7753512 -0.8977149 -0.4555262</code></pre>
+<p>Calculem les distancies euclidianes.</p>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="teoria-setmana-8.html#cb421-1" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">dist</span>(Xs, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>, <span class="at">upper =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb421-2"><a href="teoria-setmana-8.html#cb421-2" aria-hidden="true" tabindex="-1"></a>D</span></code></pre></div>
+<pre><code>##           Andal     Catal     Madri     Valen     Casle     Galic      Vasc
+## Andal           3.3909378 4.3116621 2.2182017 0.7766923 1.4698484 3.2980609
+## Catal 3.3909378           3.2087683 1.1984257 3.2333938 4.2792204 0.3331301
+## Madri 4.3116621 3.2087683           3.2649812 4.5916782 5.0305493 3.4879479
+## Valen 2.2182017 1.1984257 3.2649812           2.1058775 3.1564563 1.1182685
+## Casle 0.7766923 3.2333938 4.5916782 2.1058775           1.3011533 3.0831397
+## Galic 1.4698484 4.2792204 5.0305493 3.1564563 1.3011533           4.1537258
+## Vasc  3.2980609 0.3331301 3.4879479 1.1182685 3.0831397 4.1537258          
+## Manc  0.6605585 3.6614647 4.8382780 2.4848682 0.6502605 1.2238615 3.5159503
+## Cana  1.4623037 3.1455752 3.4093477 2.2402105 1.8076834 2.3287132 3.1763875
+## Arag  1.5499263 2.1936506 4.2305984 1.2026903 1.1820547 2.4349853 2.0113188
+## Astu  1.1044931 2.7668095 4.0480511 1.5884374 1.0796414 1.8804045 2.6355331
+## Extr  1.7144509 4.9975131 5.6487024 3.8046755 1.9299497 1.2985500 4.8722182
+## Murc  1.1290951 3.1269558 4.2036965 1.9826666 1.5090162 2.2679203 3.0268689
+## Bale  3.0349693 2.6586091 3.9049427 2.4633526 2.8415961 3.6516151 2.6861571
+##            Manc      Cana      Arag      Astu      Extr      Murc      Bale
+## Andal 0.6605585 1.4623037 1.5499263 1.1044931 1.7144509 1.1290951 3.0349693
+## Catal 3.6614647 3.1455752 2.1936506 2.7668095 4.9975131 3.1269558 2.6586091
+## Madri 4.8382780 3.4093477 4.2305984 4.0480511 5.6487024 4.2036965 3.9049427
+## Valen 2.4848682 2.2402105 1.2026903 1.5884374 3.8046755 1.9826666 2.4633526
+## Casle 0.6502605 1.8076834 1.1820547 1.0796414 1.9299497 1.5090162 2.8415961
+## Galic 1.2238615 2.3287132 2.4349853 1.8804045 1.2985500 2.2679203 3.6516151
+## Vasc  3.5159503 3.1763875 2.0113188 2.6355331 4.8722182 3.0268689 2.6861571
+## Manc            2.0728205 1.6477985 1.1239719 1.4014910 1.2541501 3.4173891
+## Cana  2.0728205           2.0248524 2.0732836 2.8703509 2.1973882 2.1261708
+## Arag  1.6477985 2.0248524           1.2594662 3.0425874 1.6928121 2.3450076
+## Astu  1.1239719 2.0732836 1.2594662           2.3176976 0.8451783 3.2477084
+## Extr  1.4014910 2.8703509 3.0425874 2.3176976           2.2417440 4.5173429
+## Murc  1.2541501 2.1973882 1.6928121 0.8451783 2.2417440           3.6387133
+## Bale  3.4173891 2.1261708 2.3450076 3.2477084 4.5173429 3.6387133</code></pre>
+<div id="distancia-manhattan" class="section level4" number="8.1.1.1">
+<h4><span class="header-section-number">8.1.1.1</span> Distancia Manhattan</h4>
+<p>Altres distancies:</p>
+<ul>
+<li>manhattan: O distancia de l’eixample. Es a dir, per moure’s d’un punt a un altre, no anem en linia recta si no pels catets (o costats) del cuadrat.</li>
+</ul>
+<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="teoria-setmana-8.html#cb423-1" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">dist</span>(Xs, <span class="at">method =</span> <span class="st">&quot;manhattan&quot;</span>, <span class="at">upper =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb423-2"><a href="teoria-setmana-8.html#cb423-2" aria-hidden="true" tabindex="-1"></a>D</span></code></pre></div>
+<pre><code>##            Andal      Catal      Madri      Valen      Casle      Galic
+## Andal             6.3596120  7.5218744  4.0906609  1.5339615  1.8884319
+## Catal  6.3596120             5.1565960  2.2689511  6.2000731  7.6831835
+## Madri  7.5218744  5.1565960             4.9112822  7.3623356  8.8454459
+## Valen  4.0906609  2.2689511  4.9112822             3.9311221  5.4142324
+## Casle  1.5339615  6.2000731  7.3623356  3.9311221             2.3559563
+## Galic  1.8884319  7.6831835  8.8454459  5.4142324  2.3559563           
+## Vasc   5.9511870  0.5806160  5.6395086  1.8832170  5.7916481  7.2747585
+## Manc   1.2432345  7.1481849  8.3104473  4.8792338  0.9481118  2.2098027
+## Cana   2.8344246  4.4751400  5.6374024  2.8603418  3.5068198  3.8407003
+## Arag   2.7703511  4.2775536  5.8190232  2.0352489  2.0541271  4.4100834
+## Astu   1.5111809  5.2373374  6.5563129  2.9683863  2.1174123  2.9876559
+## Extr   3.1688291  9.5284411 10.6907036  7.2594901  3.3283680  2.2950827
+## Murc   1.9706621  5.8189723  6.9812348  3.5500213  2.6726896  3.7441264
+## Bale   4.4362220  4.5702639  6.7628531  3.6425140  4.5204591  5.7597934
+##             Vasc       Manc       Cana       Arag       Astu       Extr
+## Andal  5.9511870  1.2432345  2.8344246  2.7703511  1.5111809  3.1688291
+## Catal  0.5806160  7.1481849  4.4751400  4.2775536  5.2373374  9.5284411
+## Madri  5.6395086  8.3104473  5.6374024  5.8190232  6.5563129 10.6907036
+## Valen  1.8832170  4.8792338  2.8603418  2.0352489  2.9683863  7.2594901
+## Casle  5.7916481  0.9481118  3.5068198  2.0541271  2.1174123  3.3283680
+## Galic  7.2747585  2.2098027  3.8407003  4.4100834  2.9876559  2.2950827
+## Vasc              6.7397599  4.5659163  3.8691286  4.8289124  9.1200161
+## Manc   6.7397599             4.0776591  2.8706313  1.9108475  2.4558928
+## Cana   4.5659163  4.0776591             3.1030636  3.8403533  5.0533012
+## Arag   3.8691286  2.8706313  3.1030636             2.1533286  5.2690403
+## Astu   4.8289124  1.9108475  3.8403533  2.1533286             4.2911038
+## Extr   9.1200161  2.4558928  5.0533012  5.2690403  4.2911038           
+## Murc   5.4105473  2.3950678  3.7835273  2.4904556  1.5840229  3.7094688
+## Bale   4.2595423  5.2247948  3.4382104  4.1167029  4.8539927  7.6050511
+##             Murc       Bale
+## Andal  1.9706621  4.4362220
+## Catal  5.8189723  4.5702639
+## Madri  6.9812348  6.7628531
+## Valen  3.5500213  3.6425140
+## Casle  2.6726896  4.5204591
+## Galic  3.7441264  5.7597934
+## Vasc   5.4105473  4.2595423
+## Manc   2.3950678  5.2247948
+## Cana   3.7835273  3.4382104
+## Arag   2.4904556  4.1167029
+## Astu   1.5840229  4.8539927
+## Extr   3.7094688  7.6050511
+## Murc              4.7971666
+## Bale   4.7971666</code></pre>
+</div>
+<div id="mètode-complete" class="section level4" number="8.1.1.2">
+<h4><span class="header-section-number">8.1.1.2</span> Mètode “Complete”</h4>
+<p>Mesurem la distancia entre dos clusters com el màxim de les distancies 2 a 2.</p>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="teoria-setmana-8.html#cb425-1" aria-hidden="true" tabindex="-1"></a>hc<span class="ot">&lt;-</span><span class="fu">hclust</span>(D, <span class="at">method =</span> <span class="st">&quot;complete&quot;</span>)</span>
+<span id="cb425-2"><a href="teoria-setmana-8.html#cb425-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hc, <span class="at">lab=</span>data[,<span class="dv">1</span>], <span class="at">cex=</span><span class="fl">0.8</span>, <span class="at">hang =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb425-3"><a href="teoria-setmana-8.html#cb425-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">2.5</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-215-1.png" width="672" /></p>
+<p>Segmentem per alçada.</p>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="teoria-setmana-8.html#cb426-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cutree</span>(hc,<span class="at">h =</span> <span class="fl">2.5</span>)</span></code></pre></div>
+<pre><code>## Andal Catal Madri Valen Casle Galic  Vasc  Manc  Cana  Arag  Astu  Extr  Murc 
+##     1     2     3     4     5     6     2     5     7     4     1     6     1 
+##  Bale 
+##     8</code></pre>
+<p>Segmentem per número de grups.</p>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="teoria-setmana-8.html#cb428-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>grups <span class="ot">&lt;-</span> <span class="fu">cutree</span>(hc,<span class="at">k =</span> <span class="dv">4</span>)</span>
+<span id="cb428-2"><a href="teoria-setmana-8.html#cb428-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>grups</span></code></pre></div>
+<pre><code>##  [1] 1 2 3 4 1 1 2 1 4 4 1 1 1 4</code></pre>
+<p>Representem mitjanes.</p>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="teoria-setmana-8.html#cb430-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(X,<span class="fu">list</span>(data<span class="sc">$</span>grups),mean)</span></code></pre></div>
+<pre><code>##   Group.1    denpob pacagri   pacind     recap
+## 1       1  60.31429 36.8600 19.69143  9.851429
+## 2       2 160.15000  9.3750 43.25500 13.695000
+## 3       3 543.40000  2.4100 27.49000 12.590000
+## 4       4 115.92500 20.1025 24.33000 13.420000</code></pre>
+</div>
+<div id="mètode-single" class="section level4" number="8.1.1.3">
+<h4><span class="header-section-number">8.1.1.3</span> Mètode “single”</h4>
+<p>Mesurem la distancia entre dos clusters com el mínim de les distancies 2 a 2.</p>
+<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="teoria-setmana-8.html#cb432-1" aria-hidden="true" tabindex="-1"></a>hc<span class="ot">&lt;-</span><span class="fu">hclust</span>(D, <span class="at">method =</span> <span class="st">&quot;single&quot;</span>)</span>
+<span id="cb432-2"><a href="teoria-setmana-8.html#cb432-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hc, <span class="at">lab=</span>data[,<span class="dv">1</span>], <span class="at">cex=</span><span class="fl">0.8</span>, <span class="at">hang =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb432-3"><a href="teoria-setmana-8.html#cb432-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">2.5</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-219-1.png" width="672" /></p>
+</div>
+<div id="mètode-single-1" class="section level4" number="8.1.1.4">
+<h4><span class="header-section-number">8.1.1.4</span> Mètode “single”</h4>
+<p>Altres métodes:</p>
+<ul>
+<li>average: mitajana de totes les distancies 2 a 2.</li>
+<li>centroid: distancia entre els centroides de cada cluster.</li>
+</ul>
+<div class="figure">
+<img src="www/images/hclust.png" alt="" />
+<p class="caption">metodes hclust</p>
+</div>
+</div>
+</div>
+<div id="cluster-jerarquis-sobre-components-principals" class="section level3" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> Cluster jerarquis sobre components principals</h3>
+<p>Evita redundancies en les variabels.</p>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="teoria-setmana-8.html#cb433-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FactoMineR)</span>
+<span id="cb433-2"><a href="teoria-setmana-8.html#cb433-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(factoextra) </span>
+<span id="cb433-3"><a href="teoria-setmana-8.html#cb433-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb433-4"><a href="teoria-setmana-8.html#cb433-4" aria-hidden="true" tabindex="-1"></a><span class="co"># components principals</span></span>
+<span id="cb433-5"><a href="teoria-setmana-8.html#cb433-5" aria-hidden="true" tabindex="-1"></a>res.pca <span class="ot">&lt;-</span> <span class="fu">PCA</span>(Xs, <span class="at">ncp =</span> <span class="dv">4</span>,  <span class="at">graph =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb433-6"><a href="teoria-setmana-8.html#cb433-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb433-7"><a href="teoria-setmana-8.html#cb433-7" aria-hidden="true" tabindex="-1"></a><span class="co"># cluster jerarquic</span></span>
+<span id="cb433-8"><a href="teoria-setmana-8.html#cb433-8" aria-hidden="true" tabindex="-1"></a>res.hcpc <span class="ot">&lt;-</span> <span class="fu">HCPC</span>(res.pca, <span class="at">nb.clust=</span><span class="dv">4</span>,<span class="at">graph =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb433-9"><a href="teoria-setmana-8.html#cb433-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb433-10"><a href="teoria-setmana-8.html#cb433-10" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_dend</span>(res.hcpc, </span>
+<span id="cb433-11"><a href="teoria-setmana-8.html#cb433-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">cex =</span> <span class="fl">0.7</span>,                     <span class="co"># Label size</span></span>
+<span id="cb433-12"><a href="teoria-setmana-8.html#cb433-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">palette =</span> <span class="st">&quot;jco&quot;</span>,               <span class="co"># Color palette see ?ggpubr::ggpar</span></span>
+<span id="cb433-13"><a href="teoria-setmana-8.html#cb433-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">rect =</span> <span class="cn">TRUE</span>, <span class="at">rect_fill =</span> <span class="cn">TRUE</span>, <span class="co"># Add rectangle around groups</span></span>
+<span id="cb433-14"><a href="teoria-setmana-8.html#cb433-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">rect_border =</span> <span class="st">&quot;jco&quot;</span>,           <span class="co"># Rectangle color</span></span>
+<span id="cb433-15"><a href="teoria-setmana-8.html#cb433-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">labels_track_height =</span> <span class="fl">0.8</span>      <span class="co"># Augment the room for labels</span></span>
+<span id="cb433-16"><a href="teoria-setmana-8.html#cb433-16" aria-hidden="true" tabindex="-1"></a>          )</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-220-1.png" width="672" /></p>
+<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="teoria-setmana-8.html#cb434-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_cluster</span>(res.hcpc,</span>
+<span id="cb434-2"><a href="teoria-setmana-8.html#cb434-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> <span class="cn">TRUE</span>,            <span class="co"># Avoid label overlapping</span></span>
+<span id="cb434-3"><a href="teoria-setmana-8.html#cb434-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">show.clust.cent =</span> <span class="cn">TRUE</span>, <span class="co"># Show cluster centers</span></span>
+<span id="cb434-4"><a href="teoria-setmana-8.html#cb434-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">palette =</span> <span class="st">&quot;jco&quot;</span>,         <span class="co"># Color palette see ?ggpubr::ggpar</span></span>
+<span id="cb434-5"><a href="teoria-setmana-8.html#cb434-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>(),</span>
+<span id="cb434-6"><a href="teoria-setmana-8.html#cb434-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">main =</span> <span class="st">&quot;Factor map&quot;</span></span>
+<span id="cb434-7"><a href="teoria-setmana-8.html#cb434-7" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-221-1.png" width="672" /></p>
+</div>
+<div id="cluster-no-jerarquic" class="section level3" number="8.1.3">
+<h3><span class="header-section-number">8.1.3</span> Cluster no jerarquic</h3>
+<p>kmeans: Mètode iteratius</p>
+<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="teoria-setmana-8.html#cb435-1" aria-hidden="true" tabindex="-1"></a><span class="do">######### K-means: f kmeans()</span></span>
+<span id="cb435-2"><a href="teoria-setmana-8.html#cb435-2" aria-hidden="true" tabindex="-1"></a><span class="co">#help(hclust)</span></span>
+<span id="cb435-3"><a href="teoria-setmana-8.html#cb435-3" aria-hidden="true" tabindex="-1"></a>km <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(D,<span class="dv">3</span>) </span>
+<span id="cb435-4"><a href="teoria-setmana-8.html#cb435-4" aria-hidden="true" tabindex="-1"></a>groups <span class="ot">&lt;-</span> km<span class="sc">$</span>cluster</span>
+<span id="cb435-5"><a href="teoria-setmana-8.html#cb435-5" aria-hidden="true" tabindex="-1"></a>km<span class="sc">$</span>centers</span></code></pre></div>
+<pre><code>##      Andal    Catal    Madri    Valen    Casle    Galic     Vasc     Manc
+## 1 6.610891 1.912404 3.598702 3.021150 6.451352 7.934463 2.073375 7.399464
+## 2 1.616614 6.853686 8.038336 4.584735 1.850928 2.211579 6.445261 1.594708
+## 3 3.532915 3.897977 5.782640 2.134526 3.503132 4.856202 3.644451 4.263080
+##       Cana     Arag     Astu     Extr     Murc     Bale
+## 1 4.892820 4.655235 5.540854 9.779720 6.070251 5.197553
+## 2 3.848112 3.145431 2.057460 2.749821 2.296577 5.313926
+## 3 2.350404 2.313754 3.454015 6.296721 3.655293 2.799357</code></pre>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="teoria-setmana-8.html#cb437-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(data[,<span class="sc">-</span><span class="dv">1</span>],<span class="fu">list</span>(data<span class="sc">$</span>grup),mean)</span></code></pre></div>
+<pre><code>##   Group.1    denpob pacagri   pacind     recap grups
+## 1       1  60.31429 36.8600 19.69143  9.851429     1
+## 2       2 160.15000  9.3750 43.25500 13.695000     2
+## 3       3 543.40000  2.4100 27.49000 12.590000     3
+## 4       4 115.92500 20.1025 24.33000 13.420000     4</code></pre>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="teoria-setmana-8.html#cb439-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_cluster</span>(km,</span>
+<span id="cb439-2"><a href="teoria-setmana-8.html#cb439-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data=</span>Xs,</span>
+<span id="cb439-3"><a href="teoria-setmana-8.html#cb439-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> <span class="cn">TRUE</span>,            <span class="co"># Avoid label overlapping</span></span>
+<span id="cb439-4"><a href="teoria-setmana-8.html#cb439-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">show.clust.cent =</span> <span class="cn">TRUE</span>, <span class="co"># Show cluster centers</span></span>
+<span id="cb439-5"><a href="teoria-setmana-8.html#cb439-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">palette =</span> <span class="st">&quot;jco&quot;</span>,         <span class="co"># Color palette see ?ggpubr::ggpar</span></span>
+<span id="cb439-6"><a href="teoria-setmana-8.html#cb439-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>(),</span>
+<span id="cb439-7"><a href="teoria-setmana-8.html#cb439-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">main =</span> <span class="st">&quot;Factor map - kmeans&quot;</span></span>
+<span id="cb439-8"><a href="teoria-setmana-8.html#cb439-8" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-224-1.png" width="672" /></p>
+</div>
+</div>
+<div id="dades-eleccions-parlament-2021" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Dades eleccions parlament 2021</h2>
+<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="teoria-setmana-8.html#cb440-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;www/data/mesa2021.csv&quot;</span>, <span class="at">fileEncoding =</span> <span class="st">&quot;utf-8&quot;</span>)</span>
+<span id="cb440-2"><a href="teoria-setmana-8.html#cb440-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb440-3"><a href="teoria-setmana-8.html#cb440-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(d)</span></code></pre></div>
+<pre><code>## [1] 9139   67</code></pre>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="teoria-setmana-8.html#cb442-1" aria-hidden="true" tabindex="-1"></a>d<span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb442-2"><a href="teoria-setmana-8.html#cb442-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">N_PSC=</span>Vots.PARTIT.DELS.SOCIALISTES.DE.CATALUNYA..PSC.PSOE...PSC.</span>
+<span id="cb442-3"><a href="teoria-setmana-8.html#cb442-3" aria-hidden="true" tabindex="-1"></a>    ,<span class="at">N_ERC=</span>Vots.ESQUERRA.REPUBLICANA.DE.CATALUNYA..ERC.</span>
+<span id="cb442-4"><a href="teoria-setmana-8.html#cb442-4" aria-hidden="true" tabindex="-1"></a>    ,<span class="at">N_JxCat=</span>Vots.JUNTS.PER.CATALUNYA..JxCat.</span>
+<span id="cb442-5"><a href="teoria-setmana-8.html#cb442-5" aria-hidden="true" tabindex="-1"></a>    ,<span class="at">N_VOX=</span>Vots.VOX..VOX.</span>
+<span id="cb442-6"><a href="teoria-setmana-8.html#cb442-6" aria-hidden="true" tabindex="-1"></a>    ,<span class="at">N_CUP=</span>Vots.CANDIDATURA.D.UNITAT.POPULAR.UN.NOU.CICLE.PER.GUANYAR..CUP.G.</span>
+<span id="cb442-7"><a href="teoria-setmana-8.html#cb442-7" aria-hidden="true" tabindex="-1"></a>    ,<span class="at">N_COMUNS=</span>Vots.EN.COMÚ.PODEM.PODEM.EN.COMÚ..ECP.PEC.</span>
+<span id="cb442-8"><a href="teoria-setmana-8.html#cb442-8" aria-hidden="true" tabindex="-1"></a>    ,<span class="at">N_Cs=</span>Vots.CIUTADANS...PARTIDO.DE.LA.CIUDADANÍA..Cs.</span>
+<span id="cb442-9"><a href="teoria-setmana-8.html#cb442-9" aria-hidden="true" tabindex="-1"></a>    ,<span class="at">N_PP=</span>Vots.PARTIT.POPULAR.PARTIDO.POPULAR..PP.</span>
+<span id="cb442-10"><a href="teoria-setmana-8.html#cb442-10" aria-hidden="true" tabindex="-1"></a>    ,<span class="at">N_TOT =</span> N_PSC <span class="sc">+</span> N_ERC <span class="sc">+</span> N_JxCat <span class="sc">+</span> N_VOX <span class="sc">+</span> N_CUP <span class="sc">+</span> N_COMUNS <span class="sc">+</span> N_Cs <span class="sc">+</span> N_PP</span>
+<span id="cb442-11"><a href="teoria-setmana-8.html#cb442-11" aria-hidden="true" tabindex="-1"></a>    ,<span class="at">municipi=</span>Nom.municipi,<span class="at">comarca=</span>Nom.comarca)</span>
+<span id="cb442-12"><a href="teoria-setmana-8.html#cb442-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb442-13"><a href="teoria-setmana-8.html#cb442-13" aria-hidden="true" tabindex="-1"></a>dmesa<span class="ot">&lt;-</span>d <span class="sc">%&gt;%</span> </span>
+<span id="cb442-14"><a href="teoria-setmana-8.html#cb442-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(N_TOT<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb442-15"><a href="teoria-setmana-8.html#cb442-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PSC =</span> N_PSC <span class="sc">/</span> N_TOT</span>
+<span id="cb442-16"><a href="teoria-setmana-8.html#cb442-16" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">ERC =</span> N_ERC  <span class="sc">/</span> N_TOT</span>
+<span id="cb442-17"><a href="teoria-setmana-8.html#cb442-17" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">JxCat =</span> N_JxCat  <span class="sc">/</span> N_TOT</span>
+<span id="cb442-18"><a href="teoria-setmana-8.html#cb442-18" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">VOX =</span> N_VOX  <span class="sc">/</span> N_TOT</span>
+<span id="cb442-19"><a href="teoria-setmana-8.html#cb442-19" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">CUP =</span> N_CUP  <span class="sc">/</span> N_TOT</span>
+<span id="cb442-20"><a href="teoria-setmana-8.html#cb442-20" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">COMUNS =</span> N_COMUNS  <span class="sc">/</span> N_TOT</span>
+<span id="cb442-21"><a href="teoria-setmana-8.html#cb442-21" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">Cs =</span> N_Cs  <span class="sc">/</span> N_TOT</span>
+<span id="cb442-22"><a href="teoria-setmana-8.html#cb442-22" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">PP =</span> N_PP  <span class="sc">/</span> N_TOT</span>
+<span id="cb442-23"><a href="teoria-setmana-8.html#cb442-23" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> </span>
+<span id="cb442-24"><a href="teoria-setmana-8.html#cb442-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Districte,Secció,Mesa,municipi,comarca,PSC,ERC,JxCat,VOX,CUP,COMUNS,Cs,PP)</span>
+<span id="cb442-25"><a href="teoria-setmana-8.html#cb442-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb442-26"><a href="teoria-setmana-8.html#cb442-26" aria-hidden="true" tabindex="-1"></a>dmun <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb442-27"><a href="teoria-setmana-8.html#cb442-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(N_TOT<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb442-28"><a href="teoria-setmana-8.html#cb442-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(municipi,comarca) <span class="sc">%&gt;%</span> </span>
+<span id="cb442-29"><a href="teoria-setmana-8.html#cb442-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">PSC =</span> <span class="fu">sum</span>(N_PSC) <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-30"><a href="teoria-setmana-8.html#cb442-30" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">ERC =</span> <span class="fu">sum</span>(N_ERC)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-31"><a href="teoria-setmana-8.html#cb442-31" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">JxCat =</span> <span class="fu">sum</span>(N_JxCat)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-32"><a href="teoria-setmana-8.html#cb442-32" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">VOX =</span> <span class="fu">sum</span>(N_VOX)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-33"><a href="teoria-setmana-8.html#cb442-33" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">CUP =</span> <span class="fu">sum</span>(N_CUP)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-34"><a href="teoria-setmana-8.html#cb442-34" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">COMUNS =</span> <span class="fu">sum</span>(N_COMUNS)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-35"><a href="teoria-setmana-8.html#cb442-35" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">Cs =</span> <span class="fu">sum</span>(N_Cs)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-36"><a href="teoria-setmana-8.html#cb442-36" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">PP =</span> <span class="fu">sum</span>(N_PP)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-37"><a href="teoria-setmana-8.html#cb442-37" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> </span>
+<span id="cb442-38"><a href="teoria-setmana-8.html#cb442-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb442-39"><a href="teoria-setmana-8.html#cb442-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb442-40"><a href="teoria-setmana-8.html#cb442-40" aria-hidden="true" tabindex="-1"></a>dcom <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb442-41"><a href="teoria-setmana-8.html#cb442-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(N_TOT<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb442-42"><a href="teoria-setmana-8.html#cb442-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(comarca) <span class="sc">%&gt;%</span> </span>
+<span id="cb442-43"><a href="teoria-setmana-8.html#cb442-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">PSC =</span> <span class="fu">sum</span>(N_PSC) <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-44"><a href="teoria-setmana-8.html#cb442-44" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">ERC =</span> <span class="fu">sum</span>(N_ERC)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-45"><a href="teoria-setmana-8.html#cb442-45" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">JxCat =</span> <span class="fu">sum</span>(N_JxCat)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-46"><a href="teoria-setmana-8.html#cb442-46" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">VOX =</span> <span class="fu">sum</span>(N_VOX)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-47"><a href="teoria-setmana-8.html#cb442-47" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">CUP =</span> <span class="fu">sum</span>(N_CUP)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-48"><a href="teoria-setmana-8.html#cb442-48" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">COMUNS =</span> <span class="fu">sum</span>(N_COMUNS)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-49"><a href="teoria-setmana-8.html#cb442-49" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">Cs =</span> <span class="fu">sum</span>(N_Cs)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-50"><a href="teoria-setmana-8.html#cb442-50" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">PP =</span> <span class="fu">sum</span>(N_PP)  <span class="sc">/</span> <span class="fu">sum</span>(N_TOT)</span>
+<span id="cb442-51"><a href="teoria-setmana-8.html#cb442-51" aria-hidden="true" tabindex="-1"></a>         ) <span class="sc">%&gt;%</span> </span>
+<span id="cb442-52"><a href="teoria-setmana-8.html#cb442-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb442-53"><a href="teoria-setmana-8.html#cb442-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="teoria-setmana-8.html#cb443-1" aria-hidden="true" tabindex="-1"></a>X<span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(dcom[,<span class="sc">-</span><span class="dv">1</span>])</span>
+<span id="cb443-2"><a href="teoria-setmana-8.html#cb443-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(X) <span class="ot">&lt;-</span> dcom[,<span class="dv">1</span>] </span>
+<span id="cb443-3"><a href="teoria-setmana-8.html#cb443-3" aria-hidden="true" tabindex="-1"></a>D<span class="ot">&lt;-</span><span class="fu">dist</span>(X)</span>
+<span id="cb443-4"><a href="teoria-setmana-8.html#cb443-4" aria-hidden="true" tabindex="-1"></a>hc<span class="ot">&lt;-</span> <span class="fu">hclust</span>(D)</span>
+<span id="cb443-5"><a href="teoria-setmana-8.html#cb443-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb443-6"><a href="teoria-setmana-8.html#cb443-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hc, <span class="at">main =</span> <span class="st">&quot;dendograma&quot;</span>, <span class="at">sub =</span> <span class="cn">NULL</span>,     <span class="at">xlab =</span> <span class="cn">NULL</span>, <span class="at">ylab =</span> <span class="st">&quot;Height&quot;</span>, <span class="at">hang=</span><span class="fl">0.1</span>,  <span class="at">lab=</span>dcom[,<span class="dv">1</span>] )</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-226-1.png" width="672" /></p>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="teoria-setmana-8.html#cb444-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute PCA with ncp = 3</span></span>
+<span id="cb444-2"><a href="teoria-setmana-8.html#cb444-2" aria-hidden="true" tabindex="-1"></a>res.pca <span class="ot">&lt;-</span> <span class="fu">PCA</span>(X, <span class="at">ncp =</span> <span class="dv">2</span>, <span class="at">graph =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb444-3"><a href="teoria-setmana-8.html#cb444-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute hierarchical clustering on principal components</span></span>
+<span id="cb444-4"><a href="teoria-setmana-8.html#cb444-4" aria-hidden="true" tabindex="-1"></a>res.hcpc <span class="ot">&lt;-</span> <span class="fu">HCPC</span>(res.pca, <span class="at">graph =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb444-5"><a href="teoria-setmana-8.html#cb444-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb444-6"><a href="teoria-setmana-8.html#cb444-6" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_dend</span>(res.hcpc, </span>
+<span id="cb444-7"><a href="teoria-setmana-8.html#cb444-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">cex =</span> <span class="fl">0.7</span>,                     <span class="co"># Label size</span></span>
+<span id="cb444-8"><a href="teoria-setmana-8.html#cb444-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">palette =</span> <span class="st">&quot;jco&quot;</span>,               <span class="co"># Color palette see ?ggpubr::ggpar</span></span>
+<span id="cb444-9"><a href="teoria-setmana-8.html#cb444-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">rect =</span> <span class="cn">TRUE</span>, <span class="at">rect_fill =</span> <span class="cn">TRUE</span>, <span class="co"># Add rectangle around groups</span></span>
+<span id="cb444-10"><a href="teoria-setmana-8.html#cb444-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">rect_border =</span> <span class="st">&quot;jco&quot;</span>,           <span class="co"># Rectangle color</span></span>
+<span id="cb444-11"><a href="teoria-setmana-8.html#cb444-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">labels_track_height =</span> <span class="fl">0.8</span>      <span class="co"># Augment the room for labels</span></span>
+<span id="cb444-12"><a href="teoria-setmana-8.html#cb444-12" aria-hidden="true" tabindex="-1"></a>          )</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-227-1.png" width="672" /></p>
+<p>SEgmentem sobre les components principals.</p>
+<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="teoria-setmana-8.html#cb445-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_cluster</span>(res.hcpc,</span>
+<span id="cb445-2"><a href="teoria-setmana-8.html#cb445-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> <span class="cn">TRUE</span>,            <span class="co"># Avoid label overlapping</span></span>
+<span id="cb445-3"><a href="teoria-setmana-8.html#cb445-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">show.clust.cent =</span> <span class="cn">TRUE</span>, <span class="co"># Show cluster centers</span></span>
+<span id="cb445-4"><a href="teoria-setmana-8.html#cb445-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">palette =</span> <span class="st">&quot;jco&quot;</span>,         <span class="co"># Color palette see ?ggpubr::ggpar</span></span>
+<span id="cb445-5"><a href="teoria-setmana-8.html#cb445-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>(),</span>
+<span id="cb445-6"><a href="teoria-setmana-8.html#cb445-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">main =</span> <span class="st">&quot;Factor map&quot;</span></span>
+<span id="cb445-7"><a href="teoria-setmana-8.html#cb445-7" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-228-1.png" width="672" /></p>
+<div id="cluster-no-jerarquic-1" class="section level3" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Cluster no jerarquic</h3>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="teoria-setmana-8.html#cb446-1" aria-hidden="true" tabindex="-1"></a><span class="do">######### K-means: f kmeans()</span></span>
+<span id="cb446-2"><a href="teoria-setmana-8.html#cb446-2" aria-hidden="true" tabindex="-1"></a><span class="co">#help(hclust)</span></span>
+<span id="cb446-3"><a href="teoria-setmana-8.html#cb446-3" aria-hidden="true" tabindex="-1"></a>km <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(D,<span class="dv">3</span>) </span>
+<span id="cb446-4"><a href="teoria-setmana-8.html#cb446-4" aria-hidden="true" tabindex="-1"></a>groups <span class="ot">&lt;-</span> km<span class="sc">$</span>cluster</span></code></pre></div>
+<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="teoria-setmana-8.html#cb447-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(dcom[,<span class="sc">-</span><span class="dv">1</span>],<span class="fu">list</span>(groups),mean)</span></code></pre></div>
+<pre><code>##   Group.1       PSC       ERC     JxCat        VOX        CUP     COMUNS
+## 1       1 0.1863542 0.2744703 0.2677018 0.06732752 0.08502995 0.04972617
+## 2       2 0.1181800 0.2942368 0.3690934 0.03522813 0.11051965 0.03187249
+## 3       3 0.2809031 0.2078552 0.1585323 0.10540031 0.05658615 0.07342902
+##           Cs         PP
+## 1 0.03785314 0.03153684
+## 2 0.02097492 0.01989460
+## 3 0.07065427 0.04663963</code></pre>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="teoria-setmana-8.html#cb449-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_cluster</span>(km,</span>
+<span id="cb449-2"><a href="teoria-setmana-8.html#cb449-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data=</span>X,</span>
+<span id="cb449-3"><a href="teoria-setmana-8.html#cb449-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> <span class="cn">TRUE</span>,            <span class="co"># Avoid label overlapping</span></span>
+<span id="cb449-4"><a href="teoria-setmana-8.html#cb449-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">show.clust.cent =</span> <span class="cn">TRUE</span>, <span class="co"># Show cluster centers</span></span>
+<span id="cb449-5"><a href="teoria-setmana-8.html#cb449-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">palette =</span> <span class="st">&quot;jco&quot;</span>,         <span class="co"># Color palette see ?ggpubr::ggpar</span></span>
+<span id="cb449-6"><a href="teoria-setmana-8.html#cb449-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>(),</span>
+<span id="cb449-7"><a href="teoria-setmana-8.html#cb449-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">main =</span> <span class="st">&quot;Factor map - kmeans&quot;</span></span>
+<span id="cb449-8"><a href="teoria-setmana-8.html#cb449-8" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-231-1.png" width="672" /></p>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="teoria-setmana-8.html#cb450-1" aria-hidden="true" tabindex="-1"></a><span class="do">######### K-means: f kmeans()</span></span>
+<span id="cb450-2"><a href="teoria-setmana-8.html#cb450-2" aria-hidden="true" tabindex="-1"></a><span class="co">#help(hclust)</span></span>
+<span id="cb450-3"><a href="teoria-setmana-8.html#cb450-3" aria-hidden="true" tabindex="-1"></a>X<span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(dmesa[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)])</span>
+<span id="cb450-4"><a href="teoria-setmana-8.html#cb450-4" aria-hidden="true" tabindex="-1"></a>D<span class="ot">&lt;-</span><span class="fu">dist</span>(X)</span>
+<span id="cb450-5"><a href="teoria-setmana-8.html#cb450-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb450-6"><a href="teoria-setmana-8.html#cb450-6" aria-hidden="true" tabindex="-1"></a>km <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(D,<span class="dv">3</span>) </span>
+<span id="cb450-7"><a href="teoria-setmana-8.html#cb450-7" aria-hidden="true" tabindex="-1"></a>groups <span class="ot">&lt;-</span> km<span class="sc">$</span>cluster</span></code></pre></div>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="teoria-setmana-8.html#cb451-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(dmesa[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)],<span class="fu">list</span>(groups),mean)</span></code></pre></div>
+<pre><code>##   Group.1       PSC       ERC      JxCat        VOX        CUP     COMUNS
+## 1       1 0.2246899 0.2363556 0.21091738 0.07788420 0.07417324 0.07670302
+## 2       2 0.3742784 0.1674723 0.07521028 0.12053415 0.03628468 0.09006064
+## 3       3 0.1146300 0.2782633 0.37612585 0.03990866 0.10770903 0.03811885
+##           Cs         PP
+## 1 0.05769580 0.04158086
+## 2 0.08500837 0.05115113
+## 3 0.02353931 0.02170498</code></pre>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="teoria-setmana-8.html#cb453-1" aria-hidden="true" tabindex="-1"></a>respca <span class="ot">&lt;-</span> <span class="fu">PCA</span>(X, <span class="at">graph=</span><span class="cn">FALSE</span>)</span>
+<span id="cb453-2"><a href="teoria-setmana-8.html#cb453-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb453-3"><a href="teoria-setmana-8.html#cb453-3" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="fu">predict</span>(respca, <span class="at">newdata=</span>X)<span class="sc">$</span>coord[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
+<span id="cb453-4"><a href="teoria-setmana-8.html#cb453-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb453-5"><a href="teoria-setmana-8.html#cb453-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Z, <span class="at">pch=</span><span class="st">&quot;.&quot;</span>, <span class="at">col=</span>groups, <span class="at">main=</span><span class="st">&quot;meses segons 3 clusters&quot;</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-234-1.png" width="672" /></p>
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="teoria-setmana-7.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="seminaris-setmana-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "night",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/griu/meacp_2021/edit/master/01080-class_journal_w8.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["meacp_2021.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

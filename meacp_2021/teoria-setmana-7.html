@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítol 13 Seminaris Setmana 5 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022</title>
+  <title>Capítol 7 Teoria Setmana 7 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022</title>
   <meta name="description" content="Diari de les classes del Curs 2021-2022 de mètodes estadístics aplicats a ciències polítiques." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítol 13 Seminaris Setmana 5 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022" />
+  <meta property="og:title" content="Capítol 7 Teoria Setmana 7 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítol 13 Seminaris Setmana 5 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022" />
+  <meta name="twitter:title" content="Capítol 7 Teoria Setmana 7 | Diari de les Classes de Mètodes Estadístics Aplicats (21703). Curs 2021-2022" />
   
   <meta name="twitter:description" content="Diari de les classes del Curs 2021-2022 de mètodes estadístics aplicats a ciències polítiques." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="seminaris-setmana-4.html"/>
-<link rel="next" href="homework.html"/>
+<link rel="prev" href="teoria-setmana-6.html"/>
+<link rel="next" href="teoria-setmana-8.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -334,23 +334,90 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="seminaris-setmana-5" class="section level1" number="13">
-<h1><span class="header-section-number">Capítol 13</span> Seminaris Setmana 5</h1>
+<div id="teoria-setmana-7" class="section level1" number="7">
+<h1><span class="header-section-number">Capítol 7</span> Teoria Setmana 7</h1>
+<div id="european-statisticall-survey-2016-ess" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> European Statisticall Survey 2016 (ESS)</h2>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="teoria-setmana-7.html#cb404-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FactoMineR)</span>
+<span id="cb404-2"><a href="teoria-setmana-7.html#cb404-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span></code></pre></div>
+<pre><code>## Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa</code></pre>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="teoria-setmana-7.html#cb406-1" aria-hidden="true" tabindex="-1"></a>ess <span class="ot">&lt;-</span> <span class="fu">load</span>(<span class="st">&quot;www/data/ess16_8.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="teoria-setmana-7.html#cb407-1" aria-hidden="true" tabindex="-1"></a>X<span class="ot">&lt;-</span>essdata[,<span class="sc">-</span><span class="dv">1</span><span class="sc">:-</span><span class="dv">2</span>]</span>
+<span id="cb407-2"><a href="teoria-setmana-7.html#cb407-2" aria-hidden="true" tabindex="-1"></a>Xs<span class="ot">&lt;-</span><span class="fu">scale</span>(X)</span>
+<span id="cb407-3"><a href="teoria-setmana-7.html#cb407-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb407-4"><a href="teoria-setmana-7.html#cb407-4" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">PCA</span>(Xs, <span class="at">graph =</span> F)</span>
+<span id="cb407-5"><a href="teoria-setmana-7.html#cb407-5" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_screeplot</span>(result, <span class="at">main=</span><span class="st">&quot;PCA ESS 2016: Scree plot&quot;</span>, <span class="at">ncp=</span><span class="dv">21</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-204-1.png" width="672" /></p>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="teoria-setmana-7.html#cb408-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_var</span>(result, <span class="at">repel=</span>T, </span>
+<span id="cb408-2"><a href="teoria-setmana-7.html#cb408-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">title=</span><span class="st">&quot;PCA ESS 2016: variables plot, exp. var. is 35.66%&quot;</span>, </span>
+<span id="cb408-3"><a href="teoria-setmana-7.html#cb408-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.var =</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-205-1.png" width="672" /></p>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="teoria-setmana-7.html#cb409-1" aria-hidden="true" tabindex="-1"></a>CoordenadesPC <span class="ot">&lt;-</span> <span class="fu">predict</span>(result, <span class="at">newdata=</span>Xs)</span>
+<span id="cb409-2"><a href="teoria-setmana-7.html#cb409-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb409-3"><a href="teoria-setmana-7.html#cb409-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(CoordenadesPC<span class="sc">$</span>coord)</span></code></pre></div>
+<pre><code>##         Dim.1       Dim.2      Dim.3      Dim.4       Dim.5
+## 1  0.05587675 -0.78445549 -2.6542938 -1.7548698  1.96207258
+## 2 -2.59615053 -1.14631785 -1.3477210 -1.8178399  0.52480225
+## 3 -0.91825328  2.06662635 -0.3738472 -1.0165870 -2.49455226
+## 4  0.92790773 -1.26918362  0.6469516  0.1678153 -0.03991936
+## 5  1.08033473  0.09643711 -2.1028387  0.2559448 -1.33723820
+## 6  0.90197585  2.88962053  1.0347817  0.5298216  0.46822160</code></pre>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="teoria-setmana-7.html#cb411-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(Xs,CoordenadesPC<span class="sc">$</span>coord)</span></code></pre></div>
+<pre><code>##             Dim.1      Dim.2       Dim.3       Dim.4       Dim.5
+## ipcrtiv 0.4850904 -0.2466303 -0.27896542 -0.23266697  0.32178101
+## imprich 0.2983448 -0.4955241  0.45252734 -0.05873774  0.05502028
+## ipeqopt 0.4617391  0.2670961 -0.32557454 -0.20129679  0.19142078
+## ipshabt 0.5393657 -0.3483975  0.31343428 -0.27357813  0.19453073
+## impsafe 0.4715346  0.3398959  0.33869121 -0.20931577 -0.20770968
+## impdiff 0.5275476 -0.3972211 -0.23448945  0.16728347  0.17915319
+## ipfrule 0.3486195  0.2688416  0.42811230  0.36713962  0.30471563
+## ipudrst 0.5047132  0.2456069 -0.39684700  0.06162487  0.31674151
+## ipmodst 0.3340044  0.4938287 -0.06293401  0.32049269  0.14915976
+## ipgdtim 0.4780183 -0.4264057 -0.18670616  0.21052200 -0.37456250
+## impfree 0.5143234 -0.0926020 -0.26653410 -0.26626859 -0.22923968
+## iphlppl 0.5765880  0.3046963 -0.33534853 -0.03841315  0.00315128
+## ipsuces 0.5699053 -0.3712434  0.34858548 -0.18018895  0.08902413
+## ipstrgv 0.5138666  0.2904064  0.25720280 -0.13212796 -0.26157469
+## ipadvnt 0.3775718 -0.6221513 -0.11053826  0.28812685  0.09685584
+## ipbhprp 0.4557116  0.4223522  0.32174890  0.22660341  0.07768646
+## iprspot 0.4924489 -0.0909169  0.49381765 -0.08019413  0.01327728
+## iplylfr 0.5737709  0.2523066 -0.30833537 -0.04585277 -0.17154264
+## impenv  0.5035905  0.3235171 -0.18851825 -0.11526224 -0.10723265
+## imptrad 0.3834979  0.3320727  0.32592300  0.19435975 -0.19122251
+## impfun  0.4992021 -0.4226673 -0.18968646  0.36359478 -0.30496134</code></pre>
 <ul>
-<li>Xerrada <a href="https://www.upf.edu/web/politiques/inici/-/asset_publisher/fZjeFt1Yyu1I/content/id/254712953/maximized#.YgKvELrMLD4">“Justicia en la Inteligencia Artificial”</a>.</li>
+<li>ipcrtiv: Important to think new ideas and being creative</li>
+<li>imprich: Important to be rich, have money and expensive things</li>
+<li>ipeqopt: Important that people are treated equally and have equal opportunities</li>
+<li>ipshabt: Important to show abilities and be admired</li>
+<li>impsafe: Important to live in secure and safe surroundings</li>
+<li>impdiff: Important to try new and different things in life</li>
+<li>ipfrule: Important to do what is told and follow rules</li>
+<li>ipudrst: Important to understand different people</li>
+<li>ipmodst: Important to be humble and modest, not draw attention</li>
+<li>ipgdtim: Important to have a good time</li>
+<li>impfree: Important to make own decisions and be free</li>
+<li>iphlppl: Important to help people and care for others well-being</li>
+<li>ipsuces: Important to be successful and that people recognize achievements</li>
+<li>ipstrgv: Important that government is strong and ensures safety</li>
+<li>ipadvnt: Important to seek adventures and have an exciting life</li>
+<li>ipbhprp: Important to behave properly</li>
+<li>iprspot: Important to get respect from others</li>
+<li>iplylfr: Important to be loyal to friends and devote to people close</li>
+<li>impenv: Important to care for nature and environment</li>
+<li>imptrad: Important to follow traditions and customs</li>
+<li>impfun: Important to seek fun and things that give pleasure</li>
 </ul>
 
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="seminaris-setmana-4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="homework.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="teoria-setmana-6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="teoria-setmana-8.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -372,7 +439,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/griu/meacp_2021/edit/master/02050-seminar_class_journal_w5.Rmd",
+"link": "https://github.com/griu/meacp_2021/edit/master/01070-class_journal_w7.Rmd",
 "text": "Edit"
 },
 "history": {
