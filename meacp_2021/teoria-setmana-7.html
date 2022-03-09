@@ -339,22 +339,22 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <div id="european-statisticall-survey-2016-ess" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> European Statisticall Survey 2016 (ESS)</h2>
 <div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="teoria-setmana-7.html#cb404-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FactoMineR)</span>
-<span id="cb404-2"><a href="teoria-setmana-7.html#cb404-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span></code></pre></div>
-<pre><code>## Welcome! Want to learn more? See two factoextra-related books at https://goo.gl/ve3WBa</code></pre>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="teoria-setmana-7.html#cb406-1" aria-hidden="true" tabindex="-1"></a>ess <span class="ot">&lt;-</span> <span class="fu">load</span>(<span class="st">&quot;www/data/ess16_8.RData&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="teoria-setmana-7.html#cb407-1" aria-hidden="true" tabindex="-1"></a>X<span class="ot">&lt;-</span>essdata[,<span class="sc">-</span><span class="dv">1</span><span class="sc">:-</span><span class="dv">2</span>]</span>
-<span id="cb407-2"><a href="teoria-setmana-7.html#cb407-2" aria-hidden="true" tabindex="-1"></a>Xs<span class="ot">&lt;-</span><span class="fu">scale</span>(X)</span>
-<span id="cb407-3"><a href="teoria-setmana-7.html#cb407-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb407-4"><a href="teoria-setmana-7.html#cb407-4" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">PCA</span>(Xs, <span class="at">graph =</span> F)</span>
-<span id="cb407-5"><a href="teoria-setmana-7.html#cb407-5" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_screeplot</span>(result, <span class="at">main=</span><span class="st">&quot;PCA ESS 2016: Scree plot&quot;</span>, <span class="at">ncp=</span><span class="dv">21</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-204-1.png" width="672" /></p>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="teoria-setmana-7.html#cb408-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_var</span>(result, <span class="at">repel=</span>T, </span>
-<span id="cb408-2"><a href="teoria-setmana-7.html#cb408-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">title=</span><span class="st">&quot;PCA ESS 2016: variables plot, exp. var. is 35.66%&quot;</span>, </span>
-<span id="cb408-3"><a href="teoria-setmana-7.html#cb408-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.var =</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-205-1.png" width="672" /></p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="teoria-setmana-7.html#cb409-1" aria-hidden="true" tabindex="-1"></a>CoordenadesPC <span class="ot">&lt;-</span> <span class="fu">predict</span>(result, <span class="at">newdata=</span>Xs)</span>
-<span id="cb409-2"><a href="teoria-setmana-7.html#cb409-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb409-3"><a href="teoria-setmana-7.html#cb409-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(CoordenadesPC<span class="sc">$</span>coord)</span></code></pre></div>
+<span id="cb404-2"><a href="teoria-setmana-7.html#cb404-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span>
+<span id="cb404-3"><a href="teoria-setmana-7.html#cb404-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb404-4"><a href="teoria-setmana-7.html#cb404-4" aria-hidden="true" tabindex="-1"></a>ess <span class="ot">&lt;-</span> <span class="fu">load</span>(<span class="st">&quot;www/data/ess16_8.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="teoria-setmana-7.html#cb405-1" aria-hidden="true" tabindex="-1"></a>X<span class="ot">&lt;-</span>essdata[,<span class="sc">-</span><span class="dv">1</span><span class="sc">:-</span><span class="dv">2</span>]</span>
+<span id="cb405-2"><a href="teoria-setmana-7.html#cb405-2" aria-hidden="true" tabindex="-1"></a>Xs<span class="ot">&lt;-</span><span class="fu">scale</span>(X)</span>
+<span id="cb405-3"><a href="teoria-setmana-7.html#cb405-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb405-4"><a href="teoria-setmana-7.html#cb405-4" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">PCA</span>(Xs, <span class="at">graph =</span> F)</span>
+<span id="cb405-5"><a href="teoria-setmana-7.html#cb405-5" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_screeplot</span>(result, <span class="at">main=</span><span class="st">&quot;PCA ESS 2016: Scree plot&quot;</span>, <span class="at">ncp=</span><span class="dv">21</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-213-1.png" width="672" /></p>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="teoria-setmana-7.html#cb406-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_pca_var</span>(result, <span class="at">repel=</span>T, </span>
+<span id="cb406-2"><a href="teoria-setmana-7.html#cb406-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">title=</span><span class="st">&quot;PCA ESS 2016: variables plot, exp. var. is 35.66%&quot;</span>, </span>
+<span id="cb406-3"><a href="teoria-setmana-7.html#cb406-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.var =</span><span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-214-1.png" width="672" /></p>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="teoria-setmana-7.html#cb407-1" aria-hidden="true" tabindex="-1"></a>CoordenadesPC <span class="ot">&lt;-</span> <span class="fu">predict</span>(result, <span class="at">newdata=</span>Xs)</span>
+<span id="cb407-2"><a href="teoria-setmana-7.html#cb407-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb407-3"><a href="teoria-setmana-7.html#cb407-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(CoordenadesPC<span class="sc">$</span>coord)</span></code></pre></div>
 <pre><code>##         Dim.1       Dim.2      Dim.3      Dim.4       Dim.5
 ## 1  0.05587675 -0.78445549 -2.6542938 -1.7548698  1.96207258
 ## 2 -2.59615053 -1.14631785 -1.3477210 -1.8178399  0.52480225
@@ -362,7 +362,9 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## 4  0.92790773 -1.26918362  0.6469516  0.1678153 -0.03991936
 ## 5  1.08033473  0.09643711 -2.1028387  0.2559448 -1.33723820
 ## 6  0.90197585  2.88962053  1.0347817  0.5298216  0.46822160</code></pre>
-<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="teoria-setmana-7.html#cb411-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(Xs,CoordenadesPC<span class="sc">$</span>coord)</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="teoria-setmana-7.html#cb409-1" aria-hidden="true" tabindex="-1"></a>corCP <span class="ot">&lt;-</span> <span class="fu">cor</span>(Xs,CoordenadesPC<span class="sc">$</span>coord)</span>
+<span id="cb409-2"><a href="teoria-setmana-7.html#cb409-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb409-3"><a href="teoria-setmana-7.html#cb409-3" aria-hidden="true" tabindex="-1"></a>corCP</span></code></pre></div>
 <pre><code>##             Dim.1      Dim.2       Dim.3       Dim.4       Dim.5
 ## ipcrtiv 0.4850904 -0.2466303 -0.27896542 -0.23266697  0.32178101
 ## imprich 0.2983448 -0.4955241  0.45252734 -0.05873774  0.05502028
@@ -408,6 +410,57 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li>imptrad: Important to follow traditions and customs</li>
 <li>impfun: Important to seek fun and things that give pleasure</li>
 </ul>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="teoria-setmana-7.html#cb411-1" aria-hidden="true" tabindex="-1"></a>vars <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb411-2"><a href="teoria-setmana-7.html#cb411-2" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;Important to think new ideas and being creative&quot;</span></span>
+<span id="cb411-3"><a href="teoria-setmana-7.html#cb411-3" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to be rich, have money and expensive things&quot;</span></span>
+<span id="cb411-4"><a href="teoria-setmana-7.html#cb411-4" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important that people are treated equally and have equal opportunities&quot;</span></span>
+<span id="cb411-5"><a href="teoria-setmana-7.html#cb411-5" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to show abilities and be admired&quot;</span></span>
+<span id="cb411-6"><a href="teoria-setmana-7.html#cb411-6" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to live in secure and safe surroundings&quot;</span></span>
+<span id="cb411-7"><a href="teoria-setmana-7.html#cb411-7" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to try new and different things in life&quot;</span></span>
+<span id="cb411-8"><a href="teoria-setmana-7.html#cb411-8" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to do what is told and follow rules&quot;</span></span>
+<span id="cb411-9"><a href="teoria-setmana-7.html#cb411-9" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to understand different people&quot;</span></span>
+<span id="cb411-10"><a href="teoria-setmana-7.html#cb411-10" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to be humble and modest, not draw attention&quot;</span></span>
+<span id="cb411-11"><a href="teoria-setmana-7.html#cb411-11" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to have a good time&quot;</span></span>
+<span id="cb411-12"><a href="teoria-setmana-7.html#cb411-12" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to make own decisions and be free&quot;</span></span>
+<span id="cb411-13"><a href="teoria-setmana-7.html#cb411-13" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to help people and care for others well-being&quot;</span></span>
+<span id="cb411-14"><a href="teoria-setmana-7.html#cb411-14" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to be successful and that people recognize achievements&quot;</span></span>
+<span id="cb411-15"><a href="teoria-setmana-7.html#cb411-15" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important that government is strong and ensures safety&quot;</span></span>
+<span id="cb411-16"><a href="teoria-setmana-7.html#cb411-16" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to seek adventures and have an exciting life&quot;</span></span>
+<span id="cb411-17"><a href="teoria-setmana-7.html#cb411-17" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to behave properly&quot;</span></span>
+<span id="cb411-18"><a href="teoria-setmana-7.html#cb411-18" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to get respect from others&quot;</span></span>
+<span id="cb411-19"><a href="teoria-setmana-7.html#cb411-19" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to be loyal to friends and devote to people close&quot;</span></span>
+<span id="cb411-20"><a href="teoria-setmana-7.html#cb411-20" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to care for nature and environment&quot;</span></span>
+<span id="cb411-21"><a href="teoria-setmana-7.html#cb411-21" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to follow traditions and customs&quot;</span></span>
+<span id="cb411-22"><a href="teoria-setmana-7.html#cb411-22" aria-hidden="true" tabindex="-1"></a>,<span class="st">&quot;Important to seek fun and things that give pleasure&quot;</span>)</span>
+<span id="cb411-23"><a href="teoria-setmana-7.html#cb411-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb411-24"><a href="teoria-setmana-7.html#cb411-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb411-25"><a href="teoria-setmana-7.html#cb411-25" aria-hidden="true" tabindex="-1"></a><span class="co"># SEgunda componente</span></span>
+<span id="cb411-26"><a href="teoria-setmana-7.html#cb411-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb411-27"><a href="teoria-setmana-7.html#cb411-27" aria-hidden="true" tabindex="-1"></a>corCPDesc<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">CP1=</span>corCP[,<span class="dv">1</span>],<span class="at">CP2=</span>corCP[,<span class="dv">2</span>],<span class="at">VAR =</span> vars)</span>
+<span id="cb411-28"><a href="teoria-setmana-7.html#cb411-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb411-29"><a href="teoria-setmana-7.html#cb411-29" aria-hidden="true" tabindex="-1"></a>corCPDesc[<span class="fu">order</span>(corCPDesc[,<span class="dv">2</span>]),]</span></code></pre></div>
+<pre><code>##               CP1        CP2                                                                    VAR
+## ipadvnt 0.3775718 -0.6221513                 Important to seek adventures and have an exciting life
+## imprich 0.2983448 -0.4955241                  Important to be rich, have money and expensive things
+## ipgdtim 0.4780183 -0.4264057                                          Important to have a good time
+## impfun  0.4992021 -0.4226673                    Important to seek fun and things that give pleasure
+## impdiff 0.5275476 -0.3972211                      Important to try new and different things in life
+## ipsuces 0.5699053 -0.3712434      Important to be successful and that people recognize achievements
+## ipshabt 0.5393657 -0.3483975                             Important to show abilities and be admired
+## ipcrtiv 0.4850904 -0.2466303                        Important to think new ideas and being creative
+## impfree 0.5143234 -0.0926020                            Important to make own decisions and be free
+## iprspot 0.4924489 -0.0909169                                   Important to get respect from others
+## ipudrst 0.5047132  0.2456069                               Important to understand different people
+## iplylfr 0.5737709  0.2523066            Important to be loyal to friends and devote to people close
+## ipeqopt 0.4617391  0.2670961 Important that people are treated equally and have equal opportunities
+## ipfrule 0.3486195  0.2688416                          Important to do what is told and follow rules
+## ipstrgv 0.5138666  0.2904064                 Important that government is strong and ensures safety
+## iphlppl 0.5765880  0.3046963                Important to help people and care for others well-being
+## impenv  0.5035905  0.3235171                           Important to care for nature and environment
+## imptrad 0.3834979  0.3320727                             Important to follow traditions and customs
+## impsafe 0.4715346  0.3398959                      Important to live in secure and safe surroundings
+## ipbhprp 0.4557116  0.4223522                                           Important to behave properly
+## ipmodst 0.3340044  0.4938287                  Important to be humble and modest, not draw attention</code></pre>
 
 </div>
 </div>

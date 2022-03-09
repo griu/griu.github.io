@@ -419,7 +419,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb238-3"><a href="teoria-setmana-5.html#cb238-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span><span class="fl">0.02</span>)<span class="sc">+</span></span>
 <span id="cb238-4"><a href="teoria-setmana-5.html#cb238-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;lm&#39;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">formula =</span> y<span class="sc">~</span>x, <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;lm&quot;</span>))<span class="sc">+</span></span>
 <span id="cb238-5"><a href="teoria-setmana-5.html#cb238-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;loess&#39;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">formula =</span> y<span class="sc">~</span>x, <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;loess&quot;</span>))</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-117-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
 <p>Mirem ara el resum de la regressió lineal.</p>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="teoria-setmana-5.html#cb239-1" aria-hidden="true" tabindex="-1"></a>re0 <span class="ot">&lt;-</span><span class="fu">lm</span>(Vot <span class="sc">~</span> Lrenda, <span class="at">data=</span>data)</span>
 <span id="cb239-2"><a href="teoria-setmana-5.html#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(re0)</span></code></pre></div>
@@ -448,9 +448,9 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <li>El terme d’error no té distribució normal</li>
 </ul>
 <div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="teoria-setmana-5.html#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(re0,<span class="dv">1</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-119-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
 <div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="teoria-setmana-5.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(re0,<span class="dv">2</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 </div>
 <div id="la-regressió-logística" class="section level3" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> La Regressió logística</h3>
@@ -529,7 +529,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb251-5"><a href="teoria-setmana-5.html#cb251-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&#39;loess&#39;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">formula =</span> y<span class="sc">~</span>x, <span class="fu">aes</span>(<span class="at">color =</span> <span class="st">&quot;loess&quot;</span>))<span class="sc">+</span></span>
 <span id="cb251-6"><a href="teoria-setmana-5.html#cb251-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>P_glm_Vot,<span class="at">color =</span> <span class="st">&quot;glm-logit&quot;</span>))<span class="sc">+</span></span>
 <span id="cb251-7"><a href="teoria-setmana-5.html#cb251-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-125-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
 <p>Observa com la corba obtinguda per la regressió logística (glm-logit) captura millor la tendència observada a través de la regressió Loess. Addicionalment la regressió logística defineix una asímptota respecte el 0 i l’1 (s’acosta, però no arriba a creuar mai).</p>
 </div>
 <div id="regressió-logística-amb-covariants-lrenda-gènere" class="section level3" number="5.2.5">
@@ -598,7 +598,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb258-8"><a href="teoria-setmana-5.html#cb258-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">scale=</span><span class="st">&quot;response&quot;</span>) <span class="sc">+</span></span>
 <span id="cb258-9"><a href="teoria-setmana-5.html#cb258-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Prob(Vot)&quot;</span>, </span>
 <span id="cb258-10"><a href="teoria-setmana-5.html#cb258-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Lrenda&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-138-1.png" width="672" /></p>
 <p>Observem com els homes tenen una corba clarament per sobre. També, la variació de la intenció de vot es fa més pronunciada (mes pendent) en les dones en trams de rentes baixes que en homes (efecte no lineal).</p>
 <p>També podem retornar la variable de Renta a escala normal (Euros) transformant amb la exponencial.</p>
 <div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="teoria-setmana-5.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(re2, <span class="st">&quot;Lrenda&quot;</span>, </span>
@@ -610,7 +610,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb259-7"><a href="teoria-setmana-5.html#cb259-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">scale=</span><span class="st">&quot;response&quot;</span>) <span class="sc">+</span></span>
 <span id="cb259-8"><a href="teoria-setmana-5.html#cb259-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Prob(Vot)&quot;</span>, </span>
 <span id="cb259-9"><a href="teoria-setmana-5.html#cb259-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Lrenda&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-130-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
 <p>El canvi d’escala accentua la interpretació anterior, es a dir, major variació en trams de rentes baixes en dones que en homes.</p>
 <p>Pots profunditzar en el paràmetres de visreg a l’ajuda:</p>
 <pre><code>?visreg        # paràmetres dels càlculs.
@@ -688,7 +688,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb269-6"><a href="teoria-setmana-5.html#cb269-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">scale=</span><span class="st">&quot;response&quot;</span>) <span class="sc">+</span></span>
 <span id="cb269-7"><a href="teoria-setmana-5.html#cb269-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Prob(Close)&quot;</span>, </span>
 <span id="cb269-8"><a href="teoria-setmana-5.html#cb269-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;LIVED&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-144-1.png" width="672" /></p>
 <p>Definim un model complert amb un factor de interacció de GENDER y KIDS.</p>
 <div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="teoria-setmana-5.html#cb270-1" aria-hidden="true" tabindex="-1"></a>da <span class="ot">&lt;-</span> da <span class="sc">%&gt;%</span> </span>
 <span id="cb270-2"><a href="teoria-setmana-5.html#cb270-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">MALE =</span>  <span class="fl">1.0</span><span class="sc">*</span>(GENDER<span class="sc">==</span><span class="st">&quot;MALE&quot;</span>))</span>
@@ -790,7 +790,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb276-7"><a href="teoria-setmana-5.html#cb276-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">scale=</span><span class="st">&quot;response&quot;</span>) <span class="sc">+</span></span>
 <span id="cb276-8"><a href="teoria-setmana-5.html#cb276-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Prob(Close)&quot;</span>, </span>
 <span id="cb276-9"><a href="teoria-setmana-5.html#cb276-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;LIVED&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-148-1.png" width="672" /></p>
 <div id="anàlisis-bivariant-preliminar" class="section level3" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> Anàlisis bivariant preliminar</h3>
 <p>Fem un pas enrere. Com en el cas de la regressió lineal, abans de modelitzar, es interesant fer un breu anàlisis bivariant de les variables que es volen introduir en el model.</p>
@@ -876,7 +876,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb285-20"><a href="teoria-setmana-5.html#cb285-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Intervals confiança Indecisió&quot;</span>)</span>
 <span id="cb285-21"><a href="teoria-setmana-5.html#cb285-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb285-22"><a href="teoria-setmana-5.html#cb285-22" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-144-1.png" width="864" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-153-1.png" width="864" /></p>
 <p>Mateix anàlisi, sobre la variable MEETINGS :</p>
 <div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="teoria-setmana-5.html#cb286-1" aria-hidden="true" tabindex="-1"></a>RESUM <span class="ot">&lt;-</span> da <span class="sc">%&gt;%</span> </span>
 <span id="cb286-2"><a href="teoria-setmana-5.html#cb286-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(MEETINGS ) <span class="sc">%&gt;%</span> </span>
@@ -906,7 +906,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb286-26"><a href="teoria-setmana-5.html#cb286-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Intervals confiança Indecisió&quot;</span>)</span>
 <span id="cb286-27"><a href="teoria-setmana-5.html#cb286-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb286-28"><a href="teoria-setmana-5.html#cb286-28" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-145-1.png" width="864" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-154-1.png" width="864" /></p>
 
 </div>
 </div>

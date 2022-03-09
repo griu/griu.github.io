@@ -381,36 +381,36 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <p>Calculem les distancies euclidianes.</p>
 <div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="teoria-setmana-8.html#cb421-1" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">dist</span>(Xs, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>, <span class="at">upper =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb421-2"><a href="teoria-setmana-8.html#cb421-2" aria-hidden="true" tabindex="-1"></a>D</span></code></pre></div>
-<pre><code>##           Andal     Catal     Madri     Valen     Casle     Galic      Vasc
-## Andal           3.3909378 4.3116621 2.2182017 0.7766923 1.4698484 3.2980609
-## Catal 3.3909378           3.2087683 1.1984257 3.2333938 4.2792204 0.3331301
-## Madri 4.3116621 3.2087683           3.2649812 4.5916782 5.0305493 3.4879479
-## Valen 2.2182017 1.1984257 3.2649812           2.1058775 3.1564563 1.1182685
-## Casle 0.7766923 3.2333938 4.5916782 2.1058775           1.3011533 3.0831397
-## Galic 1.4698484 4.2792204 5.0305493 3.1564563 1.3011533           4.1537258
-## Vasc  3.2980609 0.3331301 3.4879479 1.1182685 3.0831397 4.1537258          
-## Manc  0.6605585 3.6614647 4.8382780 2.4848682 0.6502605 1.2238615 3.5159503
-## Cana  1.4623037 3.1455752 3.4093477 2.2402105 1.8076834 2.3287132 3.1763875
-## Arag  1.5499263 2.1936506 4.2305984 1.2026903 1.1820547 2.4349853 2.0113188
-## Astu  1.1044931 2.7668095 4.0480511 1.5884374 1.0796414 1.8804045 2.6355331
-## Extr  1.7144509 4.9975131 5.6487024 3.8046755 1.9299497 1.2985500 4.8722182
-## Murc  1.1290951 3.1269558 4.2036965 1.9826666 1.5090162 2.2679203 3.0268689
-## Bale  3.0349693 2.6586091 3.9049427 2.4633526 2.8415961 3.6516151 2.6861571
-##            Manc      Cana      Arag      Astu      Extr      Murc      Bale
-## Andal 0.6605585 1.4623037 1.5499263 1.1044931 1.7144509 1.1290951 3.0349693
-## Catal 3.6614647 3.1455752 2.1936506 2.7668095 4.9975131 3.1269558 2.6586091
-## Madri 4.8382780 3.4093477 4.2305984 4.0480511 5.6487024 4.2036965 3.9049427
-## Valen 2.4848682 2.2402105 1.2026903 1.5884374 3.8046755 1.9826666 2.4633526
-## Casle 0.6502605 1.8076834 1.1820547 1.0796414 1.9299497 1.5090162 2.8415961
-## Galic 1.2238615 2.3287132 2.4349853 1.8804045 1.2985500 2.2679203 3.6516151
-## Vasc  3.5159503 3.1763875 2.0113188 2.6355331 4.8722182 3.0268689 2.6861571
-## Manc            2.0728205 1.6477985 1.1239719 1.4014910 1.2541501 3.4173891
-## Cana  2.0728205           2.0248524 2.0732836 2.8703509 2.1973882 2.1261708
-## Arag  1.6477985 2.0248524           1.2594662 3.0425874 1.6928121 2.3450076
-## Astu  1.1239719 2.0732836 1.2594662           2.3176976 0.8451783 3.2477084
-## Extr  1.4014910 2.8703509 3.0425874 2.3176976           2.2417440 4.5173429
-## Murc  1.2541501 2.1973882 1.6928121 0.8451783 2.2417440           3.6387133
-## Bale  3.4173891 2.1261708 2.3450076 3.2477084 4.5173429 3.6387133</code></pre>
+<pre><code>##           Andal     Catal     Madri     Valen     Casle     Galic      Vasc      Manc      Cana      Arag      Astu      Extr
+## Andal           3.3909378 4.3116621 2.2182017 0.7766923 1.4698484 3.2980609 0.6605585 1.4623037 1.5499263 1.1044931 1.7144509
+## Catal 3.3909378           3.2087683 1.1984257 3.2333938 4.2792204 0.3331301 3.6614647 3.1455752 2.1936506 2.7668095 4.9975131
+## Madri 4.3116621 3.2087683           3.2649812 4.5916782 5.0305493 3.4879479 4.8382780 3.4093477 4.2305984 4.0480511 5.6487024
+## Valen 2.2182017 1.1984257 3.2649812           2.1058775 3.1564563 1.1182685 2.4848682 2.2402105 1.2026903 1.5884374 3.8046755
+## Casle 0.7766923 3.2333938 4.5916782 2.1058775           1.3011533 3.0831397 0.6502605 1.8076834 1.1820547 1.0796414 1.9299497
+## Galic 1.4698484 4.2792204 5.0305493 3.1564563 1.3011533           4.1537258 1.2238615 2.3287132 2.4349853 1.8804045 1.2985500
+## Vasc  3.2980609 0.3331301 3.4879479 1.1182685 3.0831397 4.1537258           3.5159503 3.1763875 2.0113188 2.6355331 4.8722182
+## Manc  0.6605585 3.6614647 4.8382780 2.4848682 0.6502605 1.2238615 3.5159503           2.0728205 1.6477985 1.1239719 1.4014910
+## Cana  1.4623037 3.1455752 3.4093477 2.2402105 1.8076834 2.3287132 3.1763875 2.0728205           2.0248524 2.0732836 2.8703509
+## Arag  1.5499263 2.1936506 4.2305984 1.2026903 1.1820547 2.4349853 2.0113188 1.6477985 2.0248524           1.2594662 3.0425874
+## Astu  1.1044931 2.7668095 4.0480511 1.5884374 1.0796414 1.8804045 2.6355331 1.1239719 2.0732836 1.2594662           2.3176976
+## Extr  1.7144509 4.9975131 5.6487024 3.8046755 1.9299497 1.2985500 4.8722182 1.4014910 2.8703509 3.0425874 2.3176976          
+## Murc  1.1290951 3.1269558 4.2036965 1.9826666 1.5090162 2.2679203 3.0268689 1.2541501 2.1973882 1.6928121 0.8451783 2.2417440
+## Bale  3.0349693 2.6586091 3.9049427 2.4633526 2.8415961 3.6516151 2.6861571 3.4173891 2.1261708 2.3450076 3.2477084 4.5173429
+##            Murc      Bale
+## Andal 1.1290951 3.0349693
+## Catal 3.1269558 2.6586091
+## Madri 4.2036965 3.9049427
+## Valen 1.9826666 2.4633526
+## Casle 1.5090162 2.8415961
+## Galic 2.2679203 3.6516151
+## Vasc  3.0268689 2.6861571
+## Manc  1.2541501 3.4173891
+## Cana  2.1973882 2.1261708
+## Arag  1.6928121 2.3450076
+## Astu  0.8451783 3.2477084
+## Extr  2.2417440 4.5173429
+## Murc            3.6387133
+## Bale  3.6387133</code></pre>
 <div id="distancia-manhattan" class="section level4" number="8.1.1.1">
 <h4><span class="header-section-number">8.1.1.1</span> Distancia Manhattan</h4>
 <p>Altres distancies:</p>
@@ -419,51 +419,36 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 </ul>
 <div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="teoria-setmana-8.html#cb423-1" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">dist</span>(Xs, <span class="at">method =</span> <span class="st">&quot;manhattan&quot;</span>, <span class="at">upper =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb423-2"><a href="teoria-setmana-8.html#cb423-2" aria-hidden="true" tabindex="-1"></a>D</span></code></pre></div>
-<pre><code>##            Andal      Catal      Madri      Valen      Casle      Galic
-## Andal             6.3596120  7.5218744  4.0906609  1.5339615  1.8884319
-## Catal  6.3596120             5.1565960  2.2689511  6.2000731  7.6831835
-## Madri  7.5218744  5.1565960             4.9112822  7.3623356  8.8454459
-## Valen  4.0906609  2.2689511  4.9112822             3.9311221  5.4142324
-## Casle  1.5339615  6.2000731  7.3623356  3.9311221             2.3559563
-## Galic  1.8884319  7.6831835  8.8454459  5.4142324  2.3559563           
-## Vasc   5.9511870  0.5806160  5.6395086  1.8832170  5.7916481  7.2747585
-## Manc   1.2432345  7.1481849  8.3104473  4.8792338  0.9481118  2.2098027
-## Cana   2.8344246  4.4751400  5.6374024  2.8603418  3.5068198  3.8407003
-## Arag   2.7703511  4.2775536  5.8190232  2.0352489  2.0541271  4.4100834
-## Astu   1.5111809  5.2373374  6.5563129  2.9683863  2.1174123  2.9876559
-## Extr   3.1688291  9.5284411 10.6907036  7.2594901  3.3283680  2.2950827
-## Murc   1.9706621  5.8189723  6.9812348  3.5500213  2.6726896  3.7441264
-## Bale   4.4362220  4.5702639  6.7628531  3.6425140  4.5204591  5.7597934
-##             Vasc       Manc       Cana       Arag       Astu       Extr
-## Andal  5.9511870  1.2432345  2.8344246  2.7703511  1.5111809  3.1688291
-## Catal  0.5806160  7.1481849  4.4751400  4.2775536  5.2373374  9.5284411
-## Madri  5.6395086  8.3104473  5.6374024  5.8190232  6.5563129 10.6907036
-## Valen  1.8832170  4.8792338  2.8603418  2.0352489  2.9683863  7.2594901
-## Casle  5.7916481  0.9481118  3.5068198  2.0541271  2.1174123  3.3283680
-## Galic  7.2747585  2.2098027  3.8407003  4.4100834  2.9876559  2.2950827
-## Vasc              6.7397599  4.5659163  3.8691286  4.8289124  9.1200161
-## Manc   6.7397599             4.0776591  2.8706313  1.9108475  2.4558928
-## Cana   4.5659163  4.0776591             3.1030636  3.8403533  5.0533012
-## Arag   3.8691286  2.8706313  3.1030636             2.1533286  5.2690403
-## Astu   4.8289124  1.9108475  3.8403533  2.1533286             4.2911038
-## Extr   9.1200161  2.4558928  5.0533012  5.2690403  4.2911038           
-## Murc   5.4105473  2.3950678  3.7835273  2.4904556  1.5840229  3.7094688
-## Bale   4.2595423  5.2247948  3.4382104  4.1167029  4.8539927  7.6050511
-##             Murc       Bale
-## Andal  1.9706621  4.4362220
-## Catal  5.8189723  4.5702639
-## Madri  6.9812348  6.7628531
-## Valen  3.5500213  3.6425140
-## Casle  2.6726896  4.5204591
-## Galic  3.7441264  5.7597934
-## Vasc   5.4105473  4.2595423
-## Manc   2.3950678  5.2247948
-## Cana   3.7835273  3.4382104
-## Arag   2.4904556  4.1167029
-## Astu   1.5840229  4.8539927
-## Extr   3.7094688  7.6050511
-## Murc              4.7971666
-## Bale   4.7971666</code></pre>
+<pre><code>##            Andal      Catal      Madri      Valen      Casle      Galic       Vasc       Manc       Cana       Arag       Astu
+## Andal             6.3596120  7.5218744  4.0906609  1.5339615  1.8884319  5.9511870  1.2432345  2.8344246  2.7703511  1.5111809
+## Catal  6.3596120             5.1565960  2.2689511  6.2000731  7.6831835  0.5806160  7.1481849  4.4751400  4.2775536  5.2373374
+## Madri  7.5218744  5.1565960             4.9112822  7.3623356  8.8454459  5.6395086  8.3104473  5.6374024  5.8190232  6.5563129
+## Valen  4.0906609  2.2689511  4.9112822             3.9311221  5.4142324  1.8832170  4.8792338  2.8603418  2.0352489  2.9683863
+## Casle  1.5339615  6.2000731  7.3623356  3.9311221             2.3559563  5.7916481  0.9481118  3.5068198  2.0541271  2.1174123
+## Galic  1.8884319  7.6831835  8.8454459  5.4142324  2.3559563             7.2747585  2.2098027  3.8407003  4.4100834  2.9876559
+## Vasc   5.9511870  0.5806160  5.6395086  1.8832170  5.7916481  7.2747585             6.7397599  4.5659163  3.8691286  4.8289124
+## Manc   1.2432345  7.1481849  8.3104473  4.8792338  0.9481118  2.2098027  6.7397599             4.0776591  2.8706313  1.9108475
+## Cana   2.8344246  4.4751400  5.6374024  2.8603418  3.5068198  3.8407003  4.5659163  4.0776591             3.1030636  3.8403533
+## Arag   2.7703511  4.2775536  5.8190232  2.0352489  2.0541271  4.4100834  3.8691286  2.8706313  3.1030636             2.1533286
+## Astu   1.5111809  5.2373374  6.5563129  2.9683863  2.1174123  2.9876559  4.8289124  1.9108475  3.8403533  2.1533286           
+## Extr   3.1688291  9.5284411 10.6907036  7.2594901  3.3283680  2.2950827  9.1200161  2.4558928  5.0533012  5.2690403  4.2911038
+## Murc   1.9706621  5.8189723  6.9812348  3.5500213  2.6726896  3.7441264  5.4105473  2.3950678  3.7835273  2.4904556  1.5840229
+## Bale   4.4362220  4.5702639  6.7628531  3.6425140  4.5204591  5.7597934  4.2595423  5.2247948  3.4382104  4.1167029  4.8539927
+##             Extr       Murc       Bale
+## Andal  3.1688291  1.9706621  4.4362220
+## Catal  9.5284411  5.8189723  4.5702639
+## Madri 10.6907036  6.9812348  6.7628531
+## Valen  7.2594901  3.5500213  3.6425140
+## Casle  3.3283680  2.6726896  4.5204591
+## Galic  2.2950827  3.7441264  5.7597934
+## Vasc   9.1200161  5.4105473  4.2595423
+## Manc   2.4558928  2.3950678  5.2247948
+## Cana   5.0533012  3.7835273  3.4382104
+## Arag   5.2690403  2.4904556  4.1167029
+## Astu   4.2911038  1.5840229  4.8539927
+## Extr              3.7094688  7.6050511
+## Murc   3.7094688             4.7971666
+## Bale   7.6050511  4.7971666</code></pre>
 </div>
 <div id="mètode-complete" class="section level4" number="8.1.1.2">
 <h4><span class="header-section-number">8.1.1.2</span> Mètode “Complete”</h4>
@@ -471,13 +456,11 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="teoria-setmana-8.html#cb425-1" aria-hidden="true" tabindex="-1"></a>hc<span class="ot">&lt;-</span><span class="fu">hclust</span>(D, <span class="at">method =</span> <span class="st">&quot;complete&quot;</span>)</span>
 <span id="cb425-2"><a href="teoria-setmana-8.html#cb425-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hc, <span class="at">lab=</span>data[,<span class="dv">1</span>], <span class="at">cex=</span><span class="fl">0.8</span>, <span class="at">hang =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
 <span id="cb425-3"><a href="teoria-setmana-8.html#cb425-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">2.5</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-215-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-225-1.png" width="672" /></p>
 <p>Segmentem per alçada.</p>
 <div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="teoria-setmana-8.html#cb426-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cutree</span>(hc,<span class="at">h =</span> <span class="fl">2.5</span>)</span></code></pre></div>
-<pre><code>## Andal Catal Madri Valen Casle Galic  Vasc  Manc  Cana  Arag  Astu  Extr  Murc 
-##     1     2     3     4     5     6     2     5     7     4     1     6     1 
-##  Bale 
-##     8</code></pre>
+<pre><code>## Andal Catal Madri Valen Casle Galic  Vasc  Manc  Cana  Arag  Astu  Extr  Murc  Bale 
+##     1     2     3     4     5     6     2     5     7     4     1     6     1     8</code></pre>
 <p>Segmentem per número de grups.</p>
 <div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="teoria-setmana-8.html#cb428-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>grups <span class="ot">&lt;-</span> <span class="fu">cutree</span>(hc,<span class="at">k =</span> <span class="dv">4</span>)</span>
 <span id="cb428-2"><a href="teoria-setmana-8.html#cb428-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>grups</span></code></pre></div>
@@ -496,7 +479,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="teoria-setmana-8.html#cb432-1" aria-hidden="true" tabindex="-1"></a>hc<span class="ot">&lt;-</span><span class="fu">hclust</span>(D, <span class="at">method =</span> <span class="st">&quot;single&quot;</span>)</span>
 <span id="cb432-2"><a href="teoria-setmana-8.html#cb432-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hc, <span class="at">lab=</span>data[,<span class="dv">1</span>], <span class="at">cex=</span><span class="fl">0.8</span>, <span class="at">hang =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
 <span id="cb432-3"><a href="teoria-setmana-8.html#cb432-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">2.5</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-219-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-229-1.png" width="672" /></p>
 </div>
 <div id="mètode-single-1" class="section level4" number="8.1.1.4">
 <h4><span class="header-section-number">8.1.1.4</span> Mètode “single”</h4>
@@ -530,7 +513,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb433-14"><a href="teoria-setmana-8.html#cb433-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">rect_border =</span> <span class="st">&quot;jco&quot;</span>,           <span class="co"># Rectangle color</span></span>
 <span id="cb433-15"><a href="teoria-setmana-8.html#cb433-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">labels_track_height =</span> <span class="fl">0.8</span>      <span class="co"># Augment the room for labels</span></span>
 <span id="cb433-16"><a href="teoria-setmana-8.html#cb433-16" aria-hidden="true" tabindex="-1"></a>          )</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-220-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-230-1.png" width="672" /></p>
 <div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="teoria-setmana-8.html#cb434-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_cluster</span>(res.hcpc,</span>
 <span id="cb434-2"><a href="teoria-setmana-8.html#cb434-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> <span class="cn">TRUE</span>,            <span class="co"># Avoid label overlapping</span></span>
 <span id="cb434-3"><a href="teoria-setmana-8.html#cb434-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">show.clust.cent =</span> <span class="cn">TRUE</span>, <span class="co"># Show cluster centers</span></span>
@@ -538,7 +521,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb434-5"><a href="teoria-setmana-8.html#cb434-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>(),</span>
 <span id="cb434-6"><a href="teoria-setmana-8.html#cb434-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">main =</span> <span class="st">&quot;Factor map&quot;</span></span>
 <span id="cb434-7"><a href="teoria-setmana-8.html#cb434-7" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-221-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-231-1.png" width="672" /></p>
 </div>
 <div id="cluster-no-jerarquic" class="section level3" number="8.1.3">
 <h3><span class="header-section-number">8.1.3</span> Cluster no jerarquic</h3>
@@ -548,14 +531,10 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb435-3"><a href="teoria-setmana-8.html#cb435-3" aria-hidden="true" tabindex="-1"></a>km <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(D,<span class="dv">3</span>) </span>
 <span id="cb435-4"><a href="teoria-setmana-8.html#cb435-4" aria-hidden="true" tabindex="-1"></a>groups <span class="ot">&lt;-</span> km<span class="sc">$</span>cluster</span>
 <span id="cb435-5"><a href="teoria-setmana-8.html#cb435-5" aria-hidden="true" tabindex="-1"></a>km<span class="sc">$</span>centers</span></code></pre></div>
-<pre><code>##      Andal    Catal    Madri    Valen    Casle    Galic     Vasc     Manc
-## 1 6.610891 1.912404 3.598702 3.021150 6.451352 7.934463 2.073375 7.399464
-## 2 1.616614 6.853686 8.038336 4.584735 1.850928 2.211579 6.445261 1.594708
-## 3 3.532915 3.897977 5.782640 2.134526 3.503132 4.856202 3.644451 4.263080
-##       Cana     Arag     Astu     Extr     Murc     Bale
-## 1 4.892820 4.655235 5.540854 9.779720 6.070251 5.197553
-## 2 3.848112 3.145431 2.057460 2.749821 2.296577 5.313926
-## 3 2.350404 2.313754 3.454015 6.296721 3.655293 2.799357</code></pre>
+<pre><code>##      Andal    Catal    Madri    Valen    Casle    Galic     Vasc     Manc     Cana     Arag     Astu     Extr     Murc     Bale
+## 1 2.528630 8.605812 9.768075 6.336861 2.842162 1.147541 8.197387 2.332848 4.447001 4.839562 3.639380 1.147541 3.726798 6.682422
+## 2 5.671911 2.515285 4.494048 2.541193 5.561128 6.995483 2.472577 6.460484 4.195402 4.023531 4.888988 8.840740 5.311588 3.847035
+## 3 1.694831 5.645268 6.884090 3.473574 1.833303 3.062394 5.308157 1.920793 3.020835 2.205994 1.873878 3.896572 2.128061 4.483936</code></pre>
 <div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="teoria-setmana-8.html#cb437-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(data[,<span class="sc">-</span><span class="dv">1</span>],<span class="fu">list</span>(data<span class="sc">$</span>grup),mean)</span></code></pre></div>
 <pre><code>##   Group.1    denpob pacagri   pacind     recap grups
 ## 1       1  60.31429 36.8600 19.69143  9.851429     1
@@ -570,7 +549,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb439-6"><a href="teoria-setmana-8.html#cb439-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>(),</span>
 <span id="cb439-7"><a href="teoria-setmana-8.html#cb439-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">main =</span> <span class="st">&quot;Factor map - kmeans&quot;</span></span>
 <span id="cb439-8"><a href="teoria-setmana-8.html#cb439-8" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-224-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-234-1.png" width="672" /></p>
 </div>
 </div>
 <div id="dades-eleccions-parlament-2021" class="section level2" number="8.2">
@@ -638,7 +617,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb443-4"><a href="teoria-setmana-8.html#cb443-4" aria-hidden="true" tabindex="-1"></a>hc<span class="ot">&lt;-</span> <span class="fu">hclust</span>(D)</span>
 <span id="cb443-5"><a href="teoria-setmana-8.html#cb443-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb443-6"><a href="teoria-setmana-8.html#cb443-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hc, <span class="at">main =</span> <span class="st">&quot;dendograma&quot;</span>, <span class="at">sub =</span> <span class="cn">NULL</span>,     <span class="at">xlab =</span> <span class="cn">NULL</span>, <span class="at">ylab =</span> <span class="st">&quot;Height&quot;</span>, <span class="at">hang=</span><span class="fl">0.1</span>,  <span class="at">lab=</span>dcom[,<span class="dv">1</span>] )</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-226-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-236-1.png" width="672" /></p>
 <div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="teoria-setmana-8.html#cb444-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute PCA with ncp = 3</span></span>
 <span id="cb444-2"><a href="teoria-setmana-8.html#cb444-2" aria-hidden="true" tabindex="-1"></a>res.pca <span class="ot">&lt;-</span> <span class="fu">PCA</span>(X, <span class="at">ncp =</span> <span class="dv">2</span>, <span class="at">graph =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb444-3"><a href="teoria-setmana-8.html#cb444-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute hierarchical clustering on principal components</span></span>
@@ -651,7 +630,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb444-10"><a href="teoria-setmana-8.html#cb444-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">rect_border =</span> <span class="st">&quot;jco&quot;</span>,           <span class="co"># Rectangle color</span></span>
 <span id="cb444-11"><a href="teoria-setmana-8.html#cb444-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">labels_track_height =</span> <span class="fl">0.8</span>      <span class="co"># Augment the room for labels</span></span>
 <span id="cb444-12"><a href="teoria-setmana-8.html#cb444-12" aria-hidden="true" tabindex="-1"></a>          )</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-227-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-237-1.png" width="672" /></p>
 <p>SEgmentem sobre les components principals.</p>
 <div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="teoria-setmana-8.html#cb445-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_cluster</span>(res.hcpc,</span>
 <span id="cb445-2"><a href="teoria-setmana-8.html#cb445-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> <span class="cn">TRUE</span>,            <span class="co"># Avoid label overlapping</span></span>
@@ -660,7 +639,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb445-5"><a href="teoria-setmana-8.html#cb445-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>(),</span>
 <span id="cb445-6"><a href="teoria-setmana-8.html#cb445-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">main =</span> <span class="st">&quot;Factor map&quot;</span></span>
 <span id="cb445-7"><a href="teoria-setmana-8.html#cb445-7" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-228-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-238-1.png" width="672" /></p>
 <div id="cluster-no-jerarquic-1" class="section level3" number="8.2.1">
 <h3><span class="header-section-number">8.2.1</span> Cluster no jerarquic</h3>
 <div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="teoria-setmana-8.html#cb446-1" aria-hidden="true" tabindex="-1"></a><span class="do">######### K-means: f kmeans()</span></span>
@@ -668,14 +647,10 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb446-3"><a href="teoria-setmana-8.html#cb446-3" aria-hidden="true" tabindex="-1"></a>km <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(D,<span class="dv">3</span>) </span>
 <span id="cb446-4"><a href="teoria-setmana-8.html#cb446-4" aria-hidden="true" tabindex="-1"></a>groups <span class="ot">&lt;-</span> km<span class="sc">$</span>cluster</span></code></pre></div>
 <div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="teoria-setmana-8.html#cb447-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(dcom[,<span class="sc">-</span><span class="dv">1</span>],<span class="fu">list</span>(groups),mean)</span></code></pre></div>
-<pre><code>##   Group.1       PSC       ERC     JxCat        VOX        CUP     COMUNS
-## 1       1 0.1863542 0.2744703 0.2677018 0.06732752 0.08502995 0.04972617
-## 2       2 0.1181800 0.2942368 0.3690934 0.03522813 0.11051965 0.03187249
-## 3       3 0.2809031 0.2078552 0.1585323 0.10540031 0.05658615 0.07342902
-##           Cs         PP
-## 1 0.03785314 0.03153684
-## 2 0.02097492 0.01989460
-## 3 0.07065427 0.04663963</code></pre>
+<pre><code>##   Group.1       PSC       ERC     JxCat        VOX        CUP     COMUNS         Cs         PP
+## 1       1 0.1863542 0.2744703 0.2677018 0.06732752 0.08502995 0.04972617 0.03785314 0.03153684
+## 2       2 0.1181800 0.2942368 0.3690934 0.03522813 0.11051965 0.03187249 0.02097492 0.01989460
+## 3       3 0.2809031 0.2078552 0.1585323 0.10540031 0.05658615 0.07342902 0.07065427 0.04663963</code></pre>
 <div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="teoria-setmana-8.html#cb449-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_cluster</span>(km,</span>
 <span id="cb449-2"><a href="teoria-setmana-8.html#cb449-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data=</span>X,</span>
 <span id="cb449-3"><a href="teoria-setmana-8.html#cb449-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">repel =</span> <span class="cn">TRUE</span>,            <span class="co"># Avoid label overlapping</span></span>
@@ -684,7 +659,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb449-6"><a href="teoria-setmana-8.html#cb449-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">ggtheme =</span> <span class="fu">theme_minimal</span>(),</span>
 <span id="cb449-7"><a href="teoria-setmana-8.html#cb449-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">main =</span> <span class="st">&quot;Factor map - kmeans&quot;</span></span>
 <span id="cb449-8"><a href="teoria-setmana-8.html#cb449-8" aria-hidden="true" tabindex="-1"></a>             )</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-231-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-241-1.png" width="672" /></p>
 <div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="teoria-setmana-8.html#cb450-1" aria-hidden="true" tabindex="-1"></a><span class="do">######### K-means: f kmeans()</span></span>
 <span id="cb450-2"><a href="teoria-setmana-8.html#cb450-2" aria-hidden="true" tabindex="-1"></a><span class="co">#help(hclust)</span></span>
 <span id="cb450-3"><a href="teoria-setmana-8.html#cb450-3" aria-hidden="true" tabindex="-1"></a>X<span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(dmesa[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)])</span>
@@ -693,20 +668,16 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb450-6"><a href="teoria-setmana-8.html#cb450-6" aria-hidden="true" tabindex="-1"></a>km <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(D,<span class="dv">3</span>) </span>
 <span id="cb450-7"><a href="teoria-setmana-8.html#cb450-7" aria-hidden="true" tabindex="-1"></a>groups <span class="ot">&lt;-</span> km<span class="sc">$</span>cluster</span></code></pre></div>
 <div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="teoria-setmana-8.html#cb451-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(dmesa[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)],<span class="fu">list</span>(groups),mean)</span></code></pre></div>
-<pre><code>##   Group.1       PSC       ERC      JxCat        VOX        CUP     COMUNS
-## 1       1 0.2246899 0.2363556 0.21091738 0.07788420 0.07417324 0.07670302
-## 2       2 0.3742784 0.1674723 0.07521028 0.12053415 0.03628468 0.09006064
-## 3       3 0.1146300 0.2782633 0.37612585 0.03990866 0.10770903 0.03811885
-##           Cs         PP
-## 1 0.05769580 0.04158086
-## 2 0.08500837 0.05115113
-## 3 0.02353931 0.02170498</code></pre>
+<pre><code>##   Group.1       PSC       ERC      JxCat        VOX        CUP     COMUNS         Cs         PP
+## 1       1 0.2247752 0.2363245 0.21084377 0.07789258 0.07415371 0.07671764 0.05770510 0.04158755
+## 2       2 0.1146650 0.2782561 0.37599566 0.03995657 0.10768523 0.03814870 0.02357438 0.02171835
+## 3       3 0.3742974 0.1674550 0.07518966 0.12054222 0.03628159 0.09006323 0.08501500 0.05115592</code></pre>
 <div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="teoria-setmana-8.html#cb453-1" aria-hidden="true" tabindex="-1"></a>respca <span class="ot">&lt;-</span> <span class="fu">PCA</span>(X, <span class="at">graph=</span><span class="cn">FALSE</span>)</span>
 <span id="cb453-2"><a href="teoria-setmana-8.html#cb453-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb453-3"><a href="teoria-setmana-8.html#cb453-3" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="fu">predict</span>(respca, <span class="at">newdata=</span>X)<span class="sc">$</span>coord[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
 <span id="cb453-4"><a href="teoria-setmana-8.html#cb453-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb453-5"><a href="teoria-setmana-8.html#cb453-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Z, <span class="at">pch=</span><span class="st">&quot;.&quot;</span>, <span class="at">col=</span>groups, <span class="at">main=</span><span class="st">&quot;meses segons 3 clusters&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-234-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-244-1.png" width="672" /></p>
 
 </div>
 </div>

@@ -368,16 +368,12 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <p>Veiem les freqüències de intenció de vot a cada partit.</p>
 <div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="teoria-setmana-6.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>P15R)</span></code></pre></div>
 <pre><code>## 
-##                     PPC                     ERC                     PSC 
-##                      14                     165                     116 
-##                     C&#39;s                     CUP                  PDeCAT 
-##                      18                      42                      11 
-##     Junts per Catalunya Catalunya en Comú Podem                     Vox 
-##                      93                      49                      10 
-##           Altres, blanc                     Nul              No votaria 
-##                      28                       4                      71 
-##                   NS/NC 
-##                     479</code></pre>
+##                     PPC                     ERC                     PSC                     C&#39;s                     CUP 
+##                      14                     165                     116                      18                      42 
+##                  PDeCAT     Junts per Catalunya Catalunya en Comú Podem                     Vox           Altres, blanc 
+##                      11                      93                      49                      10                      28 
+##                     Nul              No votaria                   NS/NC 
+##                       4                      71                     479</code></pre>
 <div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="teoria-setmana-6.html#cb292-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>Vot <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data<span class="sc">$</span>P15R <span class="sc">==</span> <span class="st">&quot;PSC&quot;</span>)</span>
 <span id="cb292-2"><a href="teoria-setmana-6.html#cb292-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data<span class="sc">$</span>Vot)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -419,7 +415,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb295-26"><a href="teoria-setmana-6.html#cb295-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Intervals confiança Indecisió&quot;</span>)</span>
 <span id="cb295-27"><a href="teoria-setmana-6.html#cb295-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb295-28"><a href="teoria-setmana-6.html#cb295-28" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-151-1.png" width="864" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-160-1.png" width="864" /></p>
 </div>
 <div id="habitat" class="section level4" number="6.2.1.2">
 <h4><span class="header-section-number">6.2.1.2</span> HABITAT</h4>
@@ -451,7 +447,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb296-26"><a href="teoria-setmana-6.html#cb296-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Intervals confiança Indecisió&quot;</span>)</span>
 <span id="cb296-27"><a href="teoria-setmana-6.html#cb296-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb296-28"><a href="teoria-setmana-6.html#cb296-28" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-152-1.png" width="864" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-161-1.png" width="864" /></p>
 <div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="teoria-setmana-6.html#cb297-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb297-2"><a href="teoria-setmana-6.html#cb297-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">HABITAT_R =</span> <span class="fu">as.factor</span>(<span class="fu">ifelse</span>(<span class="fu">as.numeric</span>(HABITAT)<span class="sc">&lt;=</span><span class="dv">2</span>,<span class="st">&quot;3-Petita&quot;</span>,</span>
 <span id="cb297-3"><a href="teoria-setmana-6.html#cb297-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ifelse</span>(<span class="fu">as.numeric</span>(HABITAT)<span class="sc">&lt;=</span><span class="dv">4</span>,<span class="st">&quot;2-Mitjana&quot;</span>, <span class="st">&quot;1-Gran&quot;</span>))))</span></code></pre></div>
@@ -483,7 +479,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb298-26"><a href="teoria-setmana-6.html#cb298-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Intervals confiança Indecisió&quot;</span>)</span>
 <span id="cb298-27"><a href="teoria-setmana-6.html#cb298-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb298-28"><a href="teoria-setmana-6.html#cb298-28" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-154-1.png" width="864" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-163-1.png" width="864" /></p>
 </div>
 <div id="sexe" class="section level4" number="6.2.1.3">
 <h4><span class="header-section-number">6.2.1.3</span> SEXE</h4>
@@ -515,7 +511,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb299-26"><a href="teoria-setmana-6.html#cb299-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Intervals confiança Indecisió&quot;</span>)</span>
 <span id="cb299-27"><a href="teoria-setmana-6.html#cb299-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb299-28"><a href="teoria-setmana-6.html#cb299-28" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-155-1.png" width="864" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-164-1.png" width="864" /></p>
 </div>
 <div id="edat" class="section level4" number="6.2.1.4">
 <h4><span class="header-section-number">6.2.1.4</span> EDAT</h4>
@@ -552,7 +548,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb303-26"><a href="teoria-setmana-6.html#cb303-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Intervals confiança Indecisió&quot;</span>)</span>
 <span id="cb303-27"><a href="teoria-setmana-6.html#cb303-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb303-28"><a href="teoria-setmana-6.html#cb303-28" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-158-1.png" width="864" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-167-1.png" width="864" /></p>
 </div>
 <div id="p38" class="section level4" number="6.2.1.5">
 <h4><span class="header-section-number">6.2.1.5</span> P38</h4>
@@ -583,7 +579,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb304-25"><a href="teoria-setmana-6.html#cb304-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Intervals confiança Indecisió&quot;</span>)</span>
 <span id="cb304-26"><a href="teoria-setmana-6.html#cb304-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb304-27"><a href="teoria-setmana-6.html#cb304-27" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-159-1.png" width="864" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-168-1.png" width="864" /></p>
 <div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="teoria-setmana-6.html#cb305-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>INGRES <span class="ot">&lt;-</span> <span class="dv">500</span></span>
 <span id="cb305-2"><a href="teoria-setmana-6.html#cb305-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>INGRES[<span class="fu">as.numeric</span>(data<span class="sc">$</span>P38)<span class="sc">==</span><span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="dv">1500</span></span>
 <span id="cb305-3"><a href="teoria-setmana-6.html#cb305-3" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>INGRES[<span class="fu">as.numeric</span>(data<span class="sc">$</span>P38)<span class="sc">==</span><span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="dv">2500</span></span>
@@ -637,14 +633,12 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## 
 ## Number of Fisher Scoring iterations: 5</code></pre>
 <div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="teoria-setmana-6.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span><span class="sc">*</span>(<span class="fu">exp</span>(<span class="fu">coef</span>(lreg1)) <span class="sc">-</span><span class="dv">1</span> )</span></code></pre></div>
-<pre><code>##              (Intercept)          PROVINCIAGIRONA          PROVINCIALLEIDA 
-##               -75.013286               -57.206062               -24.793186 
-##       PROVINCIATARRAGONA       HABITAT_R2-Mitjana        HABITAT_R3-Petita 
-##                -4.727075                58.824328               -33.163210 
-##                 SEXEDona                     EDAT              log(INGRES) 
-##                -5.442899                 1.951906               -21.228365 
-##   INGRES_NSNC2-No ho sap INGRES_NSNC3-No contesta 
-##               -14.863541               -40.253907</code></pre>
+<pre><code>##              (Intercept)          PROVINCIAGIRONA          PROVINCIALLEIDA       PROVINCIATARRAGONA       HABITAT_R2-Mitjana 
+##               -75.013286               -57.206062               -24.793186                -4.727075                58.824328 
+##        HABITAT_R3-Petita                 SEXEDona                     EDAT              log(INGRES)   INGRES_NSNC2-No ho sap 
+##               -33.163210                -5.442899                 1.951906               -21.228365               -14.863541 
+## INGRES_NSNC3-No contesta 
+##               -40.253907</code></pre>
 </div>
 <div id="regressió-logística-amb-covariants-gràfic-defectes-condicionats-1" class="section level3" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> Regressió logística amb covariants: gràfic d’efectes condicionats</h3>
@@ -657,7 +651,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb310-7"><a href="teoria-setmana-6.html#cb310-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">scale=</span><span class="st">&quot;response&quot;</span>) <span class="sc">+</span></span>
 <span id="cb310-8"><a href="teoria-setmana-6.html#cb310-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Prob(Vot)&quot;</span>, </span>
 <span id="cb310-9"><a href="teoria-setmana-6.html#cb310-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;EDAT&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-163-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-172-1.png" width="672" /></p>
 <p>Observem com els homes, de Barcelona, amb ingressos nets mensuals de la llar igual a 500, en poblacions mitjanes, tenen una corba de probabilitat de Vots al PSC superior als altres mides d’hàbitat</p>
 </div>
 </div>
@@ -722,39 +716,32 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="teoria-setmana-6.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(dmesa)</span></code></pre></div>
 <pre><code>## [1] 9139   13</code></pre>
 <div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="teoria-setmana-6.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dmesa)</span></code></pre></div>
-<pre><code>##   Districte Secció Mesa municipi        comarca       PSC       ERC
-## 1         1      1    A   Abrera Baix Llobregat 0.3015075 0.2361809
-## 2         1      1    B   Abrera Baix Llobregat 0.3898305 0.1807910
-## 3         1      1    C   Abrera Baix Llobregat 0.2949309 0.2534562
-## 4         1      2    A   Abrera Baix Llobregat 0.3594470 0.2119816
-## 5         1      2    B   Abrera Baix Llobregat 0.4136364 0.1590909
-## 6         1      2    C   Abrera Baix Llobregat 0.3756098 0.2097561
-##        JxCat        VOX        CUP     COMUNS         Cs         PP
-## 1 0.10050251 0.07537688 0.06532663 0.10552764 0.07537688 0.04020101
-## 2 0.07344633 0.07344633 0.02259887 0.12994350 0.10734463 0.02259887
-## 3 0.07373272 0.11520737 0.05529954 0.07834101 0.08294931 0.04608295
-## 4 0.12903226 0.10138249 0.03225806 0.06451613 0.04608295 0.05529954
-## 5 0.05909091 0.09545455 0.03181818 0.10454545 0.07727273 0.05909091
-## 6 0.06341463 0.09756098 0.01951220 0.11219512 0.10243902 0.01951220</code></pre>
+<pre><code>##   Districte Secció Mesa municipi        comarca       PSC       ERC      JxCat        VOX        CUP     COMUNS         Cs
+## 1         1      1    A   Abrera Baix Llobregat 0.3015075 0.2361809 0.10050251 0.07537688 0.06532663 0.10552764 0.07537688
+## 2         1      1    B   Abrera Baix Llobregat 0.3898305 0.1807910 0.07344633 0.07344633 0.02259887 0.12994350 0.10734463
+## 3         1      1    C   Abrera Baix Llobregat 0.2949309 0.2534562 0.07373272 0.11520737 0.05529954 0.07834101 0.08294931
+## 4         1      2    A   Abrera Baix Llobregat 0.3594470 0.2119816 0.12903226 0.10138249 0.03225806 0.06451613 0.04608295
+## 5         1      2    B   Abrera Baix Llobregat 0.4136364 0.1590909 0.05909091 0.09545455 0.03181818 0.10454545 0.07727273
+## 6         1      2    C   Abrera Baix Llobregat 0.3756098 0.2097561 0.06341463 0.09756098 0.01951220 0.11219512 0.10243902
+##           PP
+## 1 0.04020101
+## 2 0.02259887
+## 3 0.04608295
+## 4 0.05529954
+## 5 0.05909091
+## 6 0.01951220</code></pre>
 <div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="teoria-setmana-6.html#cb318-1" aria-hidden="true" tabindex="-1"></a>X_mesa <span class="ot">&lt;-</span> dmesa <span class="sc">%&gt;%</span></span>
 <span id="cb318-2"><a href="teoria-setmana-6.html#cb318-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(PSC,ERC,JxCat,VOX,CUP,COMUNS,Cs,PP) <span class="sc">%&gt;%</span> </span>
 <span id="cb318-3"><a href="teoria-setmana-6.html#cb318-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale</span>()</span>
 <span id="cb318-4"><a href="teoria-setmana-6.html#cb318-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb318-5"><a href="teoria-setmana-6.html#cb318-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(X_mesa)</span></code></pre></div>
-<pre><code>##            PSC        ERC      JxCat        VOX         CUP     COMUNS
-## [1,] 0.4798992  0.1872116 -0.8357312 -0.1714520 -0.09972564  0.9452201
-## [2,] 1.2818016 -0.6216485 -1.0546477 -0.2135402 -1.15370367  1.6421690
-## [3,] 0.4201883  0.4394833 -1.0523304  0.6968941 -0.34706685  0.1691800
-## [4,] 1.0059435 -0.1661717 -0.6048918  0.3954972 -0.91543754 -0.2254502
-## [5,] 1.4979398 -0.9385347 -1.1708000  0.2662619 -0.92628825  0.9171837
-## [6,] 1.1526885 -0.1986702 -1.1358159  0.3121843 -1.22984357  1.1355429
-##              Cs           PP
-## [1,]  0.5237459 -0.001549926
-## [2,]  1.5415819 -0.626328468
-## [3,]  0.7648478  0.207226599
-## [4,] -0.4089574  0.534364619
-## [5,]  0.5841085  0.668937304
-## [6,]  1.3853900 -0.735888375</code></pre>
+<pre><code>##            PSC        ERC      JxCat        VOX         CUP     COMUNS         Cs           PP
+## [1,] 0.4798992  0.1872116 -0.8357312 -0.1714520 -0.09972564  0.9452201  0.5237459 -0.001549926
+## [2,] 1.2818016 -0.6216485 -1.0546477 -0.2135402 -1.15370367  1.6421690  1.5415819 -0.626328468
+## [3,] 0.4201883  0.4394833 -1.0523304  0.6968941 -0.34706685  0.1691800  0.7648478  0.207226599
+## [4,] 1.0059435 -0.1661717 -0.6048918  0.3954972 -0.91543754 -0.2254502 -0.4089574  0.534364619
+## [5,] 1.4979398 -0.9385347 -1.1708000  0.2662619 -0.92628825  0.9171837  0.5841085  0.668937304
+## [6,] 1.1526885 -0.1986702 -1.1358159  0.3121843 -1.22984357  1.1355429  1.3853900 -0.735888375</code></pre>
 <div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="teoria-setmana-6.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">cov</span>(X_mesa),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##           PSC    ERC  JxCat    VOX    CUP COMUNS     Cs     PP
 ## PSC     1.000 -0.636 -0.880  0.560 -0.679  0.465  0.642  0.269
@@ -769,38 +756,26 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb322-2"><a href="teoria-setmana-6.html#cb322-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb322-3"><a href="teoria-setmana-6.html#cb322-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pca_mesa)</span></code></pre></div>
 <pre><code>## Importance of components:
-##                           Comp.1    Comp.2     Comp.3     Comp.4     Comp.5
-## Standard deviation     2.1382945 1.0874848 0.84995171 0.71172482 0.60738263
-## Proportion of Variance 0.5716005 0.1478441 0.09031212 0.06332596 0.04611925
-## Cumulative Proportion  0.5716005 0.7194446 0.80975668 0.87308264 0.91920189
-##                            Comp.6     Comp.7       Comp.8
-## Standard deviation     0.57990364 0.55679971 1.703416e-08
-## Proportion of Variance 0.04204063 0.03875748 3.627428e-17
-## Cumulative Proportion  0.96124252 1.00000000 1.000000e+00</code></pre>
+##                           Comp.1    Comp.2     Comp.3     Comp.4     Comp.5     Comp.6     Comp.7       Comp.8
+## Standard deviation     2.1382945 1.0874848 0.84995171 0.71172482 0.60738263 0.57990364 0.55679971 1.703416e-08
+## Proportion of Variance 0.5716005 0.1478441 0.09031212 0.06332596 0.04611925 0.04204063 0.03875748 3.627428e-17
+## Cumulative Proportion  0.5716005 0.7194446 0.80975668 0.87308264 0.91920189 0.96124252 1.00000000 1.000000e+00</code></pre>
 <div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="teoria-setmana-6.html#cb324-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(pca_mesa)</span></code></pre></div>
 <pre><code>## $names
-## [1] &quot;sdev&quot;     &quot;loadings&quot; &quot;center&quot;   &quot;scale&quot;    &quot;n.obs&quot;    &quot;scores&quot;  
-## [7] &quot;call&quot;    
+## [1] &quot;sdev&quot;     &quot;loadings&quot; &quot;center&quot;   &quot;scale&quot;    &quot;n.obs&quot;    &quot;scores&quot;   &quot;call&quot;    
 ## 
 ## $class
 ## [1] &quot;princomp&quot;</code></pre>
 <div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="teoria-setmana-6.html#cb326-1" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">&lt;-</span> pca_mesa<span class="sc">$</span>scores</span>
 <span id="cb326-2"><a href="teoria-setmana-6.html#cb326-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb326-3"><a href="teoria-setmana-6.html#cb326-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Z)</span></code></pre></div>
-<pre><code>##         Comp.1     Comp.2      Comp.3      Comp.4     Comp.5     Comp.6
-## [1,] 0.8665642  1.0070506 -0.06690843 -0.52329933 -0.1046999 -0.2737614
-## [2,] 2.3363692  1.7464017  0.15773682 -0.02917238  0.8176058 -0.8564416
-## [3,] 1.2282605  0.1575983  0.65913566 -0.50013781 -0.6020300 -0.2846055
-## [4,] 1.1250577 -0.2502562  0.49254384 -0.21954622  0.3997918  1.0098184
-## [5,] 2.4677055  0.5828516 -0.28712250 -0.17836744  0.4988533  0.4020623
-## [6,] 2.1867538  1.3674877  0.81059413 -0.02288879  0.4167371 -0.6999940
-##          Comp.7        Comp.8
-## [1,]  0.2039157 -3.053113e-16
-## [2,] -0.2182054  1.665335e-16
-## [3,]  0.2797815  3.330669e-16
-## [4,]  0.3236403 -8.187895e-16
-## [5,]  0.3165207 -9.020562e-16
-## [6,] -0.2129415  1.942890e-16</code></pre>
+<pre><code>##         Comp.1     Comp.2      Comp.3      Comp.4     Comp.5     Comp.6     Comp.7        Comp.8
+## [1,] 0.8665642  1.0070506 -0.06690843 -0.52329933 -0.1046999 -0.2737614  0.2039157 -3.053113e-16
+## [2,] 2.3363692  1.7464017  0.15773682 -0.02917238  0.8176058 -0.8564416 -0.2182054  1.665335e-16
+## [3,] 1.2282605  0.1575983  0.65913566 -0.50013781 -0.6020300 -0.2846055  0.2797815  3.330669e-16
+## [4,] 1.1250577 -0.2502562  0.49254384 -0.21954622  0.3997918  1.0098184  0.3236403 -8.187895e-16
+## [5,] 2.4677055  0.5828516 -0.28712250 -0.17836744  0.4988533  0.4020623  0.3165207 -9.020562e-16
+## [6,] 2.1867538  1.3674877  0.81059413 -0.02288879  0.4167371 -0.6999940 -0.2129415  1.942890e-16</code></pre>
 <div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="teoria-setmana-6.html#cb328-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">cov</span>(Z),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##        Comp.1 Comp.2 Comp.3 Comp.4 Comp.5 Comp.6 Comp.7 Comp.8
 ## Comp.1  4.573  0.000  0.000  0.000  0.000  0.000   0.00      0
@@ -814,9 +789,9 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <div id="components-principals-gràfics-dindividus-variables" class="section level3" number="6.3.1">
 <h3><span class="header-section-number">6.3.1</span> Components Principals: gràfics d’individus, variables</h3>
 <div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="teoria-setmana-6.html#cb330-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pca_mesa<span class="sc">$</span>scores[,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="at">pch =</span><span class="st">&quot;.&quot;</span>, <span class="at">main =</span><span class="st">&quot;Gràfic de meses&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-172-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-181-1.png" width="672" /></p>
 <div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="teoria-setmana-6.html#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="fu">biplot</span>(pca_mesa, <span class="at">cex=</span><span class="fl">0.7</span>, <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;red&quot;</span>))</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-173-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-182-1.png" width="672" /></p>
 <div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="teoria-setmana-6.html#cb332-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FactoMineR)</span>
 <span id="cb332-2"><a href="teoria-setmana-6.html#cb332-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb332-3"><a href="teoria-setmana-6.html#cb332-3" aria-hidden="true" tabindex="-1"></a>respca_mesa <span class="ot">&lt;-</span> <span class="fu">PCA</span>(X_mesa, <span class="at">graph=</span><span class="cn">FALSE</span>)</span>
@@ -827,38 +802,23 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## 
 ## 
 ## Eigenvalues
-##                        Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7
-## Variance               4.573   1.183   0.722   0.507   0.369   0.336   0.310
-## % of var.             57.160  14.784   9.031   6.333   4.612   4.204   3.876
-## Cumulative % of var.  57.160  71.944  80.976  87.308  91.920  96.124 100.000
-##                        Dim.8
-## Variance               0.000
-## % of var.              0.000
-## Cumulative % of var. 100.000
+##                        Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7   Dim.8
+## Variance               4.573   1.183   0.722   0.507   0.369   0.336   0.310   0.000
+## % of var.             57.160  14.784   9.031   6.333   4.612   4.204   3.876   0.000
+## Cumulative % of var.  57.160  71.944  80.976  87.308  91.920  96.124 100.000 100.000
 ## 
 ## Individuals (the 10 first)
-##            Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr
-## 1      |  1.473 |  0.867  0.002  0.346 |  1.007  0.009  0.467 |  0.067  0.000
-## 2      |  3.160 |  2.336  0.013  0.547 |  1.746  0.028  0.305 | -0.158  0.000
-## 3      |  1.655 |  1.228  0.004  0.551 |  0.158  0.000  0.009 | -0.659  0.007
-## 4      |  1.704 |  1.125  0.003  0.436 | -0.250  0.001  0.022 | -0.493  0.004
-## 5      |  2.656 |  2.468  0.015  0.863 |  0.583  0.003  0.048 |  0.287  0.001
-## 6      |  2.832 |  2.187  0.011  0.596 |  1.368  0.017  0.233 | -0.811  0.010
-## 7      |  1.853 |  1.516  0.005  0.669 |  0.494  0.002  0.071 | -0.579  0.005
-## 8      |  2.120 |  1.125  0.003  0.282 |  1.519  0.021  0.514 | -0.817  0.010
-## 9      |  2.081 |  1.794  0.008  0.744 | -0.930  0.008  0.200 | -0.106  0.000
-## 10     |  3.078 |  2.796  0.019  0.825 | -0.603  0.003  0.038 | -0.581  0.005
-##          cos2  
-## 1       0.002 |
-## 2       0.002 |
-## 3       0.159 |
-## 4       0.084 |
-## 5       0.012 |
-## 6       0.082 |
-## 7       0.098 |
-## 8       0.149 |
-## 9       0.003 |
-## 10      0.036 |
+##            Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
+## 1      |  1.473 |  0.867  0.002  0.346 |  1.007  0.009  0.467 |  0.067  0.000  0.002 |
+## 2      |  3.160 |  2.336  0.013  0.547 |  1.746  0.028  0.305 | -0.158  0.000  0.002 |
+## 3      |  1.655 |  1.228  0.004  0.551 |  0.158  0.000  0.009 | -0.659  0.007  0.159 |
+## 4      |  1.704 |  1.125  0.003  0.436 | -0.250  0.001  0.022 | -0.493  0.004  0.084 |
+## 5      |  2.656 |  2.468  0.015  0.863 |  0.583  0.003  0.048 |  0.287  0.001  0.012 |
+## 6      |  2.832 |  2.187  0.011  0.596 |  1.368  0.017  0.233 | -0.811  0.010  0.082 |
+## 7      |  1.853 |  1.516  0.005  0.669 |  0.494  0.002  0.071 | -0.579  0.005  0.098 |
+## 8      |  2.120 |  1.125  0.003  0.282 |  1.519  0.021  0.514 | -0.817  0.010  0.149 |
+## 9      |  2.081 |  1.794  0.008  0.744 | -0.930  0.008  0.200 | -0.106  0.000  0.003 |
+## 10     |  3.078 |  2.796  0.019  0.825 | -0.603  0.003  0.038 | -0.581  0.005  0.036 |
 ## 
 ## Variables
 ##           Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
@@ -871,9 +831,9 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## Cs     |  0.848 15.725  0.719 | -0.091  0.702  0.008 | -0.016  0.034  0.000 |
 ## PP     |  0.552  6.655  0.304 | -0.580 28.411  0.336 |  0.416 23.974  0.173 |</code></pre>
 <div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="teoria-setmana-6.html#cb334-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(respca_mesa,<span class="at">choix=</span><span class="st">&quot;ind&quot;</span>, <span class="at">cex=</span>.<span class="dv">1</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-175-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-184-1.png" width="672" /></p>
 <div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="teoria-setmana-6.html#cb335-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(respca_mesa,<span class="at">choix=</span><span class="st">&quot;var&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-176-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-185-1.png" width="672" /></p>
 <div id="muncipi" class="section level4" number="6.3.1.1">
 <h4><span class="header-section-number">6.3.1.1</span> Muncipi</h4>
 <div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="teoria-setmana-6.html#cb336-1" aria-hidden="true" tabindex="-1"></a>X_mun  <span class="ot">&lt;-</span> dmun <span class="sc">%&gt;%</span></span>
@@ -881,20 +841,13 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb336-3"><a href="teoria-setmana-6.html#cb336-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale</span>()</span>
 <span id="cb336-4"><a href="teoria-setmana-6.html#cb336-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb336-5"><a href="teoria-setmana-6.html#cb336-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(X_mun)</span></code></pre></div>
-<pre><code>##             PSC        ERC      JxCat         VOX        CUP     COMUNS
-## [1,] -1.0680025 -0.1951766  1.2652455 -1.26203775  0.8570902 -0.3219951
-## [2,]  2.5592264 -1.0298304 -2.0999427  1.66838562 -1.2687628  1.7333943
-## [3,] -0.3023732  0.2965304  0.3265143 -0.45103561  0.3688814 -0.9039498
-## [4,] -0.3624323  0.5467015  0.5774023 -0.05130109 -0.9667080 -0.7251911
-## [5,] -1.1867827 -1.2967095  0.9280739 -0.43047329  2.8021293 -1.0867382
-## [6,] -0.5559249  0.3756069 -0.2751672 -0.05149017  1.0593011  0.1636361
-##              Cs          PP
-## [1,] -0.5406946 -1.15890625
-## [2,]  2.4578172  0.65668030
-## [3,] -0.1663473 -0.46674009
-## [4,] -0.2552742  0.02885896
-## [5,] -0.6788765 -0.52016231
-## [6,]  0.4630548 -0.88542106</code></pre>
+<pre><code>##             PSC        ERC      JxCat         VOX        CUP     COMUNS         Cs          PP
+## [1,] -1.0680025 -0.1951766  1.2652455 -1.26203775  0.8570902 -0.3219951 -0.5406946 -1.15890625
+## [2,]  2.5592264 -1.0298304 -2.0999427  1.66838562 -1.2687628  1.7333943  2.4578172  0.65668030
+## [3,] -0.3023732  0.2965304  0.3265143 -0.45103561  0.3688814 -0.9039498 -0.1663473 -0.46674009
+## [4,] -0.3624323  0.5467015  0.5774023 -0.05130109 -0.9667080 -0.7251911 -0.2552742  0.02885896
+## [5,] -1.1867827 -1.2967095  0.9280739 -0.43047329  2.8021293 -1.0867382 -0.6788765 -0.52016231
+## [6,] -0.5559249  0.3756069 -0.2751672 -0.05149017  1.0593011  0.1636361  0.4630548 -0.88542106</code></pre>
 <div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="teoria-setmana-6.html#cb338-1" aria-hidden="true" tabindex="-1"></a>respca_mun <span class="ot">&lt;-</span> <span class="fu">PCA</span>(X_mun, <span class="at">graph=</span><span class="cn">FALSE</span>)</span>
 <span id="cb338-2"><a href="teoria-setmana-6.html#cb338-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb338-3"><a href="teoria-setmana-6.html#cb338-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(respca_mun)</span></code></pre></div>
@@ -904,38 +857,23 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## 
 ## 
 ## Eigenvalues
-##                        Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7
-## Variance               4.073   1.110   1.022   0.738   0.498   0.296   0.261
-## % of var.             50.914  13.880  12.775   9.231   6.231   3.706   3.262
-## Cumulative % of var.  50.914  64.795  77.569  86.800  93.032  96.738 100.000
-##                        Dim.8
-## Variance               0.000
-## % of var.              0.000
-## Cumulative % of var. 100.000
+##                        Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7   Dim.8
+## Variance               4.073   1.110   1.022   0.738   0.498   0.296   0.261   0.000
+## % of var.             50.914  13.880  12.775   9.231   6.231   3.706   3.262   0.000
+## Cumulative % of var.  50.914  64.795  77.569  86.800  93.032  96.738 100.000 100.000
 ## 
 ## Individuals (the 10 first)
-##            Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr
-## 1      |  2.618 | -2.365  0.145  0.816 |  0.864  0.071  0.109 |  0.295  0.009
-## 2      |  5.091 |  4.994  0.647  0.962 |  0.234  0.005  0.002 |  0.676  0.047
-## 3      |  1.300 | -1.078  0.030  0.688 | -0.185  0.003  0.020 | -0.189  0.004
-## 4      |  1.515 | -0.554  0.008  0.134 | -0.808  0.062  0.285 | -0.966  0.096
-## 5      |  3.730 | -2.397  0.149  0.413 |  2.182  0.453  0.342 |  0.044  0.000
-## 6      |  1.637 | -0.525  0.007  0.103 |  0.160  0.002  0.010 |  1.079  0.120
-## 7      |  0.563 | -0.391  0.004  0.483 | -0.236  0.005  0.176 |  0.208  0.004
-## 8      |  1.429 |  0.326  0.003  0.052 |  0.278  0.007  0.038 |  1.351  0.189
-## 9      |  1.803 | -0.956  0.024  0.282 |  1.130  0.121  0.393 | -0.715  0.053
-## 10     |  5.334 |  1.634  0.069  0.094 | -1.846  0.324  0.120 | -2.541  0.667
-##          cos2  
-## 1       0.013 |
-## 2       0.018 |
-## 3       0.021 |
-## 4       0.407 |
-## 5       0.000 |
-## 6       0.435 |
-## 7       0.136 |
-## 8       0.894 |
-## 9       0.157 |
-## 10      0.227 |
+##            Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
+## 1      |  2.618 | -2.365  0.145  0.816 |  0.864  0.071  0.109 |  0.295  0.009  0.013 |
+## 2      |  5.091 |  4.994  0.647  0.962 |  0.234  0.005  0.002 |  0.676  0.047  0.018 |
+## 3      |  1.300 | -1.078  0.030  0.688 | -0.185  0.003  0.020 | -0.189  0.004  0.021 |
+## 4      |  1.515 | -0.554  0.008  0.134 | -0.808  0.062  0.285 | -0.966  0.096  0.407 |
+## 5      |  3.730 | -2.397  0.149  0.413 |  2.182  0.453  0.342 |  0.044  0.000  0.000 |
+## 6      |  1.637 | -0.525  0.007  0.103 |  0.160  0.002  0.010 |  1.079  0.120  0.435 |
+## 7      |  0.563 | -0.391  0.004  0.483 | -0.236  0.005  0.176 |  0.208  0.004  0.136 |
+## 8      |  1.429 |  0.326  0.003  0.052 |  0.278  0.007  0.038 |  1.351  0.189  0.894 |
+## 9      |  1.803 | -0.956  0.024  0.282 |  1.130  0.121  0.393 | -0.715  0.053  0.157 |
+## 10     |  5.334 |  1.634  0.069  0.094 | -1.846  0.324  0.120 | -2.541  0.667  0.227 |
 ## 
 ## Variables
 ##           Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
@@ -948,9 +886,9 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## Cs     |  0.881 19.074  0.777 |  0.092  0.754  0.008 | -0.029  0.081  0.001 |
 ## PP     |  0.548  7.370  0.300 | -0.092  0.757  0.008 | -0.462 20.890  0.213 |</code></pre>
 <div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="teoria-setmana-6.html#cb340-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(respca_mun,<span class="at">choix=</span><span class="st">&quot;ind&quot;</span>, <span class="at">cex=</span>.<span class="dv">1</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-179-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-188-1.png" width="672" /></p>
 <div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="teoria-setmana-6.html#cb341-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(respca_mun,<span class="at">choix=</span><span class="st">&quot;var&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-180-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-189-1.png" width="672" /></p>
 </div>
 <div id="comarca" class="section level4" number="6.3.1.2">
 <h4><span class="header-section-number">6.3.1.2</span> Comarca</h4>
@@ -961,20 +899,13 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb342-5"><a href="teoria-setmana-6.html#cb342-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(X_com) <span class="ot">&lt;-</span> dcom<span class="sc">$</span>comarca</span>
 <span id="cb342-6"><a href="teoria-setmana-6.html#cb342-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb342-7"><a href="teoria-setmana-6.html#cb342-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(X_com)</span></code></pre></div>
-<pre><code>##                        PSC         ERC       JxCat          VOX         CUP
-## Alt Camp       -0.30529296  0.03487542  0.14640166  0.007228997  0.80049453
-## Alt Empordà    -0.09770661 -0.64734071  0.05648827  1.373011952 -0.40492332
-## Alt Penedès     0.14134786  0.04363951 -0.21651018 -0.264979516  0.51303786
-## Alt Urgell     -0.07388738  0.44769451  0.18154376 -0.702539940  0.06202996
-## Alta Ribagorça  0.92177215 -0.17791455 -0.58775659 -0.715421696  0.54807874
-## Anoia           0.80305793 -0.44960062 -0.66918617  0.527041929 -0.39030468
-##                    COMUNS         Cs           PP
-## Alt Camp       -0.5813202 -0.1443124 -0.250631053
-## Alt Empordà    -0.2892842  0.3400093  0.003287255
-## Alt Penedès     0.7393680 -0.1767673 -0.540350173
-## Alt Urgell     -0.2619583 -0.4231937 -0.019771562
-## Alta Ribagorça  1.2315719 -0.7777302  0.220674650
-## Anoia           0.5181311  0.7270414 -0.014375275</code></pre>
+<pre><code>##                        PSC         ERC       JxCat          VOX         CUP     COMUNS         Cs           PP
+## Alt Camp       -0.30529296  0.03487542  0.14640166  0.007228997  0.80049453 -0.5813202 -0.1443124 -0.250631053
+## Alt Empordà    -0.09770661 -0.64734071  0.05648827  1.373011952 -0.40492332 -0.2892842  0.3400093  0.003287255
+## Alt Penedès     0.14134786  0.04363951 -0.21651018 -0.264979516  0.51303786  0.7393680 -0.1767673 -0.540350173
+## Alt Urgell     -0.07388738  0.44769451  0.18154376 -0.702539940  0.06202996 -0.2619583 -0.4231937 -0.019771562
+## Alta Ribagorça  0.92177215 -0.17791455 -0.58775659 -0.715421696  0.54807874  1.2315719 -0.7777302  0.220674650
+## Anoia           0.80305793 -0.44960062 -0.66918617  0.527041929 -0.39030468  0.5181311  0.7270414 -0.014375275</code></pre>
 <div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="teoria-setmana-6.html#cb344-1" aria-hidden="true" tabindex="-1"></a>respca_com <span class="ot">&lt;-</span> <span class="fu">PCA</span>(X_com, <span class="at">graph=</span><span class="cn">FALSE</span>)</span>
 <span id="cb344-2"><a href="teoria-setmana-6.html#cb344-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb344-3"><a href="teoria-setmana-6.html#cb344-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(respca_com)</span></code></pre></div>
@@ -984,62 +915,38 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## 
 ## 
 ## Eigenvalues
-##                        Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7
-## Variance               6.119   0.779   0.568   0.278   0.150   0.066   0.040
-## % of var.             76.487   9.735   7.105   3.472   1.880   0.826   0.495
-## Cumulative % of var.  76.487  86.222  93.327  96.799  98.679  99.505 100.000
-##                        Dim.8
-## Variance               0.000
-## % of var.              0.000
-## Cumulative % of var. 100.000
+##                        Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7   Dim.8
+## Variance               6.119   0.779   0.568   0.278   0.150   0.066   0.040   0.000
+## % of var.             76.487   9.735   7.105   3.472   1.880   0.826   0.495   0.000
+## Cumulative % of var.  76.487  86.222  93.327  96.799  98.679  99.505 100.000 100.000
 ## 
 ## Individuals (the 10 first)
-##                    Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2  
-## Alt Camp       |  1.099 | -0.798  0.248  0.528 | -0.195  0.116  0.031 |
-## Alt Empordà    |  1.657 |  0.819  0.261  0.244 | -0.363  0.402  0.048 |
-## Alt Penedès    |  1.142 | -0.161  0.010  0.020 | -0.398  0.484  0.122 |
-## Alt Urgell     |  1.004 | -0.772  0.232  0.590 |  0.363  0.404  0.131 |
-## Alta Ribagorça |  2.077 |  0.356  0.049  0.029 | -0.261  0.209  0.016 |
-## Anoia          |  1.607 |  1.484  0.857  0.852 | -0.266  0.216  0.027 |
-## Aran           |  6.235 |  5.908 13.581  0.898 |  0.092  0.026  0.000 |
-## Bages          |  0.564 | -0.138  0.007  0.060 | -0.311  0.295  0.303 |
-## Baix Camp      |  2.416 |  2.153  1.804  0.794 |  0.191  0.111  0.006 |
-## Baix Ebre      |  2.012 | -0.069  0.002  0.001 |  1.580  7.637  0.617 |
-##                 Dim.3    ctr   cos2  
-## Alt Camp       -0.210  0.185  0.037 |
-## Alt Empordà    -1.090  4.978  0.433 |
-## Alt Penedès     1.031  4.450  0.815 |
-## Alt Urgell      0.192  0.155  0.037 |
-## Alta Ribagorça  1.619 10.984  0.608 |
-## Anoia           0.266  0.297  0.027 |
-## Aran           -1.711 12.259  0.075 |
-## Bages           0.201  0.170  0.127 |
-## Baix Camp      -0.828  2.875  0.118 |
-## Baix Ebre       0.902  3.410  0.201 |
+##                    Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
+## Alt Camp       |  1.099 | -0.798  0.248  0.528 | -0.195  0.116  0.031 | -0.210  0.185  0.037 |
+## Alt Empordà    |  1.657 |  0.819  0.261  0.244 | -0.363  0.402  0.048 | -1.090  4.978  0.433 |
+## Alt Penedès    |  1.142 | -0.161  0.010  0.020 | -0.398  0.484  0.122 |  1.031  4.450  0.815 |
+## Alt Urgell     |  1.004 | -0.772  0.232  0.590 |  0.363  0.404  0.131 |  0.192  0.155  0.037 |
+## Alta Ribagorça |  2.077 |  0.356  0.049  0.029 | -0.261  0.209  0.016 |  1.619 10.984  0.608 |
+## Anoia          |  1.607 |  1.484  0.857  0.852 | -0.266  0.216  0.027 |  0.266  0.297  0.027 |
+## Aran           |  6.235 |  5.908 13.581  0.898 |  0.092  0.026  0.000 | -1.711 12.259  0.075 |
+## Bages          |  0.564 | -0.138  0.007  0.060 | -0.311  0.295  0.303 |  0.201  0.170  0.127 |
+## Baix Camp      |  2.416 |  2.153  1.804  0.794 |  0.191  0.111  0.006 | -0.828  2.875  0.118 |
+## Baix Ebre      |  2.012 | -0.069  0.002  0.001 |  1.580  7.637  0.617 |  0.902  3.410  0.201 |
 ## 
 ## Variables
-##                   Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr
-## PSC            |  0.967 15.298  0.936 | -0.061  0.478  0.004 |  0.154  4.148
-## ERC            | -0.682  7.609  0.466 |  0.691 61.251  0.477 |  0.212  7.927
-## JxCat          | -0.908 13.473  0.824 | -0.280 10.095  0.079 | -0.256 11.573
-## VOX            |  0.924 13.966  0.855 |  0.015  0.027  0.000 | -0.286 14.429
-## CUP            | -0.844 11.650  0.713 | -0.252  8.148  0.063 |  0.205  7.395
-## COMUNS         |  0.823 11.070  0.677 | -0.175  3.921  0.031 |  0.516 46.857
-## Cs             |  0.968 15.329  0.938 | -0.097  1.196  0.009 | -0.056  0.544
-## PP             |  0.843 11.606  0.710 |  0.340 14.885  0.116 | -0.201  7.128
-##                  cos2  
-## PSC             0.024 |
-## ERC             0.045 |
-## JxCat           0.066 |
-## VOX             0.082 |
-## CUP             0.042 |
-## COMUNS          0.266 |
-## Cs              0.003 |
-## PP              0.041 |</code></pre>
+##                   Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
+## PSC            |  0.967 15.298  0.936 | -0.061  0.478  0.004 |  0.154  4.148  0.024 |
+## ERC            | -0.682  7.609  0.466 |  0.691 61.251  0.477 |  0.212  7.927  0.045 |
+## JxCat          | -0.908 13.473  0.824 | -0.280 10.095  0.079 | -0.256 11.573  0.066 |
+## VOX            |  0.924 13.966  0.855 |  0.015  0.027  0.000 | -0.286 14.429  0.082 |
+## CUP            | -0.844 11.650  0.713 | -0.252  8.148  0.063 |  0.205  7.395  0.042 |
+## COMUNS         |  0.823 11.070  0.677 | -0.175  3.921  0.031 |  0.516 46.857  0.266 |
+## Cs             |  0.968 15.329  0.938 | -0.097  1.196  0.009 | -0.056  0.544  0.003 |
+## PP             |  0.843 11.606  0.710 |  0.340 14.885  0.116 | -0.201  7.128  0.041 |</code></pre>
 <div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="teoria-setmana-6.html#cb346-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(respca_com,<span class="at">choix=</span><span class="st">&quot;ind&quot;</span>, <span class="at">cex=</span>.<span class="dv">7</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-183-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-192-1.png" width="672" /></p>
 <div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="teoria-setmana-6.html#cb347-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(respca_com,<span class="at">choix=</span><span class="st">&quot;var&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-184-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-193-1.png" width="672" /></p>
 </div>
 </div>
 <div id="barómetre-2021-01-29-1" class="section level3" number="6.3.2">
@@ -1047,73 +954,50 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <p>Valoració candiadts.</p>
 <div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="teoria-setmana-6.html#cb348-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.spss</span>(<span class="st">&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;</span>, <span class="at">to.data.frame =</span> <span class="cn">TRUE</span>, <span class="at">use.value.labels =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## re-encoding from UTF-8</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 18, 68, 73,
-## 98, 138, 144, 181, 237, 430, 491, 614, 629, 645, 659, 670, 690, 695, 777,
-## 810, 813, 827, 828, 830, 848, 850, 851, 852, 853, 855, 877 added in variable:
-## ENQUESTADOR_CODI</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P4</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P7</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P11</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P13_A</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 2, 3, 4, 5, 6,
-## 7, 8, 9 added in variable: P13_B</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P13_C</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P13_D</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P13_E</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P19B_A_FERNANDEZ</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P19B_L_BORRAS</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P19B_P_ARAGONES</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P19B_S_ILLA</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P19B_J_ALBIACH</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P19B_C_CARRIZOSA</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P19B_D_SABATER</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8 added in variable: P19B_I_GARRIGA</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3, 4, 5,
-## 6, 7, 8, 9 added in variable: P19B_A_CHACON</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1932, 1939,
-## 1942, 1944, 1945, 1946, 1948, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957,
-## 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970,
-## 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983,
-## 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1994, 1995, 1996, 1997,
-## 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 18, 68,
+## 73, 98, 138, 144, 181, 237, 430, 491, 614, 629, 645, 659, 670, 690, 695, 777, 810, 813, 827, 828, 830, 848, 850, 851, 852, 853, 855,
+## 877 added in variable: ENQUESTADOR_CODI</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P4</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P7</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P11</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P13_A</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 2, 3, 4,
+## 5, 6, 7, 8, 9 added in variable: P13_B</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P13_C</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P13_D</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P13_E</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P19B_A_FERNANDEZ</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P19B_L_BORRAS</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P19B_P_ARAGONES</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P19B_S_ILLA</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P19B_J_ALBIACH</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P19B_C_CARRIZOSA</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P19B_D_SABATER</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8 added in variable: P19B_I_GARRIGA</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1, 2, 3,
+## 4, 5, 6, 7, 8, 9 added in variable: P19B_A_CHACON</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Undeclared level(s) 1932,
+## 1939, 1942, 1944, 1945, 1946, 1948, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959, 1960, 1961, 1962, 1963, 1964, 1965,
+## 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987,
+## 1988, 1989, 1990, 1991, 1992, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
 ## 2011, 2013, 2014, 2015, 2016, 2017, 2018, 2019 added in variable: P20</code></pre>
-<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/
-## Microdades%20anonimitzades%20-992.sav&quot;, : Duplicated levels in factor P29:
-## Altres</code></pre>
+<pre><code>## Warning in read.spss(&quot;http://upceo.ceo.gencat.cat/wsceop/7908/Microdades%20anonimitzades%20-992.sav&quot;, : Duplicated levels in factor
+## P29: Altres</code></pre>
 <div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="teoria-setmana-6.html#cb370-1" aria-hidden="true" tabindex="-1"></a>valor <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
 <span id="cb370-2"><a href="teoria-setmana-6.html#cb370-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb370-3"><a href="teoria-setmana-6.html#cb370-3" aria-hidden="true" tabindex="-1"></a> <span class="at">FERNANDEZ=</span> <span class="fu">ifelse</span>(P19B_A_FERNANDEZ<span class="sc">%in%</span><span class="fu">c</span>(<span class="st">&quot;No ho sap&quot;</span>,<span class="st">&quot;No contesta&quot;</span>),<span class="cn">NA</span>,<span class="fu">as.numeric</span>(P19B_A_FERNANDEZ) <span class="sc">-</span><span class="dv">1</span>)</span>
@@ -1147,7 +1031,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## 
 ##     sleep</code></pre>
 <div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="teoria-setmana-6.html#cb379-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggr</span>(valor)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-186-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-195-1.png" width="672" /></p>
 <p>cor()</p>
 <div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="teoria-setmana-6.html#cb380-1" aria-hidden="true" tabindex="-1"></a>valorNA<span class="ot">&lt;-</span><span class="fu">na.omit</span>(valor)</span>
 <span id="cb380-2"><a href="teoria-setmana-6.html#cb380-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(valorNA)</span></code></pre></div>
@@ -1162,64 +1046,39 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## 
 ## 
 ## Eigenvalues
-##                        Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7
-## Variance               3.141   1.883   0.990   0.813   0.550   0.537   0.395
-## % of var.             34.896  20.926  11.005   9.030   6.109   5.967   4.388
-## Cumulative % of var.  34.896  55.822  66.828  75.858  81.967  87.934  92.322
-##                        Dim.8   Dim.9
-## Variance               0.379   0.312
-## % of var.              4.206   3.472
-## Cumulative % of var.  96.528 100.000
+##                        Dim.1   Dim.2   Dim.3   Dim.4   Dim.5   Dim.6   Dim.7   Dim.8   Dim.9
+## Variance               3.141   1.883   0.990   0.813   0.550   0.537   0.395   0.379   0.312
+## % of var.             34.896  20.926  11.005   9.030   6.109   5.967   4.388   4.206   3.472
+## Cumulative % of var.  34.896  55.822  66.828  75.858  81.967  87.934  92.322  96.528 100.000
 ## 
 ## Individuals (the 10 first)
-##               Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3
-## 1         |  2.890 | -0.162  0.008  0.003 |  1.109  0.659  0.147 | -0.937
-## 21        |  2.884 |  0.818  0.215  0.080 | -0.311  0.052  0.012 | -1.757
-## 23        |  2.410 | -0.343  0.038  0.020 |  2.004  2.154  0.691 |  0.689
-## 27        |  2.466 |  1.124  0.406  0.208 |  0.072  0.003  0.001 |  0.006
-## 28        |  3.314 |  2.829  2.575  0.729 |  0.301  0.049  0.008 | -0.603
-## 33        |  1.980 | -0.361  0.042  0.033 |  0.286  0.044  0.021 |  0.216
-## 43        |  2.576 |  1.841  1.090  0.510 |  0.103  0.006  0.002 | -0.947
-## 82        |  3.848 |  3.223  3.340  0.701 | -1.757  1.655  0.208 |  0.727
-## 92        |  1.669 | -0.821  0.217  0.242 | -0.032  0.001  0.000 | -0.233
-## 110       |  3.709 | -1.964  1.241  0.280 |  1.351  0.978  0.133 | -0.392
-##              ctr   cos2  
-## 1          0.895  0.105 |
-## 21         3.147  0.371 |
-## 23         0.484  0.082 |
-## 27         0.000  0.000 |
-## 28         0.370  0.033 |
-## 33         0.048  0.012 |
-## 43         0.915  0.135 |
-## 82         0.538  0.036 |
-## 92         0.056  0.020 |
-## 110        0.157  0.011 |
+##               Dist    Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
+## 1         |  2.890 | -0.162  0.008  0.003 |  1.109  0.659  0.147 | -0.937  0.895  0.105 |
+## 21        |  2.884 |  0.818  0.215  0.080 | -0.311  0.052  0.012 | -1.757  3.147  0.371 |
+## 23        |  2.410 | -0.343  0.038  0.020 |  2.004  2.154  0.691 |  0.689  0.484  0.082 |
+## 27        |  2.466 |  1.124  0.406  0.208 |  0.072  0.003  0.001 |  0.006  0.000  0.000 |
+## 28        |  3.314 |  2.829  2.575  0.729 |  0.301  0.049  0.008 | -0.603  0.370  0.033 |
+## 33        |  1.980 | -0.361  0.042  0.033 |  0.286  0.044  0.021 |  0.216  0.048  0.012 |
+## 43        |  2.576 |  1.841  1.090  0.510 |  0.103  0.006  0.002 | -0.947  0.915  0.135 |
+## 82        |  3.848 |  3.223  3.340  0.701 | -1.757  1.655  0.208 |  0.727  0.538  0.036 |
+## 92        |  1.669 | -0.821  0.217  0.242 | -0.032  0.001  0.000 | -0.233  0.056  0.020 |
+## 110       |  3.709 | -1.964  1.241  0.280 |  1.351  0.978  0.133 | -0.392  0.157  0.011 |
 ## 
 ## Variables
-##              Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr
-## FERNANDEZ |  0.616 12.092  0.380 | -0.572 17.359  0.327 |  0.232  5.426
-## BORRAS    |  0.351  3.923  0.123 |  0.642 21.911  0.413 |  0.375 14.230
-## ARAGONES  |  0.662 13.951  0.438 |  0.442 10.378  0.195 | -0.094  0.883
-## ILLA      |  0.627 12.534  0.394 |  0.032  0.053  0.001 | -0.658 43.664
-## ALBIACH   |  0.759 18.362  0.577 |  0.229  2.796  0.053 | -0.337 11.438
-## CARRIZOSA |  0.630 12.640  0.397 | -0.589 18.425  0.347 |  0.036  0.132
-## SABATER   |  0.413  5.430  0.171 |  0.548 15.919  0.300 |  0.207  4.326
-## GARRIGA   |  0.572 10.432  0.328 | -0.486 12.526  0.236 |  0.214  4.609
-## CHACON    |  0.578 10.635  0.334 |  0.109  0.634  0.012 |  0.389 15.293
-##             cos2  
-## FERNANDEZ  0.054 |
-## BORRAS     0.141 |
-## ARAGONES   0.009 |
-## ILLA       0.432 |
-## ALBIACH    0.113 |
-## CARRIZOSA  0.001 |
-## SABATER    0.043 |
-## GARRIGA    0.046 |
-## CHACON     0.151 |</code></pre>
+##              Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr   cos2  
+## FERNANDEZ |  0.616 12.092  0.380 | -0.572 17.359  0.327 |  0.232  5.426  0.054 |
+## BORRAS    |  0.351  3.923  0.123 |  0.642 21.911  0.413 |  0.375 14.230  0.141 |
+## ARAGONES  |  0.662 13.951  0.438 |  0.442 10.378  0.195 | -0.094  0.883  0.009 |
+## ILLA      |  0.627 12.534  0.394 |  0.032  0.053  0.001 | -0.658 43.664  0.432 |
+## ALBIACH   |  0.759 18.362  0.577 |  0.229  2.796  0.053 | -0.337 11.438  0.113 |
+## CARRIZOSA |  0.630 12.640  0.397 | -0.589 18.425  0.347 |  0.036  0.132  0.001 |
+## SABATER   |  0.413  5.430  0.171 |  0.548 15.919  0.300 |  0.207  4.326  0.043 |
+## GARRIGA   |  0.572 10.432  0.328 | -0.486 12.526  0.236 |  0.214  4.609  0.046 |
+## CHACON    |  0.578 10.635  0.334 |  0.109  0.634  0.012 |  0.389 15.293  0.151 |</code></pre>
 <div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="teoria-setmana-6.html#cb384-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(respca,<span class="at">choix=</span><span class="st">&quot;ind&quot;</span>, <span class="at">cex=</span><span class="fl">0.7</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-189-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-198-1.png" width="672" /></p>
 <div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="teoria-setmana-6.html#cb385-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(respca,<span class="at">choix=</span><span class="st">&quot;var&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-190-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-199-1.png" width="672" /></p>
 </div>
 </div>
 <div id="analisis-factorial-amb-dades-omeses" class="section level2" number="6.4">
@@ -1231,10 +1090,8 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## factanal(x = X, factors = 2, rotation = &quot;varimax&quot;)
 ## 
 ## Uniquenesses:
-## FERNANDEZ    BORRAS  ARAGONES      ILLA   ALBIACH CARRIZOSA   SABATER 
-##     0.391     0.713     0.435     0.666     0.427     0.295     0.729 
-##   GARRIGA    CHACON 
-##     0.578     0.760 
+## FERNANDEZ    BORRAS  ARAGONES      ILLA   ALBIACH CARRIZOSA   SABATER   GARRIGA    CHACON 
+##     0.391     0.713     0.435     0.666     0.427     0.295     0.729     0.578     0.760 
 ## 
 ## Loadings:
 ##           Factor1 Factor2
@@ -1258,10 +1115,8 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 ## The p-value is 0.0742</code></pre>
 <div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="teoria-setmana-6.html#cb388-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(fit)</span></code></pre></div>
 <pre><code>## $names
-##  [1] &quot;converged&quot;    &quot;loadings&quot;     &quot;uniquenesses&quot; &quot;correlation&quot; 
-##  [5] &quot;criteria&quot;     &quot;factors&quot;      &quot;dof&quot;          &quot;method&quot;      
-##  [9] &quot;rotmat&quot;       &quot;STATISTIC&quot;    &quot;PVAL&quot;         &quot;n.obs&quot;       
-## [13] &quot;call&quot;        
+##  [1] &quot;converged&quot;    &quot;loadings&quot;     &quot;uniquenesses&quot; &quot;correlation&quot;  &quot;criteria&quot;     &quot;factors&quot;      &quot;dof&quot;          &quot;method&quot;      
+##  [9] &quot;rotmat&quot;       &quot;STATISTIC&quot;    &quot;PVAL&quot;         &quot;n.obs&quot;        &quot;call&quot;        
 ## 
 ## $class
 ## [1] &quot;factanal&quot;</code></pre>
@@ -1292,7 +1147,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb392-3"><a href="teoria-setmana-6.html#cb392-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">3</span>) </span>
 <span id="cb392-4"><a href="teoria-setmana-6.html#cb392-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">3</span>) </span>
 <span id="cb392-5"><a href="teoria-setmana-6.html#cb392-5" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(A[,<span class="dv">1</span>], A[,<span class="dv">2</span>] , <span class="fu">colnames</span>(X), <span class="at">cex =</span>.<span class="dv">7</span>) </span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-194-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-203-1.png" width="672" /></p>
 </div>
 <div id="anàlisis-factorial-amb-correlacions-dos-a-dos" class="section level3" number="6.4.2">
 <h3><span class="header-section-number">6.4.2</span> Anàlisis factorial amb correlacions dos a dos</h3>
@@ -1307,29 +1162,19 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="teoria-setmana-6.html#cb395-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(valor)</span></code></pre></div>
 <pre><code>## [1] 1100    9</code></pre>
 <div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="teoria-setmana-6.html#cb397-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggr</span>(valor)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-197-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-206-1.png" width="672" /></p>
 <div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="teoria-setmana-6.html#cb398-1" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span>  <span class="fu">cor</span>(valor, <span class="at">use=</span><span class="st">&quot;pairwise.complete.obs&quot;</span>)</span>
 <span id="cb398-2"><a href="teoria-setmana-6.html#cb398-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(R,<span class="dv">3</span>)</span></code></pre></div>
-<pre><code>##           FERNANDEZ BORRAS ARAGONES  ILLA ALBIACH CARRIZOSA SABATER GARRIGA
-## FERNANDEZ     1.000  0.005    0.074 0.231   0.327     0.726   0.120   0.648
-## BORRAS        0.005  1.000    0.517 0.205   0.308    -0.067   0.534   0.012
-## ARAGONES      0.074  0.517    1.000 0.439   0.504     0.030   0.408   0.030
-## ILLA          0.231  0.205    0.439 1.000   0.497     0.214   0.310   0.209
-## ALBIACH       0.327  0.308    0.504 0.497   1.000     0.229   0.422   0.317
-## CARRIZOSA     0.726 -0.067    0.030 0.214   0.229     1.000   0.005   0.605
-## SABATER       0.120  0.534    0.408 0.310   0.422     0.005   1.000   0.158
-## GARRIGA       0.648  0.012    0.030 0.209   0.317     0.605   0.158   1.000
-## CHACON        0.350  0.380    0.463 0.402   0.467     0.283   0.443   0.258
-##           CHACON
-## FERNANDEZ  0.350
-## BORRAS     0.380
-## ARAGONES   0.463
-## ILLA       0.402
-## ALBIACH    0.467
-## CARRIZOSA  0.283
-## SABATER    0.443
-## GARRIGA    0.258
-## CHACON     1.000</code></pre>
+<pre><code>##           FERNANDEZ BORRAS ARAGONES  ILLA ALBIACH CARRIZOSA SABATER GARRIGA CHACON
+## FERNANDEZ     1.000  0.005    0.074 0.231   0.327     0.726   0.120   0.648  0.350
+## BORRAS        0.005  1.000    0.517 0.205   0.308    -0.067   0.534   0.012  0.380
+## ARAGONES      0.074  0.517    1.000 0.439   0.504     0.030   0.408   0.030  0.463
+## ILLA          0.231  0.205    0.439 1.000   0.497     0.214   0.310   0.209  0.402
+## ALBIACH       0.327  0.308    0.504 0.497   1.000     0.229   0.422   0.317  0.467
+## CARRIZOSA     0.726 -0.067    0.030 0.214   0.229     1.000   0.005   0.605  0.283
+## SABATER       0.120  0.534    0.408 0.310   0.422     0.005   1.000   0.158  0.443
+## GARRIGA       0.648  0.012    0.030 0.209   0.317     0.605   0.158   1.000  0.258
+## CHACON        0.350  0.380    0.463 0.402   0.467     0.283   0.443   0.258  1.000</code></pre>
 <div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="teoria-setmana-6.html#cb400-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">=</span> <span class="fu">factanal</span>(<span class="at">covmat =</span>R, <span class="at">factors=</span><span class="dv">2</span>,<span class="at">rotation =</span> <span class="st">&#39;varimax&#39;</span>)</span>
 <span id="cb400-2"><a href="teoria-setmana-6.html#cb400-2" aria-hidden="true" tabindex="-1"></a>A<span class="ot">=</span>fit<span class="sc">$</span>loadings; ma<span class="ot">=</span><span class="fu">max</span>(<span class="fu">abs</span>(A)) </span></code></pre></div>
 <p>Veiem la representació.</p>
@@ -1357,7 +1202,7 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 <span id="cb403-3"><a href="teoria-setmana-6.html#cb403-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">3</span>) </span>
 <span id="cb403-4"><a href="teoria-setmana-6.html#cb403-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">3</span>) </span>
 <span id="cb403-5"><a href="teoria-setmana-6.html#cb403-5" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(A[,<span class="dv">1</span>], A[,<span class="dv">2</span>] , <span class="fu">rownames</span>(R), <span class="at">cex =</span>.<span class="dv">7</span>) </span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-201-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-210-1.png" width="672" /></p>
 
 </div>
 </div>

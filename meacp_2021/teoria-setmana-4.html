@@ -348,8 +348,7 @@ install.packages(sandwich)</code></pre>
 <p>Hi ha una consulta sobre la possible discriminació salarial per gènere.</p>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="teoria-setmana-4.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
 <span id="cb177-2"><a href="teoria-setmana-4.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Salaries)</span></code></pre></div>
-<pre><code>## [1] &quot;rank&quot;          &quot;discipline&quot;    &quot;yrs.since.phd&quot; &quot;yrs.service&quot;  
-## [5] &quot;sex&quot;           &quot;salary&quot;</code></pre>
+<pre><code>## [1] &quot;rank&quot;          &quot;discipline&quot;    &quot;yrs.since.phd&quot; &quot;yrs.service&quot;   &quot;sex&quot;           &quot;salary&quot;</code></pre>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="teoria-setmana-4.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(Salaries)</span></code></pre></div>
 <pre><code>## [1] 397   6</code></pre>
 <div id="anàlisis-univariant" class="section level3" number="4.2.1">
@@ -360,41 +359,41 @@ install.packages(sandwich)</code></pre>
 <span id="cb181-4"><a href="teoria-setmana-4.html#cb181-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>salary)) <span class="sc">+</span></span>
 <span id="cb181-5"><a href="teoria-setmana-4.html#cb181-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
 <span id="cb181-6"><a href="teoria-setmana-4.html#cb181-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Densitat Salaris&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
 <div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="teoria-setmana-4.html#cb182-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
 <span id="cb182-2"><a href="teoria-setmana-4.html#cb182-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log</span>(salary))) <span class="sc">+</span></span>
 <span id="cb182-3"><a href="teoria-setmana-4.html#cb182-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
 <span id="cb182-4"><a href="teoria-setmana-4.html#cb182-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Densitat Log-Salaris&quot;</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="teoria-setmana-4.html#cb183-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
 <span id="cb183-2"><a href="teoria-setmana-4.html#cb183-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>sex)) <span class="sc">+</span></span>
 <span id="cb183-3"><a href="teoria-setmana-4.html#cb183-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
 <div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="teoria-setmana-4.html#cb184-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
 <span id="cb184-2"><a href="teoria-setmana-4.html#cb184-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>rank)) <span class="sc">+</span></span>
 <span id="cb184-3"><a href="teoria-setmana-4.html#cb184-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
 <div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="teoria-setmana-4.html#cb185-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
 <span id="cb185-2"><a href="teoria-setmana-4.html#cb185-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>discipline)) <span class="sc">+</span></span>
 <span id="cb185-3"><a href="teoria-setmana-4.html#cb185-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-96-1.png" width="672" /></p>
 <div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="teoria-setmana-4.html#cb186-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
 <span id="cb186-2"><a href="teoria-setmana-4.html#cb186-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>yrs.since.phd)) <span class="sc">+</span></span>
 <span id="cb186-3"><a href="teoria-setmana-4.html#cb186-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
 <div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="teoria-setmana-4.html#cb187-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
 <span id="cb187-2"><a href="teoria-setmana-4.html#cb187-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log</span>(yrs.since.phd))) <span class="sc">+</span></span>
 <span id="cb187-3"><a href="teoria-setmana-4.html#cb187-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-98-1.png" width="672" /></p>
 <div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="teoria-setmana-4.html#cb188-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
 <span id="cb188-2"><a href="teoria-setmana-4.html#cb188-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>yrs.service)) <span class="sc">+</span></span>
 <span id="cb188-3"><a href="teoria-setmana-4.html#cb188-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="teoria-setmana-4.html#cb189-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
 <span id="cb189-2"><a href="teoria-setmana-4.html#cb189-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log</span>(yrs.service))) <span class="sc">+</span></span>
 <span id="cb189-3"><a href="teoria-setmana-4.html#cb189-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 11 rows containing non-finite values (stat_density).</code></pre>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-100-1.png" width="672" /></p>
 </div>
 <div id="anàlisis-bivariant" class="section level3" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Anàlisis bivariant</h3>
@@ -407,28 +406,22 @@ install.packages(sandwich)</code></pre>
 <span id="cb191-7"><a href="teoria-setmana-4.html#cb191-7" aria-hidden="true" tabindex="-1"></a>         )</span>
 <span id="cb191-8"><a href="teoria-setmana-4.html#cb191-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb191-9"><a href="teoria-setmana-4.html#cb191-9" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span> <span class="fu">select</span>(salary,log_salary,yrs.since.phd,log_yrs.since.phd,yrs.since.phd2) <span class="sc">%&gt;%</span> <span class="fu">plot</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-101-1.png" width="672" /></p>
 <div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="teoria-setmana-4.html#cb192-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span> <span class="fu">select</span>(salary,log_salary,yrs.since.phd,log_yrs.since.phd,yrs.since.phd2) <span class="sc">%&gt;%</span> <span class="fu">cor</span>() <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>)</span></code></pre></div>
-<pre><code>##                   salary log_salary yrs.since.phd log_yrs.since.phd
-## salary             1.000      0.988         0.419             0.496
-## log_salary         0.988      1.000         0.426             0.520
-## yrs.since.phd      0.419      0.426         1.000             0.915
-## log_yrs.since.phd  0.496      0.520         0.915             1.000
-## yrs.since.phd2     0.305      0.297         0.963             0.790
-##                   yrs.since.phd2
-## salary                     0.305
-## log_salary                 0.297
-## yrs.since.phd              0.963
-## log_yrs.since.phd          0.790
-## yrs.since.phd2             1.000</code></pre>
+<pre><code>##                   salary log_salary yrs.since.phd log_yrs.since.phd yrs.since.phd2
+## salary             1.000      0.988         0.419             0.496          0.305
+## log_salary         0.988      1.000         0.426             0.520          0.297
+## yrs.since.phd      0.419      0.426         1.000             0.915          0.963
+## log_yrs.since.phd  0.496      0.520         0.915             1.000          0.790
+## yrs.since.phd2     0.305      0.297         0.963             0.790          1.000</code></pre>
 <div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="teoria-setmana-4.html#cb194-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
 <span id="cb194-2"><a href="teoria-setmana-4.html#cb194-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>sex,<span class="at">y=</span>salary)) <span class="sc">+</span></span>
 <span id="cb194-3"><a href="teoria-setmana-4.html#cb194-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="teoria-setmana-4.html#cb195-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span></span>
 <span id="cb195-2"><a href="teoria-setmana-4.html#cb195-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>sex,<span class="at">y=</span><span class="fu">log</span>(salary))) <span class="sc">+</span></span>
 <span id="cb195-3"><a href="teoria-setmana-4.html#cb195-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-104-1.png" width="672" /></p>
 <div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="teoria-setmana-4.html#cb196-1" aria-hidden="true" tabindex="-1"></a>reg1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(salary<span class="sc">~</span>sex, <span class="at">data=</span>Salaries)</span>
 <span id="cb196-2"><a href="teoria-setmana-4.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span></code></pre></div>
 <pre><code>## 
@@ -508,7 +501,7 @@ install.packages(sandwich)</code></pre>
 <div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="teoria-setmana-4.html#cb202-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span> </span>
 <span id="cb202-2"><a href="teoria-setmana-4.html#cb202-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>yrs.since.phd, <span class="at">y=</span><span class="fu">log</span>(salary), <span class="at">color=</span>sex))<span class="sc">+</span></span>
 <span id="cb202-3"><a href="teoria-setmana-4.html#cb202-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-99-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-108-1.png" width="672" /></p>
 </div>
 <div id="realció-log-log" class="section level3" number="4.2.3">
 <h3><span class="header-section-number">4.2.3</span> Realció log-log</h3>
@@ -551,7 +544,7 @@ install.packages(sandwich)</code></pre>
 <div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="teoria-setmana-4.html#cb205-1" aria-hidden="true" tabindex="-1"></a>Salaries <span class="sc">%&gt;%</span> </span>
 <span id="cb205-2"><a href="teoria-setmana-4.html#cb205-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log</span>(yrs.since.phd), <span class="at">y=</span><span class="fu">log</span>(salary), <span class="at">color=</span>sex))<span class="sc">+</span></span>
 <span id="cb205-3"><a href="teoria-setmana-4.html#cb205-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-101-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-110-1.png" width="672" /></p>
 </div>
 <div id="realció-x2" class="section level3" number="4.2.4">
 <h3><span class="header-section-number">4.2.4</span> Realció x**2</h3>
@@ -593,7 +586,7 @@ install.packages(sandwich)</code></pre>
 <span id="cb208-2"><a href="teoria-setmana-4.html#cb208-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>yrs.since.phd, <span class="at">y=</span><span class="fu">log</span>(salary), <span class="at">color=</span>sex))<span class="sc">+</span></span>
 <span id="cb208-3"><a href="teoria-setmana-4.html#cb208-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>), <span class="at">size =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
 <span id="cb208-4"><a href="teoria-setmana-4.html#cb208-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-103-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
 </div>
 <div id="interaccions" class="section level3" number="4.2.5">
 <h3><span class="header-section-number">4.2.5</span> Interaccions</h3>
@@ -680,7 +673,7 @@ install.packages(sandwich)</code></pre>
 ## Multiple R-squared:  0.5293, Adjusted R-squared:  0.522 
 ## F-statistic: 73.09 on 6 and 390 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="teoria-setmana-4.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">avPlots</span>(logreg5)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-107-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-116-1.png" width="672" /></p>
 <div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="teoria-setmana-4.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(logreg5)</span></code></pre></div>
 <pre><code>##                     GVIF Df GVIF^(1/(2*Df))
 ## sex             1.036197  1        1.017938
@@ -689,7 +682,7 @@ install.packages(sandwich)</code></pre>
 ## rank            4.291107  2        1.439270
 ## discipline      1.057661  1        1.028426</code></pre>
 <div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="teoria-setmana-4.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(logreg5,<span class="dv">1</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-109-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
 </div>
 <div id="estimadors-robustos" class="section level3" number="4.2.6">
 <h3><span class="header-section-number">4.2.6</span> Estimadors robustos</h3>
@@ -756,10 +749,10 @@ install.packages(sandwich)</code></pre>
 <div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="teoria-setmana-4.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span></code></pre></div>
 <p>Normalidad</p>
 <div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="teoria-setmana-4.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(logreg5,<span class="dv">2</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-111-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
 <p>Outlyers</p>
 <div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="teoria-setmana-4.html#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(logreg5,<span class="dv">5</span>)</span></code></pre></div>
-<p><img src="meacp_2021_files/figure-html/unnamed-chunk-112-1.png" width="672" /></p>
+<p><img src="meacp_2021_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
 
 </div>
 </div>
